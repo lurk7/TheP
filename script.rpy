@@ -40,6 +40,7 @@ image engineimg = "images/map/engine_idle.png"
 image medimg = "images/map/med_idle.png"
 image wareimg = "images/map/warehouse_idle.png"
 image barimg = "images/map/barracks_idle.png"
+image sewimg = "images/map/sew_idle.png"
 
 define flag1 = True
 define flag2 = True
@@ -80,6 +81,14 @@ define hallwaydest = False
 define pool = False
 define poolnew = False
 define poolFirst = True
+
+define sew_engine = True
+define sew_door = True
+define sew_hatch = False
+define sew_hatch1 = False
+define sewers = False
+define sewerslight = False
+define sew_first = True
 
 define comroom_crate1 = True
 define comroom_crate2 = False
@@ -158,6 +167,7 @@ define lewd = 1
 # CHANGE TO 3
 define ammo = 3
 # CHANGE TO 0
+define prison_phantom = False
 define run_ok = False
 define run1 = False
 define run2 = False
@@ -173,6 +183,7 @@ define alarm = 0
 define parts = 0
 define quest = "None"
 define sidequest = "..."
+define sidequest1 = "..."
 define enemyhp = 0
 define doorSliderValue = 1000
 define doorHackJump = 'doorHackFail'
@@ -186,6 +197,7 @@ define sexstage = 1
 # CHANGE TO FALSE
 define hackOK = False
 define scanOK = False
+define scanpool = False
 define partsQuest = False
 define crewQuest = False
 define redVarrenFirstEnc = True
@@ -196,6 +208,7 @@ define havedogbone = False
 define prisonLock = False
 # CHANGE TO FALSE
 define act3 = False
+define act2 = False
 define twoHount = False
 define twoWinFirst = False
 define twoCount = 0
@@ -206,6 +219,7 @@ define barfirst = True
 define gatesQuest = False
 define gatesFlag = True
 define bitchQuest = False
+define scanFix = False
 define scanQuest = False
 define nyunfirst = True
 define elkorFirst = True
@@ -241,10 +255,32 @@ define enc_chance = 0
 define corridor_fight = False
 define door_fight = False
 
+define teasecount = 0
+define teaseevent = False
+
+#---------------------- HATCH MINI GAME ------------------------------
+define bar1taken = False
+define bar2taken = False
+define bar1fix = False
+define bar2fix = False
+define wirefix = False
+define seq1 = False
+define seq2 = False
+define seq3 = False
+define sewriddle2 = False
+image bar1set = "images/events/sewers/riddle/barrel1_set.png"
+image bar2set = "images/events/sewers/riddle/barrel2_set.png"
+image bar1lay = "images/events/sewers/riddle/barrel4_idle.png"
+image bar2lay = "images/events/sewers/riddle/barrel3_idle.png"
+image wireset = "images/events/sewers/riddle/wire_set.png"
+
 # --------------------- VENTS VARIABLES ------------------------------
+define amienemy1 = True
 define ventsopen = False
 define vquest = "..."
 define ventsidequest = "..."
+define venthatchquest = False
+define amihatchtalk = False
 
 define nyun1 = True
 define nyun2 = True
@@ -256,6 +292,8 @@ define nyunblock = False
 define nyunhatch = False
 define nyunami = False
 define nyunsaved = False
+# CHANGE TO FALSE
+define nyunmed = False
 
 define flesh1 = True
 
@@ -267,10 +305,12 @@ define aft_ok = False
 define action_ok = True
 
 #define quest = ""
-define eggs = 0
+define eggs = 2
 define cells = 0
 define hearts = 0
 define arousal = 0
+define coom = 2
+define poison = 2
 #define infection = 0
 define nest1 = "Active"
 define nest2 = "N/A"
@@ -324,6 +364,56 @@ default clicked1 = True
 default hpcurrent = 100
 default hpmax = 100
 default hpdmg = 20
+
+# CRAFT ----------------------
+define slot1 = True
+define slot2 = True
+define slot3 = False
+
+define slot1egg = False
+define slot2egg = False
+define slot1cum = False
+define slot2cum = False
+define slot1poison = False
+define slot2poison = False
+define slot3poison = False
+
+define craftbutton = True
+
+image eggslot1 = "images/events/labcraft/eggslot1.png"
+image eggslot2 = "images/events/labcraft/eggslot2.png"
+image cumslot1 = "images/events/labcraft/cumslot1.png"
+image cumslot2 = "images/events/labcraft/cumslot2.png"
+image poisonslot1 = "images/events/labcraft/greenslot1.png"
+image poisonslot2 = "images/events/labcraft/greenslot2.png"
+image poisonslot3 = "images/events/labcraft/greenslot3.png"
+
+image craftanim1:
+    "images/events/labcraft/bg craft0.jpg"
+    pause .12
+    "images/events/labcraft/bg craft1.jpg"
+    pause .12
+    "images/events/labcraft/bg craft2.jpg"
+    pause .12
+    "images/events/labcraft/bg craft3.jpg"
+    pause .12
+    "images/events/labcraft/bg craft4.jpg"
+    pause .12
+    "images/events/labcraft/bg craft5.jpg"
+    pause .12
+    "images/events/labcraft/bg craft4.jpg"
+    pause .12
+    "images/events/labcraft/bg craft3.jpg"
+    pause .12
+    "images/events/labcraft/bg craft2.jpg"
+    pause .12
+    "images/events/labcraft/bg craft1.jpg"
+    pause .12
+    repeat
+
+
+
+#--------------------------------------
 
 
 define encID = 0
@@ -10176,6 +10266,26 @@ image poolscan:
     "images/map/poolspot/4.png"
     pause .15
 
+image prisonscan:
+    "images/map/prisonspot/1.png"
+    pause .15
+    "images/map/prisonspot/2.png"
+    pause .15
+    "images/map/prisonspot/3.png"
+    pause .15
+    "images/map/prisonspot/4.png"
+    pause .15
+
+image sewscan:
+    "images/map/sewspot/1.png"
+    pause .15
+    "images/map/sewspot/2.png"
+    pause .15
+    "images/map/sewspot/3.png"
+    pause .15
+    "images/map/sewspot/4.png"
+    pause .15
+
 image poolopen:
     "images/events/pool/open/0001.jpg"
     pause 0.15
@@ -12396,6 +12506,2496 @@ image pooldry:
     "images/events/pool/dry/0023.jpg"
     pause .12
     "images/events/pool/dry/0024.jpg"
+    pause .12
+
+image hatchsewers:
+    "images/events/sewers/hatch/1.jpg"
+    pause .15
+    "images/events/sewers/hatch/2.jpg"
+    pause .15
+    "images/events/sewers/hatch/3.jpg"
+    pause .15
+    "images/events/sewers/hatch/4.jpg"
+    pause .15
+    "images/events/sewers/hatch/5.jpg"
+    pause .15
+
+image sewhatchanim1:
+    "images/events/sewers/1/0001.jpg"
+    pause .12
+    "images/events/sewers/1/0002.jpg"
+    pause .12
+    "images/events/sewers/1/0003.jpg"
+    pause .12
+    "images/events/sewers/1/0004.jpg"
+    pause .12
+    "images/events/sewers/1/0005.jpg"
+    pause .12
+    "images/events/sewers/1/0006.jpg"
+    pause .12
+    "images/events/sewers/1/0007.jpg"
+    pause .12
+    "images/events/sewers/1/0008.jpg"
+    pause .12
+    "images/events/sewers/1/0009.jpg"
+    pause .12
+    repeat
+
+image sewhatchanim2:
+    "images/events/sewers/2/0001.jpg"
+    pause .12
+    "images/events/sewers/2/0002.jpg"
+    pause .12
+    "images/events/sewers/2/0003.jpg"
+    pause .12
+    "images/events/sewers/2/0004.jpg"
+    pause .12
+    "images/events/sewers/2/0005.jpg"
+    pause .12
+    "images/events/sewers/2/0006.jpg"
+    pause .12
+    "images/events/sewers/2/0007.jpg"
+    pause .12
+    "images/events/sewers/2/0008.jpg"
+    pause .12
+    "images/events/sewers/2/0009.jpg"
+    pause .12
+
+image sewhatchanim3:
+    "images/events/sewers/hatchopen/0023.jpg"
+    pause .12
+    "images/events/sewers/hatchopen/0024.jpg"
+    pause .12
+    "images/events/sewers/hatchopen/0025.jpg"
+    pause .12
+    "images/events/sewers/hatchopen/0026.jpg"
+    pause .12
+    "images/events/sewers/hatchopen/0027.jpg"
+    pause .12
+    "images/events/sewers/hatchopen/0028.jpg"
+    pause .12
+    "images/events/sewers/hatchopen/0029.jpg"
+    pause .12
+    "images/events/sewers/hatchopen/0030.jpg"
+    pause .12
+
+image sewlights:
+    "images/events/sewers/light/0001.jpg"
+    pause .12
+    "images/events/sewers/light/0002.jpg"
+    pause .12
+    "images/events/sewers/light/0003.jpg"
+    pause .12
+    "images/events/sewers/light/0004.jpg"
+    pause .12
+    "images/events/sewers/light/0005.jpg"
+    pause .12
+    "images/events/sewers/light/0006.jpg"
+    pause .12
+    "images/events/sewers/light/0007.jpg"
+    pause .12
+    "images/events/sewers/light/0008.jpg"
+    pause .12
+    "images/events/sewers/light/0009.jpg"
+    pause .12
+
+image sewvar1:
+    "images/events/sewers/3/0008.jpg"
+    pause .10
+    "images/events/sewers/3/0009.jpg"
+    pause .10
+    "images/events/sewers/3/0010.jpg"
+    pause .10
+    "images/events/sewers/3/0011.jpg"
+    function lick
+    pause .10
+    "images/events/sewers/3/0012.jpg"
+    pause .10
+    "images/events/sewers/3/0013.jpg"
+    pause .10
+    "images/events/sewers/3/0014.jpg"
+    pause .10
+    "images/events/sewers/3/0015.jpg"
+    pause .10
+    "images/events/sewers/3/0016.jpg"
+    pause .10
+    repeat
+
+image sewvar2:
+    "images/events/sewers/4/0016.jpg"
+    pause .12
+    "images/events/sewers/4/0017.jpg"
+    pause .12
+    "images/events/sewers/4/0018.jpg"
+    pause .12
+    "images/events/sewers/4/0019.jpg"
+    pause .12
+    "images/events/sewers/4/0020.jpg"
+    pause .12
+    "images/events/sewers/4/0021.jpg"
+    pause .12
+    "images/events/sewers/4/0022.jpg"
+    pause .12
+    "images/events/sewers/4/0023.jpg"
+    pause .12
+    "images/events/sewers/4/0024.jpg"
+    pause .12
+    "images/events/sewers/4/0025.jpg"
+    pause .12
+    "images/events/sewers/4/0026.jpg"
+    pause .12
+    "images/events/sewers/4/0027.jpg"
+    pause .12
+    "images/events/sewers/4/0028.jpg"
+    pause .12
+    "images/events/sewers/4/0029.jpg"
+    function fall
+    pause .12
+    "images/events/sewers/4/0030.jpg"
+    pause .12
+    "images/events/sewers/4/0031.jpg"
+    pause .12
+    "images/events/sewers/4/0032.jpg"
+    pause .12
+
+image sewvar3:
+    "images/events/sewers/5/0001.jpg"
+    pause .10
+    "images/events/sewers/5/0002.jpg"
+    pause .10
+    "images/events/sewers/5/0003.jpg"
+    pause .10
+    "images/events/sewers/5/0004.jpg"
+    pause .10
+    "images/events/sewers/5/0005.jpg"
+    function slap2
+    pause .10
+    "images/events/sewers/5/0006.jpg"
+    pause .10
+    "images/events/sewers/5/0007.jpg"
+    pause .10
+    "images/events/sewers/5/0008.jpg"
+    pause .10
+    "images/events/sewers/5/0009.jpg"
+    pause .10
+    "images/events/sewers/5/0010.jpg"
+    pause .10
+    "images/events/sewers/5/0011.jpg"
+    function slap2
+    pause .10
+    "images/events/sewers/5/0012.jpg"
+    pause .10
+    "images/events/sewers/5/0013.jpg"
+    pause .10
+    "images/events/sewers/5/0014.jpg"
+    pause .10
+    "images/events/sewers/5/0015.jpg"
+    pause .10
+    "images/events/sewers/5/0016.jpg"
+    pause .10
+    "images/events/sewers/5/0017.jpg"
+    pause .10
+    "images/events/sewers/5/0018.jpg"
+    function slap2
+    pause .10
+    "images/events/sewers/5/0019.jpg"
+    pause .10
+    "images/events/sewers/5/0020.jpg"
+    pause .10
+    "images/events/sewers/5/0021.jpg"
+    pause .10
+    repeat
+
+image sewvar4:
+    "images/events/sewers/6/0032.jpg"
+    pause .10
+    "images/events/sewers/6/0033.jpg"
+    pause .10
+    "images/events/sewers/6/0034.jpg"
+    pause .10
+    "images/events/sewers/6/0035.jpg"
+    pause .10
+    "images/events/sewers/6/0036.jpg"
+    pause .10
+    "images/events/sewers/6/0037.jpg"
+    function slap1
+    pause .10
+    "images/events/sewers/6/0038.jpg"
+    pause .10
+    "images/events/sewers/6/0039.jpg"
+    pause .10
+    "images/events/sewers/6/0040.jpg"
+    pause .10
+    "images/events/sewers/6/0041.jpg"
+    pause .10
+    "images/events/sewers/6/0042.jpg"
+    pause .10
+    "images/events/sewers/6/0043.jpg"
+    pause .10
+    "images/events/sewers/6/0044.jpg"
+    pause .10
+    "images/events/sewers/6/0045.jpg"
+    function slap2
+    pause .10
+    "images/events/sewers/6/0046.jpg"
+    pause .10
+    "images/events/sewers/6/0047.jpg"
+    pause .10
+    repeat
+
+image sewvar5:
+    "images/events/sewers/7/0032.jpg"
+    pause .10
+    "images/events/sewers/7/0033.jpg"
+    pause .10
+    "images/events/sewers/7/0034.jpg"
+    pause .10
+    "images/events/sewers/7/0035.jpg"
+    pause .10
+    "images/events/sewers/7/0036.jpg"
+    pause .10
+    "images/events/sewers/7/0037.jpg"
+    function slap1
+    pause .10
+    "images/events/sewers/7/0038.jpg"
+    pause .10
+    "images/events/sewers/7/0039.jpg"
+    pause .10
+    repeat
+
+image sewvar6:
+    "images/events/sewers/8/0040.jpg"
+    pause .10
+    "images/events/sewers/8/0041.jpg"
+    pause .10
+    "images/events/sewers/8/0042.jpg"
+    pause .10
+    "images/events/sewers/8/0043.jpg"
+    pause .10
+    "images/events/sewers/8/0044.jpg"
+    pause .10
+    "images/events/sewers/8/0045.jpg"
+    function cum1
+    pause .10
+    "images/events/sewers/8/0046.jpg"
+    pause .10
+    "images/events/sewers/8/0047.jpg"
+    pause .10
+    "images/events/sewers/8/0048.jpg"
+    pause .10
+    "images/events/sewers/8/0049.jpg"
+    pause .10
+    "images/events/sewers/8/0050.jpg"
+    pause .10
+    "images/events/sewers/8/0051.jpg"
+    pause .10
+    "images/events/sewers/8/0052.jpg"
+    function cum1
+    pause .10
+    "images/events/sewers/8/0053.jpg"
+    pause .10
+    "images/events/sewers/8/0054.jpg"
+    pause .10
+    "images/events/sewers/8/0055.jpg"
+    pause .10
+    "images/events/sewers/8/0056.jpg"
+    pause .10
+    "images/events/sewers/8/0057.jpg"
+    pause .10
+    "images/events/sewers/8/0058.jpg"
+    pause .10
+    "images/events/sewers/8/0059.jpg"
+    pause .10
+    "images/events/sewers/8/0060.jpg"
+    pause .10
+    "images/events/sewers/8/0061.jpg"
+    pause .10
+    "images/events/sewers/8/0062.jpg"
+    pause .10
+    "images/events/sewers/8/0063.jpg"
+    pause .10
+    "images/events/sewers/8/0064.jpg"
+    pause .10
+    "images/events/sewers/8/0065.jpg"
+    pause .10
+    "images/events/sewers/8/0066.jpg"
+    pause .10
+    "images/events/sewers/8/0067.jpg"
+    pause .10
+    "images/events/sewers/8/0068.jpg"
+    pause .10
+    "images/events/sewers/8/0069.jpg"
+    pause .10
+    "images/events/sewers/8/0070.jpg"
+    pause .10
+    "images/events/sewers/8/0071.jpg"
+    function splat2
+    pause .10
+    "images/events/sewers/8/0072.jpg"
+    pause .10
+    "images/events/sewers/8/0073.jpg"
+    pause .10
+    "images/events/sewers/8/0074.jpg"
+    pause .10
+    "images/events/sewers/8/0075.jpg"
+    pause .10
+    "images/events/sewers/8/0076.jpg"
+    pause .10
+    "images/events/sewers/8/0077.jpg"
+    pause .10
+    "images/events/sewers/8/0078.jpg"
+    pause .10
+    "images/events/sewers/8/0079.jpg"
+    pause .10
+    "images/events/sewers/8/0080.jpg"
+    pause .10
+    "images/events/sewers/8/0081.jpg"
+    pause .10
+    "images/events/sewers/8/0082.jpg"
+    pause .10
+    "images/events/sewers/8/0083.jpg"
+    pause .10
+    "images/events/sewers/8/0084.jpg"
+    pause .10
+    "images/events/sewers/8/0085.jpg"
+    pause .10
+    "images/events/sewers/8/0086.jpg"
+    pause .10
+    "images/events/sewers/8/0087.jpg"
+    pause .10
+    "images/events/sewers/8/0088.jpg"
+    pause .10
+    "images/events/sewers/8/0089.jpg"
+    pause .10
+    "images/events/sewers/8/0090.jpg"
+    pause .10
+
+image sewvar7:
+    "images/events/sewers/9/0010.jpg"
+    pause .10
+    "images/events/sewers/9/0011.jpg"
+    pause .10
+    "images/events/sewers/9/0012.jpg"
+    pause .10
+    "images/events/sewers/9/0013.jpg"
+    pause .10
+    "images/events/sewers/9/0014.jpg"
+    pause .10
+    "images/events/sewers/9/0015.jpg"
+    pause .10
+    "images/events/sewers/9/0016.jpg"
+    pause .10
+    "images/events/sewers/9/0017.jpg"
+    pause .10
+    "images/events/sewers/9/0018.jpg"
+    pause .10
+    "images/events/sewers/9/0019.jpg"
+    function s1
+    pause .10
+    "images/events/sewers/9/0020.jpg"
+    pause .10
+    "images/events/sewers/9/0021.jpg"
+    pause .10
+    "images/events/sewers/9/0022.jpg"
+    pause .10
+    "images/events/sewers/9/0023.jpg"
+    pause .10
+    "images/events/sewers/9/0024.jpg"
+    pause .10
+    "images/events/sewers/9/0025.jpg"
+    pause .10
+    "images/events/sewers/9/0026.jpg"
+    pause .10
+    "images/events/sewers/9/0027.jpg"
+    pause .10
+    repeat
+
+image sewvar8:
+    "images/events/sewers/10/0010.jpg"
+    pause .10
+    "images/events/sewers/10/0011.jpg"
+    pause .10
+    "images/events/sewers/10/0012.jpg"
+    pause .10
+    "images/events/sewers/10/0013.jpg"
+    pause .10
+    "images/events/sewers/10/0014.jpg"
+    pause .10
+    "images/events/sewers/10/0015.jpg"
+    pause .10
+    "images/events/sewers/10/0016.jpg"
+    pause .10
+    "images/events/sewers/10/0017.jpg"
+    pause .10
+    "images/events/sewers/10/0018.jpg"
+    pause .10
+    "images/events/sewers/10/0019.jpg"
+    pause .10
+    "images/events/sewers/10/0020.jpg"
+    pause .10
+    "images/events/sewers/10/0021.jpg"
+    pause .10
+    "images/events/sewers/10/0022.jpg"
+    pause .10
+    "images/events/sewers/10/0023.jpg"
+    pause .10
+    "images/events/sewers/10/0024.jpg"
+    function s3
+    pause .10
+    "images/events/sewers/10/0025.jpg"
+    pause .10
+    "images/events/sewers/10/0026.jpg"
+    pause .10
+    "images/events/sewers/10/0027.jpg"
+    pause .10
+    "images/events/sewers/10/0028.jpg"
+    pause .10
+    "images/events/sewers/10/0029.jpg"
+    pause .10
+    "images/events/sewers/10/0030.jpg"
+    pause .10
+    "images/events/sewers/10/0031.jpg"
+    pause .10
+    "images/events/sewers/10/0032.jpg"
+    function suck4
+    pause .10
+    "images/events/sewers/10/0033.jpg"
+    pause .10
+
+image sewvar9:
+    "images/events/sewers/11/0030.jpg"
+    pause .10
+    "images/events/sewers/11/0031.jpg"
+    pause .10
+    "images/events/sewers/11/0032.jpg"
+    pause .10
+    "images/events/sewers/11/0033.jpg"
+    function suck1
+    pause .10
+    "images/events/sewers/11/0034.jpg"
+    pause .10
+    "images/events/sewers/11/0035.jpg"
+    pause .10
+    "images/events/sewers/11/0036.jpg"
+    pause .10
+    repeat
+
+image sewvar10:
+    "images/events/sewers/12/0037.jpg"
+    pause .10
+    "images/events/sewers/12/0038.jpg"
+    pause .10
+    "images/events/sewers/12/0039.jpg"
+    pause .10
+    "images/events/sewers/12/0040.jpg"
+    function suck1
+    pause .10
+    "images/events/sewers/12/0041.jpg"
+    pause .10
+    "images/events/sewers/12/0042.jpg"
+    pause .10
+    "images/events/sewers/12/0043.jpg"
+    pause .10
+    "images/events/sewers/12/0044.jpg"
+    function slap1
+    pause .10
+    repeat
+
+image sewvar11:
+    "images/events/sewers/13/0037.jpg"
+    pause .10
+    "images/events/sewers/13/0038.jpg"
+    pause .10
+    "images/events/sewers/13/0039.jpg"
+    pause .10
+    "images/events/sewers/13/0040.jpg"
+    function suck2
+    pause .10
+    "images/events/sewers/13/0041.jpg"
+    pause .10
+    "images/events/sewers/13/0042.jpg"
+    pause .10
+    "images/events/sewers/13/0043.jpg"
+    pause .10
+    "images/events/sewers/13/0044.jpg"
+    pause .10
+    "images/events/sewers/13/0045.jpg"
+    pause .10
+    "images/events/sewers/13/0046.jpg"
+    function suck2
+    pause .10
+    "images/events/sewers/13/0047.jpg"
+    pause .10
+    "images/events/sewers/13/0048.jpg"
+    pause .10
+    "images/events/sewers/13/0049.jpg"
+    pause .10
+    "images/events/sewers/13/0050.jpg"
+    pause .10
+    "images/events/sewers/13/0051.jpg"
+    pause .10
+    "images/events/sewers/13/0052.jpg"
+    function suck2
+    pause .10
+    "images/events/sewers/13/0053.jpg"
+    pause .10
+    "images/events/sewers/13/0054.jpg"
+    pause .10
+    repeat
+
+image sewvar12:
+    "images/events/sewers/14/0054.jpg"
+    pause .10
+    "images/events/sewers/14/0055.jpg"
+    pause .10
+    "images/events/sewers/14/0056.jpg"
+    pause .10
+    "images/events/sewers/14/0057.jpg"
+    pause .10
+    "images/events/sewers/14/0058.jpg"
+    pause .10
+    "images/events/sewers/14/0059.jpg"
+    pause .10
+    "images/events/sewers/14/0060.jpg"
+    pause .10
+    "images/events/sewers/14/0061.jpg"
+    pause .10
+    "images/events/sewers/14/0062.jpg"
+    function suck4
+    pause .10
+    "images/events/sewers/14/0063.jpg"
+    pause .10
+    "images/events/sewers/14/0064.jpg"
+    pause .10
+    "images/events/sewers/14/0065.jpg"
+    pause .10
+    "images/events/sewers/14/0066.jpg"
+    pause .10
+    "images/events/sewers/14/0067.jpg"
+    pause .10
+    "images/events/sewers/14/0068.jpg"
+    pause .10
+    "images/events/sewers/14/0069.jpg"
+    pause .10
+    "images/events/sewers/14/0070.jpg"
+    pause .10
+    "images/events/sewers/14/0071.jpg"
+    pause .10
+    "images/events/sewers/14/0072.jpg"
+    pause .10
+    "images/events/sewers/14/0073.jpg"
+    pause .10
+    "images/events/sewers/14/0074.jpg"
+    pause .10
+    "images/events/sewers/14/0075.jpg"
+    pause .10
+    "images/events/sewers/14/0076.jpg"
+    pause .10
+    "images/events/sewers/14/0077.jpg"
+    function s2
+    pause .10
+    "images/events/sewers/14/0078.jpg"
+    pause .10
+
+image sewvar13:
+    "images/events/sewers/15/0078.jpg"
+    pause .10
+    "images/events/sewers/15/0079.jpg"
+    pause .10
+    "images/events/sewers/15/0080.jpg"
+    pause .10
+    "images/events/sewers/15/0081.jpg"
+    function swallow
+    pause .10
+    "images/events/sewers/15/0082.jpg"
+    pause .10
+    "images/events/sewers/15/0083.jpg"
+    pause .10
+    "images/events/sewers/15/0084.jpg"
+    pause .10
+    "images/events/sewers/15/0085.jpg"
+    pause .10
+    "images/events/sewers/15/0086.jpg"
+    pause .10
+    "images/events/sewers/15/0087.jpg"
+    pause .10
+    "images/events/sewers/15/0088.jpg"
+    pause .10
+    "images/events/sewers/15/0089.jpg"
+    function s2
+    pause .10
+    "images/events/sewers/15/0090.jpg"
+    pause .10
+    "images/events/sewers/15/0091.jpg"
+    pause .10
+    "images/events/sewers/15/0092.jpg"
+    pause .10
+    "images/events/sewers/15/0093.jpg"
+    pause .10
+    "images/events/sewers/15/0094.jpg"
+    pause .10
+    "images/events/sewers/15/0095.jpg"
+    pause .10
+    "images/events/sewers/15/0096.jpg"
+    pause .10
+    "images/events/sewers/15/0097.jpg"
+    pause .10
+    "images/events/sewers/15/0098.jpg"
+    pause .10
+    "images/events/sewers/15/0099.jpg"
+    pause .10
+    "images/events/sewers/15/0100.jpg"
+    pause .10
+    "images/events/sewers/15/0101.jpg"
+    function cough
+    pause .10
+    "images/events/sewers/15/0102.jpg"
+    pause .10
+    "images/events/sewers/15/0103.jpg"
+    pause .10
+    "images/events/sewers/15/0104.jpg"
+    pause .10
+    "images/events/sewers/15/0105.jpg"
+    pause .10
+    "images/events/sewers/15/0106.jpg"
+    pause .10
+    "images/events/sewers/15/0107.jpg"
+    pause .10
+    "images/events/sewers/15/0108.jpg"
+    pause .10
+    "images/events/sewers/15/0109.jpg"
+    pause .10
+    "images/events/sewers/15/0110.jpg"
+    pause .10
+
+image prisdp1:
+    "images/events/prison/catch/1/0035.jpg"
+    pause .1
+    "images/events/prison/catch/1/0036.jpg"
+    pause .1
+    "images/events/prison/catch/1/0037.jpg"
+    pause .1
+    "images/events/prison/catch/1/0038.jpg"
+    pause .1
+    "images/events/prison/catch/1/0039.jpg"
+    pause .1
+    "images/events/prison/catch/1/0040.jpg"
+    pause .1
+    "images/events/prison/catch/1/0041.jpg"
+    function slap5
+    pause .1
+    "images/events/prison/catch/1/0042.jpg"
+    pause .1
+    "images/events/prison/catch/1/0043.jpg"
+    pause .1
+    "images/events/prison/catch/1/0044.jpg"
+    pause .1
+    repeat
+
+image prisdp2:
+    "images/events/prison/catch/2/0035.jpg"
+    pause .1
+    "images/events/prison/catch/2/0036.jpg"
+    pause .1
+    "images/events/prison/catch/2/0037.jpg"
+    pause .1
+    "images/events/prison/catch/2/0038.jpg"
+    pause .1
+    "images/events/prison/catch/2/0039.jpg"
+    pause .1
+    "images/events/prison/catch/2/0040.jpg"
+    pause .1
+    "images/events/prison/catch/2/0041.jpg"
+    function slap5
+    pause .1
+    "images/events/prison/catch/2/0042.jpg"
+    pause .1
+    "images/events/prison/catch/2/0043.jpg"
+    pause .1
+    "images/events/prison/catch/2/0044.jpg"
+    pause .1
+    repeat
+
+image prisdp3:
+    "images/events/prison/catch/3/0045.jpg"
+    pause .12
+    "images/events/prison/catch/3/0046.jpg"
+    pause .12
+    "images/events/prison/catch/3/0047.jpg"
+    pause .12
+    "images/events/prison/catch/3/0048.jpg"
+    pause .12
+    "images/events/prison/catch/3/0049.jpg"
+    pause .12
+    "images/events/prison/catch/3/0050.jpg"
+    pause .12
+    "images/events/prison/catch/3/0051.jpg"
+    pause .12
+    "images/events/prison/catch/3/0052.jpg"
+    pause .12
+    "images/events/prison/catch/3/0053.jpg"
+    pause .12
+    "images/events/prison/catch/3/0054.jpg"
+    pause .12
+    "images/events/prison/catch/3/0055.jpg"
+    pause .12
+    "images/events/prison/catch/3/0056.jpg"
+    pause .12
+    "images/events/prison/catch/3/0057.jpg"
+    pause .12
+    "images/events/prison/catch/3/0058.jpg"
+    pause .12
+    "images/events/prison/catch/3/0059.jpg"
+    function s1
+    pause .12
+    "images/events/prison/catch/3/0060.jpg"
+    pause .12
+    "images/events/prison/catch/3/0061.jpg"
+    pause .12
+    "images/events/prison/catch/3/0062.jpg"
+    pause .12
+    "images/events/prison/catch/3/0063.jpg"
+    pause .12
+    "images/events/prison/catch/3/0064.jpg"
+    pause .12
+    "images/events/prison/catch/3/0065.jpg"
+    pause .12
+    "images/events/prison/catch/3/0066.jpg"
+    function splat1
+    pause .12
+    "images/events/prison/catch/3/0067.jpg"
+    pause .12
+    "images/events/prison/catch/3/0068.jpg"
+    pause .12
+    "images/events/prison/catch/3/0069.jpg"
+    pause .12
+
+image prisdp4:
+    "images/events/prison/catch/4/0045.jpg"
+    pause .12
+    "images/events/prison/catch/4/0046.jpg"
+    pause .12
+    "images/events/prison/catch/4/0047.jpg"
+    pause .12
+    "images/events/prison/catch/4/0048.jpg"
+    pause .12
+    "images/events/prison/catch/4/0049.jpg"
+    pause .12
+    "images/events/prison/catch/4/0050.jpg"
+    pause .12
+    "images/events/prison/catch/4/0051.jpg"
+    pause .12
+    "images/events/prison/catch/4/0052.jpg"
+    pause .12
+    "images/events/prison/catch/4/0053.jpg"
+    pause .12
+    "images/events/prison/catch/4/0054.jpg"
+    pause .12
+    "images/events/prison/catch/4/0055.jpg"
+    pause .12
+    "images/events/prison/catch/4/0056.jpg"
+    pause .12
+    "images/events/prison/catch/4/0057.jpg"
+    pause .12
+    "images/events/prison/catch/4/0058.jpg"
+    pause .12
+    "images/events/prison/catch/4/0059.jpg"
+    function s1
+    pause .12
+    "images/events/prison/catch/4/0060.jpg"
+    pause .12
+    "images/events/prison/catch/4/0061.jpg"
+    pause .12
+    "images/events/prison/catch/4/0062.jpg"
+    pause .12
+    "images/events/prison/catch/4/0063.jpg"
+    pause .12
+    "images/events/prison/catch/4/0064.jpg"
+    pause .12
+    "images/events/prison/catch/4/0065.jpg"
+    function splat1
+    pause .12
+    "images/events/prison/catch/4/0066.jpg"
+    pause .12
+    "images/events/prison/catch/4/0067.jpg"
+    pause .12
+    "images/events/prison/catch/4/0068.jpg"
+    pause .12
+    "images/events/prison/catch/4/0069.jpg"
+    pause .12
+
+image prisdp5:
+    "images/events/prison/catch/5/0069.jpg"
+    pause .1
+    "images/events/prison/catch/5/0070.jpg"
+    pause .1
+    "images/events/prison/catch/5/0071.jpg"
+    pause .1
+    "images/events/prison/catch/5/0072.jpg"
+    pause .1
+    "images/events/prison/catch/5/0073.jpg"
+    pause .1
+    "images/events/prison/catch/5/0074.jpg"
+    function slap5
+    pause .1
+    "images/events/prison/catch/5/0075.jpg"
+    pause .1
+    "images/events/prison/catch/5/0076.jpg"
+    pause .1
+    repeat
+
+image prisdp6:
+    "images/events/prison/catch/6/0069.jpg"
+    pause .1
+    "images/events/prison/catch/6/0070.jpg"
+    pause .1
+    "images/events/prison/catch/6/0071.jpg"
+    pause .1
+    "images/events/prison/catch/6/0072.jpg"
+    pause .1
+    "images/events/prison/catch/6/0073.jpg"
+    pause .1
+    "images/events/prison/catch/6/0074.jpg"
+    pause .1
+    "images/events/prison/catch/6/0075.jpg"
+    pause .1
+    "images/events/prison/catch/6/0076.jpg"
+    function slap5
+    pause .1
+    repeat
+
+image prisdp7:
+    "images/events/prison/catch/7/0078.jpg"
+    pause .12
+    "images/events/prison/catch/7/0079.jpg"
+    pause .12
+    "images/events/prison/catch/7/0080.jpg"
+    pause .12
+    "images/events/prison/catch/7/0081.jpg"
+    pause .12
+    "images/events/prison/catch/7/0082.jpg"
+    pause .12
+    "images/events/prison/catch/7/0083.jpg"
+    pause .12
+    "images/events/prison/catch/7/0084.jpg"
+    pause .12
+    "images/events/prison/catch/7/0085.jpg"
+    pause .12
+    "images/events/prison/catch/7/0086.jpg"
+    pause .12
+    "images/events/prison/catch/7/0087.jpg"
+    pause .12
+    "images/events/prison/catch/7/0088.jpg"
+    pause .12
+
+image prisdp8:
+    "images/events/prison/catch/8/0094.jpg"
+    pause .10
+    "images/events/prison/catch/8/0095.jpg"
+    pause .10
+    "images/events/prison/catch/8/0096.jpg"
+    pause .10
+    "images/events/prison/catch/8/0097.jpg"
+    pause .10
+    "images/events/prison/catch/8/0098.jpg"
+    pause .10
+    "images/events/prison/catch/8/0099.jpg"
+    function slap5
+    pause .10
+    "images/events/prison/catch/8/0100.jpg"
+    pause .10
+    "images/events/prison/catch/8/0101.jpg"
+    pause .10
+    repeat
+
+image prisdp9:
+    "images/events/prison/catch/9/0102.jpg"
+    pause .12
+    "images/events/prison/catch/9/0103.jpg"
+    pause .12
+    "images/events/prison/catch/9/0104.jpg"
+    pause .12
+    "images/events/prison/catch/9/0105.jpg"
+    pause .12
+    "images/events/prison/catch/9/0106.jpg"
+    pause .12
+    "images/events/prison/catch/9/0107.jpg"
+    pause .12
+    "images/events/prison/catch/9/0108.jpg"
+    function s1
+    pause .12
+    "images/events/prison/catch/9/0109.jpg"
+    pause .12
+    "images/events/prison/catch/9/0110.jpg"
+    pause .12
+    "images/events/prison/catch/9/0111.jpg"
+    pause .12
+    "images/events/prison/catch/9/0112.jpg"
+    pause .12
+    "images/events/prison/catch/9/0113.jpg"
+    pause .12
+    "images/events/prison/catch/9/0114.jpg"
+    function s2
+    pause .12
+    "images/events/prison/catch/9/0115.jpg"
+    pause .12
+    "images/events/prison/catch/9/0116.jpg"
+    pause .12
+    "images/events/prison/catch/9/0117.jpg"
+    pause .12
+    "images/events/prison/catch/9/0118.jpg"
+    pause .12
+
+image prisdp10:
+    "images/events/prison/catch/10/0078.jpg"
+    pause .12
+    "images/events/prison/catch/10/0079.jpg"
+    pause .12
+    "images/events/prison/catch/10/0080.jpg"
+    function s4
+    pause .12
+    "images/events/prison/catch/10/0081.jpg"
+    pause .12
+    "images/events/prison/catch/10/0082.jpg"
+    pause .12
+    repeat
+
+image prisdp11:
+    "images/events/prison/catch/11/0102.jpg"
+    pause .10
+    "images/events/prison/catch/11/0103.jpg"
+    pause .10
+    "images/events/prison/catch/11/0104.jpg"
+    pause .10
+    "images/events/prison/catch/11/0105.jpg"
+    function slap5
+    pause .10
+    "images/events/prison/catch/11/0106.jpg"
+    pause .10
+    repeat
+
+image prisdp12:
+    "images/events/prison/catch/12_06/0107.jpg"
+    pause .06
+    "images/events/prison/catch/12_06/0108.jpg"
+    pause .06
+    "images/events/prison/catch/12_06/0109.jpg"
+    pause .06
+    "images/events/prison/catch/12_06/0110.jpg"
+    function fart2
+    pause .06
+    "images/events/prison/catch/12_06/0111.jpg"
+    pause .06
+    "images/events/prison/catch/12_06/0112.jpg"
+    pause .06
+    "images/events/prison/catch/12_06/0113.jpg"
+    pause .06
+    "images/events/prison/catch/12_06/0114.jpg"
+    pause .06
+    "images/events/prison/catch/12_06/0115.jpg"
+    function s2
+    pause .06
+    "images/events/prison/catch/12_06/0116.jpg"
+    pause .06
+    repeat
+
+image prisdp13:
+    "images/events/prison/catch/13_cum1/0107.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0108.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0109.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0110.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0111.jpg"
+    function cum1
+    pause .12
+    "images/events/prison/catch/13_cum1/0112.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0113.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0114.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0115.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0116.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0117.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0118.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0119.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0120.jpg"
+    function cum1
+    pause .12
+    "images/events/prison/catch/13_cum1/0121.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0122.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0123.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0124.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0125.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0126.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0127.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0128.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0129.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0130.jpg"
+    function splat2
+    pause .12
+    "images/events/prison/catch/13_cum1/0131.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0132.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0133.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0134.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0135.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0136.jpg"
+    pause .12
+    "images/events/prison/catch/13_cum1/0137.jpg"
+    pause .12
+
+image prisdp14:
+    "images/events/prison/catch/14/0137.jpg"
+    pause .10
+    "images/events/prison/catch/14/0138.jpg"
+    pause .10
+    "images/events/prison/catch/14/0139.jpg"
+    pause .10
+    "images/events/prison/catch/14/0140.jpg"
+    function splat1
+    pause .10
+    "images/events/prison/catch/14/0141.jpg"
+    pause .10
+    "images/events/prison/catch/14/0142.jpg"
+    pause .10
+    "images/events/prison/catch/14/0143.jpg"
+    pause .10
+    "images/events/prison/catch/14/0144.jpg"
+    pause .10
+    "images/events/prison/catch/14/0145.jpg"
+    pause .10
+    "images/events/prison/catch/14/0146.jpg"
+    pause .10
+    repeat
+
+image prisdp15:
+    "images/events/prison/catch/15_cum2/0136.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0137.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0138.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0139.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0140.jpg"
+    function cum1
+    pause .12
+    "images/events/prison/catch/15_cum2/0141.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0142.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0143.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0144.jpg"
+    function fart2
+    pause .12
+    "images/events/prison/catch/15_cum2/0145.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0146.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0147.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0148.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0149.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0150.jpg"
+    function cum2
+    pause .12
+    "images/events/prison/catch/15_cum2/0151.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0152.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0153.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0154.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0155.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0156.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0157.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0158.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0159.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0160.jpg"
+    function splat2
+    pause .12
+    "images/events/prison/catch/15_cum2/0161.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0162.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0163.jpg"
+    function squish
+    pause .12
+    "images/events/prison/catch/15_cum2/0164.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0165.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0166.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0167.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0168.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0169.jpg"
+    pause .12
+    "images/events/prison/catch/15_cum2/0170.jpg"
+    pause .12
+
+image prisdp16:
+    "images/events/prison/catch/16/0157.jpg"
+    pause .10
+    "images/events/prison/catch/16/0158.jpg"
+    function slap5
+    pause .10
+    "images/events/prison/catch/16/0159.jpg"
+    pause .10
+    "images/events/prison/catch/16/0160.jpg"
+    pause .10
+    "images/events/prison/catch/16/0161.jpg"
+    pause .10
+    repeat
+
+image prisdp17:
+    "images/events/prison/catch/17_cum/0157.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0158.jpg"
+    function cum1
+    pause .12
+    "images/events/prison/catch/17_cum/0159.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0160.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0161.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0162.jpg"
+    function cum1
+    pause .12
+    "images/events/prison/catch/17_cum/0163.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0164.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0165.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0166.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0167.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0168.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0169.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0170.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0171.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0172.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0173.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0174.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0175.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0176.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0177.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0178.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0179.jpg"
+    pause .12
+    "images/events/prison/catch/17_cum/0180.jpg"
+    pause .12
+
+image amibj1:
+    "images/ami/event1/1/0030.jpg"
+    pause .1
+    "images/ami/event1/1/0031.jpg"
+    pause .1
+    "images/ami/event1/1/0032.jpg"
+    pause .1
+    "images/ami/event1/1/0033.jpg"
+    pause .1
+    "images/ami/event1/1/0034.jpg"
+    pause .1
+    "images/ami/event1/1/0035.jpg"
+    pause .1
+    "images/ami/event1/1/0036.jpg"
+    pause .1
+    "images/ami/event1/1/0037.jpg"
+    pause .1
+    "images/ami/event1/1/0038.jpg"
+    pause .1
+    "images/ami/event1/1/0039.jpg"
+    pause .1
+    repeat
+
+image amibj2:
+    "images/ami/event1/2/0030.jpg"
+    pause .1
+    "images/ami/event1/2/0031.jpg"
+    pause .1
+    "images/ami/event1/2/0032.jpg"
+    pause .1
+    "images/ami/event1/2/0033.jpg"
+    pause .1
+    "images/ami/event1/2/0034.jpg"
+    pause .1
+    "images/ami/event1/2/0035.jpg"
+    function slurp
+    pause .1
+    "images/ami/event1/2/0036.jpg"
+    pause .1
+    "images/ami/event1/2/0037.jpg"
+    pause .1
+    "images/ami/event1/2/0038.jpg"
+    pause .1
+    "images/ami/event1/2/0039.jpg"
+    pause .1
+    repeat
+
+image amibj3:
+    "images/ami/event1/3/0030.jpg"
+    pause .1
+    "images/ami/event1/3/0031.jpg"
+    pause .1
+    "images/ami/event1/3/0032.jpg"
+    pause .1
+    "images/ami/event1/3/0033.jpg"
+    pause .1
+    "images/ami/event1/3/0034.jpg"
+    function s4
+    pause .1
+    "images/ami/event1/3/0035.jpg"
+    pause .1
+    "images/ami/event1/3/0036.jpg"
+    pause .1
+    repeat
+
+image amibj4:
+    "images/ami/event1/4/0033.jpg"
+    pause .1
+    "images/ami/event1/4/0034.jpg"
+    pause .1
+    "images/ami/event1/4/0035.jpg"
+    function splat2
+    pause .1
+    "images/ami/event1/4/0036.jpg"
+    pause .1
+    "images/ami/event1/4/0037.jpg"
+    pause .1
+    "images/ami/event1/4/0038.jpg"
+    pause .1
+    "images/ami/event1/4/0039.jpg"
+    pause .1
+    "images/ami/event1/4/0040.jpg"
+    pause .1
+    "images/ami/event1/4/0041.jpg"
+    pause .1
+    "images/ami/event1/4/0042.jpg"
+    pause .1
+    "images/ami/event1/4/0043.jpg"
+    pause .1
+    "images/ami/event1/4/0044.jpg"
+    pause .1
+    "images/ami/event1/4/0045.jpg"
+    function splat2
+    pause .1
+    "images/ami/event1/4/0046.jpg"
+    pause .1
+    "images/ami/event1/4/0047.jpg"
+    pause .1
+    "images/ami/event1/4/0048.jpg"
+    pause .1
+    "images/ami/event1/4/0049.jpg"
+    pause .1
+    "images/ami/event1/4/0050.jpg"
+    pause .1
+    "images/ami/event1/4/0051.jpg"
+    pause .1
+    "images/ami/event1/4/0052.jpg"
+    pause .1
+    "images/ami/event1/4/0053.jpg"
+    pause .1
+    "images/ami/event1/4/0054.jpg"
+    pause .1
+    "images/ami/event1/4/0055.jpg"
+    function splat2
+    pause .1
+    "images/ami/event1/4/0056.jpg"
+    pause .1
+    "images/ami/event1/4/0057.jpg"
+    pause .1
+    "images/ami/event1/4/0058.jpg"
+    pause .1
+    "images/ami/event1/4/0059.jpg"
+    pause .1
+    "images/ami/event1/4/0060.jpg"
+    pause .1
+    "images/ami/event1/4/0061.jpg"
+    pause .1
+    "images/ami/event1/4/0062.jpg"
+    pause .1
+    "images/ami/event1/4/0063.jpg"
+    pause .1
+    "images/ami/event1/4/0064.jpg"
+    pause .1
+    "images/ami/event1/4/0065.jpg"
+    pause .1
+    "images/ami/event1/4/0066.jpg"
+    pause .1
+    "images/ami/event1/4/0067.jpg"
+    pause .1
+    "images/ami/event1/4/0068.jpg"
+    pause .1
+    "images/ami/event1/4/0069.jpg"
+    pause .1
+    "images/ami/event1/4/0070.jpg"
+    pause .1
+    "images/ami/event1/4/0071.jpg"
+    pause .1
+    "images/ami/event1/4/0072.jpg"
+    pause .1
+    "images/ami/event1/4/0073.jpg"
+    pause .1
+    "images/ami/event1/4/0074.jpg"
+    pause .1
+    "images/ami/event1/4/0075.jpg"
+    pause .1
+    "images/ami/event1/4/0076.jpg"
+    pause .1
+    "images/ami/event1/4/0077.jpg"
+    pause .1
+    "images/ami/event1/4/0078.jpg"
+    pause .1
+    "images/ami/event1/4/0079.jpg"
+    pause .1
+    "images/ami/event1/4/0080.jpg"
+    pause .1
+
+image amivag1:
+    "images/ami/event2/1/0030.jpg"
+    pause .1
+    "images/ami/event2/1/0031.jpg"
+    pause .1
+    "images/ami/event2/1/0032.jpg"
+    pause .1
+    "images/ami/event2/1/0033.jpg"
+    pause .1
+    "images/ami/event2/1/0034.jpg"
+    pause .1
+    "images/ami/event2/1/0035.jpg"
+    pause .1
+    "images/ami/event2/1/0036.jpg"
+    pause .1
+    "images/ami/event2/1/0037.jpg"
+    pause .1
+    "images/ami/event2/1/0038.jpg"
+    pause .1
+    "images/ami/event2/1/0039.jpg"
+    pause .1
+    repeat
+
+image amivag2:
+    "images/ami/event2/2/0030.jpg"
+    pause .1
+    "images/ami/event2/2/0031.jpg"
+    pause .1
+    "images/ami/event2/2/0032.jpg"
+    pause .1
+    "images/ami/event2/2/0033.jpg"
+    pause .1
+    "images/ami/event2/2/0034.jpg"
+    function slap1
+    pause .1
+    "images/ami/event2/2/0035.jpg"
+    pause .1
+    "images/ami/event2/2/0036.jpg"
+    pause .1
+    "images/ami/event2/2/0037.jpg"
+    pause .1
+    "images/ami/event2/2/0038.jpg"
+    pause .1
+    "images/ami/event2/2/0039.jpg"
+    pause .1
+    repeat
+
+image amivag3:
+    "images/ami/event2/3/0030.jpg"
+    pause .1
+    "images/ami/event2/3/0031.jpg"
+    pause .1
+    "images/ami/event2/3/0032.jpg"
+    pause .1
+    "images/ami/event2/3/0033.jpg"
+    pause .1
+    "images/ami/event2/3/0034.jpg"
+    function slap1
+    pause .1
+    "images/ami/event2/3/0035.jpg"
+    pause .1
+    "images/ami/event2/3/0036.jpg"
+    pause .1
+    repeat
+
+image amivag4:
+    "images/ami/event2/4/0034.jpg"
+    pause .1
+    "images/ami/event2/4/0035.jpg"
+    pause .1
+    "images/ami/event2/4/0036.jpg"
+    pause .1
+    "images/ami/event2/4/0037.jpg"
+    pause .1
+    "images/ami/event2/4/0038.jpg"
+    pause .1
+    "images/ami/event2/4/0039.jpg"
+    pause .1
+    "images/ami/event2/4/0040.jpg"
+    pause .1
+    "images/ami/event2/4/0041.jpg"
+    pause .1
+    "images/ami/event2/4/0042.jpg"
+    pause .1
+    "images/ami/event2/4/0043.jpg"
+    pause .1
+    "images/ami/event2/4/0044.jpg"
+    pause .1
+    "images/ami/event2/4/0045.jpg"
+    function splat2
+    pause .1
+    "images/ami/event2/4/0046.jpg"
+    pause .1
+    "images/ami/event2/4/0047.jpg"
+    pause .1
+    "images/ami/event2/4/0048.jpg"
+    pause .1
+    "images/ami/event2/4/0049.jpg"
+    pause .1
+    "images/ami/event2/4/0050.jpg"
+    pause .1
+    "images/ami/event2/4/0051.jpg"
+    pause .1
+    "images/ami/event2/4/0052.jpg"
+    pause .1
+    "images/ami/event2/4/0053.jpg"
+    pause .1
+    "images/ami/event2/4/0054.jpg"
+    pause .1
+    "images/ami/event2/4/0055.jpg"
+    pause .1
+    "images/ami/event2/4/0056.jpg"
+    pause .1
+    "images/ami/event2/4/0057.jpg"
+    pause .1
+    "images/ami/event2/4/0058.jpg"
+    pause .1
+    "images/ami/event2/4/0059.jpg"
+    pause .1
+    "images/ami/event2/4/0060.jpg"
+    pause .1
+
+image amianal1:
+    "images/ami/event3/1/0030.jpg"
+    pause .1
+    "images/ami/event3/1/0031.jpg"
+    pause .1
+    "images/ami/event3/1/0032.jpg"
+    pause .1
+    "images/ami/event3/1/0033.jpg"
+    pause .1
+    "images/ami/event3/1/0034.jpg"
+    pause .1
+    "images/ami/event3/1/0035.jpg"
+    pause .1
+    "images/ami/event3/1/0036.jpg"
+    pause .1
+    "images/ami/event3/1/0037.jpg"
+    pause .1
+    "images/ami/event3/1/0038.jpg"
+    pause .1
+    repeat
+
+image amianal2:
+    "images/ami/event3/2_08/0030.jpg"
+    pause .1
+    "images/ami/event3/2_08/0031.jpg"
+    pause .1
+    "images/ami/event3/2_08/0032.jpg"
+    pause .1
+    "images/ami/event3/2_08/0033.jpg"
+    pause .1
+    "images/ami/event3/2_08/0034.jpg"
+    function slap3
+    pause .1
+    "images/ami/event3/2_08/0035.jpg"
+    pause .1
+    "images/ami/event3/2_08/0036.jpg"
+    pause .1
+    "images/ami/event3/2_08/0037.jpg"
+    pause .1
+    "images/ami/event3/2_08/0038.jpg"
+    pause .1
+    repeat
+
+image amianal3:
+    "images/ami/event3/3_08/0030.jpg"
+    pause .1
+    "images/ami/event3/3_08/0031.jpg"
+    pause .1
+    "images/ami/event3/3_08/0032.jpg"
+    pause .1
+    "images/ami/event3/3_08/0033.jpg"
+    pause .1
+    "images/ami/event3/3_08/0034.jpg"
+    pause .1
+    "images/ami/event3/3_08/0035.jpg"
+    pause .1
+    "images/ami/event3/3_08/0036.jpg"
+    pause .1
+    "images/ami/event3/3_08/0037.jpg"
+    pause .1
+    "images/ami/event3/3_08/0038.jpg"
+    pause .1
+    "images/ami/event3/3_08/0039.jpg"
+    pause .1
+    "images/ami/event3/3_08/0040.jpg"
+    pause .1
+    "images/ami/event3/3_08/0041.jpg"
+    function slap4
+    pause .1
+    repeat
+
+image amianal4:
+    "images/ami/event3/4/0033.jpg"
+    pause .1
+    "images/ami/event3/4/0034.jpg"
+    pause .1
+    "images/ami/event3/4/0035.jpg"
+    pause .1
+    "images/ami/event3/4/0036.jpg"
+    pause .1
+    "images/ami/event3/4/0037.jpg"
+    pause .1
+    "images/ami/event3/4/0038.jpg"
+    function splat2
+    pause .1
+    "images/ami/event3/4/0039.jpg"
+    pause .1
+    "images/ami/event3/4/0040.jpg"
+    pause .1
+    "images/ami/event3/4/0041.jpg"
+    pause .1
+    "images/ami/event3/4/0042.jpg"
+    pause .1
+    "images/ami/event3/4/0043.jpg"
+    pause .1
+    "images/ami/event3/4/0044.jpg"
+    function splat2
+    pause .1
+    "images/ami/event3/4/0045.jpg"
+    pause .1
+    "images/ami/event3/4/0046.jpg"
+    pause .1
+    "images/ami/event3/4/0047.jpg"
+    pause .1
+    "images/ami/event3/4/0048.jpg"
+    pause .1
+    "images/ami/event3/4/0049.jpg"
+    pause .1
+    "images/ami/event3/4/0050.jpg"
+    pause .1
+    "images/ami/event3/4/0051.jpg"
+    function splat2
+    pause .1
+    "images/ami/event3/4/0052.jpg"
+    pause .1
+    "images/ami/event3/4/0053.jpg"
+    pause .1
+    "images/ami/event3/4/0054.jpg"
+    pause .1
+    "images/ami/event3/4/0055.jpg"
+    pause .1
+    "images/ami/event3/4/0056.jpg"
+    function splat2
+    pause .1
+    "images/ami/event3/4/0057.jpg"
+    pause .1
+    "images/ami/event3/4/0058.jpg"
+    pause .1
+    "images/ami/event3/4/0059.jpg"
+    pause .1
+    "images/ami/event3/4/0060.jpg"
+    pause .1
+    "images/ami/event3/4/0061.jpg"
+    pause .1
+    "images/ami/event3/4/0062.jpg"
+    pause .1
+    "images/ami/event3/4/0063.jpg"
+    pause .1
+    "images/ami/event3/4/0064.jpg"
+    pause .1
+    "images/ami/event3/4/0065.jpg"
+    pause .1
+
+image amibreakhatch1:
+    "images/ami/vents/vent1_4break/0040.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0041.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0042.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0043.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0044.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0045.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0046.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0047.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0048.jpg"
+    function metal2
+    pause .12
+    "images/ami/vents/vent1_4break/0049.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0050.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0051.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0052.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0053.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0054.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0055.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0056.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0057.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0058.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0059.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0060.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0061.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0062.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0063.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0064.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0065.jpg"
+    function metal1
+    pause .12
+    "images/ami/vents/vent1_4break/0066.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0067.jpg"
+    pause .12
+    "images/ami/vents/vent1_4break/0068.jpg"
+    pause .12
+
+image prisontease:
+    "images/events/prison/event/5/0010.jpg"
+    pause .1
+    "images/events/prison/event/5/0011.jpg"
+    pause .1
+    "images/events/prison/event/5/0012.jpg"
+    pause .1
+    "images/events/prison/event/5/0013.jpg"
+    function slap0
+    pause .1
+    "images/events/prison/event/5/0014.jpg"
+    pause .1
+    "images/events/prison/event/5/0015.jpg"
+    pause .1
+    "images/events/prison/event/5/0016.jpg"
+    pause .1
+    "images/events/prison/event/5/0017.jpg"
+    pause .1
+    "images/events/prison/event/5/0018.jpg"
+    pause .1
+    "images/events/prison/event/5/0019.jpg"
+    pause .1
+    repeat
+
+image prisonph1:
+    "images/events/prison/phantom/1/0001.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0002.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0003.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0004.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0005.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0006.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0007.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0008.jpg"
+    function slap1
+    pause .1
+    "images/events/prison/phantom/1/0009.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0010.jpg"
+    pause .1
+    "images/events/prison/phantom/1/0011.jpg"
+    pause .1
+    repeat
+
+image prisonph2:
+    "images/events/prison/phantom/2/0001.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0002.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0003.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0004.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0005.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0006.jpg"
+    function suck4
+    pause .1
+    "images/events/prison/phantom/2/0007.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0008.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0009.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0010.jpg"
+    pause .1
+    "images/events/prison/phantom/2/0011.jpg"
+    pause .1
+    repeat
+
+image prisonph3:
+    "images/events/prison/phantom/3/0001.jpg"
+    pause .1
+    "images/events/prison/phantom/3/0002.jpg"
+    pause .1
+    "images/events/prison/phantom/3/0003.jpg"
+    pause .1
+    "images/events/prison/phantom/3/0004.jpg"
+    pause .1
+    "images/events/prison/phantom/3/0005.jpg"
+    pause .1
+    "images/events/prison/phantom/3/0006.jpg"
+    pause .1
+    "images/events/prison/phantom/3/0007.jpg"
+    function suck1
+    pause .1
+    "images/events/prison/phantom/3/0008.jpg"
+    pause .1
+    "images/events/prison/phantom/3/0009.jpg"
+    repeat
+
+image prisonph4:
+    "images/events/prison/phantom/4/0001.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0002.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0003.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0004.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0005.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0006.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0007.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0008.jpg"
+    function slap1
+    pause .1
+    "images/events/prison/phantom/4/0009.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0010.jpg"
+    pause .1
+    "images/events/prison/phantom/4/0011.jpg"
+    pause .1
+    repeat
+
+image prisonph5:
+    "images/events/prison/phantom/5_08/0001.jpg"
+    pause .08
+    "images/events/prison/phantom/5_08/0002.jpg"
+    pause .08
+    "images/events/prison/phantom/5_08/0003.jpg"
+    pause .08
+    "images/events/prison/phantom/5_08/0004.jpg"
+    pause .08
+    "images/events/prison/phantom/5_08/0005.jpg"
+    pause .08
+    "images/events/prison/phantom/5_08/0006.jpg"
+    pause .08
+    "images/events/prison/phantom/5_08/0007.jpg"
+    pause .08
+    "images/events/prison/phantom/5_08/0008.jpg"
+    function s4
+    pause .08
+    "images/events/prison/phantom/5_08/0009.jpg"
+    pause .08
+    repeat
+
+image prisonph5alt:
+    "images/events/prison/phantom/5_08/0001.jpg"
+    pause .06
+    "images/events/prison/phantom/5_08/0002.jpg"
+    pause .06
+    "images/events/prison/phantom/5_08/0003.jpg"
+    pause .06
+    "images/events/prison/phantom/5_08/0004.jpg"
+    function fart2
+    pause .06
+    "images/events/prison/phantom/5_08/0005.jpg"
+    pause .06
+    "images/events/prison/phantom/5_08/0006.jpg"
+    pause .06
+    "images/events/prison/phantom/5_08/0007.jpg"
+    function splat1
+    pause .06
+    "images/events/prison/phantom/5_08/0008.jpg"
+    pause .08
+    "images/events/prison/phantom/5_08/0009.jpg"
+    pause .08
+    repeat
+
+
+image prisonph6:
+    "images/events/prison/phantom/6/0008.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0009.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0010.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0011.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0012.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0013.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0014.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0015.jpg"
+    function fart2
+    pause .12
+    "images/events/prison/phantom/6/0016.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0017.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0018.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0019.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0020.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0021.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0022.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0023.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0024.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0025.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0026.jpg"
+    function s2
+    pause .12
+    "images/events/prison/phantom/6/0027.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0028.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0029.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0030.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0031.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0032.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0033.jpg"
+    function squish
+    pause .12
+    "images/events/prison/phantom/6/0034.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0035.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0036.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0037.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0038.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0039.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0040.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0041.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0042.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0043.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0044.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0045.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0046.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0047.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0048.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0049.jpg"
+    pause .12
+    "images/events/prison/phantom/6/0050.jpg"
+    pause .12
+
+image prisonph7:
+    "images/events/prison/phantom/7/0007.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0008.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0009.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0010.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0011.jpg"
+    function swallow
+    pause .12
+    "images/events/prison/phantom/7/0012.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0013.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0014.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0015.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0016.jpg"
+    function splat
+    pause .12
+    "images/events/prison/phantom/7/0017.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0018.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0019.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0020.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0021.jpg"
+    function swallow
+    pause .12
+    "images/events/prison/phantom/7/0022.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0023.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0024.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0025.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0026.jpg"
+    function splat
+    pause .12
+    "images/events/prison/phantom/7/0027.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0028.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0029.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0030.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0031.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0032.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0033.jpg"
+    function swallow
+    pause .12
+    "images/events/prison/phantom/7/0034.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0035.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0036.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0037.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0038.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0039.jpg"
+    pause .12
+    "images/events/prison/phantom/7/0040.jpg"
+    pause .12
+
+image prisonph8:
+    "images/events/prison/phantom/8/0001.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0002.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0003.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0004.jpg"
+    function squish
+    pause .12
+    "images/events/prison/phantom/8/0005.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0006.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0007.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0008.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0009.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0010.jpg"
+    pause .12
+
+image prisonph8alt:
+    "images/events/prison/phantom/8/0011.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0012.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0013.jpg"
+    function wetsquish
+    pause .12
+    "images/events/prison/phantom/8/0014.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0015.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0016.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0017.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0018.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0019.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0020.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0021.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0022.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0023.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0024.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0025.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0026.jpg"
+    pause .12
+    "images/events/prison/phantom/8/0027.jpg"
+    pause .12
+
+image prisonphfight1:
+    "images/events/prison/phantom/fight/1/0001.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0002.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0003.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0004.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0005.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0006.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0007.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0008.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0009.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0010.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0011.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/1/0012.jpg"
+    pause .12
+
+image prisonphfight2:
+    "images/events/prison/phantom/fight/2/0012.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0013.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0014.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0015.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0016.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0017.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0018.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0019.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0020.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0021.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0022.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0023.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0024.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0025.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0026.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0027.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0028.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0029.jpg"
+    pause .12
+    "images/events/prison/phantom/fight/2/0030.jpg"
+    pause .12
+
+image showerbugsgo1:
+    "images/events/medbay/shower/scene3/1/0017.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0018.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0019.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0020.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0021.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0022.jpg"
+    function splat2
+    pause .1
+    "images/events/medbay/shower/scene3/1/0023.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0024.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0025.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0026.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0027.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0028.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0029.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0030.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0031.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/1/0032.jpg"
+    pause .1
+    repeat
+
+image showerbugsgo2:
+    "images/events/medbay/shower/scene3/2/0009.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0010.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0011.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0012.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0013.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0014.jpg"
+    function wetsquish
+    pause .1
+    "images/events/medbay/shower/scene3/2/0015.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0016.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0017.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0018.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0019.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0020.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0021.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0022.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0023.jpg"
+    pause .1
+    "images/events/medbay/shower/scene3/2/0024.jpg"
+    pause .1
+    repeat
+
+image showerbugsgo3_1:
+    "images/events/medbay/shower/scene3/3/0013.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0014.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0015.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0016.jpg"
+    function splat2
+    pause .12
+    "images/events/medbay/shower/scene3/3/0017.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0018.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0019.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0020.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0021.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0022.jpg"
+    function splat2
+    pause .12
+    "images/events/medbay/shower/scene3/3/0023.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0024.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0025.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0026.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0027.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0028.jpg"
+    function splat2
+    pause .12
+    "images/events/medbay/shower/scene3/3/0029.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0030.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0031.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0032.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0033.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0034.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0035.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0036.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0037.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0038.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0039.jpg"
+    function s2
+    pause .12
+    "images/events/medbay/shower/scene3/3/0040.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0041.jpg"
+    function cum1
+    pause .12
+    "images/events/medbay/shower/scene3/3/0042.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0043.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0044.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0045.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0046.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0047.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0048.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0049.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0050.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0051.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0052.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0053.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0054.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0055.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0056.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0057.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0058.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0059.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0060.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0061.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0062.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0063.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0064.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0065.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0066.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0067.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0068.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0069.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0070.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0071.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0072.jpg"
+    function s1
+    pause .12
+    "images/events/medbay/shower/scene3/3/0073.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0074.jpg"
+    pause .12
+
+image showerbugsgo3_2:
+    "images/events/medbay/shower/scene3/3/0075.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0076.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0077.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0078.jpg"
+    function splat2
+    pause .12
+    "images/events/medbay/shower/scene3/3/0079.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0080.jpg"
+    pause .12
+    repeat
+
+image showerbugsgo3_3:
+    "images/events/medbay/shower/scene3/3/0032.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0033.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0034.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0035.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0036.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0037.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0038.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0039.jpg"
+    function s2
+    pause .12
+    "images/events/medbay/shower/scene3/3/0040.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0041.jpg"
+    function cum1
+    pause .12
+    "images/events/medbay/shower/scene3/3/0042.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0043.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0044.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0045.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0046.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0047.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0048.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0049.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0050.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0051.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0052.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0053.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0054.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0055.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0056.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0057.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0058.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0059.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0060.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0061.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0062.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0063.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0064.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0065.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0066.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0067.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0068.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0069.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0070.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0071.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0072.jpg"
+    function s1
+    pause .12
+    "images/events/medbay/shower/scene3/3/0073.jpg"
+    pause .12
+    "images/events/medbay/shower/scene3/3/0074.jpg"
     pause .12
 
 # ------------------ VENTS ANIMATIONS START --------------------------
@@ -16229,7 +18829,7 @@ image bugshoot1:
     pause .12
 
 
-# -------------------- VENT MOVEMENTS ---------------------
+# -------------------- TALI VENT MOVEMENTS ---------------------
 
 image vent1_1 = Generate_Animation("images/vent1_1", 10)
 
@@ -16355,8 +18955,18 @@ image vent7_2back = Generate_Animation("images/vent7_2back", 8)
 image vent7_3 = Generate_Animation("images/vent7_3", 8)
 image vent7_3back = Generate_Animation("images/vent7_3back", 8)
 
+# -------------------- AMI VENT MOVEMENTS ---------------------
+
+image amivent1_1 = Generate_Animation("images/ami/vents/vent1_1", 8)
+image amivent1_2 = Generate_Animation("images/ami/vents/vent1_2", 8)
+image amivent1_2e = Generate_Animation("images/ami/vents/vent1_2enemy", 8)
+image amivent1_3 = Generate_Animation("images/ami/vents/vent1_3", 8)
+image amivent1_3e = Generate_Animation("images/ami/vents/vent1_3enemy", 8)
+image amivent1_4 = Generate_Animation("images/ami/vents/vent1_4", 8)
 
 #------------------ VENTS ANIMATIONS END -------------------------
+
+#------------------ SOUNDS FOR ANIMATIONS ------------------------
 
 init -1 python:
     def shot(trans, st, at):
@@ -16531,30 +19141,9 @@ init -1 python:
         renpy.play("audio/cumsplash.mp3", channel="sound")
 
 
-
-# image testing = animate_images()
-
-init 2 python :
-    test_val = Generate_Animation("images/vent5_7", 8)
-    test_val = renpy.easy.displayable('images/bugevent/10/0226.jpg')
-    gen_anim = Animation('images/bugevent/10/0226.jpg',.2,'images/bugevent/10/0227.jpg',.2)
-    renpy.log(type(gen_anim))
-    renpy.log(dir(gen_anim))
-    test_val = gen_anim.visit()
-    renpy.log(test_val)
-    renpy.log(type(test_val))
-    renpy.log(test_val[0])
-    renpy.log(type(test_val[0]))
-    renpy.log(gen_anim.delays)
-    test_val = renpy.image("testttt",gen_anim)
-
-# init 3 python :
-#     renpy.image("test3",['images/bugevent/10/0226.jpg',.2])
-
 # --------------------- ANIMATION PLAYER ------------------------
+
 init python:
-    config.log = 'log.log'
-    renpy.image("test_name","images/skills/hacker/1.png")
     def Generate_Animation(directory,fps=24):
         #Give the image a serial number we'll use to reference it
         serial_number = 0
@@ -16581,24 +19170,6 @@ init python:
         return serial_number
 
 
-    def animate_images():
-        olist = []
-        olist.append(renpy.easy.displayable('images/bugevent/10/0226.jpg'))
-        # olist.append(.2)
-        olist.append(renpy.easy.displayable('images/bugevent/10/0227.jpg'))
-        # olist.append(.2)
-        # renpy.log('image type '+ str(type(renpy.easy.displayable('images/bugevent/10/0226.jpg'))))
-        return 'images/bugevent/10/0226.jpg'
-
-    # def animate_images():
-    #     output_list = []
-    #     output_list.append(renpy.display.im.image('images/bugevent/10/0226.jpg'))
-    #     output_list.append(.2)
-    #     output_list.append(renpy.display.im.image('images/bugevent/10/0227.jpg'))
-    #     # output_list.append(.2)
-    #     return anim.TransitionAnimation(*output_list)
-
-
 
 
 
@@ -16615,6 +19186,7 @@ label splashscreen:
     $ renpy.pause ()
     return
 
+
 label start:
 
     # Show a background. This uses a placeholder by default, but you can
@@ -16623,29 +19195,17 @@ label start:
 
 
     # ================================================ ACT 1 START  =========================================================================================
-    
-    "test dialogue"
-    show testttt
-
-    # python:
-    #     test_val = Generate_Animation("images/vent5_7", 8)
-    #     renpy.log(str(test_val))
-    #     renpy.log(type(test_val))
-    #     renpy.log(dir(test_val))
-    #     renpy.log(test_val.__str__)
-    #     renpy.log(test_val.__doc__)
     scene black
     $ sidequest = "..."
     play music "audio/bg/common_bg.mp3" volume 0.3 loop
     "With her commander grounded and her friends too busy, the young quarian Tali'Zorah ventures out into the unknown fringes of Terminus Space, busying herself with chores to find valuable tech and exciting discoveries she can report back to the Migrant Fleet."
-    #jump poolcompevent
+    #jump showerEvent2
     scene bg start1
     with dis
     show tali tool at left
     with dis
 
     tali "Is that a station? No, that's a ship. This far out? Keelah look at the size of that thing. This is Tali'Zorah vas Normandy, do you copy? Unidentified craft, come in."
-
     show tali shame at left
     with dis
     tali "Mmn. That's no good. No answer, no identification, no reg tags. Looks like it's just drifting in orbit. Scans show a functioning generator at least."
@@ -17714,20 +20274,6 @@ label start:
         jump map
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     label rest:
         $ havedogbone = True
         $ comCum = False
@@ -17858,7 +20404,14 @@ label start:
                 tali "Great, one problem less."
                 $ sidequest = "..."
                 jump MedBayUsual
-
+            "Fix the omni-scanner." if scanFix and parts > 29:
+                $ parts -= 30
+                $ scanFix = False
+                scene bg med3
+                show tali tool at left
+                play sound "audio/equip.ogg"
+                tali "Very nice. Now I can scan the surroundings to find something valuable."
+                $ scanOK = True
             "Deactivate security doors." if act3 and secureDoors:
                 $ secureDoors = False
             "Activate security doors" if act3 and secureDoors == False:
@@ -18009,6 +20562,16 @@ label start:
         jesora "I don't think using an explosive on an already damaged docking sleeve is a good idea. Thats why we need you and your new hacking device down there."
         show tali talk at left
         tali "Alright, sounds like a plan. I'll take a look."
+        show jesora talk at right
+        jesora "One more thing - when I checked you omni-tool I found that your scanner also not fully functional. You can try to fix it, just take this."
+        show jesora stand at right
+        show tali doubt at left
+        tali "What is this parts?"
+        jesora "It what remains from our old navigation system. It's roasted anyway and you going to find another one. So I can give it to you for good."
+        show tali tool at left
+        tali "Hmmm... looks good, I think i can fix it with some tech parts."
+        $ scanFix = True
+        $ sidequest1 = "Fix the scanner(30 tech parts)"
         $ quest = "Go to docking bay #1"
         $ hackOK = True
         $ barracksTablet = False
@@ -18180,6 +20743,7 @@ label start:
         text "Current quests:" xpos 0.55 ypos 0.2
         text "[quest]" xpos 0.50 ypos 0.3
         text "[sidequest]" xpos 0.50 ypos 0.4
+        text "[sidequest1]" xpos 0.50 ypos 0.5
 
     label comroomtutorial:
         scene bg comroom
@@ -18423,6 +20987,413 @@ label start:
                 hovered Notify("    Hallway")
                 focus_mask True
                 action Jump ("hallway")
+
+        showif sewers:
+            imagebutton:
+                idle "images/map/sew_idle.png"
+                hover "images/map/sew_hover.png"
+                hovered Notify("    Undefined")
+                focus_mask True
+                action Jump ("sewers")
+
+    label sewersfirst:
+        $ sew_first = False
+        if sew_hatch:
+            scene bg sew
+        else:
+            scene bg sew1
+
+        show tali tool at left
+        tali "No energy? It's pretty dark here."
+        show tali doubt at left
+        tali "What is this place? Let's try to figure out."
+        jump sewers
+
+    label sewers:
+        if sew_first:
+            jump sewersfirst
+        if sewerslight:
+            scene bg sew8
+        else:
+            scene bg sew
+        show tali back at left
+        call screen sew_items
+
+    screen sew_items():
+        modal True
+        imagebutton xpos 0.9 ypos 0.8:
+                idle "images/map/backbutton_idle.png"
+                hover "images/map/backbutton_hover.png"
+                focus_mask True
+                action Jump ("map")
+        showif sew_hatch:
+            imagebutton:
+                idle "images/events/sewers/hatch_idle.png"
+                hover "images/events/sewers/hatch_hover.png"
+                focus_mask True
+                action Jump ("sewhatch")
+
+        showif sew_hatch1:
+            imagebutton:
+                idle "images/events/sewers/hatch1_idle.png"
+                hover "images/events/sewers/hatch1_hover.png"
+                focus_mask True
+                action Jump ("sewhatch1")
+
+        showif sew_engine:
+            imagebutton:
+                idle "images/events/sewers/gen_idle.png"
+                hover "images/events/sewers/gen_hover.png"
+                focus_mask True
+                action Jump ("sewengine")
+
+        showif sew_door:
+            imagebutton:
+                idle "images/events/sewers/door_idle.png"
+                hover "images/events/sewers/door_hover.png"
+                focus_mask True
+                action Jump ("sewdoor")
+
+    label sewhatch:
+        show tali tool at left
+        play sound "audio/uibeep.mp3"
+        pause 1
+        tali "Gotcha! Let me see now..."
+        play sound "audio/metalnoise2.mp3"
+        scene bg sew
+        show hatchsewers
+        $ sew_hatch = False
+        $ sew_hatch1 = True
+        pause 1
+        show tali angry at left
+        tali "Easy! Now I can check more close."
+        jump sewers
+
+    label sewhatch1:
+        menu shatch1:
+            "Try to fix.":
+                scene bg sew2
+                play sound "audio/vent1.mp3"
+                tali "Bruh... it so... tight and dark here!"
+                play sound "audio/vent6.mp3"
+                scene black
+                show sewhatchanim1
+                $ renpy.pause ()
+                scene bg sew2
+                tali "Alright, I need more light. Guess I found something."
+                scene bg rid1
+                tali "Well, there are some fuses and wires... I guess i just need to put it back in right order."
+                jump sewriddle
+
+            "Another time.":
+                jump sewers
+
+
+    label sewriddle:
+        if sewriddle2:
+            scene black
+            show sewvar3
+        else:
+            scene bg rid4
+
+        if bar2taken == False:
+            show bar2lay
+        if bar1taken == False:
+            show bar1lay
+        #if bar1taken and bar2taken:
+            #scene bg rid4
+        #if bar1taken == False and bar2taken == False:
+            #scene bg rid1
+        if bar1fix:
+            show bar1set
+        if bar2fix:
+            show bar2set
+        if wirefix:
+            show wireset
+        call screen hatchriddle
+
+    screen hatchriddle():
+        modal True
+        showif bar1fix == False:
+            imagebutton:
+                idle "images/events/sewers/riddle/barrel1_idle.png"
+                hover "images/events/sewers/riddle/barrel1_hover.png"
+                focus_mask True
+                action Jump ("sewbar1")
+        showif bar2fix == False:
+            imagebutton:
+                idle "images/events/sewers/riddle/barrel2_idle.png"
+                hover "images/events/sewers/riddle/barrel2_hover.png"
+                focus_mask True
+                action Jump ("sewbar2")
+        showif wirefix == False:
+            imagebutton:
+                idle "images/events/sewers/riddle/wire_idle.png"
+                hover "images/events/sewers/riddle/wire_hover.png"
+                focus_mask True
+                action Jump ("sewwire")
+        showif bar1taken == False:
+            imagebutton:
+                idle "images/events/sewers/riddle/barrel4_idle.png"
+                hover "images/events/sewers/riddle/barrel4_hover.png"
+                focus_mask True
+                action Jump ("sewbar4")
+        showif bar2taken == False:
+            imagebutton:
+                idle "images/events/sewers/riddle/barrel3_idle.png"
+                hover "images/events/sewers/riddle/barrel3_hover.png"
+                focus_mask True
+                action Jump ("sewbar3")
+        imagebutton:
+            idle "images/events/sewers/riddle/panel_idle.png"
+            hover "images/events/sewers/riddle/panel_hover.png"
+            focus_mask True
+            action Jump ("sewpanel")
+
+    label sewbar1:
+        if bar1taken:
+            $ bar1fix = True
+            play sound "audio/equip.ogg"
+            show bar1set
+            "Fuse installed."
+        else:
+            tali "This is looks like fuse spot. It must be one suitable nearby."
+        jump sewriddle
+
+    label sewbar2:
+        if bar2taken:
+            $ bar2fix = True
+            play sound "audio/equip.ogg"
+            show bar2set
+            "Fuse installed."
+            if seq1:
+                $ seq2 = True
+        else:
+            tali "This is looks like fuse spot. It must be one suitable nearby."
+        jump sewriddle
+
+    label sewwire:
+        $ wirefix = True
+        play sound "audio/electric.mp3"
+        tali "Looks better now."
+        if bar1fix and bar2fix == False:
+            $ seq1 = True
+        jump sewriddle
+
+    label sewbar3:
+        $ bar2taken = True
+        play sound "audio/equip.ogg"
+        tali "Hmm... Where I need to put this?"
+        jump sewriddle
+
+    label sewbar4:
+        $ bar1taken = True
+        play sound "audio/equip.ogg"
+        tali "Hmm... Where I need to put this?"
+        jump sewriddle
+
+    label sewpanel:
+        if seq2:
+            play sound "audio/uibeep.mp3"
+            pause .5
+            play sound "audio/charge.mp3"
+            pause 1
+            if sewriddle2:
+                tali "Oh this sounds like I done it right! Now this damn hatch will open and I'll finish off this stupid dog!"
+                scene black
+                play sound "audio/metalnoise2.mp3"
+                show sewhatchanim3
+                pause 2
+                tali "What?! No no, not this hatch! Boshtet!"
+                scene bg sew6
+                play sound "audio/dogbreath.mp3"
+                pause 1
+                tali "Oh Keelah... please someone tell me that it the same varren."
+                jump sewscene2
+            else:
+                tali "I like this sound. Sound of success!"
+                $ sew_hatch1 = False
+                $ sew_engine = False
+                $ sew_door = False
+                $ sewerslight = True
+                scene black
+                show sewlights
+                pause 1.5
+                scene bg sew8
+                show tali doubt at left
+                tali "Right. Now looks better."
+                jump sewers
+
+
+
+        else:
+            play sound "audio/error.mp3"
+            pause 1
+            if sewriddle2:
+                tali "Oh no! Wrong again! Boshtet!"
+                jump sewscene1
+            tali "So? Is it working now?"
+            scene black
+            play sound "audio/metalnoise1.mp3"
+            show sewhatchanim2
+            pause 1.5
+            tali "Dammit! This stupid hatch pinched me here!"
+            scene bg sew3
+            play sound "audio/roar.mp3"
+            pause 2
+            scene bg sew4
+            tali "What is this sound? Hey! Anybody there! Help, I am stuck here!"
+            scene bg sew5 with hpunch
+            play sound "audio/fall.ogg"
+            pause 1
+            tali "Aaaaaa! No! Get off me!"
+            scene black
+            show sewvar1
+            $ renpy.pause ()
+            scene black
+            show sewvar2
+            pause 2.5
+            scene bg rid1
+            tali "Stop this right now! Ah... you dirty dog. I can feel his slimy cock getting inside my pussy..."
+            tali "Alright Tali, you still can do it... just... ah, need to concentrate. Oh Keelah, he fucks me so... intensively."
+            $ sewriddle2 = True
+            $ bar1taken = False
+            $ bar2taken = False
+            $ bar1fix = False
+            $ bar2fix = False
+            $ wirefix = False
+            $ seq1 = False
+            $ seq2 = False
+            $ seq3 = False
+            jump sewriddle
+        tali "This is control panel. I can use it to switch on when set everything in order."
+        jump sewriddle
+
+    label sewscene1:
+        $ lewd += 1
+        scene black
+        show sewvar4
+        $ renpy.pause ()
+        scene black
+        show sewvar5
+        $ renpy.pause ()
+        if lewd < 20:
+            tali "Ah... no... don't do it! Stop..."
+        elif lewd < 30:
+            tali "Oh Keelah... my pussy feels so... good."
+        else:
+            tali "Ah... yes, fuck this quarian bitch pussy! You so good boy... don't stop!"
+        scene black
+        show sewvar5
+        $ renpy.pause ()
+        scene black
+        show sewvar6
+        $ renpy.pause ()
+        if lewd < 20:
+            tali "No, you boshtet! What have you done!?"
+        elif lewd < 30:
+            tali "Ahhh... I feel his hot cum inside me..."
+        else:
+            tali "Oh Keelah! Push your hard cock indide me, fill me with your hot doggy jizz..."
+        jump seweventafter
+
+    label sewscene2:
+        scene black
+        show sewvar4
+        $ renpy.pause ()
+        scene black
+        show sewvar7
+        $ renpy.pause ()
+        scene bg sew7
+        if lewd < 20:
+            tali "Ah... stop... get that thing out of my face!"
+        elif lewd < 30:
+            tali "Oh Keelah... I am so wet... and this... one more hard varren cock..."
+        else:
+            tali "Ah... yes, I am your quarian doggy bitch! Give me your hard varren dick!"
+        scene black
+        show sewvar8
+        pause 2.5
+        if lewd < 20:
+            tali "Hhmmphhh... No! How dare you!"
+        elif lewd < 30:
+            tali "MMmmpghh... I can feel his dick veins pulsing under my lips..."
+        else:
+            tali "Mmmmm... yes, take my head, you good boy. You caught me and this sweet mouth is your reward..."
+        scene black
+        show sewvar9
+        $ renpy.pause ()
+        scene black
+        show sewvar10
+        $ renpy.pause ()
+        scene black
+        show sewvar6
+        $ renpy.pause ()
+        scene black
+        show sewvar11
+        $ renpy.pause ()
+        if lewd < 20:
+            tali "He... tearing apart my throat..."
+        elif lewd < 30:
+            tali "Mmmpf... he pushing his big cock so deep inside my tight throat... Is he want to cum in my mouth?"
+        else:
+            tali "Use my tight throat to dry your big balls, you dirty doggy. Give me all your hot jizz."
+        show sewvar12
+        pause 3
+        play sound "audio/cumshot1.ogg"
+        pause .5
+        play sound "audio/swallow.ogg"
+        tali "Uuughhhh..."
+        scene black
+        show sewvar13
+        $ renpy.pause ()
+        jump seweventafter
+
+    label seweventafter:
+        $ bar1taken = False
+        $ bar2taken = False
+        $ bar1fix = False
+        $ bar2fix = False
+        $ wirefix = False
+        $ seq1 = False
+        $ seq2 = False
+        $ seq3 = False
+        scene bg sew
+        show jesora smile at right
+        jesora "What we have here."
+        if sewriddle2:
+            show tali fin2 at left
+            with dis
+        else:
+            show tali fin1 at left
+            with dis
+        $ sewriddle2 = False
+        show jesora smiletalk at right
+        jesora "Oh, look at this poor girl. Hard fucked and happy."
+        tali "Ugh... Jesora? What you doing here?"
+        jesora "Saving your ass, I suppose."
+        show asari stand behind jesora
+        jesora "Lets bring this quarian back to medbay."
+        jump medbayafterdefeat
+
+    label sewengine:
+        scene bg sew
+        show tali tool at left
+        tali "This is local power generator. By some reason the energy system of this place is isolated from other ship."
+        show tali doubt at left
+        tali "Security matters or accident?"
+        tali "Anyway the generator is not damaged. But I can't turn it on. The problem must be somewhere in power supply system."
+        show tali shame at left
+        tali "Service hatch must be nearby. I could check it."
+        $ sew_hatch = True
+        jump sewers
+
+    label sewdoor:
+        show tali doubt at left
+        tali "Closed. No way to open it without energy."
+        jump sewers
+
+
 
     label pool_enter:
         if poolFirst:
@@ -18732,16 +21703,8 @@ label start:
         $ quest = "Search for answers in pool location."
         $ ventquest = True
         $ run_ok = True
+        $ prison_phantom = True
         jump MedBayUsual
-
-
-
-
-
-
-
-
-
 
 
     label scanmap:
@@ -18766,12 +21729,25 @@ label start:
         play sound "audio/scan.mp3"
         show scan
         pause 1.2
-        if pool == False and poolnew == False:
+        if days > 5 and prison == False:
             play sound "audio/scandet.mp3"
-            show poolscan
+            show prisonscan
             pause 1
-            $ pool = True
-            $ quest = "Check the pool."
+            $ prison = True
+        elif sewers == False:
+            play sound "audio/scandet.mp3"
+            show sewscan
+            pause 1
+            $ sewers = True
+
+        elif scanpool:
+            if pool == False and poolnew == False:
+                play sound "audio/scandet.mp3"
+                show poolscan
+                pause 1
+                $ pool = True
+                $ quest = "Check the pool."
+
         jump map
 
 
@@ -19105,6 +22081,38 @@ label start:
         jump prison
 
     label prison:
+        if prison_phantom:
+            scene bg prison
+            show tali doubt at left
+            tali "Hey hey, how my favourite cage pets are doing today?"
+            show tali angry at left
+            tali "Wait... what?!"
+            scene bg prison28
+            play sound "audio/uibeep.mp3"
+            pause 1
+            play sound "audio/metaldoor.mp3"
+            scene bg prison29
+            pause 1
+            scene bg prison29 with hpunch
+            play sound "audio/creepone.mp3"
+            pause 3
+            scene bg prison23
+            show tali gunshoot at left
+            show phantom stand at right
+            tali "Stop right there!"
+            show phantom smile at right
+            phantom "Or what?"
+            tali "Or I'll shoot you in the head! Jesora and her men have many things to discuss with you, bitch!"
+            show phantom talk at right
+            phantom "Sorry, quarian, but I'm quite busy person. But I guess your big friends have much to tell you."
+            show phantom smile at right
+            phantom "Have fun."
+            hide phantom
+            show monk stand at right
+            play sound "audio/creepone.mp3"
+            pause 1
+            $ enemyID = 32
+            jump sliderBoss
         if run3:
             jump runstart
         $ roomID = 8
@@ -19173,6 +22181,87 @@ label start:
                 hover "images/events/prison/body_hover.png"
                 focus_mask True
                 action [SetVariable("prisonbody", False), Jump ("prisonBody")]
+
+    label prisonphscene1:
+        $ prison_phantom = False
+        stop music
+        play music "audio/bg/common_bg.mp3" volume 0.3 loop
+        scene bg prison
+        show phantom stand at right
+        show tali fall at left
+        phantom "What happens, tough girl? Tired?"
+        tali "Shut up, you..."
+        show phantom cage at right
+        phantom "I bring something to teach you a lesson. Look at this. I think it will be fair for you to switch the roles with this monkeys."
+        tali "Fuck off, bitch!"
+        phantom "Oh, that's easy, I'll just leave your new friends to have fun with their new toy."
+        scene black
+        with dis
+        pause 3
+        scene black
+        show prisonph1
+        $ renpy.pause ()
+        scene black
+        show prisonph2
+        $ renpy.pause ()
+        scene black
+        show prisonph4
+        $ renpy.pause ()
+        scene black
+        show prisonph5
+        $ renpy.pause ()
+        scene black
+        show prisonph5alt
+        $ renpy.pause ()
+        scene black
+        show prisonph6
+        $ renpy.pause ()
+        scene bg prisondp1 with hpunch
+        play sound "audio/creepone.mp3"
+        pause 2
+        scene bg prisondp2 with hpunch
+        play sound "audio/punch.mp3"
+        pause 2
+        scene black
+        play sound "audio/creepone.mp3"
+        show prisonphfight1
+        pause 2
+        play sound "audio/gorillaroar.wav"
+        pause 2
+        scene black
+        show prisonphfight2
+        pause 2.5
+        scene black
+        show prisonph3
+        $ renpy.pause ()
+        scene black
+        show prisonph7
+        $ renpy.pause ()
+        show prisonph8
+        pause 1.5
+        play sound "audio/gorillaroar.wav"
+        pause 1.5
+        scene black
+        show prisonph8alt
+        $ renpy.pause ()
+        jump BadEnd
+
+    label prisonphwin:
+        $ prison_phantom = False
+        stop music
+        play music "audio/bg/common_bg.mp3" volume 0.3 loop
+        scene black
+        play sound "audio/metal door.ogg"
+        tali "Yes, like this. I own your asses now. Go back to your cages."
+        scene bg prison3
+        play sound "audio/creepone.mp3"
+        pause 1
+        tali "Now you know better who is boss here. Try to control yourself better or I'll kill you next time."
+        scene bg prison
+        show tali gunstand at right
+        tali "What a cowardly stupid bitch! Wait until I find your ass and give to those monkeys as a gift."
+        jump prison
+
 
     label dogBone:
         scene black
@@ -19266,6 +22355,8 @@ label start:
                     pause 1
                     tali "You have got to be kidding me..."
                     menu cageEvent:
+                        "Teasing." if teaseevent == False:
+                            jump cageTease
                         "Buttplay" if lewd > 6:
                             jump cageButt
                         "Handjob" if lewd > 14:
@@ -19276,6 +22367,8 @@ label start:
                             jump cageLube
                         "Use lube (anal)" if lewd > 30 and isLube:
                             jump cageLubeAnal
+                        "DP action." if lewd > 40 and teaseevent:
+                            jump prisonteasesceneagain
                         "No way":
                             tali "No, really, i am leaving... now."
                             jump prison
@@ -19293,6 +22386,7 @@ label start:
                 $ lockQuest = True
                 jump prison
             "Fix the lock (10 tech parts)" if parts > 9 and lockQuest:
+                $ parts -= 10
                 scene bg prison17
                 with dis
                 play sound "audio/uibeep.mp3"
@@ -19308,7 +22402,248 @@ label start:
             "Another time.":
                 jump prison
 
+    label cageTease:
+        $ prisCum = True
+        scene bg prison20 with hpunch
+        play sound "audio/punch.mp3"
+        tali "Look what we have here. Big monster get horny of good little quarian girl."
+        tali "You deserved punishment for your weird behavior."
+        $ teasecount += 1
+        scene black
+        show prisontease
+        $ renpy.pause ()
+        scene bg prison20 with hpunch
+        play sound "audio/creepmany.wav"
+        pause 1
+        tali "Ouch. Not happy about it, aren't you?"
+        play sound "audio/creepone.mp3"
+        pause 1
+        tali "But I missed the part where that's my problem. See you later, ugly face."
+        if teasecount > 2 and teaseevent == False:
+            $ teasecount = 0
+            scene bg prison24 with hpunch
+            play sound "audio/creepmany.wav"
+            pause 1
+            tali "Hey, hey! Hush, you creeps! Keep your dirty hands to yourself!"
+            play sound "audio/metalnoise1.mp3"
+            scene bg prison25 with hpunch
+            pause 1
+            tali "What a hell?! How it happened?!"
+            play sound "audio/creepone.mp3"
+            pause 2
+            scene bg prison23
+            show tali gunshoot at left
+            show monk stand at right
+            tali "Stop! Either you both go back to your cages or I'll shoot you right here!"
+            play sound "audio/creepmany.wav"
+            pause 2
+            $ enemyID = 32
+            jump sliderBoss
+        else:
+            jump prison
+
+    label prisonteasewin:
+        $ prisCum = True
+        stop music
+        play music "audio/bg/common_bg.mp3" volume 0.3 loop
+        scene black
+        play sound "audio/metal door.ogg"
+        tali "Yes, like this. I own your asses now. Go back to your cages."
+        scene bg prison3
+        play sound "audio/creepone.mp3"
+        pause 1
+        tali "Now you know better who is boss here. Try to control yourself better or I'll kill you next time."
+        jump prison
+
+
+    label prisonteasescene:
+        $ prisCum = True
+        $ teaseevent = True
+        $ lewd += 1
+        stop music
+        play music "audio/bg/common_bg.mp3" volume 0.3 loop
+        scene bg prison26
+        play sound "audio/gorillaroar.wav"
+        pause 1
+        tali "Let me go, you boshtet! What do you think of yourself!?"
+        scene black
+        play sound "audio/tier.mp3"
+        tali "Dont touch this!"
+        play sound "audio/gorillaroar.wav"
+        pause 2
+        scene black
+        show prisdp1
+        $ renpy.pause ()
+        show prisdp2
+        $ renpy.pause ()
+        tali "Oh Keelah, his hard cock slaping my butt... It... it so huge... hope they let me go."
+        scene bg prisondung3 with hpunch
+        play sound "audio/creepone.mp3"
+        pause 1
+        tali "Why... why you grab me like this?! Don't even think about it!"
+        scene black
+        show prisdp3
+        pause 3.5
+        tali "Ahhhh... Keelah, my pussy! So hot, so hot!"
+        scene black
+        show prisdp5
+        $ renpy.pause ()
+        tali "Oh... stop using my body like... like your fuck toy... you ugly... ah... it going so deep..."
+        scene bg prisondung2
+        play sound "audio/gorillaroar.wav"
+        pause 1
+        tali "What are you looking at?! Go back to your corner and jerk off there!"
+        scene black
+        show prisdp10
+        $ renpy.pause ()
+        tali "No no! This is not the right spot to stick your fat fingers!"
+        scene black
+        show prisdp9
+        pause 2.3
+        tali "Ahhhhh! Stop it... please. I swear I'll never be so rude with you again! Just let me go!"
+        scene black
+        show prisdp8
+        $ renpy.pause ()
+        scene black
+        show prisdp11
+        $ renpy.pause ()
+        tali "Oh Keelah! Oh Keelah! They fucking my holes so hard! I'm cumming!"
+        scene black
+        show prisdp12
+        $ renpy.pause ()
+        scene black
+        show prisdp13
+        $ renpy.pause ()
+        scene black
+        show prisdp14
+        $ renpy.pause ()
+        tali "My butt... ah... so deep in my tight quarian butt... he want to fill it with his hot monkey cum..."
+        scene black
+        show prisdp15
+        $ renpy.pause ()
+        scene black
+        with dis
+        play sound "audio/creepone.mp3"
+        pause 1
+        play sound "audio/heavyshots.mp3"
+        pause 1
+        jesora "Get them back in their cages!"
+        jesora "Oh... what a little poor quarian. Lost control I guess?"
+        scene bg prison
+        show tali fin1 at left
+        show jesora smile at right
+        jesora "You alright, suitgirl?"
+        tali "Ahhhhh... what... what going on..."
+        show jesora smiletalk at right
+        jesora "Yeah, I thought so. Let's bring you to medbay."
+        jump medbayafterdefeat
+
+
+    label prisonteasesceneagain:
+        $ prisCum = True
+        $ lewd += 1
+        stop music
+        play music "audio/bg/common_bg.mp3" volume 0.3 loop
+        scene bg prison3
+        play sound "audio/gorillaroar.wav"
+        pause 1
+        tali "Hmmmm... horny as usual..."
+        play sound "audio/creepone.mp3"
+        pause 1
+        tali "Remember you fucked me both in this cage, mmmm?"
+        scene bg prison18
+        play sound "audio/uibeep.mp3"
+        pause 1
+        tali "I have an idea..."
+        play sound "audio/metal door.ogg"
+        pause 2
+        scene bg prison27
+        tali "Surprised?"
+        play sound "audio/gorillaroar.wav"
+        pause 2
+        tali "Yeah, this bad quarian girl want to be fucked hard... Now do your dirty things, bad horny monkeys..."
+        scene black
+        play sound "audio/tier.mp3"
+        tali "Oh yes, we definitely don't need this part of the suit..."
+        play sound "audio/gorillaroar.wav"
+        pause 2
+        scene black
+        show prisdp1
+        $ renpy.pause ()
+        show prisdp2
+        $ renpy.pause ()
+        tali "Your cock so hard... I want it deep inside my body... Let me take care about it..."
+        scene black
+        show prisdp4
+        pause 3.5
+        tali "Ahhhh... Keelah, so good..."
+        scene black
+        show prisdp6
+        $ renpy.pause ()
+        tali "Oh yeah, I will enjoy riding such big boner all the day long..."
+        scene bg prisondung1
+        play sound "audio/gorillaroar.wav"
+        pause 1
+        tali "I've been waiting for you, big guy... Want to care of my tight spot?"
+        scene black
+        show prisdp7
+        pause 1.5
+        tali "Hurry up or you will miss all the fun..."
+        scene black
+        show prisdp9
+        pause 2.3
+        tali "Ah... yes, like this! Push your big cock in my stomach! Use my little body to satisfy your horny wild animal desire!"
+        scene black
+        show prisdp8
+        $ renpy.pause ()
+        scene black
+        show prisdp11
+        $ renpy.pause ()
+        tali "Oh Keelah! Fuck me harder, you boshtet! Fill this quarian slut with your hot mankey jizz!"
+        scene black
+        show prisdp12
+        $ renpy.pause ()
+        scene black
+        show prisdp13
+        $ renpy.pause ()
+        scene black
+        show prisdp14
+        $ renpy.pause ()
+        tali "I feel your dick trambling inside my stomach! Push it deeper! I am your obidient fuck toy!"
+        scene black
+        show prisdp15
+        $ renpy.pause ()
+        scene bg prisondung4
+        tali "Oh, Keelah, I'm cumming... so good, ah."
+        scene bg prisondung4 with hpunch
+        play sound "audio/creepone.mp3"
+        tali "Ah... you... still hard. Got too excited, aren't you? So... what now?"
+        scene black
+        show prisdp16
+        $ renpy.pause ()
+        tali "Ooooooh... so... ah... fuck me harder, yes... you dirty animal... I'm your little bitch..."
+        scene black
+        show prisdp17
+        $ renpy.pause ()
+        scene black
+        with dis
+        scene bg prison3
+        play sound "audio/metalnoise2.mp3"
+        pause 1
+        tali "Well... It was... nice."
+        play sound "audio/gorillaroar.wav"
+        pause 1
+        tali "Don't expect thanks from me, monkeys. I just using you... when necessary. Got it?"
+        play sound "audio/gorillaroar.wav"
+        pause 1
+        tali "Whatever... I should go."
+        jump prison
+
+
+
+
     label cageLubeAnal:
+        $ teasecount = 0
         $ lewd += 1
         $ prisCum = True
         scene bg prison20 with hpunch
@@ -19334,10 +22669,10 @@ label start:
         $ renpy.pause ()
         scene bg prevent8
         tali "Keelah, why is he good at this? I can't wait anymore. I want to see how well it works..."
-        scene bg prison24
+        scene bg pris24
         play sound "audio/gorillaroar.wav"
         tali "Mmm. There we go. Piece by piece..."
-        scene bg prison25
+        scene bg pris25
         play sound "audio/dress.mp3"
         pause 2
         scene bg prevent7
@@ -19393,6 +22728,7 @@ label start:
         jump medbayafterdefeat
 
     label cageLube:
+        $ teasecount = 0
         $ lewd += 1
         $ prisCum = True
         scene bg prison20 with hpunch
@@ -19418,10 +22754,10 @@ label start:
         $ renpy.pause ()
         scene bg prevent8
         tali "Ngh. That should be more than enough. L-Lets move on."
-        scene bg prison24
+        scene bg pris24
         play sound "audio/gorillaroar.wav"
         tali "There we are... piece by piece."
-        scene bg prison25
+        scene bg pris25
         play sound "audio/dress.mp3"
         pause 2
         scene bg prevent7
@@ -19456,6 +22792,7 @@ label start:
 
     label cageButt:
         $ lewd += 1
+        $ teasecount += 1
         scene bg prison20 with hpunch
         play sound "audio/punch.mp3"
         tali "You couldn't be any more pathetic could you? Well... fortunate for you I'm feeling sympathetic right now."
@@ -19479,6 +22816,7 @@ label start:
         jump prison
 
     label cageHand:
+        $ teasecount = 0
         $ lewd += 1
         scene bg prison20 with hpunch
         play sound "audio/punch.mp3"
@@ -19507,6 +22845,7 @@ label start:
         jump prison
 
     label cageMilk:
+        $ teasecount = 0
         $ lewd += 1
         scene bg prison20 with hpunch
         play sound "audio/punch.mp3"
@@ -20387,22 +23726,22 @@ label start:
         show jesora smiletalk at right
         if z2:
             $ z2 = False
-            jesora "Hey there, big dick tamer. I heard you had a lot of fun recently."
+            jesora "Hey there cock wrangler. I heard you had a lot of fun recently."
             show tali shame at left
             tali "Ahh... he told you."
             show jesora smile at right
-            jesora "Sure he did. Elcor can't show emotions but I swear I can see the glow of euphoria around him."
+            jesora "He sure did. Elcor might not convey emotions well but I swear I can see the glow of a new man around him. That and you kinda smell like him too."
             show tali facepalm at left
             tali "Alright, let's just move on."
             show jesora smiletalk at right
-            jesora "You sure? Don't feel like something's missing in your hands... or mouth?"
+            jesora "Something the matter? Cock numb your tongue? Hands feeling a little light without that dick in your hands?"
             show tali angry at left
             tali "Just shut up! I don't want to talk about it!"
             show jesora smile at right
             show tali doubt at left
-            jesora "Yeah, I heard you can be very bossy bitch."
+            jesora "Cool your jets Miss Snappy. I heard you can be quite the bitch when you mean too as well!"
             show jesora think at right
-            jesora "Hmmm... Where did I hear that from? Let me remember..."
+            jesora "A heavily armed birdy told me. I think his name started with a Z or something. Let me remember..."
             show jesora smiletalk at right
             show tali angry at left
             tali "Nah, fuck off!"
@@ -20422,18 +23761,18 @@ label start:
             "What's next?" if bitchQuest:
                 $ bitchQuest = False
                 $ hallwaydest = True
+                $ scanpool = True
                 $ quest = "Use the scanner on map."
                 show jesora stand at right
-                jesora "Here. Take this. Use it to improve your omni-tool."
-                show tali tool at left
-                tali "This is... this is broadband scanner utility!"
-                show jesora doubt at right
-                show tali angry at left
-                tali "Where did you get it? Hell, why didn't you give it to me sooner?"
+                jesora "Remember the thing I give you before your visit to destroyed docking bay?"
+                show tali talk at left
+                tali "The navigation system part? Sure."
+                show jesora talk at right
+                jesora "I hope you made your scanner work. During last patrol we found and destroyed the jammer device which blocks signals in right part of ship."
                 show tali doubt at left
                 show jesora stand at right
-                jesora "That info's need-to-know and you don't need to know. Just use it to scan the ship. Let me know if, when and where you find bitch."
-                $ scanOK = True
+                jesora "Now you can check that area. Just use it to scan the ship. Let me know if, when and where you find bitch."
+                #$ scanOK = True
             "What's the plan?" if gatesQuest == False and gatesFlag:
                 $ gatesFlag = False
                 $ gatesQuest = True
@@ -20524,21 +23863,21 @@ label start:
                 show serok smoke at right
                 tali "Keelah... what a shame."
                 show serok reason at right
-                serok "You're walking through a ship full of sex addicted beasts and you care that much about it?"
+                serok "You're walking through a ship full of sex addicted beasts and you care that much about getting frisky with our resident arms dealer?"
                 show tali doubt at left
                 show serok talk at right
-                serok "Relax girl. Everyone will forget about it in a day or two."
+                serok "Relax girl. No one will care in a day or two."
                 show serok smoke at right
                 show tali talk at left
-                tali "You talk so calmly about it. You don't care when your crew do something like that?"
+                tali "You're not rubbing it in as much as I thought you would, Serok. That's pretty... unnatural to me honestly. You don't care when your crew does something like that?"
                 show serok stand at right
                 serok "Like what? Having sex? I understand everyone needs to relieve stress sometimes. We're all here in a difficult situation."
                 show tali doubt at left
-                serok "You think I don't know Jesora goes on wild fuck fests with the vorcha? Unless it affects her duties, I don't care."
+                serok "You think I don't know Jesora goes on wild fuck fests with the vorcha? Until it impacts her ability to do what I say, I couldn't give a pyjacks ass who or what she fucks."
                 show serok reason at right
-                serok "Zeltan left his post - That bothers me. And I will punish him for it."
+                serok "Zeltan left his post. THAT bothers me. And he'll get an ear full and more from me so he doesn't go and do a fucking stupid thing like that ever again."
                 show serok stand at right
-                serok "Anyway he is so happy that won't notice it. Good for me. And thanks to you, girl."
+                serok "But for now the big guy is happy. Hell, he's glowing. I'll let him have his time in the sun before throwing the book at him, and he might not even notice it when it happens. That'll just make it easier for me. The less the boat rocks, the better. And you? Well in a way... thanks, girl."
             "Later.":
                 jump bay2_bar
         jump serok_bar
@@ -20644,15 +23983,15 @@ label start:
         if z4:
             $ z4 = False
             show nyun smile at right
-            nyun "So... i was right. You love to be impaled on a huge elcor cock."
+            nyun "So... I was right. You do love being shoved balls deep on a hung elcor's cock."
             show tali facepalm
-            tali "Never thought that elcors could talk so much."
-            nyun "Don't judge yourself harshly, sweetie. Just don't forget to invite me next time."
+            tali "Could we just... sigh. Alright, whatever. I just never thought elcor could talk so much."
+            nyun "Don't judge yourself too harshly, sweetie. Contrary to common beliefs, elcor are a race of passionate poets and raunchy lovers. Just don't forget to invite me next time, huh?"
             show nyun stand at right
             show tali angry at left
-            tali "Are you serious?!"
+            tali "Nyun, are you serious?!"
             show nyun curvy at right
-            nyun "Oh dear, i always serious concerning... big dicks."
+            nyun "Oh my lecherous little suit bunny, I'm always serious when it comes to huge, fat cocks."
             show tali facepalm at left
             tali "Keelah..."
             jump bay2_bar
@@ -22410,6 +25749,7 @@ label start:
             tali "Mmm... whatever you want..."
             scene bg comanal3
             tali "Oh fuck, that feels so good!"
+            scene black
             show comroomanalfront1
             $ renpy.pause ()
             scene bg comanal3
@@ -22427,6 +25767,7 @@ label start:
             $ renpy.pause ()
             scene bg comanal5
             tali "Ah! Oh Keelah you're so deep! Keep using my fat purple ass!"
+            scene black
             show comroomanalback2alt
             $ renpy.pause ()
             scene bg comanal8 with hpunch
@@ -22714,6 +26055,7 @@ label start:
             tali "Ahhh, I need to shut that hatch."
             jump MedBayUsual
         elif bugscene == 2:
+            $ bugscene += 1
             scene bg showerscene2
             play sound "audio/punch.mp3"
             tali "Aaaaaaa! Not them again!"
@@ -22759,6 +26101,75 @@ label start:
             show tali facepalm at left
             tali "I have to... I NEED to close this hatch urgently."
             jump MedBayUsual
+        elif bugscene == 3:
+            scene bg showerscene2
+            play sound "audio/punch.mp3"
+            tali "Aaaaaaa! Not them again!"
+            scene black
+            play sound "audio/buzzing.mp3"
+            tali "Stop! Don't do that!"
+            scene bg showerscene20
+            tali "Ah, no! This can't be happening again...!"
+            scene black
+            show showerevent2
+            $ renpy.pause ()
+            play sound "audio/buzzing.mp3"
+            tali "Wha... That sound? Are there more of you filthy little pests?"
+            scene black
+            show showerbug4
+            pause 3.5
+            tali "Aaaaaaa! No! There's two of them! My ass... Oh Keelah..."
+            scene black
+            show showerbug1
+            $ renpy.pause ()
+            scene black
+            play sound "audio/buzzing.mp3"
+            show showerbug5
+            pause 3.5
+            tali "GLUUGGKKK?!"
+            scene black
+            show showerbug2
+            $ renpy.pause ()
+            scene black
+            show showerbug3
+            $ renpy.pause ()
+            scene black
+            show showerbugcum2
+            $ renpy.pause ()
+            tali "Yes... fuck me hard, give me your cum, fill me up."
+            "Tali completely losing her mind, giving her body to please insects..."
+            scene black
+            with dis
+            scene black
+            play sound "audio/buzzing.mp3"
+            scene bg shower4
+            tali "Mmmmm, yes... let me spread my tight ass for your slimy dicks... Pump my holes with your hot cum... I want it all..."
+            scene black
+            show showerbugsgo1
+            $ renpy.pause ()
+            scene black
+            show showerbugsgo2
+            $ renpy.pause ()
+            scene black
+            with dis
+            pause 2
+            "After some hours..."
+            play sound "audio/buzzing.mp3"
+            scene black
+            show showerbugsgo3_1
+            pause 7.5
+            scene black
+            show showerbugsgo3_2
+            $ renpy.pause ()
+            scene black
+            play sound "audio/buzzing.mp3"
+            show showerbugsgo3_3
+            pause 5.9
+            scene black
+            show showerbugsgo3_2
+            $ renpy.pause ()
+            jump BadEnd
+
 
     label sliderDoor:
         $ heartSlider = False
@@ -23155,6 +26566,7 @@ label start:
         call screen sliderfuck1
 
     label sliderBattleFuck2:
+        $ fuckpose = renpy.random.randint(1, 2)
         scene bg cor2
         if suit > 8:
             show tali gunshoot at left
@@ -23249,7 +26661,7 @@ label start:
                 hover "images/skills/shoot_hover.png"
                 focus_mask True
                 xpos 0.45
-                ypos 0.1
+                ypos 0.2
                 action Jump("shoot_skill1")
         showif grenades > 0:
             imagebutton:
@@ -23257,7 +26669,7 @@ label start:
                 hover "images/skills/grenskill_hover.png"
                 focus_mask True
                 xpos 0.45
-                ypos 0.2
+                ypos 0.3
                 action Jump("grenade_skill1")
         showif darts > 0 and lovedart == False and suit > 7:
             imagebutton:
@@ -23265,7 +26677,7 @@ label start:
                 hover "images/skills/dart_hover.png"
                 focus_mask True
                 xpos 0.45
-                ypos 0.3
+                ypos 0.4
                 action Jump("dart_skill")
         showif lewd > 20 and suit > 7 and lovedart:
             imagebutton:
@@ -23273,24 +26685,16 @@ label start:
                 hover "images/skills/lips_hover.png"
                 focus_mask True
                 xpos 0.45
-                ypos 0.4
-                action Jump("sex_skill")
-        showif lewd > 10:
-            imagebutton:
-                idle "images/skills/tease_idle.png"
-                hover "images/skills/tease_hover.png"
-                focus_mask True
-                xpos 0.45
                 ypos 0.5
-                action Jump("tease_skill1")
-        showif lewd > 10:
+                action Jump("sex_skill")
+        showif lewd > 10 and suit > 7:
             imagebutton:
                 idle "images/skills/tease_idle.png"
                 hover "images/skills/tease_hover.png"
                 focus_mask True
                 xpos 0.45
                 ypos 0.6
-                action Jump("tease_skill2")        
+                action Jump("tease_skill")
         imagebutton:
             idle "images/skills/escape_idle.png"
             hover "images/skills/escape_hover.png"
@@ -23366,13 +26770,6 @@ label start:
             yalign 0.9
             xysize(500,70)
         timer 5.5 action Jump("suittier3")
-    label tease_skill1:
-        $ sexpose = 1
-        jump tease_skill
-
-    label tease_skill2:
-        $ sexpose = 2
-        jump tease_skill
 
     label tease_skill:
         if suit > 8:
@@ -23388,10 +26785,7 @@ label start:
             show tali tease7 at left
             show tali tease7 at shake
         play sound "audio/slap.mp3"
-        if sexpose == 1:
-            "Want this fat quarian ass? Come and get it."
-        if sexpose == 2:
-            "You Like the look of these quarian lips? Come and get them."
+        "Want this fat quarian ass? Come and get it."
         play sound "audio/creepone.mp3"
         pause 1
         if enemyID == 0:
@@ -23400,6 +26794,8 @@ label start:
             jump suittier2
         elif enemyID == 3:
             jump suittier3
+
+
 
     label dart_skill:
         $ lovedart = True
@@ -24139,8 +27535,6 @@ label start:
     label suittier2:
         hide varren stand
         $ random = renpy.random.randint(1, 100)
-        $ lewd_action = 1
-        $ defeated = 0
         play sound "audio/fall.ogg"
         if suit > 8:
             show tali a21 at left
@@ -24154,28 +27548,23 @@ label start:
         if suit < 7:
             show tali a24 at left
             show tali a24 at shake
-        "Tali failed to dodge! suit:[suit] sexpose:[sexpose] fuckstage:[fuckstage]"
-
-        if random < 0 and suit > 6:
-            # suit damage action
-            $ lewd_action = 0
-            if suit == 9:
-                play sound "audio/glass.mp3"
-                "Helmet damaged!"
-            if suit in [7,8]:
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-            $ suit -= 1
-        else:
-            # lewd action
-            scene bg cor2
-            if suit > 8:
-                #mask facial  
+        "Tali failed to dodge!"
+        if suit > 8:
+            if random > 50:
                 if fuckstage == 1:
+                    $ fuckstage += 1
+                    scene bg cor2
                     show frontvarmask1
+                    $ renpy.pause ()
                 elif fuckstage == 2:
+                    $ fuckstage += 1
+                    scene bg cor2
                     show frontvarmask2
+                    $ renpy.pause ()
                 elif fuckstage == 3:
+                    $ lewd += 1
+                    $ fuckstage = 1
+                    scene bg cor2
                     show frontvarmask2
                     $ renpy.pause ()
                     scene bg cor2
@@ -24183,16 +27572,34 @@ label start:
                     $ renpy.pause ()
                     scene bg cor2
                     show tali fin1 at left
-                    tali "Ugh... I feel so nasty. My suit is undamaged but... I think I can keep going after cleaning up."
-            elif suit == 8:
-                # no mask facial
+                    tali "Ugh... I feel so nasty. My suit is undamaged but... I can keep going after some cleanup."
+                    scene black
+                    play sound "audio/walk.mp3"
+                    "Tali continues on her way..."
+                    $ lovedart = False
+                    $ suit = 10
+                    jump warehouse
+            else:
+                $ suit -= 1
+                if suit == 8:
+                    play sound "audio/glass.mp3"
+                    "Helmet damaged!"
+        elif suit == 8:
+            if random > 50:
                 if fuckstage == 1:
+                    $ fuckstage += 1
                     if lewd > 25:
+                        scene bg cor2
                         show frontvarnomask2
+                        $ renpy.pause ()
                     else:
+                        scene bg cor2
                         show frontvarnomask1
+                        $ renpy.pause ()
                 elif fuckstage == 2:
+                    $ fuckstage += 1
                     if lewd > 25:
+                        scene bg cor2
                         show frontvarnomask2
                         $ renpy.pause ()
                         scene bg cor2
@@ -24200,11 +27607,17 @@ label start:
                         pause 2.5
                         scene bg cor2
                         show frontvarnomask4
+                        $ renpy.pause ()
                     else:
+                        scene bg cor2
                         show frontvarnomask2
+                        $ renpy.pause ()
                 elif fuckstage == 3:
+                    $ lewd += 1
                     $ infection += 1
+                    $ fuckstage = 1
                     if lewd > 25:
+                        scene bg cor2
                         show frontvarnomask4
                         $ renpy.pause ()
                         scene bg cor2
@@ -24215,37 +27628,60 @@ label start:
                         $ renpy.pause ()
                         scene bg cor2
                         show frontvarnomaskcum2
+                        $ renpy.pause ()
                     else:
+                        scene bg cor2
                         show frontvarnomask2
                         $ renpy.pause ()
                         scene bg cor2
                         show frontvarnomaskcum1
+                        $ renpy.pause ()
                     scene bg cor2
                     show tali fin2 at left
                     if infection < 3:
-                        tali "T-That was way too much cum. My antibiotics should help, but... I really need to find my helmet before it gets any worse..."
+                        tali "T-That was too much cum. My antibiotics should help, but... I need to find my helmet before it gets worse..."
+                        scene black
+                        play sound "audio/walk.mp3"
+                        "Tali continues her way..."
+                        $ lovedart = False
+                        $ suit = 10
+                        jump warehouse
                     else :
-                        tali "I swallowed way too much... I have to get back to the medbay urgently."
-                        $ defeated = 1      
-            elif suit == 7:
-            # blowjob or mount
+                        tali "I swallowed too much... I have to go to the medbay urgently."
+                        $ lovedart = False
+                        $ suit = 10
+                        jump medbayafterdefeat
+            else:
+                $ suit -= 1
+                play sound "audio/tier.mp3"
+                "Suit damaged!"
+        elif suit == 7:
+            if random > 50:
                 if fuckstage == 1:
-                # mount 1
+                    $ fuckstage += 1
                     if fuckpose == 1:
+                        scene bg cor2
                         show backvar1
-                # blow 1
+                        $ renpy.pause ()
                     else:
+                        scene bg cor2
                         show frontvardamaged1
+                        $ renpy.pause ()
                 elif fuckstage == 2:
-                # mount 2
+                    $ fuckstage += 1
                     if fuckpose == 1:
+                        scene bg cor2
                         show backvar2
+                        $ renpy.pause ()
                     else:
-                # blow 2
+                        scene bg cor2
                         show frontvardamaged2
+                        $ renpy.pause ()
                 elif fuckstage == 3:
-                # blow 2 + cum
+                    $ lewd += 1
                     $ infection += 1
+                    $ fuckstage = 1
+                    scene bg cor2
                     show frontvardamaged2
                     $ renpy.pause ()
                     scene bg cor2
@@ -24254,51 +27690,54 @@ label start:
                     scene bg cor2
                     show tali fin2 at left
                     if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to activate my suit's recover sequence before it gets worse..."
+                        tali "T-That was too much cum. My antibiotics should help, but... I need to activate suit recover sequence before it gets worse..."
+                        scene black
+                        play sound "audio/walk.mp3"
+                        "Tali continues her way..."
+                        $ lovedart = False
+                        $ suit = 10
+                        jump warehouse
                     else :
-                        tali "I swallowed too much... I have to get to the medbay urgently."
-                        $ defeated = 1
-            elif suit < 7:
-                # mount 1
-                if fuckstage == 1:
-                    show backvar3
-                elif fuckstage == 2:
-                # mount 2
-                    show backvar4
-                elif fuckstage == 3:
-                # mount 2 + cum
-                    $ infection += 1
-                    show backvar4
-                    $ renpy.pause ()
-                    scene bg cor2
-                    show backvarcum1
-                    $ renpy.pause ()
-                    scene bg cor2
-                    show tali fin3 at left
-                    tali "Ahhh. My suit's in tatters... and my body's on fire. I hope I can make it back to the medbay..."
-                    $ defeated = 1
-                
-        if lewd_action == 1:
-            $ fuckstage += 1
-            $ renpy.pause ()
-        
-        if fuckstage == 4:
-            # event over
-            $ fuckstage = 1
-            $ lewd += 1
-            $ lovedart = False
-            $ suit = 10
-            if defeated == 0:
-                scene black
-                tali "Tali continues on her way..."
-                play sound "audio/walk.mp3"
-                jump warehouse
+                        tali "I swallowed too much... I have to go to the medbay urgently."
+                        $ lovedart = False
+                        $ suit = 10
+                        jump medbayafterdefeat
             else:
+                $ suit -= 1
+                play sound "audio/tier.mp3"
+                "Suit damaged!"
+        elif suit < 7:
+            if fuckstage == 1:
+                $ fuckstage += 1
+                scene bg cor2
+                show backvar3
+                $ renpy.pause ()
+            elif fuckstage == 2:
+                $ fuckstage += 1
+                scene bg cor2
+                show backvar4
+                $ renpy.pause ()
+            elif fuckstage == 3:
+                $ lewd += 1
+                $ infection += 1
+                $ fuckstage = 1
+                scene bg cor2
+                show backvar4
+                $ renpy.pause ()
+                scene bg cor2
+                show backvarcum1
+                $ renpy.pause ()
+                scene bg cor2
+                show tali fin3 at left
+                tali "Ahhh. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
+                scene black
+                play sound "audio/walk.mp3"
+                $ lovedart = False
+                $ suit = 10
                 jump medbayafterdefeat
-
         play sound "audio/punch.mp3"
         show varren stand at right
-        show varren stand at shake    
+        show varren stand at shake
         jump sliderBattleFuck2
 
     label suittier3:
@@ -25246,6 +28685,8 @@ label start:
             show monk stand at right
         elif enemyID == 31:
             show monk stand at right
+        elif enemyID == 32:
+            show monk stand at right
         call screen bossslider
 
     screen bossslider():
@@ -25290,6 +28731,12 @@ label start:
             timer 5.5 action Jump("double_event1")
         if enemyID == 31:
             timer 5.5 action Jump("meddp1Bad")
+        if enemyID == 32:
+            if prison_phantom:
+                timer 5.5 action Jump("prisonphscene1")
+            else:
+                timer 5.5 action Jump("prisonteasescene")
+
 
     label escape_event1:
         $ lewd += 1
@@ -25432,6 +28879,8 @@ label start:
                 show monk stand at shake
             elif enemyID == 31:
                 show monk stand at shake
+            elif enemyID == 32:
+                show monk stand at shake
             play sound "audio/punch.mp3"
             "Hit!"
             $ enemyhp -= 1
@@ -25452,6 +28901,11 @@ label start:
                     "Beasts fled!"
                 elif enemyID == 31:
                     jump meddp1Good
+                elif enemyID == 32:
+                    if prison_phantom:
+                        jump prisonphwin
+                    else:
+                        jump prisonteasewin
                 if suitdur < 80:
                     $ suitdur += 20
             else:
@@ -25474,6 +28928,9 @@ label start:
                     elif enemyID == 31:
                         show tali fall at left
                         play sound "audio/fall.ogg"
+                    elif enemyID == 32:
+                        show tali fall at left
+                        play sound "audio/fall.ogg"
                     "Tali falls down."
                     stop music
                     play music "audio/bg/common_bg.mp3" volume 0.3 loop
@@ -25486,6 +28943,11 @@ label start:
                         jump double_event1
                     elif enemyID == 31:
                         jump meddp1Bad
+                    elif enemyID == 32:
+                        if prison_phantom:
+                            jump prisonphscene1
+                        else:
+                            jump prisonteasescene
                 else:
                     call screen bossslider
             show tali gunstand at left
@@ -25505,6 +28967,11 @@ label start:
                 jump MedBayUsual
             elif enemyID == 31:
                 jump meddp1Good
+            elif enemyID == 32:
+                if prison_phantom:
+                    jump prisonphwin
+                else:
+                    jump prisonteasewin
         else:
             $ random = renpy.random.randint(15, 30)
             play sound "audio/miss.mp3"
@@ -25526,6 +28993,9 @@ label start:
                 elif enemyID == 31:
                     show tali fall at left
                     play sound "audio/fall.ogg"
+                elif enemyID == 32:
+                    show tali fall at left
+                    play sound "audio/fall.ogg"
                 "Tali falls down."
                 stop music
                 play music "audio/bg/common_bg.mp3" volume 0.3 loop
@@ -25538,6 +29008,11 @@ label start:
                     jump double_event1
                 elif enemyID == 31:
                     jump meddp1Bad
+                elif enemyID == 32:
+                    if prison_phantom:
+                        jump prisonphscene
+                    else:
+                        jump prisonteasescene
             else:
                 call screen bossslider
 
@@ -25554,6 +29029,8 @@ label start:
         elif enemyID == 30:
             show monk stand at shake
         elif enemyID == 31:
+            show monk stand at shake
+        elif enemyID == 32:
             show monk stand at shake
         play sound "audio/explosion.mp3"
         "Enemy was hit hard!"
@@ -25575,6 +29052,11 @@ label start:
                 "Beasts fled!"
             elif enemyID == 31:
                 jump meddp1Good
+            elif enemyID == 32:
+                if prison_phantom:
+                    jump prisonphwin
+                else:
+                    jump prisonteasewin
             if suitdur < 80:
                 $ suitdur += 20
         else:
@@ -25596,6 +29078,9 @@ label start:
                 elif enemyID == 31:
                     show tali fall at left
                     play sound "audio/fall.ogg"
+                elif enemyID == 32:
+                    show tali fall at left
+                    play sound "audio/fall.ogg"
                 "Tali falls down."
                 stop music
                 play music "audio/bg/common_bg.mp3" volume 0.3 loop
@@ -25608,6 +29093,11 @@ label start:
                     jump double_event1
                 elif enemyID == 31:
                     jump meddp1Bad
+                elif enemyID == 32:
+                    if prison_phantom:
+                        jump prisonphscene1
+                    else:
+                        jump prisonteasescene
             else:
                 call screen bossslider
         show tali gunstand at left
@@ -25644,6 +29134,9 @@ label start:
                 elif enemyID == 31:
                     show tali fall at left
                     play sound "audio/fall.ogg"
+                elif enemyID == 32:
+                    show tali fall at left
+                    play sound "audio/fall.ogg"
                 "Tali falls down."
                 stop music
                 play music "audio/bg/common_bg.mp3" volume 0.3 loop
@@ -25656,6 +29149,11 @@ label start:
                     jump double_event1
                 elif enemyID == 31:
                     jump meddp1Bad
+                elif enemyID == 32:
+                    if prison_phantom:
+                        jump prisonphscene1
+                    else:
+                        jump prisonteasescene
             else:
                 call screen bossslider
 
@@ -25692,6 +29190,39 @@ label start:
         tali "Here we go."
         call screen movement
 
+    screen movement_ami():
+        modal True
+        showif action_ok:
+            imagebutton xpos 0.8 ypos 0.7:
+                idle "images/map/action_idle.png"
+                hover "images/map/action_hover.png"
+                focus_mask True
+                action Jump ("action_button_ami")
+        showif fwd_ok:
+            imagebutton xpos 0.8 ypos 0.63:
+                idle "images/map/fwd_idle.png"
+                hover "images/map/fwd_hover.png"
+                focus_mask True
+                action Jump ("GoFWD_ami")
+        showif left_ok:
+            imagebutton xpos 0.76 ypos 0.7:
+                idle "images/map/left_idle.png"
+                hover "images/map/left_hover.png"
+                focus_mask True
+                action Jump ("GoLEFT_ami")
+        showif right_ok:
+            imagebutton xpos 0.885 ypos 0.7:
+                idle "images/map/right_idle.png"
+                hover "images/map/right_hover.png"
+                focus_mask True
+                action Jump ("GoRIGHT_ami")
+        showif aft_ok:
+            imagebutton xpos 0.8 ypos 0.85:
+                idle "images/map/aft_idle.png"
+                hover "images/map/aft_hover.png"
+                focus_mask True
+                action Jump ("GoBACK_ami")
+
 
     screen movement():
         modal True
@@ -25725,6 +29256,47 @@ label start:
                 hover "images/map/aft_hover.png"
                 focus_mask True
                 action Jump ("GoBACK")
+
+    label screenCheck_ami:
+        if ventID == 0:
+            scene bg ami0
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 11:
+            scene bg ami1_1
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 12:
+            if amienemy1:
+                scene bg ami1_2e
+            else:
+                scene bg ami1_2e
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 13:
+            if amienemy1:
+                scene bg ami1_3e
+            else:
+                scene bg ami1_3
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 14:
+            scene bg ami1_4
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        call screen movement_ami
+
+
 
     label screenCheck:
         if ventID == 0:
@@ -25967,10 +29539,42 @@ label start:
             $ right_ok = False
             $ aft_ok = False
 
-
-
-
         call screen movement
+
+    label action_button_ami:
+        hide screen movement_ami
+        if ventID == 0:
+            ami "I must move to the objective."
+        if ventID == 11:
+            ami "I must move to the objective."
+        if ventID == 12:
+            if amienemy1:
+                ami "Testing subject ahead. Looks not aggressive."
+            else:
+                ami "I must move to the objective."
+        if ventID == 13:
+            if amienemy1:
+                ami "Subject can be used for collecting the sample. Which module I will use for it?"
+                menu amisub1:
+                    "Use oral module.":
+                        jump amioral1
+                    "Use vaginal module.":
+                        jump amivaginaly1
+                    "Use anal module.":
+                        jump amianaly1
+        if ventID == 14:
+            ami "This is the hatch quarian talked about."
+            scene black
+            show amibreakhatch1
+            pause 4
+            ami "Done. Time to come back."
+            jump amiquestcompl
+        jump screenCheck_ami
+
+
+
+
+
 
     label action_button:
         hide screen movement
@@ -26382,6 +29986,7 @@ label start:
                             scene black
                             show nyunvent1
                             $ renpy.pause ()
+                            nyun "S-Stop... P...Please...!"
                             play sound "audio/bug1.mp3"
                             scene black
                             show nyunvent3
@@ -26389,9 +29994,11 @@ label start:
                             scene black
                             show nyunvent4
                             $ renpy.pause ()
+                            nyun "Thank the... n-no! Fuck, no! Tali? Goddess, please..."
                             scene black
                             show nyunvent5
                             $ renpy.pause ()
+                            nyun "I'm cumming. Goddess, I'm cumming. Please, I can't cum anymore! Tali!!"
                             scene bg 5_9
                             tali "It's going worse! I must to do something!"
                             $ nyunblock = True
@@ -26404,10 +30011,12 @@ label start:
                             scene black
                             show nyunvent4
                             $ renpy.pause ()
+                            nyun "Cum... cumming... Nyuuuughhhhhh!"
                             play sound "audio/bug1.mp3"
                             scene black
                             show nyunvent6
                             $ renpy.pause ()
+                            nyun "Good. Too good. I'm... "
                             scene black
                             show nyunvent7
                             pause 2.5
@@ -26415,7 +30024,7 @@ label start:
                             show nyunvent8
                             $ renpy.pause ()
                             scene bg 5_9
-                            tali "Oh Keelah, this bug laid egg in her ass?! I hope it's not too late!"
+                            tali "Fuck! Did that bug lay an egg inside her ass?! Nyun, I'm on my way!"
                             $ nyunblock = True
                             jump screenCheck
                         elif nyun4:
@@ -26490,6 +30099,70 @@ label start:
 
 
         jump screenCheck
+
+
+    label amioral1:
+        stop music
+        play music "audio/bg/void_bg.mp3" loop
+        scene black
+        show amibj1
+        $ renpy.pause ()
+        stop music
+        scene black
+        show amibj2
+        $ renpy.pause ()
+        scene black
+        show amibj3
+        $ renpy.pause ()
+        scene black
+        show amibj4
+        $ renpy.pause ()
+        jump amiafterevent1
+
+    label amivaginaly1:
+        stop music
+        play music "audio/bg/void_bg.mp3" loop
+        scene black
+        show amivag1
+        $ renpy.pause ()
+        stop music
+        scene black
+        show amivag2
+        $ renpy.pause ()
+        scene black
+        show amivag3
+        $ renpy.pause ()
+        scene black
+        show amivag4
+        $ renpy.pause ()
+        jump amiafterevent1
+
+    label amianaly1:
+        stop music
+        play music "audio/bg/void_bg.mp3" loop
+        scene black
+        show amianal1
+        $ renpy.pause ()
+        stop music
+        scene black
+        show amianal2
+        $ renpy.pause ()
+        scene black
+        show amianal3
+        $ renpy.pause ()
+        scene black
+        show amianal4
+        $ renpy.pause ()
+        jump amiafterevent1
+
+    label amiafterevent1:
+        play music "audio/bg/horror_bg.mp3" volume 0.3 loop
+        scene bg ami1_3
+        $ amienemy1 = False
+        ami "Sampling successful. Extraction technique updated. Amount of material has increased as expected."
+        jump screenCheck_ami
+
+
 
 
     label amievent1:
@@ -26690,6 +30363,20 @@ label start:
                 action Jump ("ventchoice")
 
 
+    label amiquestcompl:
+        stop music
+        play music "audio/bg/common1_bg.mp3" volume 0.3 loop
+        $ venthatchquest = False
+        $ ventsidequest = "..."
+        scene bg ventmed2
+        show tali doubt at left
+        show ami talk at right
+        ami "Objective complete. You and your fellow asari are free to go."
+        show ami neutral at right
+        tali "Great. Thank you."
+        jump medlabusual
+
+
     label amilabusual:
         scene bg ventmed2
         show tali doubt at left
@@ -26705,6 +30392,27 @@ label start:
             tali "Alright. Sure. An AI with a sense of style. Why not."
             show ami neutral at right
         menu amitalk:
+            "Can you help to open another hatch?" if venthatchquest:
+                if amihatchtalk:
+                    menu amimenu1:
+                        "Go and open it now.":
+                            jump amiventstart
+                        "Not now.":
+                            jump amilabusual
+                tali "I have another problematic hatch need to open. Can you help with it also?"
+                show ami talk at right
+                ami "I understand which one you talking about. I heard your conversation with asari. This hatch is sealed mechanically and I don't have access to it through ship systems."
+                show ami neutral at right
+                show tali talk at left
+                tali "You can't be serious. And what we suppose to do with it?"
+                show tali doubt at left
+                show ami talk at right
+                ami "I suggest the simple brute force. This platform can go and do everything manually."
+                show ami neutral at right
+                tali "Huh, just like that? Sounds simple."
+                show ami talk at right
+                ami "Absolutely. Just let me know when you want me to do it."
+                $ amihatchtalk = True
             "You have sex with those animals?":
                 show ami talk at right
                 ami "The word you call 'sex' is usual for organic species. I am merely using this platform to collect organic material."
@@ -26773,6 +30481,11 @@ label start:
                 jump medlabusual
         jump amilabusual
 
+    label amiventstart:
+        stop music
+        play music "audio/bg/horror_bg.mp3" volume 0.3 loop
+        $ ventID = 0
+        jump screenCheck_ami
 
 
     label ventchoice:
@@ -26829,6 +30542,71 @@ label start:
                     $ nyunblock = False
                 scene bg labrest
                 tali "Zzzzzzzzz..."
+                if nyunmed:
+                    $ nyunmed = False
+                    scene bg ventmed2
+                    show nyun nstand at right
+                    with dis
+                    show tali angry at left
+                    tali "Nyun! Are you alright?"
+                    show nyun nhead at right
+                    nyun "Ohhhh... Tali, thought I'd never see you again."
+                    nyun "I saw a nightmare where the giant insects are mating us together again and again..."
+                    show nyun nstand at right
+                    show tali talk at left
+                    tali "Are you... remember anything?"
+                    show nyun ntalk at right
+                    nyun "We fights with monsters in pool. I run away to find a safe place and... then pass out. I thought this bad dream will never ends."
+                    show nyun nhead at right
+                    tali "No worries, you're safe now. Take some rest and... get bit more dressed I suppose."
+                    show tali doubt at left
+                    hide nyun
+                    with dis
+                    show ami doubt at right
+                    with dis
+                    tali "Is she will be alright?"
+                    show ami dtalk at right
+                    ami "Physical condition is satisfying, her body is fully recovered. I am not sure about aspect that organics called 'mental' health."
+                    show ami think at right
+                    show tali talk at left
+                    tali "What heppened with her memory? It seems she don't remember anything..."
+                    show tali doubt at left
+                    show ami dtalk at right
+                    ami "This is the result of liquid pheromone injections from the specie you calling 'insects'. They using it before mating to make the potential eggs vessel more... obedient."
+                    ami "So the victim don't remember anything and unconsciously carriyng their offspring until... "
+                    show ami doubt at right
+                    show tali angry at left
+                    tali "Oh Keelah, please skip this details, I get it!"
+                    show tali doubt at left
+                    show ami dtalk at right
+                    ami "Just want you to keep this in mind and be more careful next time."
+                    show ami doubt at right
+                    tali "Alright, thank you to save Nyun."
+                    show ami dtalk at right
+                    ami "Of course. Any time. Let me know if you need anything else."
+                    hide ami
+                    show nyun stand2 at right
+                    with dis
+                    tali "Looks better, Nyun. What do you think to do now?"
+                    show nyun talk2 at right
+                    nyun "I guess it will be more safe to come back in my bar, Tali. Is there any way out from this scary place?"
+                    show nyun stand2 at right
+                    show tali talk at left
+                    tali "Well... the hatch which we passed on the way here is sealed, but..."
+                    show nyun scared at right
+                    nyun "Oh no no! Don't tell me that we are stack here! What... what I suppose to do here?! What if the monsters will come back?!"
+                    tali "Calm down! Everything will be good. See this android girl? This is advanced battle platform which slaughtered thousands of them. She is protecting this place. You will be fine."
+                    show tali doubt at left
+                    show nyun talk2 at right
+                    nyun "Oh goddess, I hope you're right. But I want the way back. Please, Tali, do something with that."
+                    show nyun stand2 at right
+                    show tali facepalm at left
+                    tali "Alright, alright, I will do something with it, I promise. Just go and take some rest for now."
+                    hide nyun
+                    with dis
+                    $ ventsidequest = "Talk with AMI about hatch."
+                    $ venthatchquest = True
+                    tali "Oh Keelah... I need to talk with AMI."
                 if nestfirst:
                     $ vent4 = False
                 else:
@@ -26843,11 +30621,161 @@ label start:
 
 
     label labblend:
+        #menu craft1:
+            #"Craft items.":
+                #jump craftstart
+            #"Later.":
+                #jump medlabusual
         show tali tool at left
         tali "This can be used to synthesize organic material into... something."
         show tali doubt at left
         tali "I can't think of a use for it right now."
         jump medlabusual
+
+    label craftstart:
+        scene bg craftcom
+        if slot1egg:
+            show eggslot1
+        if slot1cum:
+            show cumslot1
+        if slot1poison:
+            show poisonslot1
+        if slot2egg:
+            show eggslot2
+        if slot2cum:
+            show cumslot2
+        if slot2poison:
+            show poisonslot2
+        if slot3poison:
+            show poisonslot3
+
+        call screen craftscreen
+
+    screen craftscreen():
+        modal True
+        showif slot1:
+            imagebutton:
+                idle "images/events/labcraft/slot1_idle.png"
+                hover "images/events/labcraft/slot1_hover.png"
+                focus_mask True
+                action Jump ("slot1action")
+        showif slot2:
+            imagebutton:
+                idle "images/events/labcraft/slot2_idle.png"
+                hover "images/events/labcraft/slot2_hover.png"
+                focus_mask True
+                action Jump ("slot2action")
+        showif slot3poison:
+            imagebutton:
+                idle "images/events/labcraft/slot3poison_idle.png"
+                hover "images/events/labcraft/slot3poison_hover.png"
+                focus_mask True
+                action Jump ("slot3action")
+
+        showif craftbutton:
+            imagebutton:
+                idle "images/events/labcraft/start_idle.png"
+                hover "images/events/labcraft/start_hover.png"
+                focus_mask True
+                action Jump ("craftbuttonstart")
+
+
+        imagebutton xpos 0.9 ypos 0.8:
+                idle "images/map/backbutton_idle.png"
+                hover "images/map/backbutton_hover.png"
+                focus_mask True
+                action Jump ("medlabusual")
+
+    label slot1action:
+        menu slot1craft:
+            "Add egg." if eggs > 0:
+                play sound "audio/equip.ogg"
+                $ slot1 = False
+                $ slot1egg = True
+            "Add cum." if coom > 0:
+                play sound "audio/equip.ogg"
+                $ slot1 = False
+                $ slot1cum = True
+            "Add poison." if poison > 0:
+                play sound "audio/equip.ogg"
+                $ slot1 = False
+                $ slot1poison = True
+            "Return.":
+                jump craftstart
+        jump craftstart
+
+    label slot2action:
+        menu slot2craft:
+            "Add egg." if eggs > 0:
+                play sound "audio/equip.ogg"
+                $ slot2 = False
+                $ slot2egg = True
+            "Add cum." if coom > 0:
+                play sound "audio/equip.ogg"
+                $ slot2 = False
+                $ slot2cum = True
+            "Add poison." if poison > 0:
+                play sound "audio/equip.ogg"
+                $ slot2 = False
+                $ slot2poison = True
+            "Return.":
+                jump craftstart
+        jump craftstart
+
+    label slot3action:
+        if slot3poison:
+            $ poison += 1
+            $ slot3poison = False
+            $ slot1 = True
+            $ slot2 = True
+            $ craftbutton = True
+            show bg craftcom
+            play sound "audio/equip.ogg"
+            "Poison taken!"
+        jump craftstart
+
+    label craftbuttonstart:
+        if slot1:
+            "Need to add both items before start."
+            jump craftstart
+        elif slot2:
+            "Need to add both items before start."
+            jump craftstart
+        play sound "audio/metalnoise2.mp3"
+        scene bg craft0 with hpunch
+        pause .5
+        scene black
+        play sound "audio/charge.mp3"
+        show craftanim1
+        pause 3
+        if slot1egg and slot2egg:
+            play sound "audio/beamlaser.mp3"
+            scene bg craft6
+            show poisonslot3
+            "Success."
+            $ craftbutton = False
+            $ slot1egg = False
+            $ slot2egg = False
+            $ slot1cum = False
+            $ slot2cum = False
+            $ slot1poison = False
+            $ slot2poison = False
+            $ slot3poison = True
+        else:
+            play sound "audio/error.mp3"
+            scene bg craft7
+            "Fail."
+            $ slot1egg = False
+            $ slot2egg = False
+            $ slot1cum = False
+            $ slot2cum = False
+            $ slot1poison = False
+            $ slot2poison = False
+            $ slot1 = True
+            $ slot2 = True
+        jump craftstart
+
+
 
     label labscreen:
         scene bg ventmedscreen
@@ -26868,6 +30796,42 @@ label start:
         text "{color=#00ff00}Current quests:{/color}" xpos 0.55 ypos 0.2
         text "[vquest]" xpos 0.50 ypos 0.3
         text "[ventsidequest]" xpos 0.50 ypos 0.4
+
+    label GoFWD_ami:
+        $ random = renpy.random.randint(1, 10)
+        if random == 1:
+            play sound "audio/vent1.mp3"
+        if random == 2:
+            play sound "audio/vent2.mp3"
+        if random == 3:
+            play sound "audio/vent3.mp3"
+        if random == 4:
+            play sound "audio/vent4.mp3"
+        if random == 5:
+            play sound "audio/vent5.mp3"
+        if random == 6:
+            play sound "audio/vent6.mp3"
+        if random == 7:
+            play sound "audio/vent7.mp3"
+        if random == 8:
+            play sound "audio/vent8.mp3"
+        if random == 9:
+            play sound "audio/vent9.mp3"
+        if random == 10:
+            play sound "audio/vent10.mp3"
+        scene black
+        if ventID == 0:
+            $ ventID = 11
+            show amivent1_1
+            pause 1.5
+        elif ventID == 12:
+            $ ventID = 13
+            if amienemy1:
+                show amivent1_3e
+            else:
+                show amivent1_3
+            pause 1.5
+        jump screenCheck_ami
 
     label GoFWD:
         $ random = renpy.random.randint(1, 10)
@@ -27031,6 +30995,50 @@ label start:
 
 
         jump screenCheck
+
+    label GoRIGHT_ami:
+        $ random = renpy.random.randint(1, 10)
+        if random == 1:
+            play sound "audio/vent1.mp3"
+        if random == 2:
+            play sound "audio/vent2.mp3"
+        if random == 3:
+            play sound "audio/vent3.mp3"
+        if random == 4:
+            play sound "audio/vent4.mp3"
+        if random == 5:
+            play sound "audio/vent5.mp3"
+        if random == 6:
+            play sound "audio/vent6.mp3"
+        if random == 7:
+            play sound "audio/vent7.mp3"
+        if random == 8:
+            play sound "audio/vent8.mp3"
+        if random == 9:
+            play sound "audio/vent9.mp3"
+        if random == 10:
+            play sound "audio/vent10.mp3"
+        scene black
+        if ventID == 11:
+            $ ventID = 12
+            if amienemy1:
+                show amivent1_2e
+            else:
+                show amivent1_2
+            pause 1.5
+        elif ventID == 13:
+            if amienemy1:
+                ami "This subject blocking my way. Need to deal with it first."
+                jump screenCheck_ami
+            else:
+                $ ventID = 14
+                show amivent1_4
+                pause 1.5
+
+        jump screenCheck_ami
+
+
+
 
     label GoRIGHT:
         $ random = renpy.random.randint(1, 10)
@@ -27460,9 +31468,10 @@ label start:
         $ vent6 = True
         $ nyunquest = False
         $ vent6seal = True
-        $ ventsidequest = "..."
+        $ ventsidequest = "Wait until Nyun is recovered."
         $ nyunblock = False
         $ nyunsaved = True
+        $ nyunmed = True
         jump medlabusual
 
     label shootlost:
