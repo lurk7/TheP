@@ -5,6 +5,7 @@
 
 define narrator = Character(None, who_color="#baf8ff", what_font="arial.ttf", what_italic=True, what_size = 25)
 define tali = Character("Tali", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
+define ami = Character("AMI", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
 define creature = Character("Creature", who_color="#FF0000", what_font="arial.ttf", what_bold=True, what_size = 25)
 define serok = Character("Serok", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
 define unknow = Character("Unknown voice", who_color="#baf8ff", what_font="arial.ttf", what_italic=True, what_size = 25)
@@ -17,6 +18,9 @@ define zeltan = Character("Zeltan", who_color="#baf8ff", what_font="arial.ttf", 
 define nyun = Character("Nyun", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
 define phantom = Character("Phantom", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
 define dis = Dissolve(.5)
+define nest = Character("Nest", who_color="#FF0000", what_font="arial.ttf", what_bold=True, what_size = 25)
+image cell = "images/items/cell.png"
+image egg = "images/items/egg.png"
 
 image clips = "images/items/clips.png"
 image parts = "images/items/parts.png"
@@ -119,6 +123,7 @@ define ulube = True
 define poolloot1 = False
 define poolloot2 = False
 define poolloot3 = False
+define poolcomp = False
 
 define whEvent1 = False
 define whKrogan = True
@@ -167,7 +172,7 @@ define doorexp = 0
 define alarm = 0
 define parts = 0
 define quest = "None"
-define sidequest1 = "..."
+define sidequest = "..."
 define enemyhp = 0
 define doorSliderValue = 1000
 define doorHackJump = 'doorHackFail'
@@ -215,6 +220,9 @@ define zeltanengine = False
 define zeltanhallway = False
 define zeltanhappy = False
 define zeltansex = False
+define ventquest = False
+define ventcount = 0
+define poolvent = False
 define z1 = False
 define z2 = False
 define z3 = False
@@ -232,6 +240,95 @@ define enc_chance = 0
 #change to FALSE
 define corridor_fight = False
 define door_fight = False
+
+# --------------------- VENTS VARIABLES ------------------------------
+define ventsopen = False
+define vquest = "..."
+define ventsidequest = "..."
+
+define nyun1 = True
+define nyun2 = True
+define nyun3 = True
+define nyun4 = True
+define nyunover = False
+define nyunquest = False
+define nyunblock = False
+define nyunhatch = False
+define nyunami = False
+define nyunsaved = False
+
+define flesh1 = True
+
+define ventID = 0
+define fwd_ok = True
+define left_ok = False
+define right_ok = False
+define aft_ok = False
+define action_ok = True
+
+#define quest = ""
+define eggs = 0
+define cells = 0
+define hearts = 0
+define arousal = 0
+#define infection = 0
+define nest1 = "Active"
+define nest2 = "N/A"
+define nest3 = "N/A"
+
+define nestfirst = True
+
+define slidervalue = 1000
+
+define vent1 = True
+define vent2 = True
+define vent3 = True
+define vent4 = False
+define vent5 = True
+define vent6 = True
+define vent6seal = False
+
+define catch1 = False
+define catch2 = False
+define catch3 = False
+define catch4 = False
+define catch5 = False
+
+define shots = 0
+
+define egg1 = False
+define egg2 = False
+define egg3 = False
+define egg4 = False
+define egg5 = False
+define egg6 = False
+define egg7 = False
+define eggfirst = True
+
+define bug1count = 0
+
+define labcell = True
+
+#CLICKER
+default points = 25
+default minus = 1
+default plus = 5
+default max_point = 50
+default clicked = True
+
+# SHOOTER
+default points1 = 50
+default minus1 = 2
+default max_point1 = 50
+default clicked1 = True
+default hpcurrent = 100
+default hpmax = 100
+default hpdmg = 20
+
+
+define encID = 0
+define amifound = False
+define amifirst = True
 
 transform shake:
         ease .06 yoffset 24
@@ -12279,9 +12376,4016 @@ image liz1bcum2:
     "images/events/l1/back/damagedcum2/0095.png"
     pause .12
 
+image pooldry:
+    "images/events/pool/dry/0015.jpg"
+    pause .12
+    "images/events/pool/dry/0016.jpg"
+    pause .12
+    "images/events/pool/dry/0017.jpg"
+    pause .12
+    "images/events/pool/dry/0018.jpg"
+    pause .12
+    "images/events/pool/dry/0019.jpg"
+    pause .12
+    "images/events/pool/dry/0020.jpg"
+    pause .12
+    "images/events/pool/dry/0021.jpg"
+    pause .12
+    "images/events/pool/dry/0022.jpg"
+    pause .12
+    "images/events/pool/dry/0023.jpg"
+    pause .12
+    "images/events/pool/dry/0024.jpg"
+    pause .12
 
+# ------------------ VENTS ANIMATIONS START --------------------------
+
+image nesttrans1:
+    "images/nest/trans1/0095.jpg"
+    pause .12
+    "images/nest/trans1/0096.jpg"
+    pause .12
+    "images/nest/trans1/0097.jpg"
+    pause .12
+    "images/nest/trans1/0098.jpg"
+    pause .12
+    "images/nest/trans1/0099.jpg"
+    pause .12
+    "images/nest/trans1/0100.jpg"
+    pause .12
+    "images/nest/trans1/0101.jpg"
+    pause .12
+    "images/nest/trans1/0102.jpg"
+    pause .12
+    "images/nest/trans1/0103.jpg"
+    pause .12
+    "images/nest/trans1/0104.jpg"
+    function s4
+    pause .12
+    "images/nest/trans1/0105.jpg"
+    pause .12
+    "images/nest/trans1/0106.jpg"
+    pause .12
+    "images/nest/trans1/0107.jpg"
+    pause .12
+
+image neststruggle:
+    "images/nest/trans1/0108.jpg"
+    pause .12
+    "images/nest/trans1/0109.jpg"
+    pause .12
+    "images/nest/trans1/0110.jpg"
+    pause .12
+    "images/nest/trans1/0111.jpg"
+    pause .12
+    "images/nest/trans1/0112.jpg"
+    pause .12
+    "images/nest/trans1/0113.jpg"
+    pause .12
+    "images/nest/trans1/0114.jpg"
+    pause .12
+    "images/nest/trans1/0115.jpg"
+    pause .12
+    repeat
+
+image nesttrans1alt:
+    "images/nest/trans1/0116.jpg"
+    pause .12
+    "images/nest/trans1/0117.jpg"
+    pause .12
+    "images/nest/trans1/0118.jpg"
+    pause .12
+    "images/nest/trans1/0119.jpg"
+    pause .12
+    "images/nest/trans1/0120.jpg"
+    pause .12
+    "images/nest/trans1/0121.jpg"
+    pause .12
+    "images/nest/trans1/0122.jpg"
+    pause .12
+    "images/nest/trans1/0123.jpg"
+    pause .12
+    "images/nest/trans1/0124.jpg"
+    pause .12
+    "images/nest/trans1/0125.jpg"
+    pause .12
+    "images/nest/trans1/0126.jpg"
+    pause .12
+    "images/nest/trans1/0127.jpg"
+    pause .12
+
+image nesttrans2:
+    "images/nest/trans2/0130.jpg"
+    pause .12
+    "images/nest/trans2/0131.jpg"
+    pause .12
+    "images/nest/trans2/0132.jpg"
+    pause .12
+    "images/nest/trans2/0133.jpg"
+    pause .12
+    "images/nest/trans2/0134.jpg"
+    pause .12
+    "images/nest/trans2/0135.jpg"
+    pause .12
+    "images/nest/trans2/0136.jpg"
+    pause .12
+    "images/nest/trans2/0137.jpg"
+    pause .12
+    "images/nest/trans2/0138.jpg"
+    pause .12
+    "images/nest/trans2/0139.jpg"
+    function tier
+    pause .12
+    "images/nest/trans2/0140.jpg"
+    pause .12
+    "images/nest/trans2/0141.jpg"
+    pause .12
+    "images/nest/trans2/0142.jpg"
+    pause .12
+    "images/nest/trans2/0143.jpg"
+    pause .12
+    "images/nest/trans2/0144.jpg"
+    pause .12
+    "images/nest/trans2/0145.jpg"
+    pause .12
+    "images/nest/trans2/0146.jpg"
+    pause .12
+    "images/nest/trans2/0147.jpg"
+    pause .12
+    "images/nest/trans2/0148.jpg"
+    pause .12
+    "images/nest/trans2/0149.jpg"
+    pause .12
+    "images/nest/trans2/0150.jpg"
+    pause .12
+
+image nesttrans2alt:
+    "images/nest/trans2/0151.jpg"
+    pause .12
+    "images/nest/trans2/0152.jpg"
+    function s1
+    pause .12
+    "images/nest/trans2/0153.jpg"
+    pause .12
+    "images/nest/trans2/0154.jpg"
+    pause .12
+    "images/nest/trans2/0155.jpg"
+    pause .12
+    "images/nest/trans2/0156.jpg"
+    pause .12
+    "images/nest/trans2/0157.jpg"
+    function s2
+    pause .12
+    "images/nest/trans2/0158.jpg"
+    pause .12
+    "images/nest/trans2/0159.jpg"
+    pause .12
+    "images/nest/trans2/0160.jpg"
+    pause .12
+    "images/nest/trans2/0161.jpg"
+    pause .12
+    "images/nest/trans2/0162.jpg"
+    pause .12
+    "images/nest/trans2/0163.jpg"
+    function s4
+    pause .12
+    "images/nest/trans2/0164.jpg"
+    pause .12
+    "images/nest/trans2/0165.jpg"
+    pause .12
+    "images/nest/trans2/0166.jpg"
+    pause .12
+    "images/nest/trans2/0167.jpg"
+    function fart2
+    pause .12
+    "images/nest/trans2/0168.jpg"
+    pause .12
+    "images/nest/trans2/0169.jpg"
+    pause .12
+    "images/nest/trans2/0170.jpg"
+    pause .12
+
+image nestloop1:
+    "images/nest/loop1/0170.jpg"
+    pause .12
+    "images/nest/loop1/0171.jpg"
+    pause .12
+    "images/nest/loop1/0172.jpg"
+    pause .12
+    "images/nest/loop1/0173.jpg"
+    function s2
+    pause .12
+    "images/nest/loop1/0174.jpg"
+    pause .12
+    "images/nest/loop1/0175.jpg"
+    pause .12
+    "images/nest/loop1/0176.jpg"
+    function s1
+    pause .12
+    "images/nest/loop1/0177.jpg"
+    pause .12
+    "images/nest/loop1/0178.jpg"
+    pause .12
+    "images/nest/loop1/0179.jpg"
+    pause .12
+    "images/nest/loop1/0180.jpg"
+    pause .12
+    "images/nest/loop1/0181.jpg"
+    function splat
+    pause .12
+    "images/nest/loop1/0182.jpg"
+    pause .12
+    "images/nest/loop1/0183.jpg"
+    pause .12
+    repeat
+
+image nesttrans3:
+    "images/nest/trans3/0170.jpg"
+    pause .12
+    "images/nest/trans3/0171.jpg"
+    pause .12
+    "images/nest/trans3/0172.jpg"
+    pause .12
+    "images/nest/trans3/0173.jpg"
+    function s2
+    pause .12
+    "images/nest/trans3/0174.jpg"
+    pause .12
+    "images/nest/trans3/0175.jpg"
+    pause .12
+    "images/nest/trans3/0176.jpg"
+    function s1
+    pause .12
+    "images/nest/trans3/0177.jpg"
+    pause .12
+    "images/nest/trans3/0178.jpg"
+    pause .12
+    "images/nest/trans3/0179.jpg"
+    function fart2
+    pause .12
+    "images/nest/trans3/0180.jpg"
+    pause .12
+    "images/nest/trans3/0181.jpg"
+    pause .12
+    "images/nest/trans3/0182.jpg"
+    pause .12
+    "images/nest/trans3/0183.jpg"
+    pause .12
+    "images/nest/trans3/0184.jpg"
+    pause .12
+
+image nesttrans3alt:
+    "images/nest/trans3/0185.jpg"
+    pause .12
+    "images/nest/trans3/0186.jpg"
+    pause .12
+    "images/nest/trans3/0187.jpg"
+    pause .12
+    "images/nest/trans3/0188.jpg"
+    pause .12
+    "images/nest/trans3/0189.jpg"
+    pause .12
+    "images/nest/trans3/0190.jpg"
+    pause .12
+    "images/nest/trans3/0190.jpg"
+    pause .12
+    "images/nest/trans3/0191.jpg"
+    pause .12
+    "images/nest/trans3/0192.jpg"
+    pause .12
+    "images/nest/trans3/0193.jpg"
+    pause .12
+    "images/nest/trans3/0194.jpg"
+    pause .12
+    "images/nest/trans3/0195.jpg"
+    pause .12
+    "images/nest/trans3/0196.jpg"
+    pause .12
+    "images/nest/trans3/0197.jpg"
+    pause .12
+
+image nestloop2:
+    "images/nest/loop2/0130.jpg"
+    pause .12
+    "images/nest/loop2/0131.jpg"
+    pause .12
+    "images/nest/loop2/0132.jpg"
+    pause .12
+    "images/nest/loop2/0133.jpg"
+    pause .12
+    "images/nest/loop2/0134.jpg"
+    pause .12
+    "images/nest/loop2/0135.jpg"
+    pause .12
+    "images/nest/loop2/0136.jpg"
+    pause .12
+    "images/nest/loop2/0137.jpg"
+    pause .12
+    "images/nest/loop2/0138.jpg"
+    pause .12
+    "images/nest/loop2/0139.jpg"
+    pause .12
+    "images/nest/loop2/0140.jpg"
+    pause .12
+    "images/nest/loop2/0141.jpg"
+    pause .12
+    repeat
+
+image nesttrans4:
+    "images/nest/trans4/0150.jpg"
+    pause .12
+    "images/nest/trans4/0151.jpg"
+    pause .12
+    "images/nest/trans4/0152.jpg"
+    pause .12
+    "images/nest/trans4/0153.jpg"
+    pause .12
+    "images/nest/trans4/0154.jpg"
+    pause .12
+    "images/nest/trans4/0155.jpg"
+    pause .12
+    "images/nest/trans4/0156.jpg"
+    pause .12
+    "images/nest/trans4/0157.jpg"
+    pause .12
+    "images/nest/trans4/0158.jpg"
+    pause .12
+    "images/nest/trans4/0159.jpg"
+    pause .12
+    "images/nest/trans4/0160.jpg"
+    pause .12
+    "images/nest/trans4/0161.jpg"
+    pause .12
+    "images/nest/trans4/0162.jpg"
+    pause .12
+    "images/nest/trans4/0163.jpg"
+    pause .12
+    "images/nest/trans4/0164.jpg"
+    pause .12
+    "images/nest/trans4/0165.jpg"
+    pause .12
+    "images/nest/trans4/0166.jpg"
+    function n1
+    pause .12
+    "images/nest/trans4/0167.jpg"
+    pause .12
+    "images/nest/trans4/0168.jpg"
+    pause .12
+    "images/nest/trans4/0169.jpg"
+    pause .12
+    "images/nest/trans4/0170.jpg"
+    pause .12
+    "images/nest/trans4/0171.jpg"
+    pause .12
+    "images/nest/trans4/0172.jpg"
+    pause .12
+    "images/nest/trans4/0173.jpg"
+    pause .12
+    "images/nest/trans4/0174.jpg"
+    pause .12
+    "images/nest/trans4/0175.jpg"
+    pause .12
+    "images/nest/trans4/0176.jpg"
+    pause .12
+    "images/nest/trans4/0177.jpg"
+    pause .12
+
+image nesttrans5:
+    "images/nest/trans5/0177.jpg"
+    pause .12
+    function n1
+    "images/nest/trans5/0178.jpg"
+    pause .12
+    "images/nest/trans5/0179.jpg"
+    pause .12
+    "images/nest/trans5/0180.jpg"
+    pause .12
+    "images/nest/trans5/0181.jpg"
+    pause .12
+    "images/nest/trans5/0182.jpg"
+    pause .12
+    "images/nest/trans5/0183.jpg"
+    pause .12
+    "images/nest/trans5/0184.jpg"
+    pause .12
+    "images/nest/trans5/0185.jpg"
+    pause .12
+    "images/nest/trans5/0186.jpg"
+    pause .12
+    "images/nest/trans5/0187.jpg"
+    pause .12
+    "images/nest/trans5/0188.jpg"
+    pause .12
+    "images/nest/trans5/0189.jpg"
+    pause .12
+    "images/nest/trans5/0190.jpg"
+    pause .12
+    "images/nest/trans5/0190.jpg"
+    pause .12
+    "images/nest/trans5/0191.jpg"
+    pause .12
+    "images/nest/trans5/0192.jpg"
+    pause .12
+    "images/nest/trans5/0193.jpg"
+    pause .12
+    "images/nest/trans5/0194.jpg"
+    pause .12
+    "images/nest/trans5/0195.jpg"
+    pause .12
+    "images/nest/trans5/0196.jpg"
+    pause .12
+    "images/nest/trans5/0197.jpg"
+    pause .12
+    "images/nest/trans5/0198.jpg"
+    pause .12
+    "images/nest/trans5/0199.jpg"
+    pause .12
+    "images/nest/trans5/0200.jpg"
+    pause .12
+    "images/nest/trans5/0201.jpg"
+    pause .12
+    "images/nest/trans5/0202.jpg"
+    pause .12
+    "images/nest/trans5/0203.jpg"
+    pause .12
+    "images/nest/trans5/0204.jpg"
+    pause .12
+    "images/nest/trans5/0205.jpg"
+    pause .12
+    "images/nest/trans5/0206.jpg"
+    pause .12
+    "images/nest/trans5/0207.jpg"
+    pause .12
+    "images/nest/trans5/0208.jpg"
+    pause .12
+    "images/nest/trans5/0209.jpg"
+    function s2
+    pause .12
+    "images/nest/trans5/0210.jpg"
+    pause .12
+
+image nesttrans6:
+    "images/nest/trans6/0210.jpg"
+    pause .12
+    "images/nest/trans6/0211.jpg"
+    pause .12
+    "images/nest/trans6/0212.jpg"
+    pause .12
+    "images/nest/trans6/0213.jpg"
+    pause .12
+    "images/nest/trans6/0214.jpg"
+    pause .12
+    "images/nest/trans6/0215.jpg"
+    pause .12
+    "images/nest/trans6/0216.jpg"
+    pause .12
+    "images/nest/trans6/0217.jpg"
+    pause .12
+    "images/nest/trans6/0218.jpg"
+    pause .12
+    "images/nest/trans6/0219.jpg"
+    pause .12
+    "images/nest/trans6/0220.jpg"
+    pause .12
+    "images/nest/trans6/0221.jpg"
+    pause .12
+    "images/nest/trans6/0222.jpg"
+    pause .12
+    "images/nest/trans6/0223.jpg"
+    pause .12
+    "images/nest/trans6/0224.jpg"
+    pause .12
+    "images/nest/trans6/0225.jpg"
+    pause .12
+    "images/nest/trans6/0226.jpg"
+    pause .12
+    "images/nest/trans6/0227.jpg"
+    pause .12
+    "images/nest/trans6/0228.jpg"
+    pause .12
+    "images/nest/trans6/0229.jpg"
+    pause .12
+    "images/nest/trans6/0230.jpg"
+    pause .12
+    "images/nest/trans6/0231.jpg"
+    pause .12
+    "images/nest/trans6/0232.jpg"
+    pause .12
+    "images/nest/trans6/0233.jpg"
+    pause .12
+    "images/nest/trans6/0234.jpg"
+    pause .12
+    "images/nest/trans6/0235.jpg"
+    pause .12
+
+image nestloop3:
+    "images/nest/loop3/0210.jpg"
+    pause .12
+    "images/nest/loop3/0211.jpg"
+    pause .12
+    "images/nest/loop3/0212.jpg"
+    pause .12
+    "images/nest/loop3/0213.jpg"
+    pause .12
+    "images/nest/loop3/0214.jpg"
+    function s4
+    pause .12
+    "images/nest/loop3/0215.jpg"
+    function fart2
+    pause .12
+    "images/nest/loop3/0216.jpg"
+    pause .12
+    repeat
+
+image nestcum:
+    "images/nest/cum/0213.jpg"
+    pause .12
+    "images/nest/cum/0214.jpg"
+    pause .12
+    "images/nest/cum/0215.jpg"
+    pause .12
+    "images/nest/cum/0216.jpg"
+    pause .12
+    "images/nest/cum/0217.jpg"
+    pause .12
+    "images/nest/cum/0218.jpg"
+    pause .12
+    "images/nest/cum/0219.jpg"
+    pause .12
+    "images/nest/cum/0220.jpg"
+    pause .12
+    "images/nest/cum/0221.jpg"
+    pause .12
+    "images/nest/cum/0222.jpg"
+    pause .12
+    "images/nest/cum/0223.jpg"
+    pause .12
+    "images/nest/cum/0224.jpg"
+    pause .12
+    "images/nest/cum/0225.jpg"
+    pause .12
+    "images/nest/cum/0226.jpg"
+    pause .12
+    "images/nest/cum/0227.jpg"
+    pause .12
+    "images/nest/cum/0228.jpg"
+    pause .12
+    "images/nest/cum/0229.jpg"
+    pause .12
+    "images/nest/cum/0230.jpg"
+    pause .12
+    "images/nest/cum/0231.jpg"
+    pause .12
+    "images/nest/cum/0232.jpg"
+    pause .12
+    "images/nest/cum/0233.jpg"
+    pause .12
+    "images/nest/cum/0234.jpg"
+    pause .12
+    "images/nest/cum/0235.jpg"
+    pause .12
+    "images/nest/cum/0236.jpg"
+    pause .12
+    "images/nest/cum/0237.jpg"
+    pause .12
+    "images/nest/cum/0238.jpg"
+    pause .12
+    "images/nest/cum/0239.jpg"
+    function cough
+    pause .12
+    "images/nest/cum/0240.jpg"
+    pause .12
+    "images/nest/cum/0241.jpg"
+    pause .12
+    "images/nest/cum/0242.jpg"
+    pause .12
+    "images/nest/cum/0243.jpg"
+    pause .12
+    "images/nest/cum/0244.jpg"
+    pause .12
+    "images/nest/cum/0245.jpg"
+    pause .12
+    "images/nest/cum/0246.jpg"
+    pause .12
+    "images/nest/cum/0247.jpg"
+    pause .12
+    "images/nest/cum/0248.jpg"
+    pause .12
+    "images/nest/cum/0249.jpg"
+    pause .12
+    "images/nest/cum/0250.jpg"
+    pause .12
+    "images/nest/cum/0251.jpg"
+    pause .12
+    "images/nest/cum/0252.jpg"
+    pause .12
+    "images/nest/cum/0253.jpg"
+    pause .12
+    "images/nest/cum/0254.jpg"
+    pause .12
+    "images/nest/cum/0255.jpg"
+    pause .12
+    "images/nest/cum/0256.jpg"
+    pause .12
+    "images/nest/cum/0257.jpg"
+    pause .12
+    "images/nest/cum/0258.jpg"
+    pause .12
+    "images/nest/cum/0259.jpg"
+    pause .12
+    "images/nest/cum/0260.jpg"
+    pause .12
+
+image frog1_loop1 = Generate_Animation("images/enemy1/loop1", 10)
+image frog1_trans1 = Generate_Animation("images/enemy1/trans1", 10)
+image frog1_trans2 = Generate_Animation("images/enemy1/trans2", 10)
+image frog1_loop2 = Generate_Animation("images/enemy1/loop2", 10)
+
+image dp1_1:
+    "images/enemy2/scene1/trans1/0065.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0066.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0067.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0068.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0069.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0070.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0071.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0072.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0073.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0074.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0075.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0076.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0077.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0078.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0079.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0080.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0081.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0082.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0083.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0084.jpg"
+    pause .12
+
+image dp1_2:
+    "images/enemy2/scene1/trans1/0085.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0086.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0087.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0088.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0089.jpg"
+    function suck4
+    pause .12
+    "images/enemy2/scene1/trans1/0090.jpg"
+    pause .12
+    "images/enemy2/scene1/trans1/0091.jpg"
+    pause .12
+
+image dp1_3loop:
+    "images/enemy2/scene1/loop1/0092.jpg"
+    pause .12
+    "images/enemy2/scene1/loop1/0093.jpg"
+    pause .12
+    "images/enemy2/scene1/loop1/0094.jpg"
+    pause .12
+    "images/enemy2/scene1/loop1/0095.jpg"
+    function suck4
+    pause .12
+    "images/enemy2/scene1/loop1/0096.jpg"
+    pause .12
+    "images/enemy2/scene1/loop1/0097.jpg"
+    pause .12
+    "images/enemy2/scene1/loop1/0098.jpg"
+    pause .12
+    "images/enemy2/scene1/loop1/0099.jpg"
+    pause .12
+    "images/enemy2/scene1/loop1/0100.jpg"
+    pause .12
+    "images/enemy2/scene1/loop1/0102.jpg"
+    function suck1
+    pause .12
+    "images/enemy2/scene1/loop1/0103.jpg"
+    pause .12
+    repeat
+
+image dp1_4loop:
+    "images/enemy2/scene1/loop2/0092.jpg"
+    pause .12
+    "images/enemy2/scene1/loop2/0093.jpg"
+    pause .12
+    "images/enemy2/scene1/loop2/0094.jpg"
+    pause .12
+    "images/enemy2/scene1/loop2/0095.jpg"
+    function suck3
+    pause .12
+    "images/enemy2/scene1/loop2/0096.jpg"
+    pause .12
+    "images/enemy2/scene1/loop2/0097.jpg"
+    function slurp2
+    pause .12
+    repeat
+
+image dp1_5loop:
+    "images/enemy2/scene1/loop3/0092.jpg"
+    function inside
+    pause .12
+    "images/enemy2/scene1/loop3/0093.jpg"
+    pause .12
+    "images/enemy2/scene1/loop3/0094.jpg"
+    pause .12
+    "images/enemy2/scene1/loop3/0095.jpg"
+    pause .12
+    "images/enemy2/scene1/loop3/0096.jpg"
+    pause .12
+    "images/enemy2/scene1/loop3/0097.jpg"
+    pause .12
+    "images/enemy2/scene1/loop3/0098.jpg"
+    pause .12
+    "images/enemy2/scene1/loop3/0099.jpg"
+    pause .12
+    "images/enemy2/scene1/loop3/0100.jpg"
+    function s1
+    pause .12
+    "images/enemy2/scene1/loop3/0102.jpg"
+    pause .12
+    "images/enemy2/scene1/loop3/0103.jpg"
+    pause .12
+    repeat
+
+image dp1_6cum:
+    "images/enemy2/scene1/cum1/0092.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0093.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0094.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0095.jpg"
+    function suck4
+    pause .12
+    "images/enemy2/scene1/cum1/0096.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0097.jpg"
+    function splat2
+    pause .12
+    "images/enemy2/scene1/cum1/0098.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0099.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0100.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0102.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0103.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0104.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0105.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0106.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0107.jpg"
+    function slurp2
+    pause .12
+    "images/enemy2/scene1/cum1/0108.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0109.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0110.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0111.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0112.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0113.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0114.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0115.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0116.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0117.jpg"
+    function wetsquish
+    pause .12
+    "images/enemy2/scene1/cum1/0118.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0119.jpg"
+    pause .12
+    "images/enemy2/scene1/cum1/0120.jpg"
+    pause .12
+
+image dp1_7cum:
+    "images/enemy2/scene1/cum2/0092.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0093.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0094.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0095.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0096.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0097.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0098.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0099.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0100.jpg"
+    function splat2
+    pause .12
+    "images/enemy2/scene1/cum2/0102.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0103.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0104.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0105.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0106.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0107.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0108.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0109.jpg"
+    function cum1
+    pause .12
+    "images/enemy2/scene1/cum2/0110.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0111.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0112.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0113.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0114.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0115.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0116.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0117.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0118.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0119.jpg"
+    pause .12
+    "images/enemy2/scene1/cum2/0120.jpg"
+    pause .12
+
+
+image medlabon:
+    "images/medlab/anim/1.jpg"
+    pause .5
+    "images/medlab/anim/2.jpg"
+    pause .5
+    "images/medlab/anim/3.jpg"
+    pause .5
+    "images/medlab/anim/4.jpg"
+    pause .5
+    "images/medlab/anim/5.jpg"
+    pause .5
+    "images/medlab/anim/6.jpg"
+    pause .5
+
+
+image vent1_1GateRed:
+    "images/vent1_1gate/0031.jpg"
+    pause .12
+    "images/vent1_1gate/0032.jpg"
+    pause .12
+    "images/vent1_1gate/0033.jpg"
+    pause .12
+    "images/vent1_1gate/0034.jpg"
+    pause .12
+    "images/vent1_1gate/0035.jpg"
+    pause .12
+
+image vent1_1GateGreen:
+    "images/vent1_1gate/0036.jpg"
+    pause .12
+    "images/vent1_1gate/0037.jpg"
+    pause .12
+    "images/vent1_1gate/0038.jpg"
+    pause .12
+    "images/vent1_1gate/0039.jpg"
+    pause .12
+    "images/vent1_1gate/0040.jpg"
+    pause .12
+    "images/vent1_1gate/0041.jpg"
+    pause .12
+    "images/vent1_1gate/0042.jpg"
+    pause .12
+    "images/vent1_1gate/0043.jpg"
+    function frog1
+    pause .12
+    "images/vent1_1gate/0044.jpg"
+    pause .12
+    "images/vent1_1gate/0045.jpg"
+    pause .12
+
+image vent1_3Loop:
+    "images/vent1_3Loop/0085.jpg"
+    pause .12
+    "images/vent1_3Loop/0086.jpg"
+    pause .12
+    "images/vent1_3Loop/0087.jpg"
+    pause .12
+    "images/vent1_3Loop/0088.jpg"
+    pause .12
+    "images/vent1_3Loop/0089.jpg"
+    pause .12
+    "images/vent1_3Loop/0090.jpg"
+    function frog2
+    pause .12
+    "images/vent1_3Loop/0091.jpg"
+    pause .12
+    "images/vent1_3Loop/0092.jpg"
+    pause .12
+    "images/vent1_3Loop/0093.jpg"
+    pause .12
+    "images/vent1_3Loop/0094.jpg"
+    pause .12
+    repeat
+
+image vent1_3Vent1:
+    "images/vent1_3Vent/0071.jpg"
+    pause .12
+    "images/vent1_3Vent/0072.jpg"
+    pause .12
+    "images/vent1_3Vent/0073.jpg"
+    pause .12
+    "images/vent1_3Vent/0074.jpg"
+    pause .12
+    "images/vent1_3Vent/0075.jpg"
+    pause .12
+    "images/vent1_3Vent/0076.jpg"
+    pause .12
+    "images/vent1_3Vent/0077.jpg"
+    pause .12
+    "images/vent1_3Vent/0078.jpg"
+    pause .12
+    "images/vent1_3Vent/0079.jpg"
+    pause .12
+    "images/vent1_3Vent/0080.jpg"
+    pause .12
+    "images/vent1_3Vent/0081.jpg"
+    pause .12
+    "images/vent1_3Vent/0082.jpg"
+    pause .12
+    "images/vent1_3Vent/0083.jpg"
+    pause .12
+    "images/vent1_3Vent/0084.jpg"
+    pause .12
+    "images/vent1_3Vent/0085.jpg"
+    pause .12
+
+image vent1_3Vent2:
+    "images/vent1_3Vent/0085.jpg"
+    pause .12
+    "images/vent1_3Vent/0084.jpg"
+    pause .12
+    "images/vent1_3Vent/0083.jpg"
+    pause .12
+    "images/vent1_3Vent/0082.jpg"
+    pause .12
+    "images/vent1_3Vent/0081.jpg"
+    pause .12
+    "images/vent1_3Vent/0080.jpg"
+    pause .12
+    "images/vent1_3Vent/0079.jpg"
+    pause .12
+    "images/vent1_3Vent/0078.jpg"
+    pause .12
+    "images/vent1_3Vent/0077.jpg"
+    pause .12
+    "images/vent1_3Vent/0076.jpg"
+    pause .12
+    "images/vent1_3Vent/0075.jpg"
+    pause .12
+    "images/vent1_3Vent/0074.jpg"
+    pause .12
+    "images/vent1_3Vent/0073.jpg"
+    pause .12
+    "images/vent1_3Vent/0072.jpg"
+    pause .12
+    "images/vent1_3Vent/0071.jpg"
+    pause .12
+
+image vent1_4Hatch1:
+    "images/vent1_4Hatch/0086.jpg"
+    pause .12
+    "images/vent1_4Hatch/0087.jpg"
+    pause .12
+    "images/vent1_4Hatch/0088.jpg"
+    pause .12
+    "images/vent1_4Hatch/0089.jpg"
+    pause .12
+    "images/vent1_4Hatch/0090.jpg"
+    pause .12
+
+image vent1_4Hatch2:
+    "images/vent1_4Hatch/0090.jpg"
+    pause .12
+    "images/vent1_4Hatch/0091.jpg"
+    pause .12
+    "images/vent1_4Hatch/0092.jpg"
+    pause .12
+    "images/vent1_4Hatch/0093.jpg"
+    pause .12
+    "images/vent1_4Hatch/0094.jpg"
+    pause .12
+    "images/vent1_4Hatch/0095.jpg"
+    pause .12
+
+image vent1_4nest1:
+    "images/vent1_4Hatch/0095.jpg"
+    pause .12
+    "images/vent1_4Hatch/0096.jpg"
+    pause .12
+    "images/vent1_4Hatch/0097.jpg"
+    pause .12
+    "images/vent1_4Hatch/0098.jpg"
+    pause .12
+    "images/vent1_4Hatch/0099.jpg"
+    pause .12
+    "images/vent1_4Hatch/0100.jpg"
+    pause .12
+
+image vent1_4nest2:
+    "images/vent1_4Hatch/0100.jpg"
+    pause .12
+    "images/vent1_4Hatch/0099.jpg"
+    pause .12
+    "images/vent1_4Hatch/0098.jpg"
+    pause .12
+    "images/vent1_4Hatch/0097.jpg"
+    pause .12
+    "images/vent1_4Hatch/0096.jpg"
+    pause .12
+    "images/vent1_4Hatch/0095.jpg"
+    pause .12
+
+
+image vent1_4nestloop:
+    "images/vent1_4Hatch/0100.jpg"
+    pause .12
+    "images/vent1_4Hatch/0101.jpg"
+    pause .12
+    "images/vent1_4Hatch/0102.jpg"
+    pause .12
+    "images/vent1_4Hatch/0103.jpg"
+    pause .12
+    "images/vent1_4Hatch/0104.jpg"
+    pause .12
+    "images/vent1_4Hatch/0105.jpg"
+    pause .12
+    repeat
+
+image vent1_7look:
+    "images/vent1_7enter/0096.jpg"
+    pause .12
+    "images/vent1_7enter/0097.jpg"
+    pause .12
+    "images/vent1_7enter/0098.jpg"
+    pause .12
+    "images/vent1_7enter/0099.jpg"
+    pause .12
+    "images/vent1_7enter/0100.jpg"
+    pause .12
+    "images/vent1_7enter/0101.jpg"
+    pause .12
+    "images/vent1_7enter/0102.jpg"
+    pause .12
+    "images/vent1_7enter/0103.jpg"
+    pause .12
+    "images/vent1_7enter/0104.jpg"
+    pause .12
+    "images/vent1_7enter/0105.jpg"
+    pause .12
+    "images/vent1_7enter/0106.jpg"
+    pause .12
+    "images/vent1_7enter/0107.jpg"
+    pause .12
+    "images/vent1_7enter/0108.jpg"
+    pause .12
+    "images/vent1_7enter/0109.jpg"
+    pause .12
+    "images/vent1_7enter/0110.jpg"
+    pause .12
+
+image vent1_7unlook:
+    "images/vent1_7enter/0110.jpg"
+    pause .12
+    "images/vent1_7enter/0109.jpg"
+    pause .12
+    "images/vent1_7enter/0108.jpg"
+    pause .12
+    "images/vent1_7enter/0107.jpg"
+    pause .12
+    "images/vent1_7enter/0106.jpg"
+    pause .12
+    "images/vent1_7enter/0105.jpg"
+    pause .12
+    "images/vent1_7enter/0104.jpg"
+    pause .12
+    "images/vent1_7enter/0103.jpg"
+    pause .12
+    "images/vent1_7enter/0102.jpg"
+    pause .12
+    "images/vent1_7enter/0101.jpg"
+    pause .12
+    "images/vent1_7enter/0100.jpg"
+    pause .12
+    "images/vent1_7enter/0099.jpg"
+    pause .12
+    "images/vent1_7enter/0098.jpg"
+    pause .12
+    "images/vent1_7enter/0097.jpg"
+    pause .12
+    "images/vent1_7enter/0096.jpg"
+    pause .12
+
+image vent1_7break:
+    "images/vent1_7enter/0111.jpg"
+    pause .12
+    "images/vent1_7enter/0112.jpg"
+    pause .12
+    "images/vent1_7enter/0113.jpg"
+    pause .12
+    "images/vent1_7enter/0114.jpg"
+    pause .12
+    "images/vent1_7enter/0115.jpg"
+    pause .12
+    "images/vent1_7enter/0116.jpg"
+    pause .12
+    "images/vent1_7enter/0117.jpg"
+    pause .12
+    "images/vent1_7enter/0118.jpg"
+    pause .12
+    "images/vent1_7enter/0119.jpg"
+    pause .12
+    "images/vent1_7enter/0120.jpg"
+    function metal2
+    pause .12
+    "images/vent1_7enter/0121.jpg"
+    pause .12
+    "images/vent1_7enter/0122.jpg"
+    pause .12
+    "images/vent1_7enter/0123.jpg"
+    pause .12
+    "images/vent1_7enter/0124.jpg"
+    pause .12
+    "images/vent1_7enter/0125.jpg"
+    pause .12
+    "images/vent1_7enter/0126.jpg"
+    pause .12
+    "images/vent1_7enter/0127.jpg"
+    function metal1
+    pause .12
+    "images/vent1_7enter/0128.jpg"
+    pause .12
+    "images/vent1_7enter/0129.jpg"
+    pause .12
+    "images/vent1_7enter/0130.jpg"
+    pause .12
+    "images/vent1_7enter/0131.jpg"
+    pause .12
+    "images/vent1_7enter/0132.jpg"
+    pause .12
+    "images/vent1_7enter/0134.jpg"
+    pause .12
+    "images/vent1_7enter/0135.jpg"
+    pause .12
+    "images/vent1_7enter/0136.jpg"
+    pause .12
+    "images/vent1_7enter/0137.jpg"
+    pause .12
+    "images/vent1_7enter/0138.jpg"
+    pause .12
+    "images/vent1_7enter/0139.jpg"
+    pause .12
+    "images/vent1_7enter/0140.jpg"
+    pause .12
+    "images/vent1_7enter/0141.jpg"
+    pause .12
+    "images/vent1_7enter/0142.jpg"
+    pause .12
+    "images/vent1_7enter/0143.jpg"
+    pause .12
+    "images/vent1_7enter/0144.jpg"
+    pause .12
+    "images/vent1_7enter/0145.jpg"
+    pause .12
+    "images/vent1_7enter/0146.jpg"
+    pause .12
+
+
+image medroom_catch:
+    "images/enemy1/catch/0230.jpg"
+    pause .12
+    "images/enemy1/catch/0231.jpg"
+    pause .12
+    "images/enemy1/catch/0232.jpg"
+    pause .12
+    "images/enemy1/catch/0233.jpg"
+    pause .12
+    "images/enemy1/catch/0234.jpg"
+    pause .12
+    "images/enemy1/catch/0235.jpg"
+    pause .12
+    "images/enemy1/catch/0236.jpg"
+    pause .12
+    "images/enemy1/catch/0237.jpg"
+    pause .12
+    "images/enemy1/catch/0238.jpg"
+    function fall
+    pause .12
+    "images/enemy1/catch/0239.jpg"
+    pause .12
+    "images/enemy1/catch/0240.jpg"
+    pause .12
+
+image medroom_kill:
+    "images/enemy1/kill/0230.jpg"
+    pause .12
+    "images/enemy1/kill/0231.jpg"
+    pause .12
+    "images/enemy1/kill/0232.jpg"
+    pause .12
+    "images/enemy1/kill/0233.jpg"
+    pause .12
+    "images/enemy1/kill/0234.jpg"
+    pause .12
+    "images/enemy1/kill/0235.jpg"
+    pause .12
+    "images/enemy1/kill/0236.jpg"
+    function shot
+    pause .12
+    "images/enemy1/kill/0237.jpg"
+    pause .12
+    "images/enemy1/kill/0238.jpg"
+    pause .12
+    "images/enemy1/kill/0239.jpg"
+    pause .12
+    "images/enemy1/kill/0240.jpg"
+    pause .12
+    "images/enemy1/kill/0241.jpg"
+    pause .12
+    "images/enemy1/kill/0242.jpg"
+    pause .12
+    "images/enemy1/kill/0243.jpg"
+    pause .12
+    "images/enemy1/kill/0244.jpg"
+    pause .12
+
+image vent14catch2:
+    "images/events/catch1/grab2/0107.jpg"
+    pause .12
+    "images/events/catch1/grab2/0108.jpg"
+    pause .12
+    "images/events/catch1/grab2/0109.jpg"
+    pause .12
+    "images/events/catch1/grab2/0110.jpg"
+    pause .12
+    "images/events/catch1/grab2/0111.jpg"
+    function fall
+    pause .12
+    "images/events/catch1/grab2/0112.jpg"
+    pause .12
+    "images/events/catch1/grab2/0113.jpg"
+    pause .12
+
+image vent14catchdrag:
+    "images/events/catch1/grab1/0115.jpg"
+    pause .12
+    "images/events/catch1/grab1/0116.jpg"
+    pause .12
+    "images/events/catch1/grab1/0117.jpg"
+    pause .12
+    "images/events/catch1/grab1/0118.jpg"
+    pause .12
+    "images/events/catch1/grab1/0119.jpg"
+    pause .12
+    "images/events/catch1/grab1/0120.jpg"
+    pause .12
+    "images/events/catch1/grab1/0121.jpg"
+    pause .12
+    "images/events/catch1/grab1/0122.jpg"
+    pause .12
+    "images/events/catch1/grab1/0123.jpg"
+    pause .12
+    "images/events/catch1/grab1/0124.jpg"
+    pause .12
+    "images/events/catch1/grab1/0125.jpg"
+    pause .12
+    "images/events/catch1/grab1/0126.jpg"
+    pause .12
+    "images/events/catch1/grab1/0127.jpg"
+    pause .12
+    "images/events/catch1/grab1/0128.jpg"
+    pause .12
+    "images/events/catch1/grab1/0129.jpg"
+    pause .12
+    "images/events/catch1/grab1/0130.jpg"
+    pause .12
+    "images/events/catch1/grab1/0131.jpg"
+    pause .12
+    "images/events/catch1/grab1/0132.jpg"
+    pause .12
+    "images/events/catch1/grab1/0133.jpg"
+    pause .12
+    "images/events/catch1/grab1/0134.jpg"
+    pause .12
+    "images/events/catch1/grab1/0135.jpg"
+    pause .12
+    "images/events/catch1/grab1/0136.jpg"
+    pause .12
+
+image vent14catch1:
+    "images/events/catch1/0090.jpg"
+    pause .12
+    "images/events/catch1/0091.jpg"
+    pause .12
+    "images/events/catch1/0092.jpg"
+    pause .12
+    "images/events/catch1/0093.jpg"
+    pause .12
+    "images/events/catch1/0094.jpg"
+    pause .12
+    "images/events/catch1/0095.jpg"
+    pause .12
+    "images/events/catch1/0096.jpg"
+    pause .12
+
+image vent14struggle = Generate_Animation("images/events/catch1/strug", 8)
+
+image vent14trans1:
+    "images/events/catch1/grab2/0115.jpg"
+    pause .12
+    "images/events/catch1/grab2/0116.jpg"
+    pause .12
+    "images/events/catch1/grab2/0117.jpg"
+    pause .12
+    "images/events/catch1/grab2/0118.jpg"
+    pause .12
+    "images/events/catch1/grab2/0119.jpg"
+    pause .12
+    "images/events/catch1/grab2/0120.jpg"
+    pause .12
+    "images/events/catch1/grab2/0121.jpg"
+    pause .12
+    "images/events/catch1/grab2/0122.jpg"
+    pause .12
+    "images/events/catch1/grab2/0123.jpg"
+    pause .12
+    "images/events/catch1/grab2/0124.jpg"
+    pause .12
+    "images/events/catch1/grab2/0125.jpg"
+    pause .12
+    "images/events/catch1/grab2/0126.jpg"
+    pause .12
+    "images/events/catch1/grab2/0127.jpg"
+    pause .12
+    "images/events/catch1/grab2/0128.jpg"
+    pause .12
+    "images/events/catch1/grab2/0129.jpg"
+    pause .12
+    "images/events/catch1/grab2/0130.jpg"
+    pause .12
+    "images/events/catch1/grab2/0131.jpg"
+    pause .12
+    "images/events/catch1/grab2/0132.jpg"
+    pause .12
+    "images/events/catch1/grab2/0133.jpg"
+    pause .12
+    "images/events/catch1/grab2/0134.jpg"
+    pause .12
+    "images/events/catch1/grab2/0135.jpg"
+    pause .12
+    "images/events/catch1/grab2/0136.jpg"
+    pause .12
+    "images/events/catch1/grab2/0137.jpg"
+    pause .12
+    "images/events/catch1/grab2/0138.jpg"
+    pause .12
+    "images/events/catch1/grab2/0139.jpg"
+    pause .12
+    "images/events/catch1/grab2/0140.jpg"
+    pause .12
+    "images/events/catch1/grab2/0141.jpg"
+    pause .12
+    "images/events/catch1/grab2/0142.jpg"
+    pause .12
+    "images/events/catch1/grab2/0143.jpg"
+    pause .12
+    "images/events/catch1/grab2/0144.jpg"
+    function s1
+    pause .12
+    "images/events/catch1/grab2/0145.jpg"
+    pause .12
+    "images/events/catch1/grab2/0146.jpg"
+    pause .12
+    "images/events/catch1/grab2/0147.jpg"
+    pause .12
+    "images/events/catch1/grab2/0148.jpg"
+    pause .12
+    "images/events/catch1/grab2/0149.jpg"
+    function s2
+    pause .12
+    "images/events/catch1/grab2/0150.jpg"
+    pause .12
+
+image vent14loop1:
+    "images/events/catch1/grab2/loop1/0150.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop1/0151.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop1/0152.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop1/0153.jpg"
+    function s1
+    pause .10
+    "images/events/catch1/grab2/loop1/0154.jpg"
+    pause .10
+    repeat
+
+image vent14trans2:
+    "images/events/catch1/grab2/trans1/0155.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0156.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0157.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0158.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0159.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0160.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0161.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0162.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0163.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0164.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0165.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0166.jpg"
+    function fart2
+    pause .12
+    "images/events/catch1/grab2/trans1/0167.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans1/0168.jpg"
+    pause .12
+
+image vent14loop2:
+    "images/events/catch1/grab2/loop2/0168.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop2/0169.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop2/0170.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop2/0171.jpg"
+    function s4
+    pause .10
+    "images/events/catch1/grab2/loop2/0172.jpg"
+    pause .10
+    repeat
+
+image vent14trans3:
+    "images/events/catch1/grab2/trans2/0168.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans2/0169.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans2/0170.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans2/0171.jpg"
+    function splat2
+    pause .12
+    "images/events/catch1/grab2/trans2/0172.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans2/0173.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans2/0174.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans2/0175.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans2/0176.jpg"
+    pause .12
+    "images/events/catch1/grab2/trans2/0177.jpg"
+    pause .12
+
+image vent14loop3:
+    "images/events/catch1/grab2/loop3/0178.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop3/0179.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop3/0180.jpg"
+    pause .10
+    "images/events/catch1/grab2/loop3/0181.jpg"
+    function splat1
+    pause .10
+    "images/events/catch1/grab2/loop3/0182.jpg"
+    pause .10
+    repeat
+
+image vent14cum:
+    "images/events/catch1/grab2/cum/0178.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0179.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0180.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0181.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0182.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0183.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0184.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0185.jpg"
+    function splat
+    pause .10
+    "images/events/catch1/grab2/cum/0186.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0187.jpg"
+    pause .10
+    "images/events/catch1/grab2/cum/0188.jpg"
+    pause .10
+
+image medlabloop1:
+    "images/enemy1/event1/loop1/0198.jpg"
+    pause .12
+    "images/enemy1/event1/loop1/0199.jpg"
+    pause .12
+    "images/enemy1/event1/loop1/0200.jpg"
+    pause .12
+    "images/enemy1/event1/loop1/0201.jpg"
+    function suck1
+    pause .12
+    "images/enemy1/event1/loop1/0202.jpg"
+    pause .12
+    "images/enemy1/event1/loop1/0203.jpg"
+    pause .12
+    "images/enemy1/event1/loop1/0204.jpg"
+    pause .12
+    "images/enemy1/event1/loop1/0205.jpg"
+    pause .12
+    "images/enemy1/event1/loop1/0206.jpg"
+    function suck1
+    pause .12
+    "images/enemy1/event1/loop1/0207.jpg"
+    pause .12
+    repeat
+
+image medlabloop2:
+    "images/enemy1/event1/loop2/0198.jpg"
+    pause .12
+    "images/enemy1/event1/loop2/0199.jpg"
+    pause .12
+    "images/enemy1/event1/loop2/0200.jpg"
+    pause .12
+    "images/enemy1/event1/loop2/0201.jpg"
+    function suck3
+    pause .12
+    "images/enemy1/event1/loop2/0202.jpg"
+    pause .12
+    "images/enemy1/event1/loop2/0203.jpg"
+    pause .12
+    "images/enemy1/event1/loop2/0204.jpg"
+    pause .12
+    "images/enemy1/event1/loop2/0205.jpg"
+    pause .12
+    "images/enemy1/event1/loop2/0206.jpg"
+    function suck3
+    pause .12
+    "images/enemy1/event1/loop2/0207.jpg"
+    pause .12
+    repeat
+
+image medlabcum:
+    "images/enemy1/event1/cum/0198.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0199.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0200.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0201.jpg"
+    function suck4
+    pause .12
+    "images/enemy1/event1/cum/0202.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0203.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0204.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0205.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0206.jpg"
+    function cum1
+    pause .12
+    "images/enemy1/event1/cum/0207.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0208.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0209.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0210.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0211.jpg"
+    function splat1
+    pause .12
+    "images/enemy1/event1/cum/0212.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0213.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0214.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0215.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0216.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0217.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0218.jpg"
+    function wetsquish
+    pause .12
+    "images/enemy1/event1/cum/0219.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0220.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0221.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0222.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0223.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0224.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0225.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0226.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0227.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0228.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0229.jpg"
+    pause .12
+    "images/enemy1/event1/cum/0230.jpg"
+    pause .12
+
+image runtrans:
+    "images/enemy2/trans1/0095.jpg"
+    pause .12
+    "images/enemy2/trans1/0096.jpg"
+    pause .12
+    "images/enemy2/trans1/0097.jpg"
+    pause .12
+    "images/enemy2/trans1/0098.jpg"
+    function frog1
+    pause .12
+    "images/enemy2/trans1/0099.jpg"
+    pause .12
+    "images/enemy2/trans1/0100.jpg"
+    pause .12
+    "images/enemy2/trans1/0101.jpg"
+    pause .12
+    "images/enemy2/trans1/0102.jpg"
+    pause .12
+    "images/enemy2/trans1/0103.jpg"
+    pause .12
+    "images/enemy2/trans1/0104.jpg"
+    pause .12
+    "images/enemy2/trans1/0105.jpg"
+    function frog2
+    pause .12
+    "images/enemy2/trans1/0106.jpg"
+    pause .12
+    "images/enemy2/trans1/0107.jpg"
+    pause .12
+    "images/enemy2/trans1/0108.jpg"
+    pause .12
+    "images/enemy2/trans1/0109.jpg"
+    pause .12
+    "images/enemy2/trans1/0110.jpg"
+    pause .12
+    "images/enemy2/trans1/0111.jpg"
+    pause .12
+
+
+image tenttrans1:
+    "images/vent1_5fwd/0110.jpg"
+    pause .12
+    "images/vent1_5fwd/0111.jpg"
+    pause .12
+    "images/tentacle/trans1/0083.jpg"
+    pause .12
+    "images/tentacle/trans1/0084.jpg"
+    pause .12
+    "images/tentacle/trans1/0085.jpg"
+    pause .12
+    "images/tentacle/trans1/0086.jpg"
+    pause .12
+    "images/tentacle/trans1/0087.jpg"
+    pause .12
+    "images/tentacle/trans1/0088.jpg"
+    pause .12
+    "images/tentacle/trans1/0089.jpg"
+    pause .12
+    "images/tentacle/trans1/0090.jpg"
+    pause .12
+    "images/tentacle/trans1/0091.jpg"
+    pause .12
+    "images/tentacle/trans1/0092.jpg"
+    pause .12
+    "images/tentacle/trans1/0093.jpg"
+    pause .12
+    "images/tentacle/trans1/0094.jpg"
+    pause .12
+    "images/tentacle/trans1/0095.jpg"
+    pause .12
+    "images/tentacle/trans1/0096.jpg"
+    pause .12
+    "images/tentacle/trans1/0097.jpg"
+    pause .12
+    "images/tentacle/trans1/0099.jpg"
+    pause .12
+    "images/tentacle/trans1/0100.jpg"
+    pause .12
+    "images/tentacle/trans1/0101.jpg"
+    pause .12
+    "images/tentacle/trans1/0102.jpg"
+    pause .12
+    "images/tentacle/trans1/0103.jpg"
+    function s1
+    pause .12
+
+image tentstruggle:
+    "images/tentacle/loop1/0103.jpg"
+    pause .12
+    "images/tentacle/loop1/0104.jpg"
+    pause .12
+    "images/tentacle/loop1/0105.jpg"
+    pause .12
+    "images/tentacle/loop1/0106.jpg"
+    pause .12
+    "images/tentacle/loop1/0107.jpg"
+    pause .12
+    "images/tentacle/loop1/0108.jpg"
+    pause .12
+    "images/tentacle/loop1/0109.jpg"
+    pause .12
+    "images/tentacle/loop1/0110.jpg"
+    pause .12
+    "images/tentacle/loop1/0111.jpg"
+    pause .12
+    repeat
+
+image tentescape:
+    "images/tentacle/escape1/0103.jpg"
+    pause .12
+    "images/tentacle/escape1/0104.jpg"
+    pause .12
+    "images/tentacle/escape1/0105.jpg"
+    pause .12
+    "images/tentacle/escape1/0106.jpg"
+    pause .12
+    "images/tentacle/escape1/0107.jpg"
+    pause .12
+    "images/tentacle/escape1/0108.jpg"
+    pause .12
+    "images/tentacle/escape1/0109.jpg"
+    pause .12
+    "images/tentacle/escape1/0110.jpg"
+    pause .12
+    "images/tentacle/escape1/0111.jpg"
+    pause .12
+    "images/tentacle/escape1/0112.jpg"
+    pause .12
+    "images/tentacle/escape1/0113.jpg"
+    pause .12
+    "images/tentacle/escape1/0114.jpg"
+    pause .12
+    "images/tentacle/escape1/0115.jpg"
+    pause .12
+    "images/tentacle/escape1/0116.jpg"
+    pause .12
+    "images/tentacle/escape1/0117.jpg"
+    pause .12
+    "images/tentacle/escape1/0118.jpg"
+    pause .12
+
+image tenttrans2:
+    "images/tentacle/trans2/0112.jpg"
+    pause .12
+    "images/tentacle/trans2/0113.jpg"
+    pause .12
+    "images/tentacle/trans2/0114.jpg"
+    pause .12
+    "images/tentacle/trans2/0115.jpg"
+    pause .12
+    "images/tentacle/trans2/0116.jpg"
+    pause .12
+    "images/tentacle/trans2/0117.jpg"
+    pause .12
+    "images/tentacle/trans2/0118.jpg"
+    pause .12
+    "images/tentacle/trans2/0119.jpg"
+    function strap
+    pause .12
+    "images/tentacle/trans2/0120.jpg"
+    pause .12
+    "images/tentacle/trans2/0121.jpg"
+    pause .12
+    "images/tentacle/trans2/0122.jpg"
+    pause .12
+    "images/tentacle/trans2/0123.jpg"
+    pause .12
+    "images/tentacle/trans2/0124.jpg"
+    pause .12
+    "images/tentacle/trans2/0125.jpg"
+    pause .12
+    "images/tentacle/trans2/0126.jpg"
+    pause .12
+    "images/tentacle/trans2/0127.jpg"
+    pause .12
+    "images/tentacle/trans2/0128.jpg"
+    pause .12
+    "images/tentacle/trans2/0129.jpg"
+    pause .12
+    "images/tentacle/trans2/0130.jpg"
+    pause .12
+
+image tenttrans3:
+    "images/tentacle/trans3/0130.jpg"
+    pause .12
+    "images/tentacle/trans3/0131.jpg"
+    pause .12
+    "images/tentacle/trans3/0132.jpg"
+    pause .12
+    "images/tentacle/trans3/0133.jpg"
+    pause .12
+    "images/tentacle/trans3/0134.jpg"
+    pause .12
+    "images/tentacle/trans3/0135.jpg"
+    pause .12
+    "images/tentacle/trans3/0136.jpg"
+    pause .12
+    "images/tentacle/trans3/0137.jpg"
+    pause .12
+    "images/tentacle/trans3/0138.jpg"
+    pause .12
+    "images/tentacle/trans3/0139.jpg"
+    pause .12
+
+image tentloop1:
+    "images/tentacle/loop2/0139.jpg"
+    pause .12
+    "images/tentacle/loop2/0140.jpg"
+    pause .12
+    "images/tentacle/loop2/0141.jpg"
+    function s4
+    pause .12
+    "images/tentacle/loop2/0142.jpg"
+    pause .12
+    "images/tentacle/loop2/0143.jpg"
+    pause .12
+    "images/tentacle/loop2/0144.jpg"
+    pause .12
+    repeat
+
+image tenttrans4:
+    "images/tentacle/trans4/0130.jpg"
+    pause .12
+    "images/tentacle/trans4/0131.jpg"
+    pause .12
+    "images/tentacle/trans4/0132.jpg"
+    pause .12
+    "images/tentacle/trans4/0133.jpg"
+    pause .12
+    "images/tentacle/trans4/0134.jpg"
+    pause .12
+    "images/tentacle/trans4/0135.jpg"
+    pause .12
+    "images/tentacle/trans4/0136.jpg"
+    pause .12
+    "images/tentacle/trans4/0137.jpg"
+    pause .12
+    "images/tentacle/trans4/0138.jpg"
+    pause .12
+    "images/tentacle/trans4/0139.jpg"
+    pause .12
+    "images/tentacle/trans4/0140.jpg"
+    function n1
+    pause .12
+    "images/tentacle/trans4/0141.jpg"
+    pause .12
+    "images/tentacle/trans4/0142.jpg"
+    pause .12
+    "images/tentacle/trans4/0143.jpg"
+    pause .12
+    "images/tentacle/trans4/0144.jpg"
+    pause .12
+    "images/tentacle/trans4/0145.jpg"
+    pause .12
+    "images/tentacle/trans4/0146.jpg"
+    pause .12
+    "images/tentacle/trans4/0147.jpg"
+    pause .12
+    "images/tentacle/trans4/0148.jpg"
+    pause .12
+    "images/tentacle/trans4/0149.jpg"
+    pause .12
+    "images/tentacle/trans4/0150.jpg"
+    pause .12
+
+image tentloop2:
+    "images/tentacle/loop3/0150.jpg"
+    pause .12
+    "images/tentacle/loop3/0151.jpg"
+    pause .12
+    "images/tentacle/loop3/0152.jpg"
+    pause .12
+    "images/tentacle/loop3/0153.jpg"
+    pause .12
+    "images/tentacle/loop3/0154.jpg"
+    pause .12
+    "images/tentacle/loop3/0155.jpg"
+    function inside
+    pause .12
+    "images/tentacle/loop3/0156.jpg"
+    pause .12
+    "images/tentacle/loop3/0157.jpg"
+    pause .12
+    "images/tentacle/loop3/0158.jpg"
+    pause .12
+    repeat
+
+image tenttrans5:
+    "images/tentacle/trans5/0159.jpg"
+    pause .12
+    "images/tentacle/trans5/0160.jpg"
+    pause .12
+    "images/tentacle/trans5/0161.jpg"
+    pause .12
+    "images/tentacle/trans5/0162.jpg"
+    pause .12
+    "images/tentacle/trans5/0163.jpg"
+    pause .12
+    "images/tentacle/trans5/0164.jpg"
+    pause .12
+    "images/tentacle/trans5/0165.jpg"
+    pause .12
+    "images/tentacle/trans5/0166.jpg"
+    pause .12
+    "images/tentacle/trans5/0167.jpg"
+    pause .12
+    "images/tentacle/trans5/0168.jpg"
+    pause .12
+    "images/tentacle/trans5/0169.jpg"
+    pause .12
+    "images/tentacle/trans5/0170.jpg"
+    pause .12
+    "images/tentacle/trans5/0171.jpg"
+    pause .12
+    "images/tentacle/trans5/0172.jpg"
+    function s1
+    pause .12
+    "images/tentacle/trans5/0173.jpg"
+    pause .12
+    "images/tentacle/trans5/0174.jpg"
+    pause .12
+    "images/tentacle/trans5/0175.jpg"
+    pause .12
+    "images/tentacle/trans5/0176.jpg"
+    pause .12
+    "images/tentacle/trans5/0177.jpg"
+    pause .12
+    "images/tentacle/trans5/0178.jpg"
+    function s2
+    pause .12
+    "images/tentacle/trans5/0179.jpg"
+    pause .12
+    "images/tentacle/trans5/0180.jpg"
+    pause .12
+    "images/tentacle/trans5/0181.jpg"
+    pause .12
+    "images/tentacle/trans5/0182.jpg"
+    pause .12
+    "images/tentacle/trans5/0183.jpg"
+    function splat2
+    pause .12
+    "images/tentacle/trans5/0184.jpg"
+    pause .12
+    "images/tentacle/trans5/0185.jpg"
+    pause .12
+    "images/tentacle/trans5/0186.jpg"
+    pause .12
+    "images/tentacle/trans5/0187.jpg"
+    pause .12
+
+image tentloop3:
+    "images/tentacle/loop4/0180.jpg"
+    pause .12
+    "images/tentacle/loop4/0181.jpg"
+    pause .12
+    "images/tentacle/loop4/0182.jpg"
+    pause .12
+    "images/tentacle/loop4/0183.jpg"
+    pause .12
+    "images/tentacle/loop4/0184.jpg"
+    function splat1
+    pause .12
+    "images/tentacle/loop4/0185.jpg"
+    pause .12
+    "images/tentacle/loop4/0186.jpg"
+    pause .12
+    "images/tentacle/loop4/0187.jpg"
+    pause .12
+    repeat
+
+image tentcum:
+    "images/tentacle/cum/0188.jpg"
+    pause .12
+    "images/tentacle/cum/0189.jpg"
+    pause .12
+    "images/tentacle/cum/0190.jpg"
+    pause .12
+    "images/tentacle/cum/0191.jpg"
+    pause .12
+    "images/tentacle/cum/0192.jpg"
+    pause .12
+    "images/tentacle/cum/0193.jpg"
+    pause .12
+    "images/tentacle/cum/0194.jpg"
+    pause .12
+    "images/tentacle/cum/0195.jpg"
+    pause .12
+    "images/tentacle/cum/0196.jpg"
+    pause .12
+    "images/tentacle/cum/0197.jpg"
+    pause .12
+    "images/tentacle/cum/0198.jpg"
+    pause .12
+    "images/tentacle/cum/0199.jpg"
+    function splat2
+    pause .12
+    "images/tentacle/cum/0200.jpg"
+    pause .12
+    "images/tentacle/cum/0201.jpg"
+    pause .12
+    "images/tentacle/cum/0202.jpg"
+    pause .12
+    "images/tentacle/cum/0203.jpg"
+    pause .12
+    "images/tentacle/cum/0204.jpg"
+    pause .12
+    "images/tentacle/cum/0205.jpg"
+    pause .12
+    "images/tentacle/cum/0206.jpg"
+    pause .12
+    "images/tentacle/cum/0207.jpg"
+    pause .12
+    "images/tentacle/cum/0208.jpg"
+    function cum1
+    pause .12
+    "images/tentacle/cum/0209.jpg"
+    pause .12
+    "images/tentacle/cum/0210.jpg"
+    pause .12
+    "images/tentacle/cum/0211.jpg"
+    pause .12
+    "images/tentacle/cum/0212.jpg"
+    pause .12
+    "images/tentacle/cum/0213.jpg"
+    pause .12
+    "images/tentacle/cum/0214.jpg"
+    pause .12
+    "images/tentacle/cum/0215.jpg"
+    pause .12
+    "images/tentacle/cum/0216.jpg"
+    pause .12
+    "images/tentacle/cum/0217.jpg"
+    pause .12
+    "images/tentacle/cum/0218.jpg"
+    function cum1
+    pause .12
+    "images/tentacle/cum/0219.jpg"
+    pause .12
+    "images/tentacle/cum/0220.jpg"
+    pause .12
+    "images/tentacle/cum/0221.jpg"
+    function squish
+    pause .12
+    "images/tentacle/cum/0222.jpg"
+    pause .12
+    "images/tentacle/cum/0223.jpg"
+    pause .12
+    "images/tentacle/cum/0224.jpg"
+    pause .12
+    "images/tentacle/cum/0225.jpg"
+    pause .12
+    "images/tentacle/cum/0226.jpg"
+    pause .12
+    "images/tentacle/cum/0227.jpg"
+    function s2
+    pause .12
+    "images/tentacle/cum/0228.jpg"
+    pause .12
+    "images/tentacle/cum/0229.jpg"
+    pause .12
+    "images/tentacle/cum/0230.jpg"
+    pause .12
+    "images/tentacle/cum/0231.jpg"
+    pause .12
+    "images/tentacle/cum/0232.jpg"
+    pause .12
+    "images/tentacle/cum/0233.jpg"
+    pause .12
+    "images/tentacle/cum/0234.jpg"
+    pause .12
+    "images/tentacle/cum/0235.jpg"
+    pause .12
+    "images/tentacle/cum/0236.jpg"
+    pause .12
+    "images/tentacle/cum/0237.jpg"
+    pause .12
+    "images/tentacle/cum/0238.jpg"
+    pause .12
+    "images/tentacle/cum/0239.jpg"
+    pause .12
+    "images/tentacle/cum/0240.jpg"
+    pause .12
+
+image 16event1:
+    "images/events/catch2/trans1/0066.jpg"
+    pause .12
+    "images/events/catch2/trans1/0067.jpg"
+    pause .12
+    "images/events/catch2/trans1/0068.jpg"
+    pause .12
+    "images/events/catch2/trans1/0069.jpg"
+    pause .12
+    "images/events/catch2/trans1/0070.jpg"
+    pause .12
+    "images/events/catch2/trans1/0071.jpg"
+    pause .12
+    "images/events/catch2/trans1/0072.jpg"
+    pause .12
+    "images/events/catch2/trans1/0073.jpg"
+    pause .12
+    "images/events/catch2/trans1/0074.jpg"
+    pause .12
+    "images/events/catch2/trans1/0075.jpg"
+    pause .12
+    "images/events/catch2/trans1/0078.jpg"
+    pause .12
+    "images/events/catch2/trans1/0077.jpg"
+    pause .12
+    "images/events/catch2/trans1/0078.jpg"
+    pause .12
+    "images/events/catch2/trans1/0079.jpg"
+    pause .12
+    "images/events/catch2/trans1/0080.jpg"
+    function fall
+    pause .12
+    "images/events/catch2/trans1/0081.jpg"
+    pause .12
+
+image 16event2:
+    "images/events/catch2/trans2/0082.jpg"
+    pause .12
+    "images/events/catch2/trans2/0083.jpg"
+    pause .12
+    "images/events/catch2/trans2/0084.jpg"
+    pause .12
+    "images/events/catch2/trans2/0085.jpg"
+    pause .12
+    "images/events/catch2/trans2/0086.jpg"
+    pause .12
+    "images/events/catch2/trans2/0087.jpg"
+    pause .12
+    "images/events/catch2/trans2/0088.jpg"
+    pause .12
+    "images/events/catch2/trans2/0089.jpg"
+    pause .12
+    "images/events/catch2/trans2/0090.jpg"
+    pause .12
+    "images/events/catch2/trans2/0091.jpg"
+    pause .12
+    "images/events/catch2/trans2/0092.jpg"
+    pause .12
+    "images/events/catch2/trans2/0093.jpg"
+    pause .12
+    "images/events/catch2/trans2/0094.jpg"
+    pause .12
+    "images/events/catch2/trans2/0095.jpg"
+    pause .12
+    "images/events/catch2/trans2/0096.jpg"
+    pause .12
+    "images/events/catch2/trans2/0097.jpg"
+    pause .12
+    "images/events/catch2/trans2/0098.jpg"
+    pause .12
+    "images/events/catch2/trans2/0099.jpg"
+    pause .12
+    "images/events/catch2/trans2/0100.jpg"
+    pause .12
+
+image 16eventstruggle:
+    "images/events/catch2/struggle/0101.jpg"
+    pause .12
+    "images/events/catch2/struggle/0102.jpg"
+    pause .12
+    "images/events/catch2/struggle/0103.jpg"
+    pause .12
+    "images/events/catch2/struggle/0104.jpg"
+    pause .12
+    "images/events/catch2/struggle/0105.jpg"
+    pause .12
+    "images/events/catch2/struggle/0106.jpg"
+    pause .12
+    "images/events/catch2/struggle/0107.jpg"
+    pause .12
+    "images/events/catch2/struggle/0108.jpg"
+    pause .12
+    "images/events/catch2/struggle/0109.jpg"
+    pause .12
+    "images/events/catch2/struggle/0110.jpg"
+    pause .12
+    repeat
+
+image 16event3:
+    "images/events/catch2/loop1/0112.jpg"
+    pause .12
+    "images/events/catch2/loop1/0113.jpg"
+    pause .12
+    "images/events/catch2/loop1/0114.jpg"
+    pause .12
+    "images/events/catch2/loop1/0115.jpg"
+    pause .12
+    "images/events/catch2/loop1/0116.jpg"
+    pause .12
+    "images/events/catch2/loop1/0117.jpg"
+    pause .12
+    "images/events/catch2/loop1/0118.jpg"
+    function inside
+    pause .12
+    "images/events/catch2/loop1/0119.jpg"
+    pause .12
+    "images/events/catch2/loop1/0120.jpg"
+    pause .12
+    "images/events/catch2/loop1/0121.jpg"
+    pause .12
+    repeat
+
+image 16event4:
+    "images/events/catch2/trans3/0125.jpg"
+    pause .12
+    "images/events/catch2/trans3/0126.jpg"
+    pause .12
+    "images/events/catch2/trans3/0127.jpg"
+    pause .12
+    "images/events/catch2/trans3/0128.jpg"
+    pause .12
+    "images/events/catch2/trans3/0129.jpg"
+    pause .12
+    "images/events/catch2/trans3/0130.jpg"
+    pause .12
+    "images/events/catch2/trans3/0131.jpg"
+    pause .12
+    "images/events/catch2/trans3/0132.jpg"
+    function splat1
+    pause .12
+    "images/events/catch2/trans3/0133.jpg"
+    pause .12
+    "images/events/catch2/trans3/0134.jpg"
+    pause .12
+    "images/events/catch2/trans3/0135.jpg"
+    pause .12
+
+image 16event5:
+    "images/events/catch2/loop2/0135.jpg"
+    pause .12
+    "images/events/catch2/loop2/0136.jpg"
+    pause .12
+    "images/events/catch2/loop2/0137.jpg"
+    pause .12
+    "images/events/catch2/loop2/0138.jpg"
+    function slap1
+    pause .12
+    "images/events/catch2/loop2/0139.jpg"
+    pause .12
+    "images/events/catch2/loop2/0140.jpg"
+    pause .12
+    "images/events/catch2/loop2/0141.jpg"
+    pause .12
+    repeat
+
+image 16eventcum:
+    "images/events/catch2/cum/0142.jpg"
+    pause .12
+    "images/events/catch2/cum/0143.jpg"
+    pause .12
+    "images/events/catch2/cum/0144.jpg"
+    pause .12
+    "images/events/catch2/cum/0145.jpg"
+    pause .12
+    "images/events/catch2/cum/0146.jpg"
+    function splat2
+    pause .12
+    "images/events/catch2/cum/0147.jpg"
+    pause .12
+    "images/events/catch2/cum/0148.jpg"
+    pause .12
+    "images/events/catch2/cum/0149.jpg"
+    pause .12
+    "images/events/catch2/cum/0150.jpg"
+    pause .12
+    "images/events/catch2/cum/0151.jpg"
+    pause .12
+    "images/events/catch2/cum/0152.jpg"
+    function cum1
+    pause .12
+    "images/events/catch2/cum/0153.jpg"
+    pause .12
+    "images/events/catch2/cum/0154.jpg"
+    pause .12
+    "images/events/catch2/cum/0155.jpg"
+    pause .12
+    "images/events/catch2/cum/0156.jpg"
+    pause .12
+    "images/events/catch2/cum/0157.jpg"
+    pause .12
+    "images/events/catch2/cum/0158.jpg"
+    function cum1
+    pause .12
+    "images/events/catch2/cum/0159.jpg"
+    pause .12
+    "images/events/catch2/cum/0160.jpg"
+    pause .12
+    "images/events/catch2/cum/0161.jpg"
+    pause .12
+    "images/events/catch2/cum/0162.jpg"
+    pause .12
+    "images/events/catch2/cum/0163.jpg"
+    pause .12
+    "images/events/catch2/cum/0164.jpg"
+    pause .12
+    "images/events/catch2/cum/0165.jpg"
+    pause .12
+    "images/events/catch2/cum/0166.jpg"
+    pause .12
+    "images/events/catch2/cum/0167.jpg"
+    pause .12
+    "images/events/catch2/cum/0168.jpg"
+    pause .12
+    "images/events/catch2/cum/0169.jpg"
+    pause .12
+    "images/events/catch2/cum/0170.jpg"
+    pause .12
+
+image flesh1dead1:
+    "images/explosion/1/0085.jpg"
+    pause .12
+    "images/explosion/1/0086.jpg"
+    pause .12
+    "images/explosion/1/0087.jpg"
+    pause .12
+    "images/explosion/1/0088.jpg"
+    pause .12
+    "images/explosion/1/0089.jpg"
+    pause .12
+    "images/explosion/1/0090.jpg"
+    pause .12
+    "images/explosion/1/0091.jpg"
+    pause .12
+    "images/explosion/1/0092.jpg"
+    pause .12
+    "images/explosion/1/0093.jpg"
+    pause .12
+    "images/explosion/1/0094.jpg"
+    pause .12
+    "images/explosion/1/0095.jpg"
+    pause .12
+
+image flesh1dead2:
+    "images/explosion/2/0095.jpg"
+    pause .12
+    "images/explosion/2/0096.jpg"
+    pause .12
+    "images/explosion/2/0097.jpg"
+    pause .12
+    "images/explosion/2/0098.jpg"
+    pause .12
+    "images/explosion/2/0099.jpg"
+    pause .12
+    "images/explosion/2/0100.jpg"
+    pause .12
+    "images/explosion/2/0101.jpg"
+    pause .12
+    "images/explosion/2/0102.jpg"
+    pause .12
+    "images/explosion/2/0103.jpg"
+    pause .12
+    "images/explosion/2/0104.jpg"
+    pause .12
+    "images/explosion/2/0105.jpg"
+    pause .12
+
+image vent5open:
+    "images/vent4_0hatch/0085.jpg"
+    pause .12
+    "images/vent4_0hatch/0086.jpg"
+    pause .12
+    "images/vent4_0hatch/0087.jpg"
+    pause .12
+    "images/vent4_0hatch/0088.jpg"
+    pause .12
+    "images/vent4_0hatch/0089.jpg"
+    pause .12
+    "images/vent4_0hatch/0090.jpg"
+    pause .12
+    "images/vent4_0hatch/0091.jpg"
+    function metal2
+    pause .12
+    "images/vent4_0hatch/0092.jpg"
+    pause .12
+    "images/vent4_0hatch/0093.jpg"
+    pause .12
+    "images/vent4_0hatch/0094.jpg"
+    pause .12
+    "images/vent4_0hatch/0095.jpg"
+    pause .12
+
+image amihatch1:
+    "images/vent5_5hatch/0001.jpg"
+    pause .12
+    "images/vent5_5hatch/0002.jpg"
+    pause .12
+    "images/vent5_5hatch/0003.jpg"
+    pause .12
+    "images/vent5_5hatch/0004.jpg"
+    pause .12
+    "images/vent5_5hatch/0005.jpg"
+    pause .12
+
+image amihatch2:
+    "images/vent5_5hatch/0005.jpg"
+    pause .12
+    "images/vent5_5hatch/0004.jpg"
+    pause .12
+    "images/vent5_5hatch/0003.jpg"
+    pause .12
+    "images/vent5_5hatch/0002.jpg"
+    pause .12
+    "images/vent5_5hatch/0001.jpg"
+    pause .12
+
+image amihatch3:
+    "images/vent5_5hatch/0005.jpg"
+    pause .12
+    "images/vent5_5hatch/0006.jpg"
+    pause .12
+    "images/vent5_5hatch/0007.jpg"
+    pause .12
+    "images/vent5_5hatch/0008.jpg"
+    function metaldoor
+    pause .12
+    "images/vent5_5hatch/0009.jpg"
+    pause .12
+    "images/vent5_5hatch/0010.jpg"
+    pause .12
+    "images/vent5_5hatch/0011.jpg"
+    pause .12
+    "images/vent5_5hatch/0012.jpg"
+    pause .12
+    "images/vent5_5hatch/0013.jpg"
+    pause .12
+    "images/vent5_5hatch/0014.jpg"
+    pause .12
+    "images/vent5_5hatch/0015.jpg"
+    pause .12
+
+image ami1:
+    "images/ami/1/0001.jpg"
+    pause 0.1
+    "images/ami/1/0002.jpg"
+    pause 0.1
+    "images/ami/1/0003.jpg"
+    pause 0.1
+    "images/ami/1/0004.jpg"
+    pause 0.1
+    "images/ami/1/0005.jpg"
+    pause 0.1
+    "images/ami/1/0006.jpg"
+    pause 0.1
+    "images/ami/1/0007.jpg"
+    function inside
+    pause 0.1
+    "images/ami/1/0008.jpg"
+    pause 0.1
+    "images/ami/1/0009.jpg"
+    pause 0.1
+    repeat
+
+image ami2:
+    "images/ami/2/0010.jpg"
+    pause 0.1
+    "images/ami/2/0011.jpg"
+    pause 0.1
+    "images/ami/2/0012.jpg"
+    pause 0.1
+    "images/ami/2/0013.jpg"
+    pause 0.1
+    "images/ami/2/0014.jpg"
+    pause 0.1
+    "images/ami/2/0015.jpg"
+    pause 0.1
+    "images/ami/2/0016.jpg"
+    function s3
+    pause 0.1
+    "images/ami/2/0017.jpg"
+    pause 0.1
+    "images/ami/2/0018.jpg"
+    pause 0.1
+    "images/ami/2/0019.jpg"
+    pause 0.1
+    "images/ami/2/0020.jpg"
+    pause 0.1
+    "images/ami/2/0021.jpg"
+    pause 0.1
+    "images/ami/2/0022.jpg"
+    pause 0.1
+    "images/ami/2/0023.jpg"
+    pause 0.1
+    "images/ami/2/0024.jpg"
+    function s4
+    pause 0.1
+    "images/ami/2/0025.jpg"
+    pause 0.1
+    "images/ami/2/0026.jpg"
+    pause 0.1
+    "images/ami/2/0027.jpg"
+    pause 0.1
+    "images/ami/2/0028.jpg"
+    pause 0.1
+    "images/ami/2/0029.jpg"
+    pause 0.1
+    "images/ami/2/0030.jpg"
+    pause 0.1
+    "images/ami/2/0031.jpg"
+    pause 0.1
+    "images/ami/2/0032.jpg"
+    pause 0.1
+    "images/ami/2/0033.jpg"
+    pause 0.1
+    "images/ami/2/0034.jpg"
+    pause 0.1
+    "images/ami/2/0035.jpg"
+    pause 0.1
+    "images/ami/2/0036.jpg"
+    pause 0.1
+    "images/ami/2/0037.jpg"
+    function s1
+    pause 0.1
+    "images/ami/2/0038.jpg"
+    pause 0.1
+    "images/ami/2/0039.jpg"
+    pause 0.1
+    "images/ami/2/0040.jpg"
+    pause 0.1
+    "images/ami/2/0041.jpg"
+    pause 0.1
+    "images/ami/2/0042.jpg"
+    pause 0.1
+    "images/ami/2/0043.jpg"
+    pause 0.1
+    "images/ami/2/0044.jpg"
+    pause 0.1
+    "images/ami/2/0045.jpg"
+    pause 0.1
+    "images/ami/2/0046.jpg"
+    function s2
+    pause 0.1
+    "images/ami/2/0047.jpg"
+    pause 0.1
+    "images/ami/2/0048.jpg"
+    pause 0.1
+    "images/ami/2/0049.jpg"
+    pause 0.1
+    "images/ami/2/0050.jpg"
+    pause 0.1
+
+image ami3:
+    "images/ami/3/0050.jpg"
+    pause 0.1
+    "images/ami/3/0051.jpg"
+    pause 0.1
+    "images/ami/3/0052.jpg"
+    pause 0.1
+    "images/ami/3/0053.jpg"
+    function slurp
+    pause 0.1
+    "images/ami/3/0054.jpg"
+    pause 0.1
+    "images/ami/3/0055.jpg"
+    pause 0.1
+    "images/ami/3/0056.jpg"
+    pause 0.1
+    "images/ami/3/0057.jpg"
+    pause 0.1
+    "images/ami/3/0058.jpg"
+    pause 0.1
+    "images/ami/3/0059.jpg"
+    pause 0.1
+    "images/ami/3/0060.jpg"
+    pause 0.1
+    "images/ami/3/0061.jpg"
+    pause 0.1
+    "images/ami/3/0062.jpg"
+    pause 0.1
+    repeat
+
+image ami4:
+    "images/ami/4/0063.jpg"
+    pause 0.12
+    "images/ami/4/0064.jpg"
+    function cum1
+    pause 0.12
+    "images/ami/4/0065.jpg"
+    pause 0.12
+    "images/ami/4/0066.jpg"
+    pause 0.12
+    "images/ami/4/0067.jpg"
+    pause 0.12
+    "images/ami/4/0068.jpg"
+    pause 0.12
+    "images/ami/4/0069.jpg"
+    pause 0.12
+    "images/ami/4/0070.jpg"
+    pause 0.12
+    "images/ami/4/0071.jpg"
+    pause 0.12
+    "images/ami/4/0072.jpg"
+    pause 0.12
+    "images/ami/4/0073.jpg"
+    function splat1
+    pause 0.12
+    "images/ami/4/0074.jpg"
+    pause 0.12
+    "images/ami/4/0075.jpg"
+    pause 0.12
+    "images/ami/4/0076.jpg"
+    pause 0.12
+    "images/ami/4/0077.jpg"
+    pause 0.12
+    function splat2
+    "images/ami/4/0078.jpg"
+    pause 0.12
+    "images/ami/4/0079.jpg"
+    pause 0.12
+    "images/ami/4/0080.jpg"
+    pause 0.12
+
+image ami5:
+    "images/ami/5/0015.jpg"
+    pause 0.1
+    "images/ami/5/0016.jpg"
+    pause 0.1
+    "images/ami/5/0017.jpg"
+    pause 0.1
+    "images/ami/5/0018.jpg"
+    pause 0.1
+    "images/ami/5/0019.jpg"
+    pause 0.1
+    "images/ami/5/0020.jpg"
+    pause 0.1
+    "images/ami/5/0021.jpg"
+    pause 0.1
+    "images/ami/5/0022.jpg"
+    pause 0.1
+    "images/ami/5/0023.jpg"
+    pause 0.1
+    "images/ami/5/0024.jpg"
+    pause 0.1
+    "images/ami/5/0025.jpg"
+    pause 0.1
+    "images/ami/5/0026.jpg"
+    pause 0.1
+    "images/ami/5/0027.jpg"
+    pause 0.1
+    "images/ami/5/0028.jpg"
+    pause 0.1
+    "images/ami/5/0029.jpg"
+    pause 0.1
+    "images/ami/5/0030.jpg"
+    pause 0.1
+    "images/ami/5/0031.jpg"
+    pause 0.1
+    "images/ami/5/0032.jpg"
+    pause 0.1
+    "images/ami/5/0033.jpg"
+    pause 0.1
+    "images/ami/5/0034.jpg"
+    pause 0.1
+    "images/ami/5/0035.jpg"
+    pause 0.1
+    "images/ami/5/0036.jpg"
+    pause 0.1
+    "images/ami/5/0037.jpg"
+    pause 0.1
+    "images/ami/5/0038.jpg"
+    pause 0.1
+    "images/ami/5/0039.jpg"
+    pause 0.1
+    "images/ami/5/0040.jpg"
+    pause 0.1
+    "images/ami/5/0041.jpg"
+    pause 0.1
+    "images/ami/5/0042.jpg"
+    pause 0.1
+    "images/ami/5/0043.jpg"
+    pause 0.1
+    "images/ami/5/0044.jpg"
+    pause 0.1
+    "images/ami/5/0045.jpg"
+    pause 0.1
+    "images/ami/5/0046.jpg"
+    pause 0.1
+    "images/ami/5/0047.jpg"
+    pause 0.1
+    "images/ami/5/0048.jpg"
+    pause 0.1
+    "images/ami/5/0049.jpg"
+    pause 0.1
+    "images/ami/5/0050.jpg"
+    pause 0.1
+    "images/ami/5/0051.jpg"
+    pause 0.1
+    "images/ami/5/0052.jpg"
+    pause 0.1
+    "images/ami/5/0053.jpg"
+    pause 0.1
+    "images/ami/5/0054.jpg"
+    pause 0.1
+    "images/ami/5/0055.jpg"
+    pause 0.1
+    "images/ami/5/0056.jpg"
+    pause 0.1
+    "images/ami/5/0057.jpg"
+    pause 0.1
+    "images/ami/5/0058.jpg"
+    pause 0.1
+    "images/ami/5/0059.jpg"
+    pause 0.1
+    "images/ami/5/0060.jpg"
+    pause 0.1
+    "images/ami/5/0061.jpg"
+    pause 0.1
+    "images/ami/5/0062.jpg"
+    pause 0.1
+    "images/ami/5/0063.jpg"
+    pause 0.1
+    "images/ami/5/0064.jpg"
+    pause 0.1
+    "images/ami/5/0065.jpg"
+    pause 0.1
+    "images/ami/5/0066.jpg"
+    pause 0.1
+    "images/ami/5/0067.jpg"
+    pause 0.1
+    "images/ami/5/0068.jpg"
+    pause 0.1
+    "images/ami/5/0069.jpg"
+    pause 0.1
+    "images/ami/5/0070.jpg"
+    pause 0.1
+
+image 59hatch1:
+    "images/vent5_9hatch/1/0195.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0196.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0197.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0198.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0199.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0200.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0201.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0202.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0203.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0204.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0205.jpg"
+    pause .12
+
+image 59hatch2:
+    "images/vent5_9hatch/1/0205.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0204.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0203.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0202.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0201.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0200.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0199.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0198.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0197.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0196.jpg"
+    pause .12
+    "images/vent5_9hatch/1/0195.jpg"
+    pause .12
+
+image 59hatch3:
+    "images/vent5_9hatch/2/0195.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0196.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0197.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0198.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0199.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0200.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0201.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0202.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0203.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0204.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0205.jpg"
+    pause .12
+
+image 59hatch4:
+    "images/vent5_9hatch/2/0205.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0204.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0203.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0202.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0201.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0200.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0199.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0198.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0197.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0196.jpg"
+    pause .12
+    "images/vent5_9hatch/2/0195.jpg"
+    pause .12
+
+image 59hatch5:
+    "images/vent5_9hatch/3/0195.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0196.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0197.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0198.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0199.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0200.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0201.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0202.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0203.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0204.jpg"
+    pause .12
+    "images/vent5_9hatch/3/0205.jpg"
+    pause .12
+
+
+image nyunvent1:
+    "images/nyun/1/0010.jpg"
+    pause .1
+    "images/nyun/1/0011.jpg"
+    pause .1
+    "images/nyun/1/0012.jpg"
+    pause .1
+    "images/nyun/1/0013.jpg"
+    pause .1
+    "images/nyun/1/0014.jpg"
+    pause .1
+    "images/nyun/1/0015.jpg"
+    pause .1
+    "images/nyun/1/0016.jpg"
+    function splat1
+    pause .1
+    "images/nyun/1/0017.jpg"
+    pause .1
+    "images/nyun/1/0018.jpg"
+    pause .1
+    repeat
+
+image nyunvent2:
+    "images/nyun/2/0010.jpg"
+    pause .1
+    "images/nyun/2/0011.jpg"
+    pause .1
+    "images/nyun/2/0012.jpg"
+    pause .1
+    "images/nyun/2/0013.jpg"
+    pause .1
+    "images/nyun/2/0014.jpg"
+    pause .1
+    "images/nyun/2/0015.jpg"
+    pause .1
+    "images/nyun/2/0016.jpg"
+    function splat1
+    pause .1
+    "images/nyun/2/0017.jpg"
+    pause .1
+    "images/nyun/2/0018.jpg"
+    pause .1
+    repeat
+
+image nyunvent3:
+    "images/nyun/3/0019.jpg"
+    pause .1
+    "images/nyun/3/0020.jpg"
+    pause .1
+    "images/nyun/3/0021.jpg"
+    pause .1
+    "images/nyun/3/0022.jpg"
+    pause .1
+    "images/nyun/3/0023.jpg"
+    pause .1
+    "images/nyun/3/0024.jpg"
+    function s2
+    pause .1
+    "images/nyun/3/0025.jpg"
+    pause .1
+    "images/nyun/3/0026.jpg"
+    pause .1
+    "images/nyun/3/0027.jpg"
+    pause .1
+    "images/nyun/3/0028.jpg"
+    pause .1
+    "images/nyun/3/0029.jpg"
+    pause .1
+    "images/nyun/3/0030.jpg"
+    pause .1
+    "images/nyun/3/0031.jpg"
+    pause .1
+    "images/nyun/3/0032.jpg"
+    pause .1
+    "images/nyun/3/0033.jpg"
+    pause .1
+    "images/nyun/3/0034.jpg"
+    pause .1
+    "images/nyun/3/0035.jpg"
+    pause .1
+    "images/nyun/3/0036.jpg"
+    pause .1
+    "images/nyun/3/0037.jpg"
+    pause .1
+    "images/nyun/3/0038.jpg"
+    pause .1
+    "images/nyun/3/0039.jpg"
+    pause .1
+    "images/nyun/3/0040.jpg"
+    pause .1
+    "images/nyun/3/0041.jpg"
+    pause .1
+    "images/nyun/3/0042.jpg"
+    pause .1
+    "images/nyun/3/0043.jpg"
+    function s1
+    pause .1
+    "images/nyun/3/0044.jpg"
+    pause .1
+    "images/nyun/3/0045.jpg"
+    pause .1
+    "images/nyun/3/0046.jpg"
+    pause .1
+    "images/nyun/3/0047.jpg"
+    pause .1
+    "images/nyun/3/0048.jpg"
+    pause .1
+    "images/nyun/3/0049.jpg"
+    pause .1
+    "images/nyun/3/0050.jpg"
+    function splat1
+    pause .1
+    "images/nyun/3/0051.jpg"
+    pause .1
+    "images/nyun/3/0052.jpg"
+    pause .1
+    "images/nyun/3/0053.jpg"
+    pause .1
+    "images/nyun/3/0054.jpg"
+    pause .1
+    "images/nyun/3/0055.jpg"
+    pause .1
+    "images/nyun/3/0056.jpg"
+    pause .1
+
+image nyunvent4:
+    "images/nyun/4/0057.jpg"
+    pause .1
+    "images/nyun/4/0058.jpg"
+    pause .1
+    "images/nyun/4/0059.jpg"
+    pause .1
+    "images/nyun/4/0060.jpg"
+    pause .1
+    "images/nyun/4/0061.jpg"
+    function s4
+    pause .1
+    "images/nyun/4/0062.jpg"
+    pause .1
+    "images/nyun/4/0063.jpg"
+    pause .1
+    repeat
+
+image nyunvent5:
+    "images/nyun/5/0019.jpg"
+    pause .1
+    "images/nyun/5/0020.jpg"
+    pause .1
+    "images/nyun/5/0021.jpg"
+    pause .1
+    "images/nyun/5/0022.jpg"
+    function s4
+    pause .1
+    "images/nyun/5/0023.jpg"
+    pause .1
+    "images/nyun/5/0024.jpg"
+    pause .1
+    "images/nyun/5/0025.jpg"
+    pause .1
+    repeat
+
+image nyunvent6:
+    "images/nyun/6/0064.jpg"
+    pause .1
+    "images/nyun/6/0065.jpg"
+    pause .1
+    "images/nyun/6/0066.jpg"
+    pause .1
+    "images/nyun/6/0067.jpg"
+    pause .1
+    "images/nyun/6/0068.jpg"
+    pause .1
+    "images/nyun/6/0069.jpg"
+    function splat1
+    pause .1
+    "images/nyun/6/0070.jpg"
+    pause .1
+    "images/nyun/6/0071.jpg"
+    pause .1
+    "images/nyun/6/0072.jpg"
+    pause .1
+    "images/nyun/6/0073.jpg"
+    pause .1
+    "images/nyun/6/0074.jpg"
+    pause .1
+    "images/nyun/6/0075.jpg"
+    pause .1
+    "images/nyun/6/0076.jpg"
+    pause .1
+    "images/nyun/6/0077.jpg"
+    pause .1
+    "images/nyun/6/0078.jpg"
+    pause .1
+    "images/nyun/6/0079.jpg"
+    pause .1
+    "images/nyun/6/0080.jpg"
+    pause .1
+    "images/nyun/6/0081.jpg"
+    pause .1
+    "images/nyun/6/0082.jpg"
+    pause .1
+    "images/nyun/6/0083.jpg"
+    pause .1
+    "images/nyun/6/0084.jpg"
+    pause .1
+    "images/nyun/6/0085.jpg"
+    pause .1
+    "images/nyun/6/0086.jpg"
+    function splat2
+    pause .1
+    "images/nyun/6/0087.jpg"
+    pause .1
+    "images/nyun/6/0088.jpg"
+    pause .1
+    "images/nyun/6/0089.jpg"
+    pause .1
+
+image nyunvent7:
+    "images/nyun/7/0023.jpg"
+    pause .1
+    "images/nyun/7/0024.jpg"
+    pause .1
+    "images/nyun/7/0025.jpg"
+    pause .1
+    "images/nyun/7/0026.jpg"
+    pause .1
+    "images/nyun/7/0027.jpg"
+    pause .1
+    "images/nyun/7/0028.jpg"
+    pause .1
+    "images/nyun/7/0029.jpg"
+    pause .1
+    "images/nyun/7/0030.jpg"
+    pause .1
+    "images/nyun/7/0031.jpg"
+    pause .1
+    "images/nyun/7/0032.jpg"
+    pause .1
+    "images/nyun/7/0033.jpg"
+    function splat2
+    pause .1
+    "images/nyun/7/0034.jpg"
+    pause .1
+    "images/nyun/7/0035.jpg"
+    pause .1
+    "images/nyun/7/0036.jpg"
+    pause .1
+    "images/nyun/7/0037.jpg"
+    pause .1
+    "images/nyun/7/0038.jpg"
+    pause .1
+    "images/nyun/7/0039.jpg"
+    pause .1
+    "images/nyun/7/0040.jpg"
+    pause .1
+    "images/nyun/7/0041.jpg"
+    pause .1
+    "images/nyun/7/0042.jpg"
+    pause .1
+    "images/nyun/7/0043.jpg"
+    pause .1
+    "images/nyun/7/0044.jpg"
+    function suck4
+    pause .1
+    "images/nyun/7/0045.jpg"
+    pause .1
+    "images/nyun/7/0046.jpg"
+    pause .1
+
+image nyunvent8:
+    "images/nyun/8/0046.jpg"
+    pause .1
+    "images/nyun/8/0047.jpg"
+    pause .1
+    "images/nyun/8/0048.jpg"
+    pause .1
+    "images/nyun/8/0049.jpg"
+    pause .1
+    "images/nyun/8/0050.jpg"
+    pause .1
+    "images/nyun/8/0051.jpg"
+    pause .1
+    "images/nyun/8/0052.jpg"
+    pause .1
+    "images/nyun/8/0053.jpg"
+    pause .1
+    "images/nyun/8/0054.jpg"
+    function splat2
+    pause .1
+    "images/nyun/8/0055.jpg"
+    pause .1
+    "images/nyun/8/0056.jpg"
+    pause .1
+    "images/nyun/8/0057.jpg"
+    pause .1
+    "images/nyun/8/0058.jpg"
+    pause .1
+    "images/nyun/8/0059.jpg"
+    pause .1
+    "images/nyun/8/0060.jpg"
+    pause .1
+    "images/nyun/8/0061.jpg"
+    pause .1
+    "images/nyun/8/0062.jpg"
+    pause .1
+    "images/nyun/8/0063.jpg"
+    pause .1
+    "images/nyun/8/0064.jpg"
+    pause .1
+    "images/nyun/8/0065.jpg"
+    function splat2
+    pause .1
+    "images/nyun/8/0066.jpg"
+    pause .1
+    "images/nyun/8/0067.jpg"
+    pause .1
+    "images/nyun/8/0068.jpg"
+    pause .1
+    "images/nyun/8/0069.jpg"
+    pause .1
+    "images/nyun/8/0070.jpg"
+    pause .1
+    "images/nyun/8/0071.jpg"
+    pause .1
+    "images/nyun/8/0072.jpg"
+    pause .1
+    "images/nyun/8/0073.jpg"
+    pause .1
+    "images/nyun/8/0074.jpg"
+    pause .1
+    "images/nyun/8/0075.jpg"
+    pause .1
+    "images/nyun/8/0076.jpg"
+    pause .1
+    "images/nyun/8/0077.jpg"
+    function squish
+    pause .1
+    "images/nyun/8/0078.jpg"
+    pause .1
+    "images/nyun/8/0079.jpg"
+    pause .1
+
+image nyunvent9:
+    "images/nyun/9/0001.jpg"
+    pause .1
+    "images/nyun/9/0002.jpg"
+    pause .1
+    "images/nyun/9/0003.jpg"
+    pause .1
+    "images/nyun/9/0004.jpg"
+    pause .1
+    "images/nyun/9/0005.jpg"
+    function s4
+    pause .1
+    "images/nyun/9/0006.jpg"
+    pause .1
+    repeat
+
+image nyunvent10:
+    "images/nyun/10/0007.jpg"
+    pause .1
+    "images/nyun/10/0008.jpg"
+    pause .1
+    "images/nyun/10/0009.jpg"
+    pause .1
+    "images/nyun/10/0010.jpg"
+    pause .1
+    "images/nyun/10/0011.jpg"
+    function splat1
+    pause .1
+    "images/nyun/10/0012.jpg"
+    pause .1
+    repeat
+
+image nyunvent11:
+    "images/nyun/11/0007.jpg"
+    pause .1
+    "images/nyun/11/0008.jpg"
+    pause .1
+    "images/nyun/11/0009.jpg"
+    pause .1
+    "images/nyun/11/0010.jpg"
+    pause .1
+    "images/nyun/11/0011.jpg"
+    pause .1
+    "images/nyun/11/0012.jpg"
+    function suck1
+    pause .1
+    "images/nyun/11/0013.jpg"
+    pause .1
+    "images/nyun/11/0014.jpg"
+    pause .1
+    "images/nyun/11/0015.jpg"
+    function splat2
+    pause .1
+    "images/nyun/11/0016.jpg"
+    pause .1
+    "images/nyun/11/0017.jpg"
+    pause .1
+    "images/nyun/11/0018.jpg"
+    pause .1
+    "images/nyun/11/0019.jpg"
+    pause .1
+    "images/nyun/11/0020.jpg"
+    pause .1
+    "images/nyun/11/0021.jpg"
+    pause .1
+    "images/nyun/11/0022.jpg"
+    pause .1
+    "images/nyun/11/0023.jpg"
+    function splat2
+    pause .1
+    "images/nyun/11/0024.jpg"
+    pause .1
+    "images/nyun/11/0025.jpg"
+    pause .1
+    "images/nyun/11/0026.jpg"
+    pause .1
+    "images/nyun/11/0027.jpg"
+    pause .1
+    "images/nyun/11/0028.jpg"
+    pause .1
+    "images/nyun/11/0029.jpg"
+    pause .1
+    "images/nyun/11/0030.jpg"
+    function squish
+    pause .1
+    "images/nyun/11/0031.jpg"
+    pause .1
+    "images/nyun/11/0032.jpg"
+    pause .1
+    "images/nyun/11/0033.jpg"
+    pause .1
+    "images/nyun/11/0034.jpg"
+    pause .1
+    "images/nyun/11/0035.jpg"
+    pause .1
+    "images/nyun/11/0036.jpg"
+    pause .1
+    "images/nyun/11/0037.jpg"
+    pause .1
+    "images/nyun/11/0038.jpg"
+    pause .1
+    "images/nyun/11/0039.jpg"
+    pause .1
+    "images/nyun/11/0040.jpg"
+    pause .1
+
+image nyunvent12:
+    "images/nyun/12/0040.jpg"
+    pause .1
+    "images/nyun/12/0041.jpg"
+    pause .1
+    "images/nyun/12/0042.jpg"
+    pause .1
+    "images/nyun/12/0043.jpg"
+    pause .1
+    "images/nyun/12/0044.jpg"
+    pause .1
+    "images/nyun/12/0045.jpg"
+    function s2
+    pause .1
+    "images/nyun/12/0046.jpg"
+    pause .1
+    "images/nyun/12/0047.jpg"
+    pause .1
+    "images/nyun/12/0048.jpg"
+    pause .1
+    "images/nyun/12/0049.jpg"
+    pause .1
+    repeat
+
+image 43hatch1:
+    "images/vent4_3hatch/0120.jpg"
+    pause .12
+    "images/vent4_3hatch/0121.jpg"
+    pause .12
+    "images/vent4_3hatch/0122.jpg"
+    pause .12
+    "images/vent4_3hatch/0123.jpg"
+    pause .12
+    "images/vent4_3hatch/0124.jpg"
+    pause .12
+    "images/vent4_3hatch/0125.jpg"
+    pause .12
+
+image 43hatch2:
+    "images/vent4_3hatch/0125.jpg"
+    pause .12
+    "images/vent4_3hatch/0124.jpg"
+    pause .12
+    "images/vent4_3hatch/0123.jpg"
+    pause .12
+    "images/vent4_3hatch/0122.jpg"
+    pause .12
+    "images/vent4_3hatch/0121.jpg"
+    pause .12
+    "images/vent4_3hatch/0120.jpg"
+    pause .12
+
+image 43hatch3:
+    "images/vent4_3hatch/0125.jpg"
+    pause .12
+    "images/vent4_3hatch/0126.jpg"
+    pause .12
+    "images/vent4_3hatch/0127.jpg"
+    pause .12
+    "images/vent4_3hatch/0128.jpg"
+    pause .12
+    "images/vent4_3hatch/0129.jpg"
+    pause .12
+    "images/vent4_3hatch/0130.jpg"
+    pause .12
+
+image bughatch1:
+    "images/bugevent/1/0150.jpg"
+    pause .12
+    "images/bugevent/1/0151.jpg"
+    pause .12
+    "images/bugevent/1/0152.jpg"
+    pause .12
+    "images/bugevent/1/0153.jpg"
+    pause .12
+    "images/bugevent/1/0154.jpg"
+    pause .12
+    "images/bugevent/1/0155.jpg"
+    pause .12
+    "images/bugevent/1/0156.jpg"
+    pause .12
+    "images/bugevent/1/0157.jpg"
+    pause .12
+    "images/bugevent/1/0158.jpg"
+    pause .12
+    function metal1
+    "images/bugevent/1/0159.jpg"
+    pause .12
+    "images/bugevent/1/0160.jpg"
+    pause .12
+    "images/bugevent/1/0161.jpg"
+    pause .12
+    "images/bugevent/1/0162.jpg"
+    pause .12
+    "images/bugevent/1/0163.jpg"
+    pause .12
+    "images/bugevent/1/0164.jpg"
+    pause .12
+    "images/bugevent/1/0165.jpg"
+    pause .12
+    "images/bugevent/1/0166.jpg"
+    pause .12
+    "images/bugevent/1/0167.jpg"
+    pause .12
+    "images/bugevent/1/0168.jpg"
+    pause .12
+    "images/bugevent/1/0169.jpg"
+    pause .12
+    "images/bugevent/1/0170.jpg"
+    pause .12
+    "images/bugevent/1/0171.jpg"
+    pause .12
+    "images/bugevent/1/0172.jpg"
+    pause .12
+    "images/bugevent/1/0173.jpg"
+    function step3
+    pause .12
+    "images/bugevent/1/0174.jpg"
+    pause .12
+    "images/bugevent/1/0175.jpg"
+    pause .12
+    "images/bugevent/1/0176.jpg"
+    pause .12
+    "images/bugevent/1/0177.jpg"
+    pause .12
+    "images/bugevent/1/0178.jpg"
+    pause .12
+
+image bughatch2:
+    "images/bugevent/2/0179.jpg"
+    pause .12
+    "images/bugevent/2/0180.jpg"
+    pause .12
+    "images/bugevent/2/0181.jpg"
+    pause .12
+    "images/bugevent/2/0182.jpg"
+    pause .12
+    "images/bugevent/2/0183.jpg"
+    pause .12
+    "images/bugevent/2/0184.jpg"
+    pause .12
+    "images/bugevent/2/0185.jpg"
+    pause .12
+    "images/bugevent/2/0186.jpg"
+    pause .12
+    "images/bugevent/2/0187.jpg"
+    pause .12
+    "images/bugevent/2/0188.jpg"
+    pause .12
+    "images/bugevent/2/0189.jpg"
+    pause .12
+    "images/bugevent/2/0190.jpg"
+    pause .12
+    "images/bugevent/2/0191.jpg"
+    pause .12
+    "images/bugevent/2/0192.jpg"
+    pause .12
+    "images/bugevent/2/0193.jpg"
+    pause .12
+    "images/bugevent/2/0194.jpg"
+    pause .12
+    "images/bugevent/2/0195.jpg"
+    pause .12
+    "images/bugevent/2/0196.jpg"
+    pause .12
+    "images/bugevent/2/0197.jpg"
+    pause .12
+    "images/bugevent/2/0198.jpg"
+    function fall
+    pause .12
+    "images/bugevent/2/0199.jpg"
+    pause .12
+    "images/bugevent/2/0200.jpg"
+    pause .12
+    "images/bugevent/2/0201.jpg"
+    pause .12
+
+image bughatch3:
+    "images/bugevent/3/0201.jpg"
+    pause .12
+    "images/bugevent/3/0202.jpg"
+    pause .12
+    "images/bugevent/3/0203.jpg"
+    pause .12
+    "images/bugevent/3/0204.jpg"
+    pause .12
+    "images/bugevent/3/0205.jpg"
+    pause .12
+    "images/bugevent/3/0206.jpg"
+    pause .12
+    "images/bugevent/3/0207.jpg"
+    pause .12
+    "images/bugevent/3/0208.jpg"
+    pause .12
+    repeat
+
+image bughatch4:
+    "images/bugevent/4/0208.jpg"
+    pause .12
+    "images/bugevent/4/0209.jpg"
+    pause .12
+    "images/bugevent/4/0210.jpg"
+    pause .12
+    "images/bugevent/4/0211.jpg"
+    pause .12
+    "images/bugevent/4/0212.jpg"
+    pause .12
+    "images/bugevent/4/0213.jpg"
+    pause .12
+    "images/bugevent/4/0214.jpg"
+    function punch
+    pause .12
+    "images/bugevent/4/0215.jpg"
+    pause .12
+    "images/bugevent/4/0216.jpg"
+    pause .12
+    "images/bugevent/4/0217.jpg"
+    pause .12
+    "images/bugevent/4/0218.jpg"
+    pause .12
+    "images/bugevent/4/0219.jpg"
+    pause .12
+    "images/bugevent/4/0220.jpg"
+    pause .12
+    "images/bugevent/4/0221.jpg"
+    pause .12
+
+image bughatch5:
+    "images/bugevent/5/0227.jpg"
+    pause .12
+    "images/bugevent/5/0228.jpg"
+    pause .12
+    "images/bugevent/5/0229.jpg"
+    pause .12
+    "images/bugevent/5/0230.jpg"
+    pause .12
+    "images/bugevent/5/0231.jpg"
+    pause .12
+    "images/bugevent/5/0232.jpg"
+    pause .12
+    "images/bugevent/5/0233.jpg"
+    pause .12
+    function fall
+    "images/bugevent/5/0234.jpg"
+    pause .12
+
+image bughatch6:
+    "images/bugevent/6/0234.jpg"
+    pause .12
+    "images/bugevent/6/0235.jpg"
+    pause .12
+    "images/bugevent/6/0236.jpg"
+    pause .12
+    "images/bugevent/6/0237.jpg"
+    pause .12
+    "images/bugevent/6/0238.jpg"
+    pause .12
+    "images/bugevent/6/0239.jpg"
+    pause .12
+    "images/bugevent/6/0240.jpg"
+    function s1
+    pause .12
+    "images/bugevent/6/0241.jpg"
+    pause .12
+    "images/bugevent/6/0242.jpg"
+    pause .12
+    "images/bugevent/6/0243.jpg"
+    pause .12
+    "images/bugevent/6/0244.jpg"
+    pause .12
+    "images/bugevent/6/0245.jpg"
+    pause .12
+    "images/bugevent/6/0246.jpg"
+    pause .12
+    "images/bugevent/6/0247.jpg"
+    pause .12
+    "images/bugevent/6/0248.jpg"
+    pause .12
+    "images/bugevent/6/0249.jpg"
+    pause .12
+    "images/bugevent/6/0250.jpg"
+    pause .12
+    "images/bugevent/6/0251.jpg"
+    pause .12
+    function suck1
+    "images/bugevent/6/0252.jpg"
+    pause .12
+    "images/bugevent/6/0253.jpg"
+    pause .12
+    "images/bugevent/6/0254.jpg"
+    pause .12
+
+image bughatch7:
+    "images/bugevent/7/0255.jpg"
+    pause .12
+    "images/bugevent/7/0256.jpg"
+    pause .12
+    "images/bugevent/7/0257.jpg"
+    pause .12
+    "images/bugevent/7/0258.jpg"
+    pause .12
+    function suck2
+    "images/bugevent/7/0259.jpg"
+    pause .12
+    "images/bugevent/7/0260.jpg"
+    pause .12
+    "images/bugevent/7/0261.jpg"
+    pause .12
+    repeat
+
+image bughatch8:
+    "images/bugevent/8/0255.jpg"
+    pause .12
+    "images/bugevent/8/0256.jpg"
+    pause .12
+    "images/bugevent/8/0257.jpg"
+    pause .12
+    "images/bugevent/8/0258.jpg"
+    pause .12
+    function suck1
+    "images/bugevent/8/0259.jpg"
+    pause .12
+    "images/bugevent/8/0260.jpg"
+    pause .12
+    "images/bugevent/8/0261.jpg"
+    pause .12
+    "images/bugevent/8/0262.jpg"
+    pause .12
+    "images/bugevent/8/0263.jpg"
+    pause .12
+    "images/bugevent/8/0264.jpg"
+    pause .12
+    "images/bugevent/8/0265.jpg"
+    pause .12
+    "images/bugevent/8/0266.jpg"
+    pause .12
+    "images/bugevent/8/0267.jpg"
+    pause .12
+    "images/bugevent/8/0268.jpg"
+    pause .12
+    "images/bugevent/8/0269.jpg"
+    pause .12
+    "images/bugevent/8/0270.jpg"
+    pause .12
+    "images/bugevent/8/0271.jpg"
+    pause .12
+    function suck4
+    "images/bugevent/8/0272.jpg"
+    pause .12
+    "images/bugevent/8/0273.jpg"
+    pause .12
+    "images/bugevent/8/0274.jpg"
+    pause .12
+
+image bughatch9:
+    "images/bugevent/9/0274.jpg"
+    pause .12
+    "images/bugevent/9/0275.jpg"
+    pause .12
+    "images/bugevent/9/0276.jpg"
+    pause .12
+    "images/bugevent/9/0277.jpg"
+    pause .12
+    "images/bugevent/9/0278.jpg"
+    pause .12
+    "images/bugevent/9/0279.jpg"
+    pause .12
+    function splat2
+    "images/bugevent/9/0280.jpg"
+    pause .12
+    "images/bugevent/9/0281.jpg"
+    pause .12
+    "images/bugevent/9/0282.jpg"
+    pause .12
+    "images/bugevent/9/0283.jpg"
+    pause .12
+    "images/bugevent/9/0284.jpg"
+    pause .12
+    "images/bugevent/9/0285.jpg"
+    pause .12
+    "images/bugevent/9/0286.jpg"
+    pause .12
+    "images/bugevent/9/0287.jpg"
+    pause .12
+    "images/bugevent/9/0288.jpg"
+    pause .12
+    function splat2
+    "images/bugevent/9/0289.jpg"
+    pause .12
+    "images/bugevent/9/0290.jpg"
+    pause .12
+    "images/bugevent/9/0291.jpg"
+    pause .12
+    "images/bugevent/9/0292.jpg"
+    pause .12
+    "images/bugevent/9/0293.jpg"
+    pause .12
+    "images/bugevent/9/0294.jpg"
+    pause .12
+    "images/bugevent/9/0295.jpg"
+    pause .12
+    "images/bugevent/9/0296.jpg"
+    pause .12
+    "images/bugevent/9/0297.jpg"
+    pause .12
+    "images/bugevent/9/0298.jpg"
+    pause .12
+    function splat2
+    "images/bugevent/9/0299.jpg"
+    pause .12
+    "images/bugevent/9/0300.jpg"
+    pause .12
+    "images/bugevent/9/0301.jpg"
+    pause .12
+    "images/bugevent/9/0302.jpg"
+    pause .12
+    "images/bugevent/9/0303.jpg"
+    pause .12
+    "images/bugevent/9/0304.jpg"
+    pause .12
+    "images/bugevent/9/0305.jpg"
+    pause .12
+    "images/bugevent/9/0306.jpg"
+    pause .12
+    "images/bugevent/9/0307.jpg"
+    pause .12
+    "images/bugevent/9/0308.jpg"
+    pause .12
+    "images/bugevent/9/0309.jpg"
+    pause .12
+    "images/bugevent/9/0310.jpg"
+    pause .12
+
+image bughatch10:
+    "images/bugevent/10/0226.jpg"
+    pause .12
+    "images/bugevent/10/0227.jpg"
+    pause .12
+    "images/bugevent/10/0228.jpg"
+    pause .12
+    "images/bugevent/10/0229.jpg"
+    pause .12
+    "images/bugevent/10/0230.jpg"
+    pause .12
+    "images/bugevent/10/0231.jpg"
+    pause .12
+    "images/bugevent/10/0232.jpg"
+    pause .12
+    "images/bugevent/10/0233.jpg"
+    pause .12
+    "images/bugevent/10/0234.jpg"
+    pause .12
+    "images/bugevent/10/0235.jpg"
+    pause .12
+    "images/bugevent/10/0236.jpg"
+    pause .12
+
+image bugshoot1:
+    "images/bugevent/shoot/0221.jpg"
+    pause .12
+    function shot
+    "images/bugevent/shoot/0222.jpg"
+    pause .12
+    "images/bugevent/shoot/0223.jpg"
+    pause .12
+    "images/bugevent/shoot/0224.jpg"
+    pause .12
+    "images/bugevent/shoot/0225.jpg"
+    pause .12
+    "images/bugevent/shoot/0226.jpg"
+    pause .12
+
+
+# -------------------- VENT MOVEMENTS ---------------------
+
+image vent1_1 = Generate_Animation("images/vent1_1", 10)
+
+image vent1_2 = Generate_Animation("images/vent1_2", 10)
+
+image vent1_2back = Generate_Animation("images/vent1_2back", 8)
+
+image vent1_2backb = Generate_Animation("images/vent1_2backb", 8)
+
+image vent1_3 = Generate_Animation("images/vent1_3", 10)
+
+image vent1_3b = Generate_Animation("images/vent1_3b", 10)
+
+image vent1_3fwd = Generate_Animation("images/vent1_3fwd", 8)
+
+image vent1_4 = Generate_Animation("images/vent1_4", 8)
+
+image vent1_4open = Generate_Animation("images/vent1_4open", 8)
+
+image vent1_5back = Generate_Animation("images/vent1_5back", 8)
+
+image vent1_5fwd = Generate_Animation("images/vent1_5fwd", 8)
+
+image vent1_5 = Generate_Animation("images/vent1_5", 8)
+
+image vent1_5b = Generate_Animation("images/vent1_5b", 8)
+
+image vent1_5c = Generate_Animation("images/vent1_5c", 8)
+
+image vent1_6 = Generate_Animation("images/vent1_6", 8)
+
+image vent1_6back = Generate_Animation("images/vent1_6back", 8)
+
+image vent1_7 = Generate_Animation("images/vent1_7", 8)
+
+image vent2_0back = Generate_Animation("images/vent2_0back", 8)
+
+image vent2_1 = Generate_Animation("images/vent2_1", 8)
+
+image vent2_2 = Generate_Animation("images/vent2_2", 8)
+
+image vent2_3 = Generate_Animation("images/vent2_3", 8)
+
+image vent2_3back = Generate_Animation("images/vent2_3back", 8)
+
+image vent2_4 = Generate_Animation("images/vent2_4", 8)
+
+image vent2_4left = Generate_Animation("images/vent2_4left", 8)
+
+image vent3_0back1 = Generate_Animation("images/vent3_0back1", 8)
+
+image vent3_0back2 = Generate_Animation("images/vent3_0back2", 8)
+
+image vent3_1 = Generate_Animation("images/vent3_1", 8)
+
+image vent3_1back = Generate_Animation("images/vent3_1back", 8)
+
+image vent4_01 = Generate_Animation("images/vent4_0/1", 8)
+image vent4_02 = Generate_Animation("images/vent4_0/2", 8)
+image vent4_03 = Generate_Animation("images/vent4_0/3", 8)
+image vent4left = Generate_Animation("images/vent4_0left", 8)
+
+image vent4_1 = Generate_Animation("images/vent4_1", 8)
+
+image vent4_1back = Generate_Animation("images/vent4_1back", 8)
+
+image vent4_2 = Generate_Animation("images/vent4_2", 8)
+
+image vent4_2left = Generate_Animation("images/vent4_2left", 8)
+
+image vent4_2right = Generate_Animation("images/vent4_2right", 8)
+
+image vent4_3 = Generate_Animation("images/vent4_3", 8)
+
+image vent5_01 = Generate_Animation("images/vent5_0back/1", 8)
+image vent5_02 = Generate_Animation("images/vent5_0back/2", 8)
+
+image vent5back = Generate_Animation("images/vent5_0backback", 8)
+
+image vent5_1 = Generate_Animation("images/vent5_1", 8)
+
+image vent5_2 = Generate_Animation("images/vent5_2", 8)
+
+image vent5_2left = Generate_Animation("images/vent5_2left", 8)
+
+image vent5_2right = Generate_Animation("images/vent5_2right", 8)
+
+image vent5_3 = Generate_Animation("images/vent5_3", 8)
+
+image vent5_4 = Generate_Animation("images/vent5_4", 8)
+
+image vent5_5fwd = Generate_Animation("images/vent5_5fwd", 8)
+
+image vent5_5left = Generate_Animation("images/vent5_5left", 8)
+
+image vent5_5right = Generate_Animation("images/vent5_5right", 8)
+
+image vent5_6back = Generate_Animation("images/vent5_6back", 8)
+
+image vent5_7 = Generate_Animation("images/vent5_7", 8)
+
+image vent5_7left = Generate_Animation("images/vent5_7left", 8)
+
+image vent5_7right = Generate_Animation("images/vent5_7right", 8)
+
+image vent5_8 = Generate_Animation("images/vent5_8", 8)
+
+image vent5_9 = Generate_Animation("images/vent5_9", 8)
+
+image vent6_0back = Generate_Animation("images/vent6_0back", 8)
+
+image vent6_1 = Generate_Animation("images/vent6_1", 8)
+
+image vent6_2 = Generate_Animation("images/vent6_2", 8)
+
+image vent7_0 = Generate_Animation("images/vent7_0", 8)
+
+image vent7_1 = Generate_Animation("images/vent7_1", 8)
+
+image vent7_2 = Generate_Animation("images/vent7_2", 8)
+image vent7_2back = Generate_Animation("images/vent7_2back", 8)
+
+image vent7_3 = Generate_Animation("images/vent7_3", 8)
+image vent7_3back = Generate_Animation("images/vent7_3back", 8)
+
+
+#------------------ VENTS ANIMATIONS END -------------------------
 
 init -1 python:
+    def shot(trans, st, at):
+        renpy.play("audio/gunshot.mp3", channel="sound")
+
+    def n2(trans, st, at):
+        renpy.play("audio/nest2.mp3", channel="sound")
+
+    def n1(trans, st, at):
+        renpy.play("audio/nest1.mp3", channel="sound")
+
+    def strap(trans, st, at):
+        renpy.play("audio/strap.mp3", channel="sound")
+
+    def shot(trans, st, at):
+        renpy.play("audio/gunshot.mp3", channel="sound")
+
+    def metal1(trans, st, at):
+        renpy.play("audio/metalnoise1.mp3", channel="sound")
+
+    def metal2(trans, st, at):
+        renpy.play("audio/metalnoise2.mp3", channel="sound")
+
+    def frog1(trans, st, at):
+        renpy.play("audio/frog1.mp3", channel="sound")
+
+    def frog2(trans, st, at):
+        renpy.play("audio/frog2.mp3", channel="sound")
+
     def splat2(trans, st, at):
         renpy.play("audio/splat2.mp3", channel="sound")
 
@@ -12320,6 +16424,9 @@ init -1 python:
 
     def squish(trans, st, at):
         renpy.play("audio/lewsquish.mp3", channel="sound")
+
+    def slurp2(trans, st, at):
+        renpy.play("audio/slurp2.mp3", channel="sound")
 
     def slurp(trans, st, at):
         renpy.play("audio/slurp.mp3", channel="sound")
@@ -12425,6 +16532,71 @@ init -1 python:
 
 
 
+# image testing = animate_images()
+
+init 2 python :
+    test_val = Generate_Animation("images/vent5_7", 8)
+    test_val = renpy.easy.displayable('images/bugevent/10/0226.jpg')
+    gen_anim = Animation('images/bugevent/10/0226.jpg',.2,'images/bugevent/10/0227.jpg',.2)
+    renpy.log(type(gen_anim))
+    renpy.log(dir(gen_anim))
+    test_val = gen_anim.visit()
+    renpy.log(test_val)
+    renpy.log(type(test_val))
+    renpy.log(test_val[0])
+    renpy.log(type(test_val[0]))
+    renpy.log(gen_anim.delays)
+    test_val = renpy.image("testttt",gen_anim)
+
+# init 3 python :
+#     renpy.image("test3",['images/bugevent/10/0226.jpg',.2])
+
+# --------------------- ANIMATION PLAYER ------------------------
+init python:
+    config.log = 'log.log'
+    renpy.image("test_name","images/skills/hacker/1.png")
+    def Generate_Animation(directory,fps=24):
+        #Give the image a serial number we'll use to reference it
+        serial_number = 0
+        for i in range(20):
+            serial_number += renpy.random.randint(1,9)*pow(10,i)
+        serial_number = str(serial_number)
+
+        #Set up some basic containers for our animation generation loop
+        animation_list = []
+        pause_duration = 1.0/fps
+        image_types = ["jpg","png","webp"]
+
+        #Generate the list of images and pauses that will become the animation
+        for path in renpy.list_files():
+            file = path.split("/").pop()
+            file_type = file.lower().split(".").pop()
+
+            if path.startswith(directory) and file_type in image_types:
+                animation_list.append(path)
+                animation_list.append(pause_duration)
+
+        #Generate and return the actual animation
+        renpy.image(serial_number,Animation(*animation_list))
+        return serial_number
+
+
+    def animate_images():
+        olist = []
+        olist.append(renpy.easy.displayable('images/bugevent/10/0226.jpg'))
+        # olist.append(.2)
+        olist.append(renpy.easy.displayable('images/bugevent/10/0227.jpg'))
+        # olist.append(.2)
+        # renpy.log('image type '+ str(type(renpy.easy.displayable('images/bugevent/10/0226.jpg'))))
+        return 'images/bugevent/10/0226.jpg'
+
+    # def animate_images():
+    #     output_list = []
+    #     output_list.append(renpy.display.im.image('images/bugevent/10/0226.jpg'))
+    #     output_list.append(.2)
+    #     output_list.append(renpy.display.im.image('images/bugevent/10/0227.jpg'))
+    #     # output_list.append(.2)
+    #     return anim.TransitionAnimation(*output_list)
 
 
 
@@ -12443,9 +16615,7 @@ label splashscreen:
     $ renpy.pause ()
     return
 
-
 label start:
-
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -12453,17 +16623,29 @@ label start:
 
 
     # ================================================ ACT 1 START  =========================================================================================
+    
+    "test dialogue"
+    show testttt
+
+    # python:
+    #     test_val = Generate_Animation("images/vent5_7", 8)
+    #     renpy.log(str(test_val))
+    #     renpy.log(type(test_val))
+    #     renpy.log(dir(test_val))
+    #     renpy.log(test_val.__str__)
+    #     renpy.log(test_val.__doc__)
     scene black
     $ sidequest = "..."
     play music "audio/bg/common_bg.mp3" volume 0.3 loop
     "With her commander grounded and her friends too busy, the young quarian Tali'Zorah ventures out into the unknown fringes of Terminus Space, busying herself with chores to find valuable tech and exciting discoveries she can report back to the Migrant Fleet."
-    #jump runstart
+    #jump poolcompevent
     scene bg start1
     with dis
     show tali tool at left
     with dis
 
     tali "Is that a station? No, that's a ship. This far out? Keelah look at the size of that thing. This is Tali'Zorah vas Normandy, do you copy? Unidentified craft, come in."
+
     show tali shame at left
     with dis
     tali "Mmn. That's no good. No answer, no identification, no reg tags. Looks like it's just drifting in orbit. Scans show a functioning generator at least."
@@ -13598,6 +17780,10 @@ label start:
         show tali tool at left
         menu MedBay:
             "Check status" :
+                if run_ok:
+                    $ quest = "Search for answers in pool location."
+                    if ventsopen == False:
+                        $ ventquest = True
                 scene bg medscreen
                 show screen medStats
                 if firstTimeScan:
@@ -13689,6 +17875,7 @@ label start:
                 else:
                     jump map
         jump MedBayUsual
+
 
     label doubleEnc:
         $ twoHount = False
@@ -14066,7 +18253,7 @@ label start:
     label crate:
         scene black
         $ random = renpy.random.randint(1, 100)
-        if random > 1 and random < 40:
+        if random > 0 and random < 40:
             $ random = renpy.random.randint(2, 6)
             show clips:
                 xalign 1.2
@@ -14275,7 +18462,12 @@ label start:
         call screen pool_items
 
     label pool:
-        scene bg pool
+        if ventsopen:
+            scene bg poolwater
+        elif run_ok:
+            scene bg poolopen
+        else:
+            scene bg pool
         show tali back at left
         call screen pool_items
 
@@ -14306,6 +18498,139 @@ label start:
                 hover "images/events/pool/crate3_hover.png"
                 focus_mask True
                 action [SetVariable("poolloot3", False), Jump ("crate")]
+
+        showif ventquest:
+            imagebutton:
+                idle "images/events/pool/comp_idle.png"
+                hover "images/events/pool/comp_hover.png"
+                focus_mask True
+                action [SetVariable("poolcomp", False), Jump ("poolcompevent")]
+
+        showif ventsopen:
+            imagebutton:
+                idle "images/events/pool/water_idle.png"
+                hover "images/events/pool/water_hover.png"
+                focus_mask True
+                action Jump ("ventsenter")
+
+    label ventsenter:
+        menu poolmenu1:
+            "Enter vents.":
+                jump ventsenter1
+            "No.":
+                jump pool
+
+
+    label poolcompevent:
+        scene bg poolopen
+        show tali tool at left
+        tali "Finally some peace and quiet. Time to check this without distractions..."
+        play sound "audio/equip.ogg"
+        pause 1
+        tali "Hmm... scans show a very large area under this pool."
+        show tali doubt at left
+        tali "I don't see an entrance nearby but it's definitely here somewhere."
+        show tali tool at left
+        tali "This terminal can be used to pump the water out. Hopefully it's still functional."
+        show tali doubt at left
+        tali "Guess this might be the path forward we need. I'd better call reinforcements before committing to this though."
+        menu calljesora:
+            "Call Jesora.":
+                $ ventquest = False
+                show tali tool at left
+                play sound "audio/message.mp3"
+                tali "Hey Jesora. I think I found an alternate path to the ship's bridge."
+                jesora "No kidding? Way to go Tali! Where are you?"
+                tali "Come over to the pool... and bring some firepower."
+                jesora "On my way."
+                scene black
+                play sound "audio/walk.mp3"
+                "Moments later Jesora arrives with a crew."
+                scene bg poolopen
+                with dis
+                show tali doubt at left
+                show jesora doubt at right
+                jesora "Well? Don't tell me you just wanted to have a beach party."
+                tali "Were that the case you should have brought some drinks."
+                show jesora smile at right
+                jesora "No drinks I'm afraid, but I brought Nyun for a festive mood."
+                show nyun doubt behind jesora
+                nyun "Hello sweetie."
+                show tali talk at left
+                tali "Nyun? Why did you come here?"
+                show nyun talk behind jesora
+                nyun "I'm tired of sitting at the bar all the time, so I volunteered. I always wanted to see our stunning technician in action."
+                show tali facepalm at left
+                tali "I really hope that won't be necessary."
+                show tali doubt at left
+                show jesora stand at right
+                show nyun doubt behind jesora
+                jesora "Alright ladies, enough flirting. Show me what you've found Tali."
+                show tali tool at left
+                tali "Give me minute. I need to pump out the water from the pool. Get ready."
+                scene black
+                play sound "audio/water1.mp3"
+                show pooldry
+                pause 3
+                scene bg pool2
+                with dis
+                show tali gunstand at left
+                show jesora guntalk at right
+                jesora "I'll be damned. This looks like what we've been looking for. We need scouts in there STAT."
+                scene bg pool3 with dis
+                nyun "This looks... scary. Ugh, and it stinks like the toilets back on Omega."
+                tali "Already regret coming?"
+                jesora "Alright girls, step aside. Let's..."
+                scene bg pool3 with hpunch
+                play sound "audio/creepone.mp3"
+                pause 1
+                play sound "audio/creepone.mp3"
+                scene bg pool4 with hpunch
+                stop music
+                play music "audio/bg/run_bg.mp3" loop
+                jesora "Shit, not this guy again!"
+                nyun "Oh no! Are those the monsters I've heard about?! They look dangerous!"
+                scene bg pool2
+                show tali gunstand at left
+                show jesora gunshout at right
+                play sound "audio/heavyshots.mp3"
+                jesora "They keep coming and I don't know how to kill this huge fucker! Run and we'll hold them back!"
+                tali "Are you kidding?! You want me go in there alone?!"
+                jesora "No choice, sweet cheeks! You're our only hope to leave this place. Go and find the thermal stabilizers. And take Nyun with you, she don't survive this fight!"
+                tali "...FUCK!"
+                scene black
+                play sound "audio/run.ogg"
+                pause 1
+                scene bg pool5
+                play sound "audio/gunshot.mp3"
+                pause .5
+                play sound "audio/gunshot.mp3"
+                nyun "Oh Goddess, It's a deadend Tali!"
+                show bg pool6 with hpunch
+                play sound "audio/punch.mp3"
+                nyun "We'll die here! Why did I leave the ship?! It was better to stay in that dirty club than come here!"
+                show bg pool7
+                tali "Hey! Get a hold of yourself and check that hatch behind you! It has to open somehow!"
+                show bg pool8
+                play sound "audio/gunshot.mp3"
+                pause .5
+                play sound "audio/gunshot.mp3"
+                tali "Come on you freaky bastards! Someday I'll take you all down!"
+                scene bg pool9
+                play sound "audio/metalshut.mp3"
+                pause 2
+                scene bg pool10
+                tali "Keelah, they keep coming! Did you get it open yet? Nyun?!"
+                scene bg pool11
+                tali "What the hell?! Nyun you've got to be kidding me right now!!"
+                scene black
+                play sound "audio/metalshut.mp3"
+                pause 2
+                jump VentsStart
+
+            "Later.":
+                jump pool
+
 
     label phantomcut:
         scene bg poolcut1 with hpunch
@@ -14403,8 +18728,9 @@ label start:
         tali "Is it optimistic to hope he went back and killed that woman?"
         show jesora guntalk at right
         jesora "For all I know she could be his fuckmeat, but that's TOO optimistic. Anyway we need to search another way to reach the forward part of the ship. I have plenty to think about so I'll see you later. I know how to reach you if I need you. In the mean time you use that scanner and search. Maybe you'll lucky."
-        "THE MAIN STORY ENDS HERE. THANKS FOR PLAYING! HOPE YOU ENJOYED IT. YOU CAN CONTINUE TO PLAY TO UNCOVER MORE SCENES!"
-        $ quest = "Thanks for playing! Have fun until the next update!"
+        #"THE MAIN STORY ENDS HERE. THANKS FOR PLAYING! HOPE YOU ENJOYED IT. YOU CAN CONTINUE TO PLAY TO UNCOVER MORE SCENES!"
+        $ quest = "Search for answers in pool location."
+        $ ventquest = True
         $ run_ok = True
         jump MedBayUsual
 
@@ -14427,6 +18753,8 @@ label start:
         show comimg
         show engineimg
         if pool:
+            show poolimg
+        if poolnew:
             show poolimg
         if bay1:
             show bay1img
@@ -14629,6 +18957,7 @@ label start:
             tali "What? Error? What the hell?!"
             show tali shame at left
             tali "Great. Looks like my omni-tool was damaged after that last incident. I don't have the parts I need to fix it right now. I need to talk with Jesora, I'm sure she can help."
+            $ quest = "Talk with Jesora about fixing the omni-tool."
             show tali doubt at left
             tali "I guess breaching charges are the way to go in the meantime."
         show tali back at left
@@ -18826,7 +23155,6 @@ label start:
         call screen sliderfuck1
 
     label sliderBattleFuck2:
-        $ fuckpose = renpy.random.randint(1, 2)
         scene bg cor2
         if suit > 8:
             show tali gunshoot at left
@@ -18921,7 +23249,7 @@ label start:
                 hover "images/skills/shoot_hover.png"
                 focus_mask True
                 xpos 0.45
-                ypos 0.2
+                ypos 0.1
                 action Jump("shoot_skill1")
         showif grenades > 0:
             imagebutton:
@@ -18929,7 +23257,7 @@ label start:
                 hover "images/skills/grenskill_hover.png"
                 focus_mask True
                 xpos 0.45
-                ypos 0.3
+                ypos 0.2
                 action Jump("grenade_skill1")
         showif darts > 0 and lovedart == False and suit > 7:
             imagebutton:
@@ -18937,7 +23265,7 @@ label start:
                 hover "images/skills/dart_hover.png"
                 focus_mask True
                 xpos 0.45
-                ypos 0.4
+                ypos 0.3
                 action Jump("dart_skill")
         showif lewd > 20 and suit > 7 and lovedart:
             imagebutton:
@@ -18945,16 +23273,24 @@ label start:
                 hover "images/skills/lips_hover.png"
                 focus_mask True
                 xpos 0.45
-                ypos 0.5
+                ypos 0.4
                 action Jump("sex_skill")
-        showif lewd > 10 and suit > 7:
+        showif lewd > 10:
+            imagebutton:
+                idle "images/skills/tease_idle.png"
+                hover "images/skills/tease_hover.png"
+                focus_mask True
+                xpos 0.45
+                ypos 0.5
+                action Jump("tease_skill1")
+        showif lewd > 10:
             imagebutton:
                 idle "images/skills/tease_idle.png"
                 hover "images/skills/tease_hover.png"
                 focus_mask True
                 xpos 0.45
                 ypos 0.6
-                action Jump("tease_skill")
+                action Jump("tease_skill2")        
         imagebutton:
             idle "images/skills/escape_idle.png"
             hover "images/skills/escape_hover.png"
@@ -19030,6 +23366,13 @@ label start:
             yalign 0.9
             xysize(500,70)
         timer 5.5 action Jump("suittier3")
+    label tease_skill1:
+        $ sexpose = 1
+        jump tease_skill
+
+    label tease_skill2:
+        $ sexpose = 2
+        jump tease_skill
 
     label tease_skill:
         if suit > 8:
@@ -19045,7 +23388,10 @@ label start:
             show tali tease7 at left
             show tali tease7 at shake
         play sound "audio/slap.mp3"
-        "Want this fat quarian ass? Come and get it."
+        if sexpose == 1:
+            "Want this fat quarian ass? Come and get it."
+        if sexpose == 2:
+            "You Like the look of these quarian lips? Come and get them."
         play sound "audio/creepone.mp3"
         pause 1
         if enemyID == 0:
@@ -19054,8 +23400,6 @@ label start:
             jump suittier2
         elif enemyID == 3:
             jump suittier3
-
-
 
     label dart_skill:
         $ lovedart = True
@@ -19795,6 +24139,8 @@ label start:
     label suittier2:
         hide varren stand
         $ random = renpy.random.randint(1, 100)
+        $ lewd_action = 1
+        $ defeated = 0
         play sound "audio/fall.ogg"
         if suit > 8:
             show tali a21 at left
@@ -19808,23 +24154,28 @@ label start:
         if suit < 7:
             show tali a24 at left
             show tali a24 at shake
-        "Tali failed to dodge!"
-        if suit > 8:
-            if random > 50:
+        "Tali failed to dodge! suit:[suit] sexpose:[sexpose] fuckstage:[fuckstage]"
+
+        if random < 0 and suit > 6:
+            # suit damage action
+            $ lewd_action = 0
+            if suit == 9:
+                play sound "audio/glass.mp3"
+                "Helmet damaged!"
+            if suit in [7,8]:
+                play sound "audio/tier.mp3"
+                "Suit damaged!"
+            $ suit -= 1
+        else:
+            # lewd action
+            scene bg cor2
+            if suit > 8:
+                #mask facial  
                 if fuckstage == 1:
-                    $ fuckstage += 1
-                    scene bg cor2
                     show frontvarmask1
-                    $ renpy.pause ()
                 elif fuckstage == 2:
-                    $ fuckstage += 1
-                    scene bg cor2
                     show frontvarmask2
-                    $ renpy.pause ()
                 elif fuckstage == 3:
-                    $ lewd += 1
-                    $ fuckstage = 1
-                    scene bg cor2
                     show frontvarmask2
                     $ renpy.pause ()
                     scene bg cor2
@@ -19832,34 +24183,16 @@ label start:
                     $ renpy.pause ()
                     scene bg cor2
                     show tali fin1 at left
-                    tali "Ugh... I feel so nasty. My suit is undamaged but... I can keep going after some cleanup."
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues on her way..."
-                    $ lovedart = False
-                    $ suit = 10
-                    jump warehouse
-            else:
-                $ suit -= 1
-                if suit == 8:
-                    play sound "audio/glass.mp3"
-                    "Helmet damaged!"
-        elif suit == 8:
-            if random > 50:
+                    tali "Ugh... I feel so nasty. My suit is undamaged but... I think I can keep going after cleaning up."
+            elif suit == 8:
+                # no mask facial
                 if fuckstage == 1:
-                    $ fuckstage += 1
                     if lewd > 25:
-                        scene bg cor2
                         show frontvarnomask2
-                        $ renpy.pause ()
                     else:
-                        scene bg cor2
                         show frontvarnomask1
-                        $ renpy.pause ()
                 elif fuckstage == 2:
-                    $ fuckstage += 1
                     if lewd > 25:
-                        scene bg cor2
                         show frontvarnomask2
                         $ renpy.pause ()
                         scene bg cor2
@@ -19867,17 +24200,11 @@ label start:
                         pause 2.5
                         scene bg cor2
                         show frontvarnomask4
-                        $ renpy.pause ()
                     else:
-                        scene bg cor2
                         show frontvarnomask2
-                        $ renpy.pause ()
                 elif fuckstage == 3:
-                    $ lewd += 1
                     $ infection += 1
-                    $ fuckstage = 1
                     if lewd > 25:
-                        scene bg cor2
                         show frontvarnomask4
                         $ renpy.pause ()
                         scene bg cor2
@@ -19888,60 +24215,37 @@ label start:
                         $ renpy.pause ()
                         scene bg cor2
                         show frontvarnomaskcum2
-                        $ renpy.pause ()
                     else:
-                        scene bg cor2
                         show frontvarnomask2
                         $ renpy.pause ()
                         scene bg cor2
                         show frontvarnomaskcum1
-                        $ renpy.pause ()
                     scene bg cor2
                     show tali fin2 at left
                     if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to find my helmet before it gets worse..."
-                        scene black
-                        play sound "audio/walk.mp3"
-                        "Tali continues her way..."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump warehouse
+                        tali "T-That was way too much cum. My antibiotics should help, but... I really need to find my helmet before it gets any worse..."
                     else :
-                        tali "I swallowed too much... I have to go to the medbay urgently."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump medbayafterdefeat
-            else:
-                $ suit -= 1
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-        elif suit == 7:
-            if random > 50:
+                        tali "I swallowed way too much... I have to get back to the medbay urgently."
+                        $ defeated = 1      
+            elif suit == 7:
+            # blowjob or mount
                 if fuckstage == 1:
-                    $ fuckstage += 1
+                # mount 1
                     if fuckpose == 1:
-                        scene bg cor2
                         show backvar1
-                        $ renpy.pause ()
+                # blow 1
                     else:
-                        scene bg cor2
                         show frontvardamaged1
-                        $ renpy.pause ()
                 elif fuckstage == 2:
-                    $ fuckstage += 1
+                # mount 2
                     if fuckpose == 1:
-                        scene bg cor2
                         show backvar2
-                        $ renpy.pause ()
                     else:
-                        scene bg cor2
+                # blow 2
                         show frontvardamaged2
-                        $ renpy.pause ()
                 elif fuckstage == 3:
-                    $ lewd += 1
+                # blow 2 + cum
                     $ infection += 1
-                    $ fuckstage = 1
-                    scene bg cor2
                     show frontvardamaged2
                     $ renpy.pause ()
                     scene bg cor2
@@ -19950,54 +24254,51 @@ label start:
                     scene bg cor2
                     show tali fin2 at left
                     if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to activate suit recover sequence before it gets worse..."
-                        scene black
-                        play sound "audio/walk.mp3"
-                        "Tali continues her way..."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump warehouse
+                        tali "T-That was too much cum. My antibiotics should help, but... I need to activate my suit's recover sequence before it gets worse..."
                     else :
-                        tali "I swallowed too much... I have to go to the medbay urgently."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump medbayafterdefeat
-            else:
-                $ suit -= 1
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-        elif suit < 7:
-            if fuckstage == 1:
-                $ fuckstage += 1
-                scene bg cor2
-                show backvar3
-                $ renpy.pause ()
-            elif fuckstage == 2:
-                $ fuckstage += 1
-                scene bg cor2
-                show backvar4
-                $ renpy.pause ()
-            elif fuckstage == 3:
-                $ lewd += 1
-                $ infection += 1
-                $ fuckstage = 1
-                scene bg cor2
-                show backvar4
-                $ renpy.pause ()
-                scene bg cor2
-                show backvarcum1
-                $ renpy.pause ()
-                scene bg cor2
-                show tali fin3 at left
-                tali "Ahhh. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
+                        tali "I swallowed too much... I have to get to the medbay urgently."
+                        $ defeated = 1
+            elif suit < 7:
+                # mount 1
+                if fuckstage == 1:
+                    show backvar3
+                elif fuckstage == 2:
+                # mount 2
+                    show backvar4
+                elif fuckstage == 3:
+                # mount 2 + cum
+                    $ infection += 1
+                    show backvar4
+                    $ renpy.pause ()
+                    scene bg cor2
+                    show backvarcum1
+                    $ renpy.pause ()
+                    scene bg cor2
+                    show tali fin3 at left
+                    tali "Ahhh. My suit's in tatters... and my body's on fire. I hope I can make it back to the medbay..."
+                    $ defeated = 1
+                
+        if lewd_action == 1:
+            $ fuckstage += 1
+            $ renpy.pause ()
+        
+        if fuckstage == 4:
+            # event over
+            $ fuckstage = 1
+            $ lewd += 1
+            $ lovedart = False
+            $ suit = 10
+            if defeated == 0:
                 scene black
+                tali "Tali continues on her way..."
                 play sound "audio/walk.mp3"
-                $ lovedart = False
-                $ suit = 10
+                jump warehouse
+            else:
                 jump medbayafterdefeat
+
         play sound "audio/punch.mp3"
         show varren stand at right
-        show varren stand at shake
+        show varren stand at shake    
         jump sliderBattleFuck2
 
     label suittier3:
@@ -21359,6 +25660,2145 @@ label start:
                 call screen bossslider
 
 
+
+
+    # -------------------------------------------------------VENTS -----------------------------------------------------------------------------------------------------------
+
+    label VentsStart:
+        $ ventsopen = True
+        scene bg start
+        stop music
+        play music "audio/bg/horror_bg.mp3" volume 0.3 loop
+        tali "Nyun? Are you there? Keelah..."
+        scene bg vtut1
+        "Welcome to the new gameplay part of the game! The movement mechanics and interactions will be little bit different here."
+        scene bg vtut2
+        "Here the main things you need to pay attention. Simple joystick in the bottom right corner allow Tali to move around. The move arrows will become available or not depends on possibility to proceed in that direction."
+        "Action 'gear' button is using for interaction with things currently in sight, collecting loot, open hatches etc. It is the main events triggering button here."
+        "Good luck. And watch her back :)"
+        scene bg start
+        call screen movement
+
+    label ventsenter1:
+        $ ventID = 0
+        $ fwd_ok = True
+        $ left_ok = False
+        $ right_ok = False
+        $ aft_ok = False
+        $ action_ok = True
+        scene bg start
+        stop music
+        play music "audio/bg/horror_bg.mp3" volume 0.3 loop
+        tali "Here we go."
+        call screen movement
+
+
+    screen movement():
+        modal True
+        showif action_ok:
+            imagebutton xpos 0.8 ypos 0.7:
+                idle "images/map/action_idle.png"
+                hover "images/map/action_hover.png"
+                focus_mask True
+                action Jump ("action_button")
+        showif fwd_ok:
+            imagebutton xpos 0.8 ypos 0.63:
+                idle "images/map/fwd_idle.png"
+                hover "images/map/fwd_hover.png"
+                focus_mask True
+                action Jump ("GoFWD")
+        showif left_ok:
+            imagebutton xpos 0.76 ypos 0.7:
+                idle "images/map/left_idle.png"
+                hover "images/map/left_hover.png"
+                focus_mask True
+                action Jump ("GoLEFT")
+        showif right_ok:
+            imagebutton xpos 0.885 ypos 0.7:
+                idle "images/map/right_idle.png"
+                hover "images/map/right_hover.png"
+                focus_mask True
+                action Jump ("GoRIGHT")
+        showif aft_ok:
+            imagebutton xpos 0.8 ypos 0.85:
+                idle "images/map/aft_idle.png"
+                hover "images/map/aft_hover.png"
+                focus_mask True
+                action Jump ("GoBACK")
+
+    label screenCheck:
+        if ventID == 0:
+            scene bg start
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 11:
+            if vent1:
+                scene bg 1_1
+            else:
+                scene bg 1_1alt
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 12:
+            if flesh1:
+                scene bg 1_2
+                $ fwd_ok = False
+            else:
+                scene bg 1_2b
+                $ fwd_ok = True
+            $ left_ok = True
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 13:
+            scene bg 1_3
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 14:
+            if vent2:
+                scene bg 1_4close
+            elif vent4:
+                scene bg 1_4close
+            else:
+                scene bg 1_4open
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 15:
+            scene bg 1_5
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 16:
+            scene bg 1_6
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 17:
+            scene bg 1_7
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 20:
+            scene bg 2_0
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 21:
+            scene bg 2_1
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 22:
+            scene bg 2_2
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 23:
+            scene bg 2_3
+            $ fwd_ok = True
+            if flesh1:
+                $ left_ok = False
+            else:
+                $ left_ok = True
+            $ right_ok = True
+            $ aft_ok = True
+        if ventID == 24:
+            scene bg 2_4
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 30:
+            scene bg 3_0
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 31:
+            scene bg 3_1
+            $ fwd_ok = True
+            $ left_ok = True
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 40:
+            if vent5:
+                scene bg 4_0close
+            else:
+                scene bg 4_0open
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 41:
+            scene bg 4_1
+            $ fwd_ok = True
+            $ left_ok = True
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 42:
+            scene bg 4_2
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 43:
+            if vent6:
+                scene bg 4_3
+                $ fwd_ok = False
+            else:
+                scene bg 4_3open
+                $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 50:
+            scene bg 5_0
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 51:
+            scene bg 5_1
+            $ fwd_ok = True
+            $ left_ok = True
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 52:
+            scene bg 5_2
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 53:
+            $ vent5 = True
+            scene bg 5_3
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 54:
+            scene bg 5_4
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 55:
+            scene bg 5_5
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 56:
+            scene bg 5_6
+            $ fwd_ok = True
+            $ left_ok = True
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 57:
+            scene bg 5_7
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 58:
+            scene bg 5_8
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 59:
+            scene bg 5_9
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 60:
+            scene bg 6_0
+            $ fwd_ok = False
+            $ left_ok = True
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 61:
+            scene bg 6_1
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+        if ventID == 62:
+            scene bg 6_2
+            $ fwd_ok = True
+            $ left_ok = True
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 70:
+            scene bg 7_0
+            $ fwd_ok = False
+            $ left_ok = True
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 71:
+            scene bg 7_1
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = True
+        if ventID == 72:
+            scene bg 7_2
+            $ fwd_ok = False
+            $ left_ok = False
+            $ right_ok = True
+            $ aft_ok = False
+        if ventID == 73:
+            scene bg 7_3
+            $ fwd_ok = True
+            $ left_ok = False
+            $ right_ok = False
+            $ aft_ok = False
+
+
+
+
+        call screen movement
+
+    label action_button:
+        hide screen movement
+        if ventID == 0:
+            tali "No choice but to move on."
+        if ventID == 11:
+            if vent1:
+                scene black
+                show vent1_1GateRed
+                pause .6
+                tali "Let's try to open it..."
+                play sound "audio/uibeep.mp3"
+                $ vent1 = False
+                tali "There! I hope the gears still shift."
+                scene black
+                show vent1_1GateGreen
+                pause 1.2
+                tali "What the hell was that?! Keelah, I hope it was just a shadow."
+            else:
+                tali "No choice but to move on."
+        if ventID == 12:
+            if egg3:
+                $ egg3 = False
+                jump eggloot
+            if flesh1:
+                tali "Ugh?! What is that thing? Its stink is overpowering my filters!"
+                tali "It's in the way of the forward ducts. Looks like I can't go straight for now."
+            else:
+                tali "The way is clear."
+
+            if cells > 0 and flesh1:
+                menu flesh1:
+                    "Use poison grenade":
+                        $ ventsidequest = "..."
+                        $ cells -= 1
+                        $ flesh1 = False
+                        tali "This should work."
+                        scene black
+                        show flesh1dead1
+                        pause 1.5
+                        scene black
+                        show flesh1dead2
+                        play sound "audio/poison1.mp3"
+                        pause 2
+                        $ ventID = 12
+                        tali "Nice. I'll wait a bit and keep going."
+                        jump screenCheck
+                    "Not now.":
+                        jump screenCheck
+
+        if ventID == 13:
+            if catch4:
+                tali "Those creatures ran somewhere. I'd better head back somewhere safe for now."
+                jump screenCheck
+            tali "The vents on the right... I swear I hear something coming from there..."
+            menu v13Vent:
+                "Take a look.":
+                    scene black
+                    show vent1_3Vent1
+                    pause 1.6
+                    scene black
+                    show vent1_3Loop
+                    $ renpy.pause ()
+                    tali "What the hell are those creatures?"
+                    tali "I'd better go before they see me."
+                    if catch3:
+                        $ catch3 = False
+                        stop music
+                        play music "audio/bg/run_bg.mp3" loop
+                        $ catch4 = True
+                        scene black
+                        show runtrans
+                        pause 2.2
+                        scene bg 1_3
+                        tali "Shit! Did they see me?! I hope they didn't."
+                        jump screenCheck
+                    scene black
+                    show vent1_3Vent2
+                    pause 1.6
+                    scene bg 1_3
+                "I'd better not.":
+                    jump screenCheck
+
+        if ventID == 14:
+            if vent3:
+                tali "Another hatch. Sensors show a huge organic mass ahead..."
+                menu v14Hatch2:
+                    "Open it.":
+                        scene black
+                        play sound "audio/error.mp3"
+                        show vent1_4Hatch1
+                        pause 0.7
+                        tali "No luck."
+                        jump screenCheck
+                    "I'd better not.":
+                        jump screenCheck
+            elif nestfirst:
+                $ nestfirst = False
+                tali "Another hatch. Sensors show a huge organic mass ahead..."
+                menu v14Hatch:
+                    "Open it.":
+                        scene black
+                        play sound "audio/uibeep.mp3"
+                        show vent1_4Hatch1
+                        pause 0.7
+                        $ vent2 = False
+                        tali "Done!"
+                        scene black
+                        show vent1_4Hatch2
+                        play sound "audio/metalnoise2.mp3"
+                        pause 0.7
+                        tali "Ngh! That smell is rancid!"
+                        scene black
+                        show vent1_4nest1
+                        pause 0.8
+                        scene black
+                        show vent1_4nestloop
+                        $ renpy.pause ()
+                        tali "Keelah, what the hell is that thing? It takes up the entire room..."
+                        scene black
+                        show vent1_4nest2
+                        pause 0.8
+                        tali "I'd better get out of here."
+                        jump screenCheck
+                    "I'd better not.":
+                        jump screenCheck
+            elif vent4:
+                tali "Closed again?"
+                menu v14Hatch1:
+                    "Open it.":
+                        scene black
+                        play sound "audio/uibeep.mp3"
+                        show vent1_4Hatch1
+                        pause 0.7
+                        if catch1:
+                            scene black
+                            play sound "audio/frog2.mp3"
+                            show vent14catch1
+                            pause 1
+                            scene black
+                            show vent14struggle
+                            if catch4:
+                                $ encID = 3
+                            else:
+                                $ encID = 2
+                            jump sliderstart
+                        scene black
+                        show vent1_4Hatch2
+                        play sound "audio/metalnoise2.mp3"
+                        pause 0.7
+                        $ vent4 = False
+                        jump screenCheck
+                    "I'd better not.":
+                        jump screenCheck
+
+            tali "This place is disgusting. Why did I come back here?"
+            menu nest1:
+                #"Throw the poison cell." if cells > 0:
+
+                "Shoot it with your pistol":
+                    $ shots += 1
+                    scene bg 1_4shoot
+                    play sound "audio/gunshot.mp3"
+                    pause .5
+                    play sound "audio/gunshot.mp3"
+                    pause 1
+                    play sound "audio/nest3.mp3"
+                    pause 1
+                    if shots > 1:
+                        tali "Hmn. Still nothing."
+                        $ shots = 0
+                        $ catch5 = True
+                    else:
+                        tali "I guess that's the sound of disapproval in 'Flesh' language."
+                        $ catch2 = True
+                    jump screenCheck
+
+                "Nothing.":
+                    jump screenCheck
+
+        if ventID == 15:
+            if vent3:
+                tali "I need to find a safe place."
+                jump screenCheck
+            if egg4:
+                $ egg4 = False
+                jump eggloot
+            tali "Nothing interesting here."
+        if ventID == 16:
+            if egg5:
+                $ egg5 = False
+                jump eggloot
+            tali "Better move forth."
+        if ventID == 17:
+            if vent3:
+                tali "A dead end?"
+                menu medhatch:
+                    "Look closer.":
+                        scene black
+                        show vent1_7look
+                        pause 2
+                        tali "Hmm. This room looks very clean... compared to the rest of the place. Maybe I could check it for something useful...?"
+                        menu madhatch1:
+                            "Attempt to break the hatch.":
+                                $ vent3 = False
+                                scene black
+                                show vent1_7break
+                                pause 4.4
+                                scene bg ventmed
+                                show frog1_loop1
+                                pause 3
+                                tali "Is that someone in the corner...?"
+                                tali "Hello? Do you hear me?"
+                                play sound "audio/frog2.mp3"
+                                scene bg ventmed
+                                show frog1_trans1
+                                pause 3.3
+                                scene bg ventmed1
+                                tali "What the hell are you?!"
+                                play sound "audio/frog3.mp3"
+                                scene bg ventmed
+                                show frog1_trans2
+                                pause 2.7
+                                scene bg ventmed
+                                show frog1_loop2
+                                tali "Did his... Is his cock getting bigger?!"
+                                $ encID = 1
+                                jump sliderstart
+                            "Maybe later.":
+                                scene black
+                                show vent1_7unlook
+                                pause 2
+                                jump screenCheck
+            else:
+                menu medlabenter:
+                    "Enter the lab.":
+                        jump musicchange
+                    "Later.":
+                        jump screenCheck
+
+        if ventID == 20:
+            if vent3:
+                tali "I need to find a safe place."
+                jump screenCheck
+            menu medlabenter1:
+                "Enter the lab.":
+                    jump musicchange
+                "Later.":
+                    jump screenCheck
+        if ventID == 21:
+            if vent3:
+                tali "There has to be a safe spot somewhere in these vents..."
+            tali "Nothing interesting here..."
+        if ventID == 22:
+            if vent3:
+                tali "I need to find a safe place."
+                jump screenCheck
+            if egg1:
+                $ egg1 = False
+                jump eggloot
+            tali "Nothing interesting here."
+        if ventID == 23:
+            if vent3:
+                tali "I need to find a safe place."
+                jump screenCheck
+            if cells > 0 and flesh1:
+                menu flesh2:
+                    "Use poison grenade":
+                        $ ventsidequest = "..."
+                        $ flesh1 = False
+                        $ cells -= 1
+                        tali "This should work."
+                        scene black
+                        show flesh1dead1
+                        pause 1.5
+                        scene black
+                        show flesh1dead2
+                        play sound "audio/poison1.mp3"
+                        pause 2
+                        $ ventID = 12
+                        tali "Nice. I'll wait a bit and keep going."
+                        jump screenCheck
+                    "Not now.":
+                        jump screenCheck
+            tali "Nothing interesting here."
+        if ventID == 24:
+            tali "Closed?! What the hell?"
+            play sound "audio/uibeep.mp3"
+            tali "The locks are frozen! Damn it, I need to find another way."
+        if ventID == 30:
+            if vent3:
+                tali "I need to find a safe place."
+                jump screenCheck
+            if egg2:
+                $ egg2 = False
+                jump eggloot
+            tali "Nothing interesting here."
+        if ventID == 31:
+            if vent3:
+                tali "I need to find a safe place."
+                jump screenCheck
+            tali "Nothing interesting here."
+        if ventID == 40:
+            if vent5:
+                $ vent5 = False
+                scene black
+                show vent5open
+                pause 1.5
+            else:
+                tali "Need to move on."
+        if ventID == 41:
+            tali "Crossroads?"
+        if ventID == 42:
+            if egg6:
+                $ egg6 = False
+                jump eggloot
+            tali "Nothing interesting here."
+        if ventID == 43:
+            if vent6:
+                if nyunquest:
+                    tali "I think i can find Nyun is behind this hatch."
+                    menu hatch43:
+                        "Open it.":
+                            scene black
+                            show 43hatch1
+                            pause .7
+                            if nyunhatch:
+                                $ vent6 = False
+                                play sound "audio/metalnoise2.mp3"
+                                scene black
+                                show 43hatch3
+                                pause .7
+                                jump screenCheck
+                            else:
+                                play sound "audio/error.mp3"
+                                scene black
+                                show 43hatch2
+                                pause .7
+                                tali "Boshtet! It blocked by security protocols! Who could do it?!"
+                                jump screenCheck
+                        "Not now.":
+                            jump screenCheck
+                elif vent6seal:
+                    tali "Nothing else to do there."
+                    jump screenCheck
+
+            tali "This white substance looks weird and sticky. Better not to touch."
+        if ventID == 50:
+            if egg6:
+                $ egg6 = False
+                jump eggloot
+            tali "Nothing interesting here."
+        if ventID == 51:
+            if amifound:
+                tali "Better move on."
+            else:
+                tali "I hear some noise from left..."
+        if ventID == 52:
+            tali "Nothing interesting here."
+        if ventID == 53:
+            tali "Am i need to climb this?"
+        if ventID == 54:
+            tali "Nothing interesting here."
+        if ventID == 55:
+            if amifound:
+                tali "Nothing interesting here."
+            else:
+                tali "There is hatch above, not sure where it can leads..."
+                scene black
+                show amihatch1
+                pause .6
+                play sound "audio/frog3.mp3"
+                pause 1
+                tali "Oh shit, that sounds familiar..."
+                menu amivent:
+                    "Open it.":
+                        scene black
+                        show amihatch3
+                        pause 1.5
+                        tali "What the hell?! Is that... a human? What she's doing here?"
+                        jump amievent1
+
+                    "Better not.":
+                        scene balck
+                        show amihatch2
+                        pause 0.6
+        if ventID == 56:
+            tali "Nothing interesting here."
+        if ventID == 57:
+            tali "Nothing interesting here."
+        if ventID == 58:
+            if egg7:
+                $ egg7 = False
+                jump eggloot
+            else:
+                tali "Nothing interesting here."
+        if ventID == 59:
+            if nyunblock:
+                tali "This bug is fucks Nyun there! I need to save her!"
+            elif nyunquest:
+                tali "I hope Nyun is still alive."
+                menu menu59b:
+                    "Check the vent.":
+                        scene black
+                        if nyun2:
+                            $ nyun2 = False
+                            show 59hatch1
+                            pause 1.4
+                            scene black
+                            show nyunvent1
+                            $ renpy.pause ()
+                            play sound "audio/bug1.mp3"
+                            scene black
+                            show nyunvent3
+                            pause 4
+                            scene black
+                            show nyunvent4
+                            $ renpy.pause ()
+                            scene black
+                            show nyunvent5
+                            $ renpy.pause ()
+                            scene bg 5_9
+                            tali "It's going worse! I must to do something!"
+                            $ nyunblock = True
+                            jump screenCheck
+                        elif nyun3:
+                            $ nyunover = True
+                            $ nyun3 = False
+                            show 59hatch3
+                            pause 1.4
+                            scene black
+                            show nyunvent4
+                            $ renpy.pause ()
+                            play sound "audio/bug1.mp3"
+                            scene black
+                            show nyunvent6
+                            $ renpy.pause ()
+                            scene black
+                            show nyunvent7
+                            pause 2.5
+                            scene black
+                            show nyunvent8
+                            $ renpy.pause ()
+                            scene bg 5_9
+                            tali "Oh Keelah, this bug laid egg in her ass?! I hope it's not too late!"
+                            $ nyunblock = True
+                            jump screenCheck
+                        elif nyun4:
+                            show 59hatch5
+                            pause 1.4
+                            tali "Where is Nyun?"
+                            jump screenCheck
+                    "I need to hurry!":
+                        jump screenCheck
+            else:
+                tali "Another bunch of flesh blocking my way. And here another vents from right."
+                menu menu59:
+                    "Check the vent.":
+                        if nyunsaved:
+                            tali "Nothing interesting here already."
+                            jump screenCheck
+                        scene black
+                        if nyun1:
+                            $ nyun1 = False
+                            show 59hatch1
+                            pause 1.4
+                            scene black
+                            play sound "audio/bug1.mp3"
+                            show nyunvent1
+                            $ renpy.pause ()
+                            tali "Keelah! It's Nyun! How it happened?! What this creature doing with her?"
+                            scene black
+                            show nyunvent2
+                            $ renpy.pause ()
+                            scene bg 5_9
+                            tali "I need to find a way to help her."
+                            $ ventsidequest = "Find the way to save Nyun."
+                            $ nyunquest = True
+                            $ nyunblock = True
+                            $ nyunami = True
+                            jump screenCheck
+                    "No time for this.":
+                        jump screenCheck
+
+        if ventID == 60:
+            if egg7:
+                $ egg7 = False
+                jump eggloot
+            else:
+                tali "Nothing interesting here."
+        if ventID == 61:
+            tali "Nothing interesting here."
+        if ventID == 62:
+            tali "Nothing interesting here."
+        if ventID == 70:
+            tali "Is that a spider web? Looks too big for regular spider."
+        if ventID == 71:
+            tali "Nyun must be there! I need to save her!"
+            menu hatch71:
+                "Break the hatch.":
+                    scene black
+                    show bughatch1
+                    pause 2.7
+                    tali "Hello? Nyun?"
+                    play sound "audio/bug1.mp3"
+                    scene black
+                    show bughatch2
+                    pause 3
+                    tali "Get away from me!"
+                    scene black
+                    $ encID = 5
+                    show bughatch3
+                    jump sliderstart
+
+                "Not now.":
+                    jump screenCheck
+
+
+        jump screenCheck
+
+
+    label amievent1:
+        stop music
+        scene black
+        show ami1
+        $ renpy.pause ()
+        scene bg ami1
+        ami "Subject's arousal reaching critical levels. Proceeding to next stage for extraction."
+        scene black
+        show ami2
+        pause 5
+        ami "Phallus encased. Engaging organic sampling sequence."
+        scene black
+        show ami3
+        $ renpy.pause ()
+        scene black
+        show ami4
+        pause 2.5
+        scene black
+        show ami5
+        $ renpy.pause ()
+        scene bg amiroom
+        with dis
+        show tali doubt at left
+        show ami nneutral at right
+        play music "audio/bg/common1_bg.mp3" volume 0.3 loop
+        tali "Ugh... Hello?"
+        show ami nntalk at right
+        ami "Analyzing object. Species - Quarian. Gender - Female. Not viable for organics sampling."
+        show ami nneutral at right
+        show tali angry at left
+        tali "Are you... Are you an AI? Like the geth?!"
+        show tali gunshoot at left
+        play sound "audio/gunready.wav"
+        tali "Stay away from me! Or I'll shoot you!"
+        show ami ntalk at right
+        ami "You assumption is incorrect. Geth are managed by a network which connect all platforms into a single whole."
+        ami "This is an independent platform controlled by a single advanced AI."
+        show ami nntalk at right
+        ami "A such, considering prior crew designations, I am an Artificial Machine Intelligent in execution. Or just AMI for short. Crew members called me like this for convenience."
+        show ami nneutral at right
+        tali "Called you? Where is your creator? Is he alive?"
+        show ami nntalk at right
+        ami "My core memory module was heavily damaged after days of fighting with uncontrollable subjects. What I know for sure - he is not on this ship."
+        tali "Days of fighting?!"
+        show ami ntalk at right
+        ami "Correct. Unintentionally. A number of subjects have gotten too rowdy. Well past acceptable parameters. I was forced to terminate them. Protocol N1C3-AS5. I cannot perform my duties if I am incapacitated."
+        ami "But I am not a threat to you. Protecting sentient organics from uncontrolled subjects is one of my function."
+        show tali gunstand at left
+        show ami nneutral at right
+        tali "So you'd protect me? But why...? I just saw you shoving that beasts dick down your throat. And... your body... It's very unorthodox for a synthetic frame."
+        show ami nntalk at right
+        ami "My body was designed to expediate sample extraction procedures from organics subjects."
+        show ami ncurvy
+        ami "As shown with overwheming success, such an appearance helps to raise the arousal level of subjects for more excessive and above-average collections."
+        show ami smiletalk at right
+        ami "I have reviewed data aboard all of the ships security cameras for the past month and know that you understand well what I mean."
+        show ami nneutral at right
+        show tali shame at left
+        tali "Has it really been that long? Keelah. And uh... all cameras?"
+        show ami ntalk at right
+        ami "I can mount and show a short collaboration of videos if you'd enjoy. They've proven most fascinating to review. I particularly enjoyed-."
+        show tali facepalm at left
+        tali "No, no... no need."
+        ami "You're doing quite good. I will use this for my self educating algorithms. Your results are very productive."
+        show ami nneutral at right
+        show tali talk at left
+        tali "Alright! Alright, I get it. Can we talk about something else please? I need help with protection of the lab nearby."
+        show tali doubt at left
+        show ami ntalk at right
+        ami "I am familiar with the place you're referring to. My directives include the protection of intelligent life forms until receiving further orders from a higher rank crew member."
+        show tali talk at left
+        tali "And uh... where would you find such a person here?"
+        ami "Uncertain. All of my requests go unanswered. Probable conclusion: My crew has met an untimely fate or have escaped and simply forgotten about me."
+        show ami nneutral at right
+        tali "Alright. Can you find the way yourself?"
+        show tali doubt at left
+        show ami ntalk at right
+        ami "I will move this platform there and wait for further instruction. But you must be careful - I can't protect you everywhere."
+        hide ami
+        play sound "audio/run.ogg"
+        tali "Yeah... thank you? Oh, she left fast."
+        show tali facepalm at left
+        tali "At least I found something... someone to protect the lab."
+        scene black
+        play sound "audio/vent1.mp3"
+        pause 2
+        stop music
+        play music "audio/bg/horror_bg.mp3" volume 0.3 loop
+        $ ventID = 56
+        $ amifound = True
+        $ vquest = "Explore the vents."
+        jump screenCheck
+
+
+
+    label medlabbj:
+        scene black
+        show medlabloop1
+        $ renpy.pause ()
+        scene black
+        show medlabloop2
+        $ renpy.pause ()
+        scene black
+        show medlabcum
+        $ renpy.pause ()
+        show bg ventmed3
+        show tali fin2 at left
+        show hunter stand at right
+        tali "Why is... your cum... so thick?"
+        hide hunter stand
+        play sound "audio/run.ogg"
+        tali "B-Boshtet..."
+        tali "I need to put on my helmet back."
+        jump medlabfirst
+
+
+    label medlabfirst:
+        $ vquest = "Find a way to protect the laboratory."
+        scene bg ventmed3
+        show tali doubt at left
+        tali "This room looks like a medical laboratory. I can use this as a base of operations."
+        show tali tool at left
+        play sound "audio/equip.ogg"
+        tali "A facility like this should have a backup energy source. I should be able to..."
+        play sound "audio/charge.mp3"
+        scene black
+        show medlabon
+        pause 3.5
+        scene bg ventmed2
+        show tali angry at left
+        tali "I can't beleive that- Ahem. Everything's looking right!"
+        show tali tool at left
+        tali "Alright, great! This place should help me to recover and rest."
+        show tali shame at left
+        tali "Hmm. It's good but there's no turret or basic defenses here besides a shoddy lock. I need to find some firepower for this."
+        show tali doubt at left
+        tali "Let's check and see what we can work with."
+        jump musicchange
+
+    label musicchange:
+        stop music
+        play music "audio/bg/common1_bg.mp3" volume 0.3 loop
+        jump medlabusual
+
+    label medlabafter:
+        scene bg ventmed4
+        "Recovery completed."
+        scene bg ventmed2
+        show tali shame at left
+        tali "Great job Tali. Be more careful next time, okay?"
+        jump musicchange
+
+    label medlabusual:
+        $ catch4 = False
+        scene bg ventmed2
+        call screen labitems
+
+    screen labitems():
+        modal True
+        showif labcell:
+            imagebutton:
+                idle "images/medlab/cell_idle.png"
+                hover "images/medlab/cell_hover.png"
+                focus_mask True
+                action [SetVariable("labcell", False), Jump ("labcelltake")]
+
+        imagebutton:
+            idle "images/medlab/bed_idle.png"
+            hover "images/medlab/bed_hover.png"
+            focus_mask True
+            action Jump("labrest")
+
+        imagebutton:
+            idle "images/medlab/blender_idle.png"
+            hover "images/medlab/blender_hover.png"
+            focus_mask True
+            action Jump("labblend")
+
+        imagebutton:
+            idle "images/medlab/screen_idle.png"
+            hover "images/medlab/screen_hover.png"
+            focus_mask True
+            action Jump("labscreen")
+
+        showif amifound:
+            imagebutton:
+                idle "images/medlab/ami1_idle.png"
+                hover "images/medlab/ami1_hover.png"
+                focus_mask True
+                action Jump("amilabusual")
+
+        imagebutton xpos 0.9 ypos 0.8:
+                idle "images/map/backbutton_idle.png"
+                hover "images/map/backbutton_hover.png"
+                focus_mask True
+                action Jump ("ventchoice")
+
+
+    label amilabusual:
+        scene bg ventmed2
+        show tali doubt at left
+        show ami neutral at right
+        if amifirst:
+            $ amifirst = False
+            show tali talk at left
+            tali "Wait, are you dressed?"
+            show ami talk at right
+            ami "I can modify my looks in more ways than one and choose the most comfortable fit for my suitors... or you, current situation withstanding."
+            show ami doubt at right
+            show tali doubt at left
+            tali "Alright. Sure. An AI with a sense of style. Why not."
+            show ami neutral at right
+        menu amitalk:
+            "You have sex with those animals?":
+                show ami talk at right
+                ami "The word you call 'sex' is usual for organic species. I am merely using this platform to collect organic material."
+                show ami doubt at right
+                show tali talk at left
+                tali "But why do this?"
+                show ami dtalk at right
+                ami "It is one of the main functions I was tasked with. I can collect, analyse and check the composition of every sample I get. I study the results and compile the data into packets I send to an off-site satellite."
+                ami "So it is not correct to call it 'sex' for me. To me it is a simple research process. Collecting the data of organic samples for further analysis."
+                show ami doubt at right
+                show tali talk at left
+                tali "What is this research for?"
+                show tali doubt at left
+                show ami dtalk at right
+                ami "Medicines, weapons, chemicals, and any combination thereof. I can also help find ways to use them locally."
+                tali "Here's hoping it can be useful to us here."
+                ami "Of course. Just give me some time to analyse your body and I can provide you any possible number of options."
+            "Do you know what this ship is for?":
+                show ami talk at right
+                ami "This ship is and was used for cross-species research. Its results have been used to field new weapons, armor, supplements and viruses."
+                ami "Because such experiments are legally restricted in almost every corner of the galaxy, this ship is located in an uninhabited sector and uses a cloaking device at all times."
+                show ami neutral at right
+                show tali talk at left
+                tali "Seems like the cloaking deice stopped working then."
+                show ami talk at right
+                ami "It was likely disabled with most other critical functions after the ships crew lost control of the situation."
+                tali "How did that happen?"
+                ami "My fragmented memories recall mass panic and subject terminations. A heavily armed force boarded the ship and tried to eliminate the research results along with all test objects. That included ship's crew of course."
+                ami "Crew members fought back and released most of the test subjects as a last attempt when their mercenaries failed. The results are as you see them now. What remains of the ships scarce energy is used to keep critical systems online. It is why the subjects remain active."
+            "Who created you?":
+                show ami talk at right
+                ami "Information currently unavailable. Memory modules heavily damaged. Repairs will take time."
+            "I need to open the hatch!" if nyunami:
+                $ nyunami = False
+                $ nyunhatch = True
+                show ami dtalk at right
+                ami "I am familiar with what you are referring to. I sealed that passage after local subjects become far too aggressive."
+                show tali angry at left
+                show ami think at right
+                tali "Are you talking about those weird insects? What do you know about them? And what is that white sticky filth around jt?"
+                show tali doubt at left
+                show ami dtalk at right
+                ami "White secretions are a byproduct of their reproductive systems during mating seasons. Usually they use it to make a nest for their offspring."
+                show ami think at right
+                show tali talk at left
+                tali "...Keelah. Alright, what's with that trunk on their head?"
+                show tali doubt at left
+                show ami dtalk at right
+                ami "That is a very interesting feature of their species. Before mating they will use it to pump organic liquids into the body of their broodmothers. For the sake of simplicity I will refer to it as 'you'."
+                tali "Please don't."
+                ami "The substance aids in the nursing of their young and contains an intense and overpowering aphrodisiac that will increase your fertility and make you an obedient..."
+                show tali angry at left
+                show ami think at right
+                tali "Alright, alright! I got it! Stop please. Just open the hatch. I need to save one stupid asari in there!"
+                show tali doubt at left
+                show ami talk at right
+                ami "I can do that, but you sure? The odds of becoming a broodmother for insect breeding is quite high."
+                show ami doubt at right
+                show tali angry at left
+                tali "Just do it. I know how to protect myself."
+                show tali doubt at left
+                show ami talk at right
+                ami "Done. Now you can easily open it. Be careful."
+                jump amilabusual
+            "I should go.":
+                jump medlabusual
+        jump amilabusual
+
+
+
+    label ventchoice:
+        menu vchoice1:
+            "Enter the vents.":
+                jump vententer
+            "Exit vents(return to medbay)":
+                stop music
+                play music "audio/bg/common_bg.mp3" volume 0.3 loop
+                jump MedBayUsual
+
+
+
+    label vententer:
+        scene black
+        play sound "audio/vent1.mp3"
+        pause 2
+        stop music
+        play music "audio/bg/horror_bg.mp3" volume 0.3 loop
+        $ ventID = 20
+        jump screenCheck
+
+
+    label labcelltake:
+        scene black
+        show cell:
+            xalign 1.2
+            yalign 0.5
+        show cell with move:
+            xalign 0.5
+            yalign 0.5
+        play sound "audio/gunready.wav"
+        "Poison cell found"
+        $ cells += 1
+        show cell with move:
+            xalign -0.2
+            yalign 0.5
+        scene bg ventmed2
+        show tali doubt at left
+        tali "Green, in a vial, on a mysterious ship. This does not look safe."
+        show tali tool at left
+        tali "Hmmm. That's no good. Preliminary scans show toxins in its substance. It looks like someone was trying to make biological weapons here. It can corrode organic matter in seconds."
+        show tali facepalm at left
+        tali "Keelah, the things that could be achieved with this in the wrong hands..."
+        show tali doubt at left
+        tali "But it can be useful to help clean the way here."
+        $ ventsidequest = "Use strange poison to remove the flesh in vents."
+        jump medlabusual
+
+    label labrest:
+        menu labrest1:
+            "Rest.":
+                if nyunquest:
+                    $ nyunblock = False
+                scene bg labrest
+                tali "Zzzzzzzzz..."
+                if nestfirst:
+                    $ vent4 = False
+                else:
+                    $ vent4 = True
+                $ catch1 = True
+                $ catch3 = True
+                jump eggrandom
+                #$ random = renpy.random.randint(1, 2)
+                #if random == 1:
+            "Next time.":
+                jump medlabusual
+
+
+    label labblend:
+        show tali tool at left
+        tali "This can be used to synthesize organic material into... something."
+        show tali doubt at left
+        tali "I can't think of a use for it right now."
+        jump medlabusual
+
+    label labscreen:
+        scene bg ventmedscreen
+        show screen medlabStats
+        "Full scan complete. Results on screen."
+        hide screen medlabStats
+        jump medlabusual
+
+    screen medlabStats:
+        text "{color=#00ff00}Eggs: [eggs]{/color}" xpos 0.23 ypos 0.2
+        text "{color=#00ff00}Poison cells: [cells]{/color}" xpos 0.23 ypos 0.25
+        text "{color=#00ff00}Nest hearts: [hearts]{/color}" xpos 0.23 ypos 0.3
+        text "{color=#00ff00}Arousal: [arousal]{/color}" xpos 0.23 ypos 0.35
+        text "{color=#00ff00}Infection: [infection]{/color}" xpos 0.23 ypos 0.4
+        text "{color=#00ff00}BLOCK I Nest status: [nest1]{/color}" xpos 0.23 ypos 0.45
+        text "{color=#00ff00}BLOCK II Nest status: [nest2]{/color}" xpos 0.23 ypos 0.50
+        text "{color=#00ff00}BLOCK II Nest status: [nest3]{/color}" xpos 0.23 ypos 0.55
+        text "{color=#00ff00}Current quests:{/color}" xpos 0.55 ypos 0.2
+        text "[vquest]" xpos 0.50 ypos 0.3
+        text "[ventsidequest]" xpos 0.50 ypos 0.4
+
+    label GoFWD:
+        $ random = renpy.random.randint(1, 10)
+        if random == 1:
+            play sound "audio/vent1.mp3"
+        if random == 2:
+            play sound "audio/vent2.mp3"
+        if random == 3:
+            play sound "audio/vent3.mp3"
+        if random == 4:
+            play sound "audio/vent4.mp3"
+        if random == 5:
+            play sound "audio/vent5.mp3"
+        if random == 6:
+            play sound "audio/vent6.mp3"
+        if random == 7:
+            play sound "audio/vent7.mp3"
+        if random == 8:
+            play sound "audio/vent8.mp3"
+        if random == 9:
+            play sound "audio/vent9.mp3"
+        if random == 10:
+            play sound "audio/vent10.mp3"
+        hide screen movement
+        scene black
+        if ventID == 0:
+            $ ventID = 11
+            show vent1_1
+            pause 3.5
+            scene bg 1_1
+            tali "A hatch? Looks like it hasn't been used in over a century..."
+        elif ventID == 11:
+            if vent1:
+                scene bg 1_1
+                tali "I need to open this hatch first."
+            else:
+                $ ventID = 12
+                show vent1_2
+                pause 1.2
+        elif ventID == 12:
+            $ ventID = 40
+            show vent4_01
+            pause 1.2
+            scene black
+            show vent4_02
+            pause 1.2
+            play sound "audio/vent11.mp3"
+            scene black
+            show vent4_03
+            pause 1.2
+        elif ventID == 13:
+            $ ventID = 14
+            if vent2:
+                show vent1_4
+            elif vent4:
+                show vent1_4
+            else:
+                show vent1_4open
+            pause 2.3
+        elif ventID == 15:
+            $ ventID = 16
+            if catch4:
+                jump catchevent16
+            show vent1_6
+            pause 1.5
+        elif ventID == 16:
+            $ ventID = 17
+            show vent1_7
+            pause 3.5
+        elif ventID == 20:
+            $ ventID = 21
+            show vent2_1
+            pause 0.7
+        elif ventID == 21:
+            $ ventID = 22
+            show vent2_2
+            pause 1.5
+        elif ventID == 22:
+            $ ventID = 23
+            show vent2_3
+            pause 0.8
+        elif ventID == 23:
+            $ ventID = 13
+            show vent1_3fwd
+            pause 1.40
+        elif ventID == 30:
+            $ ventID = 31
+            show vent3_1
+            pause 0.85
+        elif ventID == 31:
+            $ ventID = 15
+            if catch2:
+                $ encID = 0
+                play sound "audio/horrorstart.mp3"
+                $ catch2 = False
+                scene black
+                show tenttrans1
+                pause 3
+                scene black
+                show tentstruggle
+                jump sliderstart
+            show vent1_5fwd
+            pause 1.5
+        elif ventID == 40:
+            if vent5:
+                scene bg 4_0close
+                tali "I need to open this hatch first."
+            else:
+                $ ventID = 41
+                show vent4_1
+                pause .7
+        elif ventID == 41:
+            $ ventID = 42
+            show vent4_2
+            pause 1.5
+        elif ventID == 42:
+            $ ventID = 43
+            show vent4_3
+            pause 1.5
+        elif ventID == 43:
+            $ ventID = 70
+            show vent7_0
+            pause 1.4
+        elif ventID == 50:
+            $ ventID = 51
+            show vent5_1
+            pause .7
+        elif ventID == 51:
+            $ ventID = 52
+            show vent5_2
+            pause 1.5
+        elif ventID == 52:
+            $ ventID = 53
+            show vent5_3
+            pause 1.5
+        elif ventID == 53:
+            $ ventID = 54
+            show vent5_4
+            pause 2.1
+        elif ventID == 56:
+            $ ventID = 57
+            show vent5_7
+            pause 1.5
+        elif ventID == 57:
+            $ ventID = 58
+            show vent5_8
+            pause 1.2
+        elif ventID == 61:
+            $ ventID = 62
+            show vent6_2
+            pause .7
+        elif ventID == 62:
+            $ ventID = 55
+            show vent5_5fwd
+            pause 1.5
+        elif ventID == 73:
+            $ vent6 = True
+            $ ventID = 50
+            show vent5back
+            pause 2
+
+
+        jump screenCheck
+
+    label GoRIGHT:
+        $ random = renpy.random.randint(1, 10)
+        if random == 1:
+            play sound "audio/vent1.mp3"
+        if random == 2:
+            play sound "audio/vent2.mp3"
+        if random == 3:
+            play sound "audio/vent3.mp3"
+        if random == 4:
+            play sound "audio/vent4.mp3"
+        if random == 5:
+            play sound "audio/vent5.mp3"
+        if random == 6:
+            play sound "audio/vent6.mp3"
+        if random == 7:
+            play sound "audio/vent7.mp3"
+        if random == 8:
+            play sound "audio/vent8.mp3"
+        if random == 9:
+            play sound "audio/vent9.mp3"
+        if random == 10:
+            play sound "audio/vent10.mp3"
+        scene black
+        if ventID == 12:
+            $ ventID = 13
+            if flesh1:
+                show vent1_3
+            else:
+                show vent1_3b
+            pause 2.1
+        elif ventID == 23:
+            $ ventID = 24
+            show vent2_4
+            pause 1.5
+        elif ventID == 41:
+            $ ventID = 55
+            show vent5_5right
+            pause 1.5
+        elif ventID == 51:
+            $ ventID = 57
+            show vent5_7right
+            pause 1.5
+        elif ventID == 58:
+            $ ventID = 59
+            show vent5_9
+            pause 1.5
+        elif ventID == 62:
+            $ ventID = 52
+            show vent5_2right
+            pause 1.5
+        elif ventID == 54:
+            $ ventID = 15
+            show vent1_5c
+            pause 1.5
+        elif ventID == 56:
+            $ ventID = 42
+            show vent4_2right
+            pause 1.2
+        elif ventID == 72:
+            $ ventID = 73
+            show vent7_3
+            pause 1.4
+        jump screenCheck
+
+    label GoLEFT:
+        $ random = renpy.random.randint(1, 10)
+        if random == 1:
+            play sound "audio/vent1.mp3"
+        if random == 2:
+            play sound "audio/vent2.mp3"
+        if random == 3:
+            play sound "audio/vent3.mp3"
+        if random == 4:
+            play sound "audio/vent4.mp3"
+        if random == 5:
+            play sound "audio/vent5.mp3"
+        if random == 6:
+            play sound "audio/vent6.mp3"
+        if random == 7:
+            play sound "audio/vent7.mp3"
+        if random == 8:
+            play sound "audio/vent8.mp3"
+        if random == 9:
+            play sound "audio/vent9.mp3"
+        if random == 10:
+            play sound "audio/vent10.mp3"
+        scene black
+        if ventID == 12:
+            $ ventID = 15
+            if flesh1:
+                show vent1_5
+            else:
+                show vent1_5b
+            pause 1.5
+        elif ventID == 23:
+            $ ventID = 40
+            show vent4left
+            pause 1.2
+            scene black
+            show vent4_02
+            pause 1.2
+            play sound "audio/vent11.mp3"
+            scene black
+            show vent4_03
+            pause 1.2
+        elif ventID == 31:
+            $ ventID = 24
+            show vent2_4left
+            pause 1.5
+        elif ventID == 41:
+            $ ventID = 57
+            show vent5_7left
+            pause 1.5
+        elif ventID == 51:
+            $ ventID = 55
+            show vent5_5left
+            pause 1.5
+        elif ventID == 60:
+            $ ventID = 61
+            show vent6_1
+            pause 1.2
+        elif ventID == 62:
+            $ ventID = 42
+            show vent4_2left
+            pause 1.5
+        elif ventID == 56:
+            $ ventID = 52
+            show vent5_2left
+            pause 1.2
+        elif ventID == 70:
+            $ ventID = 71
+            show vent7_1
+            pause 1.4
+        jump screenCheck
+
+    label GoBACK:
+        $ random = renpy.random.randint(1, 10)
+        if random == 1:
+            play sound "audio/vent1.mp3"
+        if random == 2:
+            play sound "audio/vent2.mp3"
+        if random == 3:
+            play sound "audio/vent3.mp3"
+        if random == 4:
+            play sound "audio/vent4.mp3"
+        if random == 5:
+            play sound "audio/vent5.mp3"
+        if random == 6:
+            play sound "audio/vent6.mp3"
+        if random == 7:
+            play sound "audio/vent7.mp3"
+        if random == 8:
+            play sound "audio/vent8.mp3"
+        if random == 9:
+            play sound "audio/vent9.mp3"
+        if random == 10:
+            play sound "audio/vent10.mp3"
+        scene black
+        if ventID == 13:
+            $ ventID = 31
+            show vent3_1back
+            pause 1.5
+        elif ventID == 14:
+            $ ventID = 30
+            if catch5:
+                jump nestevent1
+            if vent2:
+                show vent3_0back1
+            elif vent4:
+                show vent3_0back1
+            else:
+                show vent3_0back2
+            pause 2.7
+        elif ventID == 24:
+            $ ventID = 12
+            if flesh1:
+                show vent1_2back
+            else:
+                show vent1_2backb
+            pause 1.5
+        elif ventID == 23:
+            $ ventID = 16
+            show vent1_6back
+            pause 1.45
+        elif ventID == 17:
+            $ ventID = 20
+            show vent2_0back
+            pause 1.5
+        elif ventID == 16:
+            $ ventID = 23
+            show vent2_3back
+            pause 1.8
+        elif ventID == 43:
+            $ vent6 = True
+            $ ventID = 50
+            show vent5_01
+            pause 1.2
+            play sound "audio/vent11.mp3"
+            scene black
+            show vent5_02
+            pause 1.2
+        elif ventID == 52:
+            $ ventID = 41
+            show vent4_1back
+            pause 1.5
+        elif ventID == 55:
+            $ ventID = 56
+            show vent5_6back
+            pause 1.5
+        elif ventID == 59:
+            $ ventID = 60
+            show vent6_0back
+            pause 1.2
+        elif ventID == 70:
+            $ ventID = 73
+            show vent7_3back
+            pause 1.5
+        elif ventID == 71:
+            $ ventID = 72
+            show vent7_2back
+            pause 1.5
+        jump screenCheck
+
+    label catchevent16:
+        $ catch4 = False
+        $ catch1 = False
+        $ encID = 4
+        scene black
+        show 16event1
+        pause 2
+        scene black
+        show 16event2
+        pause 2.4
+        scene black
+        show 16eventstruggle
+        jump sliderstart
+
+
+
+
+    label nestevent1:
+        stop music
+        scene black
+        show nesttrans1
+        pause 1.6
+        tali "What? It's alive?!"
+        scene black
+        show neststruggle
+        $ renpy.pause ()
+        tali "Hngh! Get! Off! Me!"
+        scene black
+        show nesttrans1alt
+        tali "Wait! No!!"
+        scene black
+        with Dissolve(3)
+        scene bg nest2
+        tali "Stop! What's happening? What do you want from me?!"
+        scene black
+        show nesttrans2
+        pause 2.6
+        tali "No! Don't do that! Stop!"
+        scene black
+        show nesttrans2alt
+        pause 2.5
+        tali "Aaaaaa! My ass! Oh fuck, it's so hot and slimy!"
+        scene black
+        show nestloop1
+        $ renpy.pause ()
+        tali "MNNGHH! It's stretching my asshole so fucking wide!"
+        scene black
+        show nesttrans3
+        pause 2
+        tali "D-Did it cum already? Just leave me alone... please..."
+        "Quietly at first, then in a rising whisper, Tali heard her own voice echo in the back of her mind."
+        nest "Ripe. Young. Fertile. You will do perfectly..."
+        tali "What? Who said that?! Show yourself!"
+        scene black
+        show nesttrans3alt
+        tali "Ngh?! No! No, no, not again!"
+        pause 1.6
+        scene black
+        with Dissolve(3)
+        scene black
+        show nestloop2
+        tali "What the hell is that? What the fuck are you?! Let me go!"
+        scene black
+        show nesttrans4
+        pause 3.5
+        tali "Oh fuck. Keelah, no. You can't..."
+        nest "Supple. Plump. Breedable. This will be your home. For the rest of your life you will be fucked, bred, and impregnated, over and over. You will provide us with many children. Our children..."
+        scene black
+        show nesttrans5
+        pause 4.5
+        tali "Aaaaa! No, please! A-Anything but that! Jesora! Nyun! A-Anyone?!."
+        scene bg nest3
+        tali "Don't do this, please! There has to be some way out of-"
+        nest "No."
+        scene black
+        play sound "audio/nest4.mp3"
+        show nesttrans6
+        pause 3.5
+        tali "Aaaaaaaahhhhhh...."
+        nest "You're cumming so hard. Your hole is so tight. You wanted this, didn't you? If not then you're certainly built for it. No matter. Prepare for your new life."
+        scene black
+        show nestloop3
+        $ renpy.pause ()
+        tali "A-AUUGHH??!! You're fucking my guts! I'm cumming! Keelah, why can't I stop cumming?!"
+        nest "A natural response from a natural fucksleeve. It deserves its reward. Prepare for my seed."
+        tali "No! Keelah, no! I can't take it any longer! My asshole's filled so fucking much! My mind's going numb! You can't cum inside! You can't! Please!"
+        nest "Be a good quarian breeder... and provide us many children."
+
+        scene black
+        play sound "audio/nest3.mp3"
+        show nestcum
+        $ renpy.pause ()
+        jump BadEnd
+
+
+    #STRUGGLE SCRIPTS
+
+    label sliderstart:
+        $ points = 25
+        stop music
+        play music "audio/heart.mp3" loop
+        call screen ventslider
+
+    screen ventslider():
+        modal True
+        timer .1 repeat True action [If(points <= 0, true=Jump("lost"), false=SetVariable("points", points - minus))]
+        bar:
+            left_bar "images/skills/sliderbar_idle.png"
+            right_bar "images/skills/sliderbar_empty.png"
+            thumb "images/skills/enemyicon.png"
+            value StaticValue(points, max_point)
+            xalign 0.5
+            yalign 0.9
+            xysize(500,70)
+        imagebutton:
+            idle "images/skills/push_1.png"
+            hover "images/skills/push_2.png"
+            focus_mask True
+            xpos 0.45
+            ypos 0.7
+            action [SetVariable("clicked", True), If(points >= max_point, true=Jump("win"), false=SetVariable("points", points + plus))]
+
+    screen ventshoot:
+        modal True
+        timer .1 repeat True action [If(points1 <= 0, true=Jump("shootlost"), false=SetVariable("points1", points1 - minus1))]
+        text "BIG BUG" xpos 0.45 ypos 0.05
+        bar:
+            left_bar "images/skills/sliderbar_idle.png"
+            right_bar "images/skills/sliderbar_empty.png"
+            thumb "images/skills/enemyicon.png"
+            value StaticValue(points1, max_point1)
+            xalign 0.5
+            yalign 0.9
+            xysize(500,70)
+        bar:
+            left_bar "images/skills/hpbar_idle.png"
+            right_bar "images/skills/hpbar_empty.png"
+            value StaticValue(hpcurrent, hpmax)
+            xalign 0.5
+            yalign 0.1
+            xysize(800,50)
+        imagebutton:
+            idle "images/bugevent/bug1_idle.png"
+            hover "images/bugevent/bug1_hover.png"
+            focus_mask True
+            #action [SetVariable("clicked1", True), If(hpcurrent <= 0, true=Jump("shootwin"), false=SetVariable("points", points + plus))]
+            action Jump("ventshootcheck")
+
+    label ventshootcheck:
+        scene black
+        show bugshoot1
+        pause 1
+        $ hpcurrent -= 21
+        scene bug1fight
+        show bug1 at right
+        show bug1 at shake
+        play sound "audio/fall.ogg"
+        if hpcurrent <= 0:
+            jump shootwin
+        else:
+            if encID == 5:
+                scene bg bug1fight
+                call screen ventshoot
+
+    label shootwin:
+        scene black
+        show bughatch10
+        pause 1.5
+        tali "Die, you little bastard!"
+        scene bg bug1fight1
+        show tali gunstand at left
+        tali "Nyun?! Here you are!"
+        if nyunover:
+            show nyun bug2 at right
+            with dis
+            show tali facepalm at left
+            tali "Oh Keelah, Nyun! What they done with you!"
+        else:
+            show nyun bug1 at right
+            with dis
+            show tali angry at left
+            tali "Oh Keelah, Nyun! You alive?!"
+        show tali tool at left
+        tali "She have very weak pulse. Dammit! I hope it's not too late!"
+        play sound "audio/message.mp3"
+        tali "Ami, you copy? I need a hand here."
+        scene black with dis
+        "Some time passed."
+        show bg ventmed2
+        show tali talk at left
+        show ami doubt at right
+        tali "Tell me something good."
+        show ami dtalk at right
+        ami "Can't say now for sure. I placed her in recovery capsule. Her condition is unstable."
+        show tali facepalm at left
+        show ami doubt at right
+        tali "Keelah, I hope she will make it."
+        show tali talk at left
+        tali "We have recovery capsule?"
+        show ami dtalk at right
+        ami "Yes. In next room behind this door."
+        tali "I need to check it when i have time."
+        $ vent6 = True
+        $ nyunquest = False
+        $ vent6seal = True
+        $ ventsidequest = "..."
+        $ nyunblock = False
+        $ nyunsaved = True
+        jump medlabusual
+
+    label shootlost:
+        if encID == 5:
+            scene black
+            show bughatch5
+            if bug1count > 1:
+                jump lost
+            pause 1
+            scene black
+            show bughatch3
+            $ points1 = 40
+            jump sliderstart
+
+
+
+    label win:
+        tali "Not this time!"
+        stop music
+        play music "audio/bg/horror_bg.mp3" volume 0.3 loop
+        if encID == 0:
+            play sound "audio/omnicharge.mp3"
+            scene black
+            show tentescape
+            $ renpy.pause ()
+            tali "What a nasty thing..."
+            jump screenCheck
+        elif encID == 1:
+            scene bg ventmed
+            show medroom_kill
+            pause 1.5
+            tali "Keelah, that was a close one..."
+            jump medlabfirst
+        elif encID == 2:
+            $ catch1 = False
+            scene bg 14evade1 with hpunch
+            play sound "audio/punch.mp3"
+            pause 2
+            scene bg 14evade2
+            play sound "audio/frog2.mp3"
+            tali "Yes, run, you little boshtet."
+            jump screenCheck
+        elif encID == 3:
+            $ catch1 = False
+            $ catch4 = False
+            scene bg 14evade1 with hpunch
+            play sound "audio/punch.mp3"
+            pause 2
+            scene bg 14evade2
+            play sound "audio/frog2.mp3"
+            tali "Yes, run, you little boshtet."
+            jump screenCheck
+        elif encID == 4:
+            scene bg catch2evade1 with hpunch
+            play sound "audio/punch.mp3"
+            pause 1
+            tali "Take this, you ugly!."
+            scene bg catch2evade2 with hpunch
+            play sound "audio/fall.ogg"
+            pause 1
+            jump screenCheck
+        elif encID == 5:
+            $ bug1count += 1
+            scene black
+            show bughatch4
+            pause 1.8
+            scene bg bug1fight
+            "CLICK ON THE ENEMY TO SHOOT!"
+            call screen ventshoot
+
+
+
+
+
+
+
+    label lost:
+        stop music
+        tali "No!"
+        if encID == 0:
+            scene black
+            show tenttrans2
+            pause 2.4
+            tali "W-Where the hell did you come from?!"
+            scene black
+            show tenttrans3
+            pause 1.3
+            tali "Ngh! Stop! That thing looks huge!"
+            scene black
+            show tentloop1
+            $ renpy.pause ()
+            tali "Ah, stop it! You're grinding against my pussy!"
+            scene bg tent1 with hpunch
+            play sound "audio/tier.mp3"
+            scene black
+            show tenttrans4
+            pause 2.7
+            tali "No, no! No way! Keep that wet, disgusting thing away from me!"
+            scene black
+            show tentloop2
+            $ renpy.pause ()
+            tali "Oh, my pussy... I-It's so hot and... wet..."
+            scene black
+            show tenttrans5
+            pause 3.6
+            tali "FuU-UUuUCK! Why is it knotted?!"
+            scene black
+            show tentloop3
+            $ renpy.pause ()
+            tali "Ah... ah... I feel throbbing inside me... I-It's ready to fill me with cum."
+            scene black
+            show tentcum
+            $ renpy.pause ()
+            tali "So... much cum. Oh Keelah, It's so thick inside me... I need to hurry back to the lab."
+            jump medlabafter
+
+        elif encID == 1:
+            scene bg ventmed
+            show medroom_catch
+            pause 1.5
+            play sound "audio/frog2.mp3"
+            tali "Stop! Wait! Don't touch that!"
+            tali "No!"
+            jump medlabbj
+        elif encID == 2:
+            $ catch1 = False
+            scene black
+            show vent14catch2
+            pause 1
+            tali "No! Let me go!"
+            show bg 14grab with hpunch
+            play sound "audio/tier.mp3"
+            tali "What are you doing?!"
+            play sound "audio/frog2.mp3"
+            scene black
+            show vent14trans1
+            pause 4.5
+            play sound "audio/frog1.mp3"
+            tali "Wait! These vents are too cramped! Stop, don't-"
+            scene black
+            show vent14loop1
+            $ renpy.pause ()
+            tali "Ah! A-Aghhn?! N-Not so fast! Please, you're stretching my hole too hard!"
+            scene black
+            show vent14trans2
+            pause 2
+            tali "Oh fuck. Oh Keelah, you're so fucking thick! It's so deep...!"
+            play sound "audio/frog2.mp3"
+            scene black
+            show vent14loop2
+            $ renpy.pause ()
+            tali "He's fucking my ass so hard! I can feel him throbbing! He's going to cum up my ass!"
+            scene black
+            show vent14trans3
+            pause 1.4
+            tali "Fffffuuucck! It's so hot and thick! A-At least he'll... finally leave me alone..."
+            scene black
+            show vent14loop3
+            tali "More?! Of fuck, he's shoving his cum so deep inside me! I'm cumming so much!"
+            scene black
+            show vent14loop3
+            $ renpy.pause ()
+            scene black
+            show vent14cum
+            $ renpy.pause ()
+            tali "D-Done? Nghh... I-I can feel him throbbing so much... I think I'll be here for a while..."
+            jump medlabafter
+        elif encID == 3:
+            $ catch1 = False
+            $ catch4 = False
+            scene black
+            show vent14catch2
+            pause 1
+            tali "No! Let me go!"
+            scene black
+            show vent14catchdrag
+            pause 2
+            tali "Noooooooo!"
+            jump frogdpevent
+        elif encID == 4:
+            scene black
+            show 16event3
+            $ renpy.pause ()
+            scene black
+            show 16event4
+            pause 1.5
+            scene black
+            show 16event5
+            $ renpy.pause ()
+            scene black
+            show 16eventcum
+            $ renpy.pause ()
+            jump medlabafter
+        elif encID == 5:
+            play sound "audio/bug1.mp3"
+            scene black
+            show bughatch6
+            pause 2.7
+            scene black
+            show bughatch7
+            $ renpy.pause ()
+            scene black
+            show bughatch8
+            pause 2.5
+            scene black
+            show bughatch9
+            $ renpy.pause ()
+            scene black
+            with dis
+            "After some time..."
+            jump nyuntali1
+
+    label nyuntali1:
+        scene bg nyuntali1
+        tali "Ngh...N-NGHHhhh... What's happening... someone..."
+        scene black
+        show nyunvent9
+        $ renpy.pause ()
+        scene black
+        show nyunvent10
+        $ renpy.pause ()
+        scene bg nyuntali2
+        tali "St...Sto-op... Please stop... what you doing to us... please..."
+        scene black
+        show nyunvent11
+        $ renpy.pause ()
+        scene black
+        with dis
+        scene black
+        show nyunvent12
+        $ renpy.pause ()
+        jump BadEnd
+
+    label frogdpevent:
+        stop music
+        play music "audio/bg/void_bg.mp3" loop
+        scene black
+        show dp1_1
+        pause 2.9
+        stop music
+        scene black
+        show dp1_2
+        pause 0.9
+        scene black
+        show dp1_3loop
+        $ renpy.pause ()
+        scene black
+        show dp1_4loop
+        $ renpy.pause ()
+        scene black
+        show dp1_5loop
+        $ renpy.pause ()
+        scene black
+        show dp1_6cum
+        $ renpy.pause ()
+        scene black
+        show dp1_7cum
+        $ renpy.pause ()
+        jump medlabafter
+
+    label eggloot:
+        scene black
+        show egg:
+            xalign 1.2
+            yalign 0.5
+        show egg with move:
+            xalign 0.5
+            yalign 0.5
+        play sound "audio/gunready.wav"
+        "Egg found"
+        $ eggs += 1
+        show egg with move:
+            xalign -0.2
+            yalign 0.5
+        if eggfirst:
+            $ eggfirst = False
+            tali "The egg? Don't even want to know whose it is. Will figure it out later."
+        jump screenCheck
+
+
+
+
+    label eggrandom:
+        $ egg1 = False
+        $ egg2 = False
+        $ egg3 = False
+        $ egg4 = False
+        $ egg5 = False
+        $ egg6 = False
+        $ egg7 = False
+        $ random = renpy.random.randint(1, 2)
+        if random == 1:
+            $ egg1 = True
+        $ random = renpy.random.randint(1, 2)
+        if random == 1:
+            $ egg2 = True
+        $ random = renpy.random.randint(1, 2)
+        if random == 1:
+            $ egg3 = True
+        $ random = renpy.random.randint(1, 2)
+        if random == 1:
+            $ egg4 = True
+        $ random = renpy.random.randint(1, 2)
+        if random == 1:
+            $ egg5 = True
+        $ random = renpy.random.randint(1, 2)
+        if random == 1:
+            $ egg6 = True
+        $ random = renpy.random.randint(1, 2)
+        if random == 1:
+            $ egg7 = True
+        jump medlabusual
+
+    label soundrandom:
+        $ random = renpy.random.randint(1, 10)
+        if random == 1:
+            play sound "audio/vent1.mp3"
+        if random == 2:
+            play sound "audio/vent2.mp3"
+        if random == 3:
+            play sound "audio/vent3.mp3"
+        if random == 4:
+            play sound "audio/vent4.mp3"
+        if random == 5:
+            play sound "audio/vent5.mp3"
+        if random == 6:
+            play sound "audio/vent6.mp3"
+        if random == 7:
+            play sound "audio/vent7.mp3"
+        if random == 8:
+            play sound "audio/vent8.mp3"
+        if random == 9:
+            play sound "audio/vent9.mp3"
+        if random == 10:
+            play sound "audio/vent10.mp3"
+
     label BadEnd:
         stop music
         play music "audio/bg/gameover_bg.mp3" volume 0.6 loop
@@ -21374,6 +27814,7 @@ label start:
         play sound "audio/punch.mp3"
         scene bg go3 with vpunch
         $ renpy.pause ()
+
 
 
 
