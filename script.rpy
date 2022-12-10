@@ -22558,7 +22558,7 @@ label start:
         show bearrun4
         pause 3
         play sound "audio/bear1.mp3"
-        tali "Stop trying to pull me away, you boshtet!"
+        tali "Don't you dare pull me there, you boshtet!"
         scene black
         play sound "audio/tier.mp3"
         pause 1
@@ -22566,7 +22566,7 @@ label start:
         scene black
         show bearscene1
         $ renpy.pause ()
-        tali "I-Is that...? Oh Keelah, it's so fucking big! It's slapping against my belly and is even touching my breasts..."
+        tali "I-Is that...? Oh Keelah, it's so fucking big! It's slapping my belly and reaches my breasts..."
         scene bg bear1 with hpunch
         tali "No! Please! Don't try to push that thing inside me!"
         play sound "audio/fall.ogg"
@@ -23325,7 +23325,7 @@ label start:
         jump prison
 
     label prison:
-        if prison_phantom:
+        if prison_phantom and prisonLock:
             scene bg prison
             show tali doubt at left
             tali "Good afternoon boys, how are my favourite caged pets doing today?"
@@ -24987,19 +24987,20 @@ label start:
             show jesora warry at right
             jesora "I am really surprised myself but... they just left!"
             show jesora stand at right
-            jesora "We shot two or three of them and don't get me started on the big one, but after you and Nyun disappeared they just stopped attacking like that was it! It looks like ran back to wherever they came from."
-            jesora "It was pretty strange. Okay, very strange. I think you have a fanclub honestly. We found the hatch you two probably escaped through but it was closed way too tight, and no way in hell I'd stick an explosive on that."
+            jesora "We shot two or three of them and don't get me started on the big one, but after you and Nyun disappeared they just stopped attacking like that was it! They ran off from wherever they came."
+            jesora "It was pretty strange. Okay, very strange. I think you have a fanclub hoenstly. We found the hatch you two probably escaped through but it was closed way too tight, and no way in hell I'd stick an explosive on that."
             jesora "But here you are, safe and clean... well safe anyway. What did you find down there?"
             show tali talk at left
             tali "Nothing interesting except more strange horny beasts. Oh... and some android girl. She's still functional."
             show jesora think at right
             jesora "Android girl? Hmmm... I'd like to have a chat with her one day. She might know something useful."
             show jesora doubt at right
-            tali "I tried. No luck, unfortunately. It Looks like her memory module was damaged so she didn't have much information to give."
+            tali "I tried. No luck, unfortunately. Looks like her memory module was damaged so she didn't have too much information to give."
             show tali doubt at left
             jesora "Well I'm sure our best engineer will find some way to fix it. And please tell Nyun to come back here."
             tali "Aww. You miss her?"
             jesora "I miss her sweet ass behind that counter!"
+            jump jesora_bar
         if z2:
             $ z2 = False
             jesora "Hey there big dick tamer. I heard you had a lot of fun recently?"
@@ -25105,6 +25106,7 @@ label start:
             tali "Fuck you, Serok! I'm tired of being your errand girl. If you want to say something to her, crawl your ugly batarian ass through the vents and tell her your damn self!"
             show serok stand at right
             serok "Whatever..."
+            jump serok_bar
         serok "What now?"
         menu serok_bar:
             "Why did you decide to go pirate?":
@@ -25559,7 +25561,7 @@ label start:
         zeltan "Optimistic advance. No time is too important for love."
         show bg shower9
         tali "Oh Keelah, what is it now?"
-        zeltan "Cautiously. Okay, here goes. Tali, you have changed my life. I do not know if we'll ever see another planet again, so I would like to ask an important question."
+        zeltan "Cautiously. Okay, here goes. Tali, you have changed my life. I do not know if we'll ever see another planet ever again, so I would like to ask an important question."
         show bg shower10
         zeltan "Bravely. Will you marry me?"
         show bg shower8
@@ -25568,21 +25570,21 @@ label start:
         scene bg shower9
         tali "Keelah... Zeltan."
         scene bg shower8
-        tali "Listen, it was just sex, okay? Like when you vist a nightclub, have some drinks, meet a pretty girl... or wherever elcors go to hang out."
+        tali "Listen, it was just sex, okay? Like when you go in a nightclub, have some drinks, meet a pretty girl... or wherever elcors go to hang around."
         scene bg shower9
         tali "Ah, sorry... I forgot."
         scene bg shower10
-        zeltan "Confused. But I thought you also loved me. Do girls often have sex with men they do not love?"
+        zeltan "Confused. But I thought you also loved me. Do girls often have sex with men they don't love?"
         scene bg shower9
         tali "Fuck... I didn't expect it would come to this."
-        zeltan "Horrified. Does that mean... you do not love me? I was not able to satisfy your needs? I knew it!"
+        zeltan "Horrified. Does that mean... you don't love me? I was not able to satisfy your needs? I knew it!"
         scene bg shower8
-        tali "No, listen that's not what I meant at all!"
+        tali "No, no! No... wait. That's not what I meant ."
         scene bg shower9
         tali "Zeltan..."
         menu zeltanproposal:
             "Why not?":
-                tali "{i}Keelah, I need to tell him something. We're locked on a drifting ship floating through space, I guess the easiest way to keep him calm is to just humor him until I leave this shifting hellhole...{/i}"
+                tali "{i}Keelah, I need to tell him something. We're locked on a drifting ship floating through space and I guess the easiest way to keep him calm till is to say yes until I leave this shifting hellhole...{/i}"
                 scene bg shower8
                 tali "I... You know what Zeltan? I think we can do that."
                 zeltan "Rapturously. It so great, Tali! I will be the best husband for you!"
@@ -25590,21 +25592,21 @@ label start:
                 tali "Yeah... I think so."
                 zeltan "Greatly elated. I feel so excited!"
                 scene bg shower11
-                tali "Uhm. Let me see... Yeah, I can definitely see that now. An engagement gift... I think."
-                tali "Well, since it's come to this... I think I'd also like to give you a gift. Come over here... husband."
+                tali "Uhm. Let me see that... Yeah, I see now. An engagement gift... I think."
+                tali "Well, since it's come to this... I think I'd also like to be a little excited. Come over here... husband."
                 jump zeltanmded4
             "No way.":
-                scene shower8
-                tali "Zeltan, I can't. It's not what you think it means. I'm not happy to have to tell you this, but someone had to eventually."
-                tali "I can't marry you just because we had some fun together. But I'm sure you will meet a much nicer girl someday who will be happy to become your wife."
+                scene bg shower8
+                tali "Zeltan, I can't. It's not what you think it means. I am not happy to be the one to tell you this, but someone had to eventually."
+                tali "I can't marry you just because we had some fun together. But I'm sure you will meet much nicer girls and someday someone will be happy to become your wife."
                 scene bg shower10
-                zeltan "Depressively. I did not expect such an answer. I need to think about your words. Sorry to bother you, Tali. I will see you later."
+                zeltan "Depressively. I didn't expect such an answer. I need to think about your words. Sorry to bother you, Tali. I will see you later."
                 scene black
                 scene bg med3
                 show tali facepalm at left
                 tali "Oh poor guy... I feel a little sorry for him."
                 show tali doubt at left
-                tali "But I'm sure this is for the best. He took it much better than I expected. Hang in there big guy."
+                tali "But I'm sure this is for the best. He took it much easier than I expected. Hang in there big guy."
                 jump MedBayUsual
 
 
@@ -25626,7 +25628,7 @@ label start:
         tali "Ahhh... Zeltan. Are you... what are you doing?!"
         scene bg medelcor10
         tali "What was that, big guy? Decided to move your body, huh?"
-        zeltan "Proudly. I just want to please my new bride."
+        zeltan "Manfully. I just want to please my new bride."
         scene bg medelcor11
         tali "Yeah, I like this self-confident elcor. Go on, show me what you've learned."
         scene black
@@ -30416,7 +30418,7 @@ label start:
                     jump meddp1Bad
                 elif enemyID == 32:
                     if prison_phantom:
-                        jump prisonphscene
+                        jump prisonphscene1
                     else:
                         jump prisonteasescene
             else:
