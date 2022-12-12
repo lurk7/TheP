@@ -20502,7 +20502,7 @@ label start:
             $ quest = "Check the comroom"
             tali "As if! I'll take my chances with the communications station over a deal with a pirate!"
             show serok stand
-            serok "Oh yeah? Sure. Up to you suitgirl. Assuming you learn your lesson after getting that pretty face of yours covered in creatures breed batter, you know where to find me. I'll be waiting."
+            serok "Oh yeah? Sure. Up to you suitgirl. Assuming you learn your lesson after getting that pretty face of yours covered in some creatures breed batter, you know where to find me. I'll be waiting."
             show tali doubt at left
             show serok smoke at right
             serok "Pack it up boys, we're done here. Grab your gear and head back to the ship. Try not to lose whats left of our stuff, ey?"
@@ -20517,11 +20517,11 @@ label start:
         scene bg med3
         show tali tool at left
         tali "Alright, lets see what we have here. Fully operational medical equipment? I could easily reconfigure it for quarian anatomy."
-        tali "Looks like I can use the rejuvenation capsules for suit repair and medical assistance. Oh! And these antibiotics are top-shelf! I should be safe in the event of prolonged suit damage!"
+        tali "Looks like I can use the rejuvenation capsules for suit repair and medical assistance. Oh! And these antibiotics are top-shelf! I should be safe in the event of prolonged exposure and damage!"
         show tali shame at left
         tali "Did they have quarians here? Huh. Very... strange. This is some very advanced inventory for a drifting hunk of junk. What was this ship used for?"
         show tali doubt at left
-        tali "No use wondering. I can relax here a little but I need to head over to communications once I'm well and ready."
+        tali "No use thinking about it. I can relax here a little but I need to head over to communications once I'm well and ready."
         $ quest = "Check the Communications Room."
         jump define_loot
 
@@ -20552,7 +20552,7 @@ label start:
         show tali shame at left
         tali "I'll have to find parts or jury rig a solution. Maybe in the engine room? The cargo bay would be best for scrap..."
         show tali tool at left
-        tali "Navigations are fried as well. I should be able to fix the computer with spare parts."
+        tali "Navigations are fried as well. I should be able to fix the computer with some spare parts."
         play sound "audio/femalemoan.mp3"
         pause 1
         show tali gunstand at left
@@ -20688,7 +20688,7 @@ label start:
         tali "That's... Just give me some guns! There's plenty of beasts on this ship! How do you expect me to defend myself?!"
         show tali doubt at left
         show jesora stand at right
-        jesora "You HAVE a gun, right? We need ours to defend whats left of our ship. We don't want or need to run around shooting everyone. Just stay silent, hide, and shoot if necessary. Preferably discreetly."
+        jesora "You HAVE a gun, don't you? We need ours to defend whats left of our ship. We don't want or need to run around shooting everyone. Just stay silent, hide, and shoot if necessary. Preferably discreetly."
         show jesora think at right
         jesora "What we CAN do for you is dismount one of our older canons from the ship and rig it up as makeshift sentry turret to protect the medical bay where you'll be residing. Who knows, maybe we'll need that bay too if it really hits the shitter."
         show tali talk at left
@@ -20696,7 +20696,7 @@ label start:
         show jesora stand at right
         jesora "You're welcome. So, you know what the issues with the ship are or what?"
         tali "Yes. There are some other issues but the important ones are your thermal stabilizers and the navigation system."
-        jesora "Navigation huh? Good. Knowing the specifics makes searching less inconvenient. Seroks vorcha haven't found anything, but its hard for them to bring back something that isn't obvious or shiny."
+        jesora "Navigation huh? Good. Knowing the specifics makes searching less random. Seroks vorcha haven't found anything, but its hard for them to bring back something that isn't obvious or shiny."
         jesora "Take this."
         scene black
         show doorexp:
@@ -20714,7 +20714,7 @@ label start:
         scene bg hangar
         show tali doubt at left
         show jesora stand at right
-        jesora "That'll help you blast through any doors too stubborn to hack, or are just flat out annoying. But thats enough talk. Lets go set up your sentry. I'll get the boys on it."
+        jesora "That'll help you blast through any doors too stubborn to hack or are just flat out annoying for ya. But thats enough talk. Lets go set up your sentry. I'll get the boys on it."
         scene black with dis
         scene bg turret1
         with dis
@@ -20727,10 +20727,10 @@ label start:
         show tali doubt at left
         show jesora stand at right
         with dis
-        jesora "Alright girl, we're done here. The turret has enough charge to resist a small siege. It's an older model so it shouldn't technically run out of ammo. Can't say the same if anything huge or bulky comes along that can absorb all that punch and cause it to overheat. I'll ask the boys to patrol the halls from time to time, just in case."
+        jesora "Alright girl, we're done here. The turret has enough charge to resist a small siege. It's an older model so it shouldn't technically run out of ammo. Can't say the same if anything huge or bulky comes along that can absorb all that punch and cause it to overheat. I'll ask the boys to patrol the halls from time to time just in case."
         show tali talk at left
-        tali "Very generous coming from a pirate crew. Thank you. I'll rest for a moment before getting to work."
-        jesora "Take your time. If you have any questions, Serok and I will be in the docking bay. But the sooner you find what we need, the faster we can get off this hellhole."
+        tali "Very generous coming for a pirate crew. Thank you. I'll rest for a moment before getting to work."
+        jesora "Take your time. If you have any questions, Serok and I will be in the docking bay. But the sooner you find what we need the faster we can get off this hellhole."
         show jesora talk at right
         jesora "Here's some ammo, on the house. Don't use it all on one trip."
         scene black
@@ -21249,7 +21249,7 @@ label start:
                 jump medbayafterdefeat
             "Use dart." if lewd > 30:
                 scene bg krok6
-                tali "Hey, big fella, look what I have here..."
+                tali "Hey big fella, look what I have here..."
                 scene bg krok7 with hpunch
                 play sound "audio/dart.mp3"
                 pause 1
@@ -21287,15 +21287,15 @@ label start:
         scene bg krok10 with hpunch
         play sound "audio/creepone.mp3"
         pause 1
-        tali "What?! No! That's not possible!"
+        tali "Wait! But the dart should...!"
         scene black
         show crocdart1
         pause 2
-        tali "Oh fuck! D-Damn you Zeltan... your darts didn't work...!"
+        tali "H-Hagh?! S-So... big!"
         scene black
         show crocdart2
         $ renpy.pause ()
-        tali "Oh Keelah, his ribbed cock is... delicious. It's like it... was designed to give pleasure to quarian pussies..."
+        tali "Oh fuck! Oh FUCK! His ribbed feels... so good! It's like it... was designed to fill a quarian's tight pussy!"
         scene bg krok11 with hpunch
         play sound "audio/creepone.mp3"
         pause 1
@@ -21305,11 +21305,11 @@ label start:
         scene black
         show crocdart4
         $ renpy.pause ()
-        tali "Y-Yes... I'm a captured quarian admiral girl... treat me like a fuckdoll or I won't tell you a thing...!"
+        tali "H-Hnngh! F-Fuck me! Fuck me like a dirty little quarian admiral fucksleeve! Make me tell you where you can find more quarian sluts!"
         scene black
         show crocdart5
         $ renpy.pause ()
-        tali "Keelah... fuck me! Fuck me harder, you boshtet!"
+        tali "Keelah... fuck me! Fill my belly with that hot load boiling in your balls!"
         scene black
         show crocdart6
         $ renpy.pause ()
@@ -21785,9 +21785,9 @@ label start:
 
     label statusCheck:
         "Here you can check on Tali's status and her inventory. Most of these stats will be shown on the upper-left corner of the map screen."
-        "Be wary of infection. Infection will rise with each consecutive defeat up to a maximum of '3'. Once Tali reaches max Infection, she will automatically return to the medbay for healing and a day will pass."
+        "Be wary of infection. Infection will rise with each consecutive defeat up to a maximum of '3'. Once Tali reaches max Infection, she will automatically return to the medbay for healing and the day will pass."
         "The more Tali loses, the higher her lewd level becomes. Additional events and dialogue options will unlock the more corrupt Tali's mind becomes."
-        "Use ammo and grenades to defeat your enemies! Door explosives will clear the way through blocked areas, but beware! The noise will alarm the locals and increase encounter chance. Alarm level can not be reduced for now."
+        "Use ammo and grenades to defeat your enemies! Door explosives will clear the way through blocked areas, but beware! Noise will alarm the locals and increase encounter chance. Alarm level can not be reduced for now."
         "You can help Tali refresh her stamina and infection levels by choosing to rest at the Medical Bay. This will also refresh both events and loot in rooms you've visited."
         $ firstTimeScan = False
         jump MedBayUsual
@@ -21816,13 +21816,13 @@ label start:
         show image "images/map/backbutton_idle.png" at right
         show tali back at left
         with dis
-        "Every time Tali enters a room, you can search for clickable objects around. Loot and misc items are scattered. You can go back to the map with the bottom-right arrow button."
+        "Every time Tali enters a room, you can search for clickable objects around. Loot and misc items are random every time. Once finished you can go back to the map with the bottom-right arrow button."
         scene bg comtutorial1
         show tali back at left
-        "Loot is randomly generated and may look different depending on the room. It could even be in a different spot than the last time you've visited! Loot won't respawn if you've already visited the room on the same day. Rest at the medbay ro reroll what you find. Keep those eyes open!"
+        "Loot is randomly generated and may look different depending on the room. It could even be in a different spot than the last time you've visited! Loot won't respawn if you've already visited the room on the same day. Rest at the medbay to reroll what you find. Keep those eyes open!"
         scene bg comtutorial2
         show tali back at left
-        "This is how it looks when you hover the cursor over such an object. Inside you can find valuable items like ammo or quest items like tech parts. These will be added to your inventory."
+        "This is how it looks when you hover the cursor over lootable objects. Inside you can find valuable items like ammo, tech or quest items. These will be added to your inventory."
         "Common loot is random. Some events may also be triggered depending on Tali's Lewd Level."
         $ firstTimeRoom = False
         jump comroom
@@ -22515,7 +22515,7 @@ label start:
 
     label sewenter:
         show tali doubt at left
-        tali "I feel a draft and a... ugh, putrid stench. No way I'm going in there."
+        tali "I feel a draft and a... ugh, pungent stench. No way I'm going in there."
         jump sewsew1
 
     label sewbear1:
@@ -22550,7 +22550,7 @@ label start:
 
     label bearlost:
         $ lewd += 1
-        tali "No! Get away!"
+        tali "Stop! Get away!"
         scene black
         show bearrun3
         pause 3
@@ -22558,21 +22558,21 @@ label start:
         show bearrun4
         pause 3
         play sound "audio/bear1.mp3"
-        tali "Don't you dare pull me there, you boshtet!"
+        tali "NonoNO! My gun! I need my gun! HELP!!"
         scene black
         play sound "audio/tier.mp3"
         pause 1
-        tali "No! What are you doing you stupid animal?!"
+        tali "Get away from me!"
         scene black
         show bearscene1
         $ renpy.pause ()
-        tali "I-Is that...? Oh Keelah, it's so fucking big! It's slapping my belly and reaches my breasts..."
+        tali "A-Ah! Oh fuck! I-Is that...? No, Keelah no! It's so fucking huge! It's riding my belly and hitting my tits!"
         scene bg bear1 with hpunch
-        tali "No! Please! Don't try to push that thing inside me!"
+        tali "Let me go! Jesora! Serok! Anyone!"
         play sound "audio/fall.ogg"
         pause 1
         play sound "audio/bear2.mp3"
-        tali "Help! Someone!"
+        tali "Someone help me!!"
         pause 2
         scene black
         show bearscene2
@@ -22580,20 +22580,22 @@ label start:
         scene black
         show bearscene3
         pause 2
-        tali "Ahhh.. O-Oh Keelah, please... this... this.... too fat, ah... my ass..."
+        tali "AGHHhhHHH?!?!?!! Too fat! Too thick! Too big! S-STOOooOOOP!"
         scene black
         show bearscene3alt
         $ renpy.pause ()
+        tali "AaaaAAGH... A-Ahhnnn..."
         scene black
         show bearscene4
         $ renpy.pause ()
         scene black
         show bearscene5
         $ renpy.pause ()
-        tali "Ahhh... ah... help... me..."
+        tali "C-Cumming... ahm cumminh... shomeone... pleashe..."
         play sound "audio/bear1.mp3"
         scene black
         show bearscene6
+        tali "Pleashe... d-don't..."
         pause 2
         scene black
         show bearscene7
@@ -22607,7 +22609,7 @@ label start:
         scene black
         show bearscene9
         pause 1.5
-        tali "Can't... hold..."
+        tali "O-Oh... K-Kee..."
         scene black
         show bearscene9alt
         $ renpy.pause ()
@@ -22616,7 +22618,7 @@ label start:
         scene bg sew9
         show tali fin3 at left
         show serok stand at right
-        serok "Oh shit, that's an especially big load of cum, even for you. What kind of wild, horny beast did you meet this time, you poor girl?"
+        serok "Huh. Well shit, that's an especially big load of ball paste, even for you. Did you crawl out by yourself or did he have his fun and toss the trash? Hah."
         tali "A-Ahhhh... ghk..."
         show serok talk at right
         serok "Right. Let's not waste any time before it comes back."
@@ -22634,7 +22636,7 @@ label start:
         pause 1
         scene bg sew9
         show tali guninjured
-        tali "Keelah! Looks like I scared him away this time..."
+        tali "What the hell was that thing?! I almost had a heart attack. Looks like I scared it away... this time..."
         jump sewsew1
 
 
@@ -23325,7 +23327,7 @@ label start:
         jump prison
 
     label prison:
-        if prison_phantom and prisonLock:
+        if prison_phantom:
             scene bg prison
             show tali doubt at left
             tali "Good afternoon boys, how are my favourite caged pets doing today?"
@@ -23551,7 +23553,7 @@ label start:
             xalign -0.2
             yalign 0.5
         scene bg prison16
-        tali "Sorry, but you don't need it anymore."
+        tali "You won't need this anymore. Sorry."
         jump prison
 
     label prisonCage1:
@@ -23566,7 +23568,7 @@ label start:
     label prisonCage:
         scene bg prison3
         with dis
-        tali "Hmph. Not so tough behind bars, are you? I'm so busy fighting you freaks I didn't even realize how ugly you really were."
+        tali "Hmph. Not so tough behind bars are you? I'm so busy fighting you freaks I didn't even realize how ugly you really were."
         menu prison_cage:
             "Check the cage":
                 scene bg prison4
@@ -23577,7 +23579,7 @@ label start:
                     jump prison
                 else:
                     play sound "audio/gorillaroar.wav"
-                    tali "All huff and puff I see. If it wasn't for your strength, you'd make some decent zoo animals."
+                    tali "All huff and puff. If it wasn't for your strength you'd make some decent zoo animals."
                     scene bg prison5
                     pause .1
                     scene bg prison6
@@ -23615,7 +23617,7 @@ label start:
                         "DP action." if lewd > 40 and teaseevent:
                             jump prisonteasesceneagain
                         "No way":
-                            tali "No, really, i am leaving... now."
+                            tali "Very impressive. Lets see how long it lasts as I walk away."
                             jump prison
             "Check the lock" if prisonLock == False:
                 scene bg prison17
@@ -23651,7 +23653,7 @@ label start:
         $ prisCum = True
         scene bg prison20 with hpunch
         play sound "audio/punch.mp3"
-        tali "Mmm. Look what we have here. The big bad monster gets all hot and horny for a lithe and curvy quarian girl."
+        tali "Mmm. Look what we have here. The big bad monster gets all hot and horny for a lithe, curvy quarian girl."
         tali "You deserved punishment for your being so damn perverted..."
         $ teasecount += 1
         scene black
@@ -23663,7 +23665,7 @@ label start:
         tali "Oh? Not happy about that, are you?"
         play sound "audio/creepone.mp3"
         pause 1
-        tali "I missed the part where that's my problem. See you later, ugly face."
+        tali "I missed the part where that's my problem. Catch you later, ugly."
         if teasecount > 2 and teaseevent == False:
             $ teasecount = 0
             scene bg prison24 with hpunch
@@ -23774,12 +23776,12 @@ label start:
         pause 1
         play sound "audio/heavyshots.mp3"
         pause 1
-        serok "Get them back in their cages!"
-        serok "Oh... what a sad little quarian. Lost control?"
+        serok "Get those things back in their cages!"
+        serok "Hmm? Psh. What a sad little quarian. Lost control?"
         scene bg prison
         show tali fin1 at left
         show serok stand at right
-        serok "You alright, suitgirl?"
+        serok "Snap out of it. You alright, suitgirl?"
         tali "Ahhhhh... what... what's going on..."
         show serok reason at right
         serok "Yeah, I thought so. Let's bring you to medbay."
@@ -24222,7 +24224,7 @@ label start:
         show tali tool at left
         tali "This holopad belonged to some human scientist who worked here. There are some messages I can view but..."
         show tali doubt at left
-        tali "Heavy encryption. They didn't want anyone to read this."
+        tali "Heavy encryption. They didn't want anyone reading this."
         if hackOK:
             menu hackTablet:
                 "Start decryption.":
@@ -24232,7 +24234,7 @@ label start:
                 "Another time.":
                     jump barracks
         else:
-            tali "I need to recover my omni-tool to hack it."
+            tali "I need to repair my omni-tool to hack it."
         jump barracks
 
     label barracksTabletNext:
@@ -24279,23 +24281,24 @@ label start:
             tali "How the hell did you even get into this room? The door looks too narrow for you."
             show tali doubt at left
             zeltan "Desperately. Why did you come here? I don't want to go back."
+            tali "Ugh, Zeltan..."
             menu zeltan2:
-                "Want to try again?":
+                "Would you like to try again?":
                     zeltan "Doubtful. Are you wanting to laugh at me again?"
                     show tali talk at left
-                    tali "No. Why would you think that? I was actually pretty horny back then. You aren't as bad as you think."
+                    tali "No! Why would you think that? Look, Zeltan, I was actually... pretty horny back then. Granted it was the mostly the beer but... you aren't as bad as you think."
                     show tali doubt at left
-                    zeltan "Hopeful elation. You really liked it? I knew my unique sense of humor would shatter your defenses. Ha. Ha. Ha."
-                    tali "Yeah... I'm surprised myself."
-                    zeltan "Shyly. So... how will it happen? What you want me to do?"
-                    tali "Don't warry. I will take care of it."
+                    zeltan "Hopeful elation. You really liked it? I knew my unique sense of humor would weaken you over time. Ha. Ha. Ha."
+                    tali "Right... weaken me... hah..."
+                    zeltan "Shyly. So... assuming I was interested... how would this proceed? What would you want me to do?"
+                    tali "Don't worry. I will take care of it."
                     jump zeltanmed2
                 "Convince him to go back.":
                     show tali talk at left
-                    tali "Listen, Zeltan, you're a nice guy. Forget about what happened, ok? I'm just not your type. You're an elcor, remember?"
+                    tali "Listen, Zeltan, you're a nice guy. Forget about what happened ok? I'm just not your type. You're an elcor, I'm a quarian...?"
                     show tali doubt at left
-                    tali "I know this. I studied interspecies biology and quarians are not suitable for sex with elcors. I was... just drunk."
-                    zeltan "Dejected. Yes, of course. We are different species. How could I forget that. This is the reason."
+                    tali "We're just not compatible. I studied interspecies biology and quarians are not suitable for sex with elcors. I was... just drunk."
+                    zeltan "Dejected. Yes. Of course. Our differences are too vast. How could I forget that? That is why it has come to this."
                     tali "See? Now just go back to the ship. Serok and his team can't survive without you, tough guy!"
                     scene bg map
                     show tali facepalm at left
@@ -24614,7 +24617,7 @@ label start:
         show bg taliship
         show tali gunstand at left
         with dis
-        tali "This part of my ship is pretty well preserved. I see the door to the cockpit."
+        tali "Not as damaged as I thought. It looks pretty well preserved in fact. I see the door to the cockpit."
         show tali back at left
         tali "Damn it. It's blocked. The ship's systems aren't responding."
         show tali back at left
@@ -24809,9 +24812,9 @@ label start:
         play sound "audio/funmoan.mp3"
         if z1:
             $ z1 = False
-            vorcha "Aggrh... little quarian love... big cocks!"
+            vorcha "Aggrh... little quarian loves... big cocks!"
             show tali facepalm at left
-            tali "Oh... i gonna kill this stupid elcor."
+            tali "...I'm gonna kill him."
         show tali doubt at left
         tali "You again."
         menu bay2_menu:
@@ -24987,20 +24990,19 @@ label start:
             show jesora warry at right
             jesora "I am really surprised myself but... they just left!"
             show jesora stand at right
-            jesora "We shot two or three of them and don't get me started on the big one, but after you and Nyun disappeared they just stopped attacking like that was it! They ran off from wherever they came."
-            jesora "It was pretty strange. Okay, very strange. I think you have a fanclub hoenstly. We found the hatch you two probably escaped through but it was closed way too tight, and no way in hell I'd stick an explosive on that."
+            jesora "We shot two or three of them and don't get me started on the big one, but after you and Nyun disappeared they just stopped attacking like that was it! It looks like ran back to wherever they came from."
+            jesora "It was pretty strange. Okay, very strange. I think you have a fanclub honestly. We found the hatch you two probably escaped through but it was closed way too tight, and no way in hell I'd stick an explosive on that."
             jesora "But here you are, safe and clean... well safe anyway. What did you find down there?"
             show tali talk at left
             tali "Nothing interesting except more strange horny beasts. Oh... and some android girl. She's still functional."
             show jesora think at right
             jesora "Android girl? Hmmm... I'd like to have a chat with her one day. She might know something useful."
             show jesora doubt at right
-            tali "I tried. No luck, unfortunately. Looks like her memory module was damaged so she didn't have too much information to give."
+            tali "I tried. No luck, unfortunately. It Looks like her memory module was damaged so she didn't have much information to give."
             show tali doubt at left
             jesora "Well I'm sure our best engineer will find some way to fix it. And please tell Nyun to come back here."
             tali "Aww. You miss her?"
             jesora "I miss her sweet ass behind that counter!"
-            jump jesora_bar
         if z2:
             $ z2 = False
             jesora "Hey there big dick tamer. I heard you had a lot of fun recently?"
@@ -25032,7 +25034,7 @@ label start:
                 tali "You mean..."
                 show jesora smiletalk at right
                 jesora "Yes, exactly. The very big one. In all cases."
-            "You saw Zeltan?" if zeltanhide:
+            "Have you seen Zeltan?" if zeltanhide:
                 show jesora stand at right
                 jesora "Here? Not today. Maybe Serok sent him to patrol."
             "What's next?" if bitchQuest:
@@ -25106,7 +25108,6 @@ label start:
             tali "Fuck you, Serok! I'm tired of being your errand girl. If you want to say something to her, crawl your ugly batarian ass through the vents and tell her your damn self!"
             show serok stand at right
             serok "Whatever..."
-            jump serok_bar
         serok "What now?"
         menu serok_bar:
             "Why did you decide to go pirate?":
@@ -25144,14 +25145,14 @@ label start:
                 show serok talk at right
                 serok "Last time I saw him he was acting weird. Darted from corner to corner like he lost something."
                 show serok stand at right
-                serok "When I asked him what's going on, he said nothing and went in the direction of the main engine room."
+                serok "When I asked him what's going on he said nothing and went in the direction of the main engine room."
                 show serok reason at right
-                serok "You know what happened to him?"
+                serok "You wouldn't happen to know what's got him spooked?"
                 show tali shame at left
                 show serok smoke at right
-                tali "Well... not really. Just wanted to buy some stuff."
+                tali "Well... not really. I just wanted to buy some stuff."
                 show serok stand at right
-                serok "I see. If you see him, tell him to get back to his post!"
+                serok "I see. If you see him tell him to get back to his post. Too many folks are bothering me since they can't find him!"
                 $ zeltanengine = True
                 $ zeltanhide = False
             "Zeltan didn't tell you anything... did he?" if z3:
@@ -25172,11 +25173,11 @@ label start:
                 show serok stand at right
                 serok "Like what? Having sex? I understand everyone needs to relieve stress sometimes. We're all here in a difficult situation."
                 show tali doubt at left
-                serok "You think I don't know Jesora goes on wild fuck fests with the vorcha? Unless it affects her duties, I don't care."
+                serok "You think I don't know Jesora goes on wild fuck fests with the vorcha? Until it affects her duties I don't couldn't give two shits."
                 show serok reason at right
-                serok "Zeltan left his post - That bothers me. And I will punish him for it."
+                serok "Zeltan left his post - That's what makes me angry. And I will punish him for it."
                 show serok stand at right
-                serok "Anyway he is so happy that won't notice it. Good for me. And thanks to you, girl."
+                serok "But he's just so damn happy right now that he probably won't notice it. Good for me I guess. High moral and all that. And you? Thanks for giving him a good night... I guess."
             "Later.":
                 jump bay2_bar
         jump serok_bar
@@ -25203,7 +25204,7 @@ label start:
             $ zeltanhappy = False
             $ zeltanprop = True
             zeltan "Confidently. Hey babe. Come to say hello to your greatest lover?"
-            tali "I assume your jokes will be even worse from now. Does everyone know?"
+            tali "I assume your jokes will be even worse from now on. Does everyone know?"
             zeltan "Defensively. Don't judge me too much. It was the most fascinating moment in my life. I can not wait for next time."
             tali "That's cute. But I'm not sure about 'next time'. Can't you keep your mouth shut?"
             zeltan "Naughtily. It is just a matter of time before you succumb to my charms again."
@@ -25283,15 +25284,15 @@ label start:
         if z4:
             $ z4 = False
             show nyun smile at right
-            nyun "So... i was right. You love to be impaled on a huge elcor cock."
+            nyun "So... I was right. You really do love them big, thick and juicy."
             show tali facepalm
-            tali "Never thought that elcors could talk so much."
-            nyun "Don't judge yourself harshly, sweetie. Just don't forget to invite me next time."
+            tali "I never thought elcor could talk so much."
+            nyun "Don't judge yourself too harshly sweetie. Just don't forget to invite me next time."
             show nyun stand at right
             show tali angry at left
             tali "Are you serious?!"
             show nyun curvy at right
-            nyun "Oh dear, i always serious concerning... big dicks."
+            nyun "Oh Tali, I'm always serious concerning big, meaty dongs."
             show tali facepalm at left
             tali "Keelah..."
             jump bay2_bar
@@ -25398,15 +25399,16 @@ label start:
                         tali "It has a... strange taste."
                         $ lewd -= 10
                         jump nyun_bar
-            "You saw Zeltan?" if zeltanhide:
+            "Have you seen Zeltan?" if zeltanhide:
                 show nyun talk at right
-                nyun "I thought he is still with you. Did you two have a good time in the medbay together?"
+                nyun "I thought he was still with you? Did you two have a good time in the medbay together?"
                 show tali angry at left
                 tali "What do you think we did in there?!"
                 show nyun smile at right
-                nyun "Oh I don't know, but if he vanished he definitely didn't come back here. He disappeared right after your last booze. What a coincidence."
+                nyun "Oh I don't know, but if he vanished he definitely didn't come back here. He disappeared right after your last drunken stupor. That's a pretty big coincidence, no?"
                 show tali doubt at left
-                tali "So what? Just... get that lustful smile off your face."
+                tali "A-And? Just... get that lecherous grin off your face Nyun!"
+                nyun "Whatever you say, Tali."
             "See you next time.":
                 jump bay2_bar
         jump nyun_bar
@@ -25473,22 +25475,22 @@ label start:
         tali "Just relax. Tali will take care of you."
         scene bg medelcor1
         tali "Alright. Where did we stop last time?"
-        zeltan "Shyly. So... what happens next? What you want me to do?"
-        tali "Don't worry, I'll make your first time special. Trust me."
+        zeltan "Shyly. So... what happens next? What do you want me to do?"
+        tali "Don't worry, I'll make your second first time special. Trust me."
         scene bg medelcor2
-        tali "Let me put it... here."
+        tali "Let me put this helpful tool right... in... here."
         scene bg medelcor3
-        tali "Mmm... yes, such a thick gun deserves nice care."
+        tali "Mmm... just looking at this monster's making me shiver. You deserve a lot of love and care, don't you big boy?"
         scene black
         show medelcor4
         pause 7
-        zeltan "Excited. I feel... so warm down there. Like my dick is submerged in a hot bath."
+        zeltan "Excited. I feel... warm down there. Like my dick is submerged in a hot bath."
         tali "Hmmmrgghh..."
         scene bg medelcor4
         tali "Finally! A nice hard cock for the only quarian on the ship... Are you happy now, Zeltan?"
         scene bg medelcor5
         zeltan "Horny. I guess... I am ready. Why have you brought a chair?"
-        tali "Preparing myself for a wild ride..."
+        tali "So I can be ready for the ride of a lifetime..."
         scene black
         show medelcor6
         pause 2.6
@@ -25497,7 +25499,7 @@ label start:
         show medelcor5
         $ renpy.pause ()
         scene bg medelcor6
-        tali "Mmmm... this cock fills up my tight hole completely..."
+        tali "Mmmm... Keelah, your dick is stretching me so much..."
         zeltan "Sensitive. I believe I've fallen in love."
         scene bg medelcor7
         tali "Can you just shut up and fuck me already?! Start moving your hips, don't just stand there like a statue."
@@ -25561,94 +25563,94 @@ label start:
         zeltan "Optimistic advance. No time is too important for love."
         show bg shower9
         tali "Oh Keelah, what is it now?"
-        zeltan "Cautiously. Okay, here goes. Tali, you have changed my life. I do not know if we'll ever see another planet ever again, so I would like to ask an important question."
+        zeltan "Cautiously. Okay, here goes. Tali, you have changed my life. I do not know if we'll ever see another planet again, so I would like to ask an important question."
         show bg shower10
         zeltan "Bravely. Will you marry me?"
         show bg shower8
         tali "...Excuse me?"
-        zeltan "Uncertain. Should I repeat myself? The sweet aroma of these flowers should have helped lighten the mood."
+        zeltan "Uncertain. Should I repeat myself? The sweet aroma of these flowers should have helped set the mood."
         scene bg shower9
         tali "Keelah... Zeltan."
         scene bg shower8
-        tali "Listen, it was just sex, okay? Like when you go in a nightclub, have some drinks, meet a pretty girl... or wherever elcors go to hang around."
+        tali "Listen, it was just sex, okay? Like when you vist a nightclub, have some drinks, meet a pretty girl... or wherever elcor go to hang out."
         scene bg shower9
         tali "Ah, sorry... I forgot."
         scene bg shower10
-        zeltan "Confused. But I thought you also loved me. Do girls often have sex with men they don't love?"
+        zeltan "Confused. But I thought you also loved me. Do girls often have sex with men they do not love?"
         scene bg shower9
         tali "Fuck... I didn't expect it would come to this."
-        zeltan "Horrified. Does that mean... you don't love me? I was not able to satisfy your needs? I knew it!"
+        zeltan "Horrified. Does that mean... you do not love me? I was not able to satisfy your needs? I knew it!"
         scene bg shower8
-        tali "No, no! No... wait. That's not what I meant ."
+        tali "No, listen that's not what I meant at all!"
         scene bg shower9
         tali "Zeltan..."
         menu zeltanproposal:
             "Why not?":
-                tali "{i}Keelah, I need to tell him something. We're locked on a drifting ship floating through space and I guess the easiest way to keep him calm till is to say yes until I leave this shifting hellhole...{/i}"
+                tali "{i}Keelah, I need to tell him something. We're locked on a drifting ship floating through space, I guess the easiest way to keep him calm is to just humor him until I leave this shifting hellhole...{/i}"
                 scene bg shower8
                 tali "I... You know what Zeltan? I think we can do that."
-                zeltan "Rapturously. It so great, Tali! I will be the best husband for you!"
+                zeltan "Rapturously. That is so amazing to hear Tali! I will be the best husband in the galaxy for you!"
                 scene bg shower10
-                tali "Yeah... I think so."
+                tali "Yeah... uhm... I think so."
                 zeltan "Greatly elated. I feel so excited!"
                 scene bg shower11
-                tali "Uhm. Let me see that... Yeah, I see now. An engagement gift... I think."
-                tali "Well, since it's come to this... I think I'd also like to be a little excited. Come over here... husband."
+                tali "Oh... You aren't kidding about that excitement either. Keelah, why is it so big already?"
+                tali "Well since it's come to this... I think I'd also like to give you a gift. Come over here... husband."
                 jump zeltanmded4
             "No way.":
-                scene bg shower8
-                tali "Zeltan, I can't. It's not what you think it means. I am not happy to be the one to tell you this, but someone had to eventually."
-                tali "I can't marry you just because we had some fun together. But I'm sure you will meet much nicer girls and someday someone will be happy to become your wife."
+                scene shower8
+                tali "Zeltan, I can't. It's not what you think it means. I'm not happy to have to tell you this, but someone had to eventually."
+                tali "I can't marry you just because we had some fun together. But I'm sure you will meet a much nicer girl someday who will be happy to become your wife."
                 scene bg shower10
-                zeltan "Depressively. I didn't expect such an answer. I need to think about your words. Sorry to bother you, Tali. I will see you later."
+                zeltan "Depressively. I did not expect such an answer. I need to think about your words. Sorry to bother you, Tali. I will see you later."
                 scene black
                 scene bg med3
                 show tali facepalm at left
                 tali "Oh poor guy... I feel a little sorry for him."
                 show tali doubt at left
-                tali "But I'm sure this is for the best. He took it much easier than I expected. Hang in there big guy."
+                tali "But I'm sure this is for the best. He took it much better than I expected. Hang in there big guy."
                 jump MedBayUsual
 
 
     label zeltanmded4:
         scene bg medelcor12
-        tali "Mmmm... I will really enjoy it."
+        tali "O-Oh fuck. I can barely wrap it between my feet. I shouldn't but... he's so hard it's... Keelah."
         scene black
         show zeltan1
         $ renpy.pause ()
         scene bg medelcor13
-        tali "Let me put this huge thing here..."
+        tali "I think he'd all warmed up, don't you? Lets bring this boy home and..."
         scene black
         show zeltan2
         $ renpy.pause ()
-        tali "Oh yes, that feels good!"
+        tali "Mmmmgh, yes! Oh fuck Zeltan, that feels so good!"
         scene black
         show zeltan3
         pause 1
-        tali "Ahhh... Zeltan. Are you... what are you doing?!"
+        tali "Z-Zeltan?! What are... What are you doing?!"
         scene bg medelcor10
-        tali "What was that, big guy? Decided to move your body, huh?"
-        zeltan "Manfully. I just want to please my new bride."
+        tali "Oh... I see. Deciding to join in on the fun?"
+        zeltan "Proudly. I just want to please my new bride."
         scene bg medelcor11
-        tali "Yeah, I like this self-confident elcor. Go on, show me what you've learned."
+        tali "That's a lot of confidence for a sensitive elcor, don't you think? Do you really think you've got what it takes with a little eagerness? Just sit back and let me-."
         scene black
         show zeltan4
         $ renpy.pause ()
-        tali "Yes... yes... Keelah, yes! Fuck me harder!"
+        tali "Fuck! OH FUCK! Keep fucking me! Keelah, keep fucking me! Pound your wife like you own her womb!"
         scene black
         show zeltan4alt
         $ renpy.pause ()
-        zeltan "Unsure. I am close Tali. Do I need to pull out now?"
-        tali "Aaahhhh... what? Ah... fuck me..."
-        zeltan "Enthusiastically. Sorry, I forgot. Let me fill your body with hot cum, my quarian cock slut!"
+        zeltan "Unsure. Am I going too fast? I think your chair is breaking."
+        tali "N-Ngh... f-f-fuck-k... m-m-m-e..."
+        zeltan "Enthusiastically. Nevermind then. Time for your tribute as my loving wife! Take me cum and bear your husband's child, you quarian cock slut!"
         scene black
         show zeltan5
         $ renpy.pause ()
         scene bg med3
         show tali doubt at left
         show zeltan stand at right
-        tali "You're making such nice progress, Zeltan. Very nice."
-        zeltan "Proudly. You won't regret your choice! I need to make some preparations for an elcors wedding ceremony! I will see you later, my love!"
+        tali "T-That was... Wow, you're making such nice progress Zeltan. Very nice."
+        zeltan "Proudly. You won't regret your choice! I need to make some preparations for an elcor wedding ceremony! I will see you later, my love!"
         hide zeltan
         play sound "audio/run.ogg"
         tali "Elcor wedding ceremony? Keelah..."
@@ -26064,7 +26066,7 @@ label start:
     label corridor2:
         scene bg cor2walk
         play sound "audio/walk.mp3"
-        "Carefully watching her steps, Tali walks down the hallway to the warehouse..."
+        "Carefully watching her back, Tali walks down the corridor to the warehouse..."
         if corridor_fight:
             $ enemyID = 2
             play sound "audio/roar.mp3"
@@ -26299,23 +26301,23 @@ label start:
     label whKrogan:
         scene bg whkrogan
         with dis
-        tali "He looks like a merc. The equipment is very expensive though. Bio-scans read he's been dead for over a month, maybe two. I... don't think Serok's boys killed him."
+        tali "Looks like a mercenary. The equipment is very expensive though. Scans read he's been dead for over a month, maybe two. I... don't think Serok's boys killed him."
         tali "The helmet recorder is damaged. Whats here barely helps. Hmm. I think I can repair this with... lets see... Ah! Yes, last recods are available! Lets hear it."
-        deadkrogan "This ship is starting to piss me off. Food's shit, everyone's weak. I'm the hired muscle but they just make me feed the varren and all those damned creatures in their cells."
-        deadkrogan "The eggheads snatch em up at random, take them to women elsewhere onboard. Human, turian, asari. There's some kinky shit going on, but this isn't a pleasure cruise."
-        deadkrogan "I hear some important fuck's coming. Maybe even the guy who organized all this shit. We need to have a talk. I'm not being paid enough to deal with this."
+        deadkrogan "This ship is starting to piss me off. Food's shit, faces are shittier, and I haven't had a fight in weeks. I'm supposed to be the tough, threatening guy here but they just make me feed the varren and growl at those damned creatures in their cells like it'll do something. Animal commnucation my ass."
+        deadkrogan "The eggheads snatch em up at random, take them to women elsewhere onboard and that's usually the last I see of em. Human, turian, asari... There's some kinky shit going on, but this aint no pleasure cruise I ever heard of."
+        deadkrogan "I hear some important fuck's coming, maybe even the guy who organized all this shit. Good. The big man and I are gonna need to have a little talk about my pay."
         tali "Looks like that's all there is. What was going on here? I need to keep looking."
         jump warehouse
 
     label whVent:
-        tali "That's a ventilation hatch. Hmm. It's quite wide. I think I can use it if I can find a way to get up there."
+        tali "That's a ventilation hatch. Hmm. It's pretty wide. I think I can use it if I can find a way to get up there."
         jump warehouse
 
 
     label corridor1:
         scene bg cor1walk
         play sound "audio/walk.mp3"
-        "Tali heads down the hallway to the engine room..."
+        "Her senses primed, Tali cautiously treads down the corridor to the engine room..."
         if corridor_fight:
             $ enemyID = 0
             play sound "audio/creepone.mp3"
@@ -26323,7 +26325,7 @@ label start:
             show tali gunshoot at left
             show creep stand at right
             with dis
-            "Sensing a female, a creature springs out!"
+            "Following her scent, a creature springs out!"
             $ fuckpose = renpy.random.randint(1, 2)
             $ enemyhp = 5
             jump sliderBattleFuck1
@@ -26344,7 +26346,7 @@ label start:
             tali "What the hell is going on with you?! Why did you leave the ship?"
             zeltan "Ashamed. There is no place for me there any more. I dishonor my ancestors."
             show tali facepalm at left
-            tali "Keelah, I know I'll regret it but..."
+            tali "For the love of... I know I'll regret it but..."
             show tali talk at left
             tali "What you talking about?"
             zeltan "Touchy. I see you're still laughing at me. Please just go away."
@@ -26352,9 +26354,9 @@ label start:
             tali "Is this about what happened in the medbay? Are you worried about that?"
             zeltan "Depressively. Don't remind me. Now all other elcor will make fun of me. Because I couldn't satisfy a woman."
             show tali talk at left
-            tali "Ah... Listen, it happens sometimes. It's no big deal right? Is this the first time it's happened to you?"
+            tali "Ah... Listen, it happens sometimes. It's no big deal alright? What happened... well it's the first time it's happened to you right?"
             zeltan "..."
-            tali "First time... with a quarian?"
+            tali "Probably your first time... with a quarian?"
             zeltan "Unconfidently. Perhaps."
             tali "Wait, you can't... Are you a virgin?!"
             hide zeltan stand
@@ -26713,7 +26715,7 @@ label start:
         scene bg comtutorial3
         "Looks like you've attracted some unwanted attention. Fighting will be handled through a simple mini-game the players can interact with."
         "A slider in the bottom-center will show the distance between Tali and the enemy. You have a limited window of opportunity before they're too close for her to stop them."
-        "Above the slider there are buttons which provide a number of options available to you. Depending on your inventory you can shoot your opponent, bomb them, or try to escape."
+        "Above the slider there are buttons which provide a number of options available to you. Depending on your inventory you can shoot your opponent, toss a grenade, or try to escape."
         "Each action has a chance to fail. Enemy stats vary according to their own difficulty level. All stats afterwards are generally random. Notice: Shooting an enemy and especially the use of explosives will increase your alarm level."
         scene bg comroom
         jump sliderFight
@@ -26928,7 +26930,7 @@ label start:
         tali "No, let me go!"
         scene bg comscene4
         play sound "audio/gorillaroar.wav"
-        creature "..."
+        creature "{i}Heavy panting{/i}"
         scene bg comscene5 with hpunch
         play sound "audio/slap.mp3"
         pause 2
@@ -27250,7 +27252,7 @@ label start:
         tali "No, let me go!"
         scene bg comscene4
         play sound "audio/gorillaroar.wav"
-        creature "..."
+        creature "{i}Heavy panting{/i}"
         scene bg comscene5 with hpunch
         play sound "audio/slap.mp3"
         pause 2
@@ -27259,7 +27261,7 @@ label start:
         scene bg comscene5 with hpunch
         play sound "audio/slap.mp3"
         pause 1
-        tali "Stop doing that, you bosh'tet!"
+        tali "Stop doing that you bosh'tet!"
         scene bg comscene6 with hpunch
         play sound "audio/punch.mp3"
         pause 2
@@ -27271,7 +27273,7 @@ label start:
         creature "Grrrrrrrrrr"
         scene bg combj1 with hpunch
         play sound "audio/punch.mp3"
-        tali "Am I supposed to be impressed? Ugh, stinks! You think I'm afraid of a dick this small?"
+        tali "Am I supposed to be impressed? Ugh, it stinks! You think I'm afraid of a dick this small?"
         tali "{i}Keelah, it's fumes are making me lightheaded. It's so heavy and sticky too. Calm down Tali, you can-{/i}"
         scene bg combj2
         play sound "audio/gorillaroar.wav"
@@ -27305,7 +27307,7 @@ label start:
         pause 1
         scene bg combj14
         play sound "audio/gorillaroar.wav"
-        tali "M-My head's spinning. It's so gross... and his cum is so thick..."
+        tali "M-My head's spinning. It's so gross... Why is his cum is so thick...?"
         scene black
         with dis
         creature "..."
@@ -27360,7 +27362,7 @@ label start:
         tali "Aaaaa! What is that?!"
         scene black
         play sound "audio/buzzing.mp3"
-        tali "Stop! Don't try it!"
+        tali "Stop! Get away from me!"
         play sound "audio/punch.mp3"
         tali "You little...! What the hell are you doing?!"
         scene bg showerscene3
@@ -27371,7 +27373,7 @@ label start:
         tali "It's licking me?! No. That's not a tongue!"
         scene bg showerscene20
         play sound "audio/lewdsplat.mp3"
-        tali "NGH! It's... inside..."
+        tali "NGH! It's... inside...!"
         scene black
         show showerevent2
         $ renpy.pause ()
@@ -27387,7 +27389,7 @@ label start:
         tali "A-Aaaaaah..."
         scene black
         play sound "audio/buzzing.mp3"
-        "While Tali tried to control herself, the creature escaped without a trace."
+        "Struggling to control herself, Tali was oblivious to the bug as it escaped without a trace."
         if bugfirst:
             $ bugfirst = False
             scene bg med3
@@ -27400,21 +27402,21 @@ label start:
             jump taliNoChoice
         scene bg med3
         show tali shame at left
-        tali "Ah... What's happening to me? After this... creature came inside me, my body started trembling and I'm feeling so... excited. Like I started losing control of myself..."
+        tali "Ah... What's happening to me? After that... creature came inside me my body started trembling and I felt so... excited. Like I started losing control of myself..."
         show tali doubt at left
-        tali "Alright Tali, focus. The bug came from somewhere. I need to scan the room and find out where."
+        tali "Alright Tali, focus. The bug came from somewhere. Search the room and find out where."
         scene black
         play sound "audio/equip.ogg"
         pause 2
         scene bg vent1
         with dis
-        tali "Here it is I think. Scans indicate the recent remains of organic materials. Something pried this vent hatch open for some reason."
-        tali "Let me see..."
+        tali "Here it is I think. My omni-tool shows recent remains of some weird organic paste. Something pried this vent hatch open a while ago..."
+        tali "Alright, lets close this."
         scene black
         show ventclose
         pause 2
         scene bg vent2
-        tali "Ugh! Does anything work on this damn ship? I guess I need some spare parts to fix this hatch."
+        tali "Ugh! Does anything work on this ship? I guess I need some spare parts to fix this hatch."
         $ bugquest = True
         $ sidequest = "Fix vent in medbay (30 tech parts)"
         $ bugsact = False
@@ -30418,7 +30420,7 @@ label start:
                     jump meddp1Bad
                 elif enemyID == 32:
                     if prison_phantom:
-                        jump prisonphscene1
+                        jump prisonphscene
                     else:
                         jump prisonteasescene
             else:
@@ -31472,7 +31474,7 @@ label start:
                     "I need to hurry!":
                         jump screenCheck
             else:
-                tali "Another bunch of flesh blocking my way. And here another vents from right."
+                tali "Another mass of flesh blocking my way. And there. another vent's on the right."
                 menu menu59:
                     "Check the vent.":
                         if nyunsaved:
@@ -31487,7 +31489,7 @@ label start:
                             play sound "audio/bug1.mp3"
                             show nyunvent1
                             $ renpy.pause ()
-                            tali "Keelah! It's Nyun! How it happened?! What this creature doing with her?"
+                            tali "Keelah! It's Nyun! How the hell did she get in there?! What that creature doing to her?"
                             scene black
                             show nyunvent2
                             $ renpy.pause ()
@@ -31514,7 +31516,7 @@ label start:
         if ventID == 70:
             tali "Is that a spider web? Looks too big for regular spider."
         if ventID == 71:
-            tali "Nyun must be there! I need to save her!"
+            tali "Nyun must be in there! I need to save her!"
             menu hatch71:
                 "Break the hatch.":
                     scene black
@@ -32916,21 +32918,21 @@ label start:
         show bg ventmed2
         show tali talk at left
         show ami doubt at right
-        tali "Tell me something good."
+        tali "I could really use some good news right now, AMI."
         show ami dtalk at right
-        ami "Can't say now for sure. I placed her in recovery capsule. Her condition is unstable."
+        ami "I can't confirm positive or negative news at this time, I'm afraid. I've placed her in recovery capsule but for now her condition is unstable."
         show tali facepalm at left
         show ami doubt at right
-        tali "Keelah, I hope she will make it."
+        tali "I guess that's as good as news can be, given the circumstances. Keelah I hope she'll make it."
         show tali talk at left
-        tali "We have recovery capsule?"
+        tali "Wait... we have recovery capsules?"
         show ami dtalk at right
-        ami "Yes. In next room behind this door."
-        tali "I need to check it when i have time."
+        ami "Yes. In the room next to this one, behind that door."
+        tali "I'll have to check it when I have time."
         $ vent6 = True
         $ nyunquest = False
         $ vent6seal = True
-        $ ventsidequest = "Wait until Nyun is recovered."
+        $ ventsidequest = "Wait until Nyun has recovered."
         $ nyunblock = False
         $ nyunsaved = True
         $ nyunmed = True
