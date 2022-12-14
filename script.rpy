@@ -23327,7 +23327,7 @@ label start:
         jump prison
 
     label prison:
-        if prison_phantom:
+        if prison_phantom and prisonLock:
             scene bg prison
             show tali doubt at left
             tali "Good afternoon boys, how are my favourite caged pets doing today?"
