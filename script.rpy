@@ -20216,53 +20216,58 @@ label start:
     scene black
     $ sidequest = "..."
     play music "audio/bg/common_bg.mp3" volume 0.3 loop
-    "With her commander grounded and her friends too busy, the young quarian Tali'Zorah ventures out into the unknown fringes of Terminus Space, busying herself with chores to find valuable tech and exciting discoveries she can report back to the Migrant Fleet."
+    "One week had passed since Shepard was relieved of command."
+    "One long week, but like that the team broke apart all over again."
+    "Garrus left to talk with his father about the Reapers, Liara continues her work as the Shadow Broker, and Joker has to play nice so they don't take the SR2 away from him."
+    "And Tali? What is Tali'Zorah vas Normandy doing all by herself? She was doing her best to talk sense to the Admirals... and thanks to her father she was back at square one. No... below square one."
     #jump crokdart
     scene bg start1
     with dis
     show tali tool at left
     with dis
 
-    tali "Is that a station? No, that's a ship. This far out? Keelah look at the size of that thing. This is Tali'Zorah vas Normandy, do you copy? Unidentified craft, come in."
+    tali "This is Tali'Zorah of the Flotilla, do you copy? Unidentified craft, come in."
+    "It was like the pilgrimage all over again."
     show tali shame at left
     with dis
-    tali "Mmn. That's no good. No answer, no identification, no reg tags. Looks like it's just drifting in orbit. Scans show a functioning generator at least."
+    tali "No response... but that ship is way too big to be floating salvage."
     show tali tool at left
     with dis
-    tali "No return ping either. Ugh, who designed that hunk of junk? Even if it wasn't for scrap it looks thrown together. It may be good for salvage but..."
+    tali "Return ping failed. Low energy readings across the board. No trackable registration. This ship is either incredibly old or incredibly confidential. Boarding it would be risky, but if it really is abandoned..."
     show tali gunstand at left
     with dis
-    tali "Alright. Lets make this quick. Maybe its abandoned, maybe not. Regardless, I can't pass up this opportunity. There might be something in there I can bring back to the Flotilla."
+    tali "This is just a risk I'll have to take."
 
     scene bg start2
     with dis
-    "With repeated attempts to hail the vessel failing, Tali gives in to her inquisitive nature and docks her ship on a half-ruined docking tube that works suspiciously too well."
+    "Tentatively flying circles around the vessel, Tali only felt comfortable nearing on her third pass and docked her ship to an eerie silence. Rusted tethers latched onto her ship and a hiss sealed her fate as the procedure went without a hitch. She was docked."
     show tali tool at left
     with dis
-    tali "Tethers in place. Pressurization complete. Docking sequence finished. It's... quiet. Dead quiet. I can hear my own breathing. Not spooky at all. For floating scrap its docking subroutines work a little too well. Alright. Time to check the damage."
+    tali "Locks in place. Pressurization complete. Tethers... notably functional. It's... too quiet. I can hear my own breathing. I'm already getting nervous, hah..."
+    "Steeling her resolve, Tali cast a regretful look back on her scouting vessel and half considered leaving. The possible spoils she'd return with however proved much more tempting and she entered the ship without a second look back."
 
     scene bg start3
     with dis
     show tali gunstand
     with dis
-    tali "The lights seem to work. Filtration systems enabled. How long has this ship been abandoned?"
+    tali "Lights functional. Artificial gravity working. It's not nearly as bad as I thought it'd be..."
     show tali tool at left
     with moveinleft
-    tali "Alright. Once I've synchronized my omni-tool with the ships local network I should be... There we go. Lets check if there's anything of note on this orbiting moon of scrap."
+    tali "It's still far too quiet... but at least I can think. First I'll need to check if the ships systems are... I'm in. A little old but easy for a quarian. Time to run a few scans just to be safe..."
     menu entrance:
-        "Scan for life signs" if flag1:
+        "Search for living entities" if flag1:
             $ flag1 = False
-            tali "This whole ship just lit up like a colony station! What the hell, why was no one responding...?"
+            tali "There's... a lot activity on this ship. A LOT. Why didn't my preliminary scans show this sooner?!"
         "Download schematics" if flag2:
             $ flag2 = False
-            tali "Corrupted. Great. What did I expect? Seems it responded to my presence and built a local map based on my position. Its not much and it'll do but even this part of the ship is a speck compared to the rest!"
-        "Investigate the ship's integrity" if flag3:
+            tali "Corrupted. Unfortunate but not unexpected. I can at least build a map based on my location and form a general layout of the ship. It's not perfect but it's all I have."
+        "Troubleshoot issues" if flag3:
             $ flag3 = False
-            tali "Critical systems are still operational. Secondary generators are kicking in to compensate for the primary's failure. The engines are functional but disabled. There's... one other ship docked on the other side? What the...?"
+            tali "Critical systems operational. Emergency generators are kicking in to compensate for the failure of the primary generators. Engines are functional but disabled. There's... what? Another ship in the opposite docking bay?"
         "I should go" if flag1 == False and flag2 == False and flag3 == False:
             show tali gunstand at left
             with dis
-            tali "Way to go Tali. You bit off way more than you could chew with this one. Nothing's responding to me here so I'd better leave while they don't know I'm here."
+            tali "I knew this was a bad idea. Never ignore your instincts Tali! It's time to get off this thing."
             jump GoNext_1
 
     jump entrance
@@ -20273,7 +20278,7 @@ label start:
         play sound "audio/explosion.mp3"
         pause 2
         show tali angry at left
-        tali "What? No! My ship!"
+        tali "What?! No, no, NO! MY SHIP!"
 
     scene bg start5
     with dis
@@ -20281,8 +20286,9 @@ label start:
     pause 2
     show tali gunstand at left
     play sound "audio/gunready.wav"
-    tali "What the hell are those things?! Get back! I'll open fire!"
+    tali "Where the hell did you bastards come from?! GET BACK!" 
     show tali gunshoot at left
+    tali "I SAID GET BACK!!"
     play sound "audio/gunshot.mp3"
     pause 1
     play sound "audio/gunshot.mp3"
@@ -20302,9 +20308,7 @@ label start:
     play sound "audio/gunshot.mp3"
 
     tali "GET! BACK!!"
-    pause 1
-    show tali gunstand
-    tali "Damnit, there's too many of them! I've got to get out of here fast!"
+    tali "Damnit, there's too many of them!"
 
     scene bg start6
     with dis
@@ -20312,28 +20316,24 @@ label start:
     play sound "audio/gunshot.mp3"
     pause 1
     play sound "audio/gunshot.mp3"
-    tali "There should be a utility tunnel nearby! I need to hurry!"
+    tali "Work! Come on, work! One of these doors have to open!"
     scene bg start7
     play sound "audio/explosion.mp3"
-    "Just seconds after turning the corner, Tali's head rang as the boom of an explosion rocked the corridor and caused the lights across the ship to flicker from the vibrations. Behind her the door sealed shut, locked at the highest level, and left no hopes of going back with a single phrase: DAMAGED HULL."
+    "Just seconds after turning the corner, Tali's head rang as the boom of an explosion rocked the corridor and caused the lights across the ship to flicker from the vibrations. She leaped through a passage and the door sealed shut behind her, locking her in and leaving no hopes of going back with a single red phrase: DAMAGED."
     scene bg doorcatch1
     show tali guninjured at left
     with dis
-    tali "Ngh. Keelah that was close."
-    show tali angry at left
-    with dis
-    tali "Wonderful. Now I need to find a solution for the mess my damned curiosity got me into. This day couldn't get any worse! No use standing around. I'll just open this and... Locked? Like I have time for this!"
+    tali "Wha... What the hell were those things?! If they were any faster they would've..."
     show tali tool at left
     with dis
-    tali "Calm down Tali. Its not exactly how you planned today on going but you've gotten out of worse. Lets open this. Afterwards I just need to find the communication center and amplify a distress beacon. There should be patrols... I hope."
+    tali "C-Calm down Tali. You can still get out of this. You've been through worse..."
+    tali "Alright. Nowhere left to go but straight, so... I'll need to open this. I'll just keep my eyes and ears out for any more of those... creatures and get to a communications center. Then I can contact the nearest patrol an-"
     show creep stand at right
     with dis
     play sound "audio/creepone.mp3"
-    creature "KUAAAAHHRR!"
-    show tali gunstand at left
-    tali "What the?! Where did you come from?!"
+    creature "HUUAAARRRRRRRKK!"
     show tali gunshoot at left
-    tali "You think you stand a chance all alone? Admirable tenacity but I'm afraid I don't have time to play with you."
+    tali "Get away! Don't try coming any closer! I said get aw-!"
     pause 2
     play sound "audio/gunready.wav"
     pause .5
@@ -20342,46 +20342,54 @@ label start:
     play sound "audio/gunready.wav"
     pause .5
     play sound "audio/gunready.wav"
-    tali "...Awkward. I knew my pistol felt light. An extra clip would've been great if MY SHIP HADN'T BLOWN UP!"
+    tali "...!"
     show tali tool at left
-    tali "OKAY. Just stand over there while I open this door, alright? Good. Maybe think about life for a second? I'm sure your two brain cells would finally love to meet eachother. Focus Tali, ignore the creature and focus! If I'm fast enough he'll-"
+    tali "Open up damnit! OPEN UP!"
     show creep horny at right
     play sound "audio/creepone.mp3"
-    creature "HAUK! GRRRAAAAHHHHH!"
+    creature "GRAAAAHHHHK!"
     scene bg doorcatch2 with hpunch
     play sound "audio/punch.mp3"
-    tali "NGH! Get away you filthy animal! Don't lick me there! Oh god, why is your tongue so girthy?!"
+    tali "Hahn?! Let go of me!"
     scene bg doorcatch3
     play sound "audio/lick.mp3"
     pause 1
     play sound "audio/lick.mp3"
-    creature "Grrrrrrrrrr..."
+    creature "LLAAAUUUUHHHH!"
     scene bg doorcatch4 with hpunch
     play sound "audio/punch.mp3"
     pause 2
     scene bg doorcatch5
     with dis
-    tali "Come on you damned sheet of metal, OPEN! He's tearing into my suit!"
+    tali "Faster! OPEN FASTER!"
     scene bg doorcatch6
     play sound "audio/creepone.mp3"
-    "Tali could feel the still air of the station kiss her skin and cradle her large quarian ass. She bit her lip and could feel sweat trickle down her face, but she fought hard to ignore it as she had almost finished unlocking the door. Just then however her body froze stiff as she felt the creatures claws on her fat purle cheeks, and between them the large, bulbous tip of its slimy bestial cock."
+    "The tearing of her suit stilled Tali's beating heart as she felt the sterile air of the station caress her bubbly ass, but not before she felt a twisted, grimy shaft push her soft purple mounds apart."
+    "This couldn't be happening. Not here, not like this."
     scene bg doorcatch7
-    tali "No! Stop! What are you-?!"
+    tali "N-No! Stop!"
+    "She pled, but a paw greedily scraping its claws into her visor told her it didn't think of her less than a quarian and a person. In its large hungry eyes and wide slobbering mouth, it only saw her as rapemeat."
     scene bg doorcatch8
     play sound "audio/creepone.mp3"
-    creature "Grrraaaaaaaa!"
+    creature "KRAAAAAAAAGH!"
+    tali "AGGHHHHH!"
     scene black
     show newdoor1
     $ renpy.pause ()
-    tali "AGGHHHN?!! Stop! Quarians are sensitive to physical stimuli! Mnngh! Gross, it's too thick and slimy! You're splitting my ass apart!"
+    "Tali's ass split wide as seven inches of bestial cock sunk into her anus and nearly caused her fragile mind to break from the sudden torrent of stimuli and slimy excretions."
+    tali "S-Sto... o-ouughh?!"
     scene black
     show newdoor2
     $ renpy.pause ()
-    tali "H-Hahhn... Oh ffuucckk. It's so hot and pasty. My insides are on fire..."
+    "Every inch caused sparks of excitement to flare in her flailing mind, causing her arms to become weak as her pussy began to wetten in her degradation."
+    "Her toes began to curl as its slober rained down her face... but despite it all Tali didn't like or want it. Who would want to be raped by a monster like this...?"
+    tali "N-Nugh-ghhhh?!"
     scene black
     show newdoor3
     $ renpy.pause ()
-    tali "No! Please! I'm still sensitive! Ah! Oh Keelah! Let me go! Let me go you filthy, brainle- AGHHH!!"
+    tali "I-I'mmmmcumming! K-Keelah I'm cumming!"
+    "The stimulation was too much. Her pussy spasmed and her cunt gushed a rich quarian cream, but the monster didn't care while it used her ass like a cheap toy. At least until..."
+    creature "RAAAGHHK!"
     scene black
     show newdoorcum1
     $ renpy.pause ()
@@ -20390,17 +20398,18 @@ label start:
     pause 4
 
     label test:
-        tali "{i}A-Agh. My ass. He fucked my ass like he... meant to breed with me. Keelah, his sperm is so thick. This can't be happening...{/i}"
+        tali "M-My ahss... h-he fuckhed my ahss..."
+        play sound "audio/creepone.mp3"
         scene black
         with Dissolve(5)
-        "Exhausted, Tali completely lost the strength and will to resist. She slumped and fell helmet-first to the ground, her body twitching from orgasms she was too humiliated to admit she had. As cum seeped out of her ass she could feel the cool, stale air finalizing her welcome aboard the unknown ship, along with the distant ache of foreign bacteria welcoming itself into her body."
-        "Before passing out she heard the familiar beep of her suit auto-enabling antibiotics and deep repair protocols. Before she passed out from the experience altogether, she could feel the beasts hands on her ass again, ready to continue. What kind of hellish ship did she board?"
+        "Her toes curling, her pussy cumming, Tali lost the strength and will to resist."
+        "Before passing out she felt the creatures fingers bury themselves into the walls of her ass, licking the outer wall as though claiming her and lining himself up for another round. She blacked out before she could feel anything else."
 
-    unknow "...There's the newcomer. Finally! Krax, Jic, grab her and lets get out of here!"
+    unknow "Where the hell is... there! Krax, Jic, grab her and lets get out of here!""
     scene black with hpunch
     play sound "audio/creepone.mp3"
     creature "KRAGHH!!!"
-    unknow "Perfect, more vermin. Kill that thing and lets go!!"
+    unknow "Great, he's back!"
     play sound "audio/gunshot.mp3"
     pause .5
     play sound "audio/heavyshots.mp3"
@@ -23327,7 +23336,7 @@ label start:
         jump prison
 
     label prison:
-        if prison_phantom and prisonLock:
+        if prison_phantom:
             scene bg prison
             show tali doubt at left
             tali "Good afternoon boys, how are my favourite caged pets doing today?"
