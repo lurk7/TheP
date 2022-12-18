@@ -21287,15 +21287,15 @@ label start:
         scene bg krok10 with hpunch
         play sound "audio/creepone.mp3"
         pause 1
-        tali "What?! No! That's not possible!"
+        tali "What?! No possible!"
         scene black
         show crocdart1
         pause 2
-        tali "Oh fuck! D-Damn you Zeltan... your darts didn't work...!"
+        tali "Ah fuck... stupid Zeltan... your darts didn't worked..."
         scene black
         show crocdart2
         $ renpy.pause ()
-        tali "Oh Keelah, his ribbed cock is... delicious. It's like it... was designed to give pleasure to quarian pussies..."
+        tali "Oh Keelah, his rubbed cock is... delicious. It's like... designed to give pleasure for my pussy..."
         scene bg krok11 with hpunch
         play sound "audio/creepone.mp3"
         pause 1
@@ -21305,7 +21305,7 @@ label start:
         scene black
         show crocdart4
         $ renpy.pause ()
-        tali "Y-Yes... I'm a captured quarian admiral girl... treat me like a fuckdoll or I won't tell you a thing...!"
+        tali "Ah yes... I'm a captured quarian admiral girl... treat me rough or I don't tell you anything..."
         scene black
         show crocdart5
         $ renpy.pause ()
@@ -22477,7 +22477,7 @@ label start:
             scene bg sew9
             $ sewsew_first = False
             show tali doubt at left
-            tali "A tunnel? On a ship?! Keelah, it's so huge! What's this kind of place doing on a ship?"
+            tali "Is this a tunnel somewhere? What this kind of place doing on this ship?"
         scene bg sew9
         hide tali
         if bearok:
@@ -22515,7 +22515,7 @@ label start:
 
     label sewenter:
         show tali doubt at left
-        tali "I feel a draft and a... ugh, putrid stench. No way I'm going in there."
+        tali "I feel a draft and a sewer-like stench. No way I will go there."
         jump sewsew1
 
     label sewbear1:
@@ -22558,17 +22558,17 @@ label start:
         show bearrun4
         pause 3
         play sound "audio/bear1.mp3"
-        tali "Don't you dare pull me there, you boshtet!"
+        tali "Don't dare to pull me there, you boshtet!"
         scene black
         play sound "audio/tier.mp3"
         pause 1
-        tali "No! What are you doing you stupid animal?!"
+        tali "No, why you doing it, stupid animal!?"
         scene black
         show bearscene1
         $ renpy.pause ()
-        tali "I-Is that...? Oh Keelah, it's so fucking big! It's slapping my belly and reaches my breasts..."
+        tali "Oh Keelah, his huge cock slapping my belly and reaches the boobs..."
         scene bg bear1 with hpunch
-        tali "No! Please! Don't try to push that thing inside me!"
+        tali "No, please! Don't try to pull this thing inside me!"
         play sound "audio/fall.ogg"
         pause 1
         play sound "audio/bear2.mp3"
@@ -22580,7 +22580,7 @@ label start:
         scene black
         show bearscene3
         pause 2
-        tali "Ahhh.. O-Oh Keelah, please... this... this.... too fat, ah... my ass..."
+        tali "Ahhh.. oh Keelah, please... this... this.... too fat, ah... my ass..."
         scene black
         show bearscene3alt
         $ renpy.pause ()
@@ -22616,10 +22616,10 @@ label start:
         scene bg sew9
         show tali fin3 at left
         show serok stand at right
-        serok "Oh shit, that's an especially big load of cum, even for you. What kind of wild, horny beast did you meet this time, you poor girl?"
-        tali "A-Ahhhh... ghk..."
+        serok "Oh shit, It really too much cum around... what a wild horny beast you met this time, poor girl?"
+        tali "Aghhhh..."
         show serok talk at right
-        serok "Right. Let's not waste any time before it comes back."
+        serok "Right. Let's not wait until he come back."
         jump medbayafterdefeat
 
 
@@ -22634,7 +22634,7 @@ label start:
         pause 1
         scene bg sew9
         show tali guninjured
-        tali "Keelah! Looks like I scared him away this time..."
+        tali "Oh Keelah, seems like I'm scared him away this time..."
         jump sewsew1
 
 
@@ -24978,50 +24978,47 @@ label start:
             $ v1 = False
             show jesora talk at right
             show tali doubt at left
-            jesora "Hey suitgirl! You're alive! Glad to see you in one piece! Where's Nyun?"
+            jesora "Hey, suirgirl! You alive! Glad to see you in one piece! Where is Nyun?"
             show jesora stand at right
             show tali talk at left
-            tali "She's... alright now. We had a couple of problems but now everything should be fine."
-            tali "How'd you survive back there after all of those monsters attacked?!"
+            tali "She is... alright now. We had a few problems but now everything must be good."
+            tali "How you survived there after all of this monsters attack?!"
             show tali doubt at left
             show jesora warry at right
             jesora "I am really surprised myself but... they just left!"
             show jesora stand at right
-            jesora "We shot two or three of them and don't get me started on the big one, but after you and Nyun disappeared they just stopped attacking like that was it! They ran off from wherever they came."
-            jesora "It was pretty strange. Okay, very strange. I think you have a fanclub hoenstly. We found the hatch you two probably escaped through but it was closed way too tight, and no way in hell I'd stick an explosive on that."
-            jesora "But here you are, safe and clean... well safe anyway. What did you find down there?"
+            jesora "We shot two or three of them, except the big one. And after you and Nyun disappeared, they just stopped attacking like by command and run away from where they come."
+            jesora "It was pretty strange. We found the hatch through which you escaped but it was closed tightly already."
+            jesora "But here you are. What did you found there?"
             show tali talk at left
-            tali "Nothing interesting except more strange horny beasts. Oh... and some android girl. She's still functional."
+            tali "Nothing interesting except more strange horny beasts. Ah yes... and adnroid girl. She is still functional."
             show jesora think at right
-            jesora "Android girl? Hmmm... I'd like to have a chat with her one day. She might know something useful."
+            jesora "Android girl? Hmmm... I might to talk with her one day. She might know something useful."
             show jesora doubt at right
-            tali "I tried. No luck, unfortunately. Looks like her memory module was damaged so she didn't have too much information to give."
+            tali "Not much really. Looks like her memory module damaged, so she didn't say me much."
             show tali doubt at left
-            jesora "Well I'm sure our best engineer will find some way to fix it. And please tell Nyun to come back here."
-            tali "Aww. You miss her?"
-            jesora "I miss her sweet ass behind that counter!"
-            jump jesora_bar
+            jesora "Well, I'm sure you will find the way to fix it. And please, tell Nyun to come back here."
         if z2:
             $ z2 = False
-            jesora "Hey there big dick tamer. I heard you had a lot of fun recently?"
+            jesora "Hey there, big dick tamer. I heard you had a lot of fun recently."
             show tali shame at left
-            tali "Ah... he told you."
+            tali "Ahh... he told you."
             show jesora smile at right
-            jesora "Sure he did. Elcor can't show emotions but even a blind man can see the glow of euphoria around him."
+            jesora "Sure he did. Elcor can't show emotions but I swear I can see the glow of euphoria around him."
             show tali facepalm at left
             tali "Alright, let's just move on."
             show jesora smiletalk at right
-            jesora "You sure? You don't feel like something's missing in your hands... or mouth?"
+            jesora "You sure? Don't feel like something's missing in your hands... or mouth?"
             show tali angry at left
             tali "Just shut up! I don't want to talk about it!"
             show jesora smile at right
             show tali doubt at left
-            jesora "Yeah, I heard you can be bossy bitch."
+            jesora "Yeah, I heard you can be very bossy bitch."
             show jesora think at right
             jesora "Hmmm... Where did I hear that from? Let me remember..."
             show jesora smiletalk at right
             show tali angry at left
-            tali "Fuck off!"
+            tali "Nah, fuck off!"
             jump bay2_bar
         jesora "Hey there vermin slayer. Come to join my little party?"
         menu jesora_bar:
@@ -25076,7 +25073,7 @@ label start:
                 jesora "You need to make sure this laser works. I don't have a tech specialist. Meet my crew in the hallway and make sure everything's up and running right. After that, well... get ready for a fight."
                 show jesora doubt at right
                 show tali talk at left
-                $ quest = "Meet Jesora in the Hallway."
+                $ quest = "Meet Jesora in hallway."
                 tali "Alright."
             "I should go.":
                 jump bay2_bar
@@ -25089,32 +25086,31 @@ label start:
         if v2:
             $ v2 = False
             show serok talk at right
-            serok "Heard you survived a tough fight. How's it going?"
+            serok "Heard you survived the tough fight. How it going?"
             show serok smoke at right
             show tali talk at left
-            tali "It could've been better. Nyun was less... fortunate and had a hard time getting through it. But now she feels better."
+            tali "Could be better. Nyun was less lucky and had a hard time getting through of it. But now she feels better."
             show tali doubt at left
             show serok reason at right
-            serok "Then tell her to come back here. My men are bored without regular drinks and her pretty face."
+            serok "Then tell her to come back here. My men bored without regular drinks and her pretty face."
             show serok smoke at right
             show tali talk at left
-            tali "Give her some time. Don't be a complete asshole, especially after what she went through. She's safe now and recovering from... what happened."
+            tali "Give her some time. Don't be complete asshole. She is safe now, recovering from... what happens."
             show serok talk at right
-            serok "Alright. But it'll be a vacation at her own expense. Just warn her about it."
+            serok "Alright. But it will be vacation at her own expense. Just warn her about it."
             show serok smoke at right
             show tali doubt at left
-            tali "Fuck you, Serok! I'm tired of being your errand girl. If you want to say something to her, crawl your ugly batarian ass through the vents and tell her your damn self!"
+            tali "Fuck you, Serok. I'm tired to be your errand girl. If you want to say something to her, bring your ugly batarian ass in this fuckin vents."
             show serok stand at right
             serok "Whatever..."
-            jump serok_bar
         serok "What now?"
         menu serok_bar:
-            "Why did you decide to go pirate?":
+            "Why did you decide to pirate?":
                 show serok talk at right
-                serok "I had an opportunity, I seized it. Took a ship and left that shitty Khar'shan behind me. I'd rather die than go back there."
+                serok "I had an opportunity, I used it. Took a ship and left that shitty Khar'shan behind me. I'd rather die than go back there."
                 show serok smoke at right
                 show tali talk at left
-                tali "That bad? I've never heard of a batarian hating their homeworld. I've only every heard good things from them."
+                tali "That bad? I've never heard of a batarian hating his homeworld. I've only every heard good things from them."
                 show tali doubt at left
                 show serok reason at right
                 serok "Sure you do. No 'wrong' info is leaked outside that planet. Generations of dictators and iron-fisted despots tend to know how to keep the wrong information from getting out."
@@ -25561,7 +25557,7 @@ label start:
         zeltan "Optimistic advance. No time is too important for love."
         show bg shower9
         tali "Oh Keelah, what is it now?"
-        zeltan "Cautiously. Okay, here goes. Tali, you have changed my life. I do not know if we'll ever see another planet ever again, so I would like to ask an important question."
+        zeltan "Cautiously. Okay, here goes. Tali, you have changed my life. I do not if we'll ever see another planet ever again, so I would like to ask an important question."
         show bg shower10
         zeltan "Bravely. Will you marry me?"
         show bg shower8
@@ -25570,43 +25566,43 @@ label start:
         scene bg shower9
         tali "Keelah... Zeltan."
         scene bg shower8
-        tali "Listen, it was just sex, okay? Like when you go in a nightclub, have some drinks, meet a pretty girl... or wherever elcors go to hang around."
+        tali "Listen, it just sex, okay? Like when you go in nightclub, take some drinks, meet pretty girl... or wherever elcors are hanging around."
         scene bg shower9
         tali "Ah, sorry... I forgot."
         scene bg shower10
-        zeltan "Confused. But I thought you also loved me. Do girls often have sex with men they don't love?"
+        zeltan "Confused. But I thought you also love me. Are the girls having sex with guys whom they don't love?"
         scene bg shower9
-        tali "Fuck... I didn't expect it would come to this."
-        zeltan "Horrified. Does that mean... you don't love me? I was not able to satisfy your needs? I knew it!"
+        tali "Oh fuck... didn't expect it will come to this."
+        zeltan "Horrified. Does it mean... you don't love me? I was not good in sex? I knew it!"
         scene bg shower8
-        tali "No, no! No... wait. That's not what I meant ."
+        tali "No no! No... wait. This is not what I mean."
         scene bg shower9
-        tali "Zeltan..."
+        tali "Let me think a bit."
         menu zeltanproposal:
             "Why not?":
-                tali "{i}Keelah, I need to tell him something. We're locked on a drifting ship floating through space and I guess the easiest way to keep him calm till is to say yes until I leave this shifting hellhole...{/i}"
+                tali "{i}Gosh, I need to tell him something. We are locked on this ship together and it seems like the easiest way to keep him calm till I leave this fuckin place.{/i}"
                 scene bg shower8
-                tali "I... You know what Zeltan? I think we can do that."
+                tali "You know. Alright. I think we can do it."
                 zeltan "Rapturously. It so great, Tali! I will be the best husband for you!"
                 scene bg shower10
                 tali "Yeah... I think so."
-                zeltan "Greatly elated. I feel so excited!"
+                zeltan "Happy. I feel so excited!"
                 scene bg shower11
-                tali "Uhm. Let me see that... Yeah, I see now. An engagement gift... I think."
-                tali "Well, since it's come to this... I think I'd also like to be a little excited. Come over here... husband."
+                tali "Let me check this out... yes, I see now. Engagement gift I guess."
+                tali "Since it come to this, I'm also want to be excited. Bring it on, my man."
                 jump zeltanmded4
             "No way.":
-                scene bg shower8
-                tali "Zeltan, I can't. It's not what you think it means. I am not happy to be the one to tell you this, but someone had to eventually."
-                tali "I can't marry you just because we had some fun together. But I'm sure you will meet much nicer girls and someday someone will be happy to become your wife."
+                scene shower8
+                tali "No, Zeltan, it not what it supposed to be. I am not happy to be the one who must tell you this, but someone has to."
+                tali "I can't marry you just because we had some fun together. But I'm sure you will meet much nice girls and someone from them will be happy to become your wife."
                 scene bg shower10
-                zeltan "Depressively. I didn't expect such an answer. I need to think about your words. Sorry to bother you, Tali. I will see you later."
+                zeltan "Depressively. I didn't expect such answer. I need to think about your words. Sorry to bother you, Tali. Will see you later."
                 scene black
                 scene bg med3
                 show tali facepalm at left
                 tali "Oh poor guy... I feel a little sorry for him."
                 show tali doubt at left
-                tali "But I'm sure this is for the best. He took it much easier than I expected. Hang in there big guy."
+                tali "But I'm sure this is for best. He took it much better than I expected."
                 jump MedBayUsual
 
 
@@ -25621,14 +25617,14 @@ label start:
         scene black
         show zeltan2
         $ renpy.pause ()
-        tali "Oh yes, that feels good!"
+        tali "Oh yes, feel good!"
         scene black
         show zeltan3
         pause 1
         tali "Ahhh... Zeltan. Are you... what are you doing?!"
         scene bg medelcor10
-        tali "What was that, big guy? Decided to move your body, huh?"
-        zeltan "Manfully. I just want to please my new bride."
+        tali "What was that, big guy? Decided to move your body, aren't you?"
+        zeltan "Manfully. I just want to please my beloved bride."
         scene bg medelcor11
         tali "Yeah, I like this self-confident elcor. Go on, show me what you've learned."
         scene black
@@ -25638,20 +25634,20 @@ label start:
         scene black
         show zeltan4alt
         $ renpy.pause ()
-        zeltan "Unsure. I am close Tali. Do I need to pull out now?"
+        zeltan "Unsure. I am close Tali. Do I need to pull it out now?"
         tali "Aaahhhh... what? Ah... fuck me..."
-        zeltan "Enthusiastically. Sorry, I forgot. Let me fill your body with hot cum, my quarian cock slut!"
+        zeltan "Enthusiastically. Sorry, I forgot. Let me fill your body with hot jizz, my quarian dick slut!"
         scene black
         show zeltan5
         $ renpy.pause ()
         scene bg med3
         show tali doubt at left
         show zeltan stand at right
-        tali "You're making such nice progress, Zeltan. Very nice."
-        zeltan "Proudly. You won't regret your choice! I need to make some preparations for an elcors wedding ceremony! I will see you later, my love!"
+        tali "You're making nice progress, Zeltan. Very nice."
+        zeltan "Proudly. You won't regret your choice! I need to make some preparations for elcors wedding ceremony! Will see you later, my sweetheart!"
         hide zeltan
         play sound "audio/run.ogg"
-        tali "Elcor wedding ceremony? Keelah..."
+        tali "Elcors wedding ceremony? Keelah..."
         jump MedBayUsual
 
 
@@ -26075,7 +26071,7 @@ label start:
             "Smelling prey, a varren attacks!"
             $ fuckpose = renpy.random.randint(1, 2)
             $ enemyhp = 5
-            jump sliderBattleFuck2
+            jump slider_battle_fuck
         else:
             "The way was clear."
             jump warehouse
@@ -26094,7 +26090,7 @@ label start:
             "Enemy attacks!"
             $ fuckpose = renpy.random.randint(1, 2)
             $ enemyhp = 5
-            jump sliderBattleFuck3
+            jump slider_battle_fuck
         else:
             "The way was clear."
             jump pool
@@ -26326,7 +26322,7 @@ label start:
             "Sensing a female, a creature springs out!"
             $ fuckpose = renpy.random.randint(1, 2)
             $ enemyhp = 5
-            jump sliderBattleFuck1
+            jump slider_battle_fuck
         else:
             "The way was clear."
             jump engine
@@ -27959,1655 +27955,6 @@ label start:
         $ hackID = 0
         jump medbayafterdefeat
 
-    label sliderBattleFuck1:
-        $ fuckpose = renpy.random.randint(1, 2)
-        scene bg cor1
-        if suit > 8:
-            show tali gunshoot at left
-        if suit == 8:
-            show tali gunshoot69 at left
-        if suit == 7:
-            show tali gunshoot7 at left
-        if suit < 7:
-            show tali gunshoot6 at left
-        show creep stand at right
-        call screen sliderfuck1
-
-    label sliderBattleFuck2:
-        $ fuckpose = renpy.random.randint(1, 2)
-        scene bg cor2
-        if suit > 8:
-            show tali gunshoot at left
-        if suit == 8:
-            show tali gunshoot69 at left
-        if suit == 7:
-            show tali gunshoot7 at left
-        if suit < 7:
-            show tali gunshoot6 at left
-        show varren stand at right
-        call screen sliderfuck2
-
-    label sliderBattleFuck3:
-        $ fuckpose = renpy.random.randint(1, 2)
-        scene bg poolcor
-        if suit > 8:
-            show tali gunshoot at left
-        if suit == 8:
-            show tali gunshoot69 at left
-        if suit == 7:
-            show tali gunshoot7 at left
-        if suit < 7:
-            show tali gunshoot6 at left
-        show lizard stand at right
-        call screen sliderfuck3
-
-
-    screen sliderfuck1():
-        modal True
-        showif ammo > 0:
-            imagebutton:
-                idle "images/skills/shoot_idle.png"
-                hover "images/skills/shoot_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.2
-                action Jump("shoot_skill1")
-        showif grenades > 0:
-            imagebutton:
-                idle "images/skills/grenskill_idle.png"
-                hover "images/skills/grenskill_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.3
-                action Jump("grenade_skill1")
-        showif darts > 0 and lovedart == False and suit > 6:
-            imagebutton:
-                idle "images/skills/dart_idle.png"
-                hover "images/skills/dart_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.4
-                action Jump("dart_skill")
-        showif lewd > 20 and suit > 6 and lovedart:
-            imagebutton:
-                idle "images/skills/lips_idle.png"
-                hover "images/skills/lips_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.5
-                action Jump("sex_skill")
-        showif lewd > 10 and suit > 6:
-            imagebutton:
-                idle "images/skills/tease_idle.png"
-                hover "images/skills/tease_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.6
-                action Jump("tease_skill")
-        imagebutton:
-            idle "images/skills/escape_idle.png"
-            hover "images/skills/escape_hover.png"
-            focus_mask True
-            xpos 0.45
-            ypos 0.7
-            action Jump("escape_skill1")
-        bar:
-            left_bar "images/skills/sliderbar_idle.png"
-            right_bar "images/skills/sliderbar_empty.png"
-            thumb "images/skills/enemyicon.png"
-            value AnimatedValue(0, 1000, 5, slidervalue)
-            xalign 0.5
-            yalign 0.9
-            xysize(500,70)
-        timer 5.5 action Jump("suittier1")
-
-    screen sliderfuck2():
-        modal True
-        showif ammo > 0:
-            imagebutton:
-                idle "images/skills/shoot_idle.png"
-                hover "images/skills/shoot_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.2
-                action Jump("shoot_skill1")
-        showif grenades > 0:
-            imagebutton:
-                idle "images/skills/grenskill_idle.png"
-                hover "images/skills/grenskill_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.3
-                action Jump("grenade_skill1")
-        showif darts > 0 and lovedart == False and suit > 7:
-            imagebutton:
-                idle "images/skills/dart_idle.png"
-                hover "images/skills/dart_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.4
-                action Jump("dart_skill")
-        showif lewd > 20 and suit > 7 and lovedart:
-            imagebutton:
-                idle "images/skills/lips_idle.png"
-                hover "images/skills/lips_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.5
-                action Jump("sex_skill")
-        showif lewd > 10 and suit > 7:
-            imagebutton:
-                idle "images/skills/tease_idle.png"
-                hover "images/skills/tease_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.6
-                action Jump("tease_skill")
-        imagebutton:
-            idle "images/skills/escape_idle.png"
-            hover "images/skills/escape_hover.png"
-            focus_mask True
-            xpos 0.45
-            ypos 0.7
-            action Jump("escape_skill1")
-        bar:
-            left_bar "images/skills/sliderbar_idle.png"
-            right_bar "images/skills/sliderbar_empty.png"
-            thumb "images/skills/enemyicon.png"
-            value AnimatedValue(0, 1000, 5, slidervalue)
-            xalign 0.5
-            yalign 0.9
-            xysize(500,70)
-        timer 5.5 action Jump("suittier2")
-
-    screen sliderfuck3():
-        modal True
-        showif ammo > 0:
-            imagebutton:
-                idle "images/skills/shoot_idle.png"
-                hover "images/skills/shoot_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.2
-                action Jump("shoot_skill1")
-        showif grenades > 0:
-            imagebutton:
-                idle "images/skills/grenskill_idle.png"
-                hover "images/skills/grenskill_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.3
-                action Jump("grenade_skill1")
-        showif darts > 0 and lovedart == False and suit > 7:
-            imagebutton:
-                idle "images/skills/dart_idle.png"
-                hover "images/skills/dart_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.4
-                action Jump("dart_skill")
-        showif lewd > 20 and suit > 7 and lovedart:
-            imagebutton:
-                idle "images/skills/lips_idle.png"
-                hover "images/skills/lips_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.5
-                action Jump("sex_skill")
-        showif lewd > 10 and suit > 7:
-            imagebutton:
-                idle "images/skills/tease_idle.png"
-                hover "images/skills/tease_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.6
-                action Jump("tease_skill")
-        imagebutton:
-            idle "images/skills/escape_idle.png"
-            hover "images/skills/escape_hover.png"
-            focus_mask True
-            xpos 0.45
-            ypos 0.7
-            action Jump("escape_skill1")
-        bar:
-            left_bar "images/skills/sliderbar_idle.png"
-            right_bar "images/skills/sliderbar_empty.png"
-            thumb "images/skills/enemyicon.png"
-            value AnimatedValue(0, 1000, 5, slidervalue)
-            xalign 0.5
-            yalign 0.9
-            xysize(500,70)
-        timer 5.5 action Jump("suittier3")
-
-    label tease_skill:
-        if suit > 8:
-            show tali tease at left
-            show tali tease at shake
-        if suit == 8:
-            show tali tease69 at left
-            show tali tease69 at shake
-        if suit == 7:
-            show tali tease7 at left
-            show tali tease7 at shake
-        if suit < 7:
-            show tali tease7 at left
-            show tali tease7 at shake
-        play sound "audio/slap.mp3"
-        "Want this fat quarian ass? Come and get it."
-        play sound "audio/creepone.mp3"
-        pause 1
-        if enemyID == 0:
-            jump suittier1
-        elif enemyID == 2:
-            jump suittier2
-        elif enemyID == 3:
-            jump suittier3
-
-
-
-    label dart_skill:
-        $ lovedart = True
-        $ darts -= 1
-        if suit > 8:
-            show tali dart at left
-        if suit == 8:
-            show tali dart69 at left
-        if suit == 7:
-            show tali dart7 at left
-        if suit < 7:
-            show tali dart6 at left
-        play sound "audio/equip.ogg"
-        "Firing tranquilizer!"
-        play sound "audio/dart.mp3"
-        pause 1
-        play sound "audio/roar.mp3"
-        "The beast looks more calm now. You can try to get closer."
-        if enemyID == 0:
-            jump sliderBattleFuck1
-        elif enemyID == 2:
-            jump sliderBattleFuck2
-        elif enemyID == 3:
-            jump sliderBattleFuck3
-
-
-
-    label sex_skill:
-        if enemyID == 0:
-            jump sex_skill1
-        if enemyID == 2:
-            jump sex_skill2
-        if enemyID == 3:
-            jump sex_skill3
-
-    label sex_skill1:
-        "Tali tries getting closer..."
-        $ random = renpy.random.randint(1, 100)
-        if random > 30:
-            play sound "audio/fall.ogg"
-            scene bg cor1
-            if suit > 8:
-                show tali grab1 at shake
-            elif suit > 6 and suit < 9:
-                show tali grab3 at shake
-            "Success!"
-            if suit > 8:
-                if sexstage == 1:
-                    $ sexstage += 1
-                    scene bg cor1
-                    show sex1
-                    $ renpy.pause ()
-                elif sexstage == 2:
-                    $ sexstage += 1
-                    scene bg cor1
-                    show sex2
-                    $ renpy.pause ()
-                elif sexstage == 3:
-                    $ sexstage = 1
-                    scene bg cor1
-                    show sex2
-                    $ renpy.pause ()
-                    scene bg cor1
-                    show cum1
-                    $ renpy.pause ()
-                    scene bg cor1
-                    show tali fin1 at left
-                    $ lewd += 1
-                    tali "Ngh. So much cum... "
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues on her way..."
-                    $ suit = 10
-                    jump engine
-            elif suit > 6:
-                if sexstage == 1:
-                    $ sexstage += 1
-                    scene bg cor1
-                    show sex3
-                    $ renpy.pause()
-                elif sexstage == 2:
-                    $ sexstage += 1
-                    if lewd < 30:
-                        scene bg cor1
-                        show sex3alt
-                        $ renpy.pause ()
-                    elif lewd < 40:
-                        scene bg cor1
-                        show tali grab3
-                        tali "So hard. I think I can do much better..."
-                        scene bg cor1
-                        show sex4
-                        $ renpy.pause ()
-                    elif lewd > 40:
-                        scene bg cor1
-                        show tali grab3
-                        tali "You like staring at my lips? Let me give you something to really look at..."
-                        scene bg cor1
-                        show sex4
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show tali grab4
-                        tali "Keelah... I want him deep in my throat..."
-                        scene bg cor1
-                        show sex5
-                        pause 3
-                        scene bg cor1
-                        show sex6
-                        $ renpy.pause ()
-                elif sexstage == 3:
-                    $ lewd += 1
-                    $ lovedart = False
-                    $ sexstage = 1
-                    if lewd < 30:
-                        scene bg cor1
-                        show sex3alt
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show cum2
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show tali doubt69 at left
-                        tali "Well... one way or another."
-                    elif lewd < 41:
-                        scene bg cor1
-                        show sex4alt
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show cum2
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show tali doubt69 at left
-                        tali "Done. Now where's me helmet...?"
-                    elif lewd > 40:
-                        scene bg cor1
-                        show sex5
-                        pause 3
-                        scene bg cor1
-                        show sex6alt
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show tali grab5
-                        tali "Mmm. My lips are wrapped so tight around your fat cock. Go on then... give me your cum. I don't want to spill a single drop."
-                        scene bg cor1
-                        show cum3
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show tali fin2 at left
-                        tali "Silly girl, you went a little too crazy..."
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues her way..."
-                    $ suit = 10
-                    jump engine
-        else:
-            if suit > 8:
-                show tali evade at left
-                show tali evade at shake
-            if suit == 8:
-                show tali evade69 at left
-                show tali evade69 at shake
-            if suit == 7:
-                show tali evade7 at left
-                show tali evade7 at shake
-            if suit < 7:
-                show tali evade6 at left
-                show tali evade6 at shake
-            play sound "audio/creepone.mp3"
-            "Pushed back!"
-            $ random = renpy.random.randint(1, 100)
-            play sound "audio/creepone.mp3"
-            if enemyID == 0:
-                show creep stand at shake
-            elif enemyID == 1:
-                show biggy stand at shake
-            elif enemyID == 2:
-                show varren stand at shake
-            "Enemy attacks!"
-            if random > 30:
-                play sound "audio/miss.mp3"
-                if suit > 8:
-                    show tali evade at left
-                if suit == 8:
-                    show tali evade69 at left
-                if suit == 7:
-                    show tali evade7 at left
-                if suit < 7:
-                    show tali evade6 at left
-                "Miss!"
-                if enemyID == 0:
-                    jump sliderBattleFuck1
-                elif enemyID == 2:
-                    jump sliderBattleFuck2
-            else:
-                $ random = renpy.random.randint(1, 100)
-                play sound "audio/creepone.mp3"
-                show creep stand at shake
-                "Enemy attacks!"
-                if random > 60:
-                    play sound "audio/miss.mp3"
-                    if suit > 8:
-                        show tali evade at left
-                    if suit == 8:
-                        show tali evade69 at left
-                    if suit == 7:
-                        show tali evade7 at left
-                    if suit < 7:
-                        show tali evade6 at left
-                    "Miss!"
-                    jump sliderBattleFuck1
-                else:
-                    jump suittier1
-        jump sliderBattleFuck1
-
-
-    label sex_skill2:
-        "Tali tries to get closer..."
-        $ random = renpy.random.randint(1, 100)
-        if random > 30:
-            play sound "audio/fall.ogg"
-            scene bg cor2
-            if suit > 8:
-                show tali grab6 at shake
-            elif suit > 6 and suit < 9:
-                show tali grab7 at shake
-            "Success!"
-            if suit > 8:
-                if sexstage == 1:
-                    $ sexstage += 1
-                    scene bg cor2
-                    show sex7
-                    $ renpy.pause ()
-                elif sexstage == 2:
-                    $ sexstage += 1
-                    scene bg cor2
-                    show sex8
-                    $ renpy.pause ()
-                elif sexstage == 3:
-                    $ lewd += 1
-                    $ sexstage = 1
-                    $ lovedart = False
-                    scene bg cor2
-                    show sex8
-                    $ renpy.pause ()
-                    scene bg cor2
-                    show cum4
-                    $ renpy.pause ()
-                    scene bg cor2
-                    show tali fin1 at left
-                    tali "Ah, so much sperm... "
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues her way..."
-                    $ suit = 10
-                    jump warehouse
-            elif suit == 8:
-                if sexstage == 1:
-                    $ sexstage += 1
-                    scene bg cor2
-                    show sex9
-                    $ renpy.pause()
-                elif sexstage == 2:
-                    $ sexstage += 1
-                    if lewd < 30:
-                        scene bg cor2
-                        show sex10
-                        $ renpy.pause ()
-                    elif lewd < 41:
-                        scene bg cor2
-                        show sex10
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show tali grab7
-                        tali "Such a nice red lollipop you have... Let me take some measurements..."
-                        scene bg cor2
-                        show sex11
-                        $ renpy.pause ()
-                    elif lewd > 40:
-                        scene bg cor2
-                        show sex10
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show tali grab7
-                        tali "Such a thick, bad doggy. Tali will have to punish you..."
-                        scene bg cor2
-                        show sex11
-                        $ renpy.pause ()
-                elif sexstage == 3:
-                    $ lewd += 1
-                    $ lovedart = False
-                    $ sexstage = 1
-                    if lewd < 30:
-                        scene bg cor2
-                        show sex10
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show cum5
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show tali doubt69 at left
-                        tali "Well... one way or another."
-                    elif lewd < 41:
-                        scene bg cor2
-                        show sex11
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show cum6
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show tali doubt69 at left
-                        tali "Now where did I put my helmet...?"
-                    elif lewd > 40:
-                        scene bg cor2
-                        show sex11
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show cum7
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show tali grab8
-                        tali "Mmmm, you filthy stray. You're not going anywhere until your cock is clean and polished..."
-                        scene bg cor2
-                        show cum8
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show cum9
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show tali fin2 at left
-                        tali "Okay. Maybe I was a little too into it..."
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues her way..."
-                    $ suit = 10
-                    jump warehouse
-
-        else:
-            if suit > 8:
-                show tali evade at left
-                show tali evade at shake
-            if suit == 8:
-                show tali evade69 at left
-                show tali evade69 at shake
-            if suit == 7:
-                show tali evade7 at left
-                show tali evade7 at shake
-            if suit < 7:
-                show tali evade6 at left
-                show tali evade6 at shake
-            play sound "audio/creepone.mp3"
-            "Pushed back!"
-            $ random = renpy.random.randint(1, 100)
-            play sound "audio/creepone.mp3"
-            show varren stand at shake
-            "Enemy attacks!"
-            if random > 60:
-                play sound "audio/miss.mp3"
-                if suit > 8:
-                    show tali evade at left
-                if suit == 8:
-                    show tali evade69 at left
-                if suit == 7:
-                    show tali evade7 at left
-                if suit < 7:
-                    show tali evade6 at left
-                "Miss!"
-                jump sliderBattleFuck2
-            else:
-                jump suittier2
-        jump sliderBattleFuck2
-
-    label sex_skill3:
-        "Tali tries to get closer..."
-        $ random = renpy.random.randint(1, 100)
-        if random > 30:
-            play sound "audio/fall.ogg"
-            scene bg poolcor
-            if suit > 8:
-                show tali grab9 at shake
-            elif suit > 6 and suit < 9:
-                show tali grab10 at shake
-            "Success!"
-            if suit > 8:
-                if sexstage == 1:
-                    $ sexstage += 1
-                    scene bg poolcor
-                    show lizsex1
-                    $ renpy.pause ()
-                elif sexstage == 2:
-                    $ sexstage += 1
-                    scene bg poolcor
-                    show lizsex2
-                    $ renpy.pause ()
-                elif sexstage == 3:
-                    $ lewd += 1
-                    $ sexstage = 1
-                    $ lovedart = False
-                    scene bg poolcor
-                    show lizsex2
-                    $ renpy.pause ()
-                    scene bg poolcor
-                    show lizcum1
-                    $ renpy.pause ()
-                    scene bg poolcor
-                    show tali fin1 at left
-                    tali "Ah, so much sperm... "
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues her way..."
-                    $ suit = 10
-                    jump pool
-            elif suit == 8:
-                if sexstage == 1:
-                    $ sexstage += 1
-                    scene bg poolcor
-                    show lizsex3
-                    $ renpy.pause()
-                elif sexstage == 2:
-                    $ sexstage += 1
-                    if lewd < 30:
-                        scene bg poolcor
-                        show lizsex4
-                        $ renpy.pause ()
-                    elif lewd < 41:
-                        tali "Mmm, let me take care of this with my mouth."
-                        scene bg poolcor
-                        show lizsex5
-                        $ renpy.pause ()
-                    elif lewd > 40:
-                        tali "Mmm, let me take care of this with my mouth."
-                        scene bg poolcor
-                        show lizsex5
-                        $ renpy.pause ()
-                elif sexstage == 3:
-                    $ lewd += 1
-                    $ lovedart = False
-                    $ sexstage = 1
-                    if lewd < 30:
-                        scene bg poolcor
-                        show lizsex4
-                        tali "Ah, you're ready to cum..."
-                        scene bg poolcor
-                        show lizcum2
-                        $ renpy.pause ()
-                        scene bg poolcor
-                        show tali doubt69 at left
-                        tali "Well... one way or another."
-                    elif lewd < 41:
-                        scene bg poolcor
-                        show lizsex5
-                        $ renpy.pause ()
-                        tali "Mmm... his dick is throbbing in pleasure. Here. Dump your load between my tight, drooling lips."
-                        scene bg poolcor
-                        show lizcum3
-                        $ renpy.pause ()
-                        scene bg poolcor
-                        show tali doubt69 at left
-                        tali "Now where did I put my helmet...?"
-                    elif lewd > 40:
-                        $ random = renpy.random.randint(1, 2)
-                        scene bg poolcor
-                        show lizsex5
-                        $ renpy.pause ()
-                        if random == 1:
-                            scene bg poolcor
-                            show tali grab11 with hpunch
-                            play sound "audio/frog2.mp3"
-                            tali "What? W-Wait, you shouldn't be able to...!"
-                            scene bg poolcor
-                            show lizsex6
-                            pause 2
-                            tali "HMMPHPP!? The... tranquilizer... didn't work?!"
-                            scene bg poolcor
-                            show lizsex7
-                            $ renpy.pause ()
-                            tali "Oh Keelah yes... Fuck my face with your fat cock... Stretch my tight throat and clog it with your cum!"
-                            scene bg poolcor
-                            show lizcum4
-                            $ renpy.pause ()
-                        else:
-                            scene bg poolcor
-                            show lizsex5
-                            $ renpy.pause ()
-                            tali "MMm... his dick is throbbing in pleasure. Let me empty your balls in my mouth."
-                            scene bg poolcor
-                            show lizcum3
-                            $ renpy.pause ()
-                        scene bg poolcor
-                        show tali fin2 at left
-                        tali "Okay. Maybe I was a little too into it..."
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues her way..."
-                    $ suit = 10
-                    jump pool
-
-        else:
-            if suit > 8:
-                show tali evade at left
-                show tali evade at shake
-            if suit == 8:
-                show tali evade69 at left
-                show tali evade69 at shake
-            if suit == 7:
-                show tali evade7 at left
-                show tali evade7 at shake
-            if suit < 7:
-                show tali evade6 at left
-                show tali evade6 at shake
-            play sound "audio/frog2.mp3"
-            "Pushed back!"
-            $ random = renpy.random.randint(1, 100)
-            play sound "audio/frog2.mp3"
-            show lizard stand at shake
-            "Enemy attacks!"
-            if random > 60:
-                play sound "audio/miss.mp3"
-                if suit > 8:
-                    show tali evade at left
-                if suit == 8:
-                    show tali evade69 at left
-                if suit == 7:
-                    show tali evade7 at left
-                if suit < 7:
-                    show tali evade6 at left
-                "Miss!"
-                jump sliderBattleFuck3
-            else:
-                jump suittier3
-        jump sliderBattleFuck3
-
-
-    label suittier1:
-        hide creep stand
-        $ random = renpy.random.randint(1, 100)
-        play sound "audio/fall.ogg"
-        if suit > 8:
-            show tali a11 at left
-            show tali a11 at shake
-        if suit == 8:
-            show tali a12 at left
-            show tali a12 at shake
-        if suit == 7:
-            show tali a13 at left
-            show tali a13 at shake
-        if suit < 7:
-            show tali a14 at left
-            show tali a14 at shake
-        "Tali failed to dodge!"
-        if suit > 8:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    if fuckpose == 1:
-                        scene bg cor1
-                        show frontmask1
-                        $ renpy.pause ()
-                    else:
-                        scene bg cor1
-                        show backmask1
-                        $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    if fuckpose == 1:
-                        scene bg cor1
-                        show frontmask2
-                        $ renpy.pause ()
-                    else:
-                        scene bg cor1
-                        show backmask2
-                        $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ fuckstage = 1
-                    if fuckpose == 1:
-                        scene bg cor1
-                        show frontmask2
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show frontmaskcum
-                        $ renpy.pause ()
-                    else:
-                        scene bg cor1
-                        show backmask2
-                        $ renpy.pause ()
-                        scene bg cor1
-                        show backmaskcum
-                        $ renpy.pause ()
-                    scene bg cor1
-                    show tali fin1 at left
-                    tali "Ugh... I feel so nasty. My suit is undamaged but... I can keep going after some cleanup."
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues her way..."
-                    $ lovedart = False
-                    $ suit = 10
-                    jump engine
-            else:
-                $ suit -= 1
-                if suit == 8:
-                    play sound "audio/glass.mp3"
-                    "Helmet damaged!"
-        elif suit == 8:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    scene bg cor1
-                    show frontnomask1
-                    $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    scene bg cor1
-                    show frontnomask2
-                    $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ infection += 1
-                    $ fuckstage = 1
-                    scene bg cor1
-                    show frontnomask2
-                    $ renpy.pause ()
-                    scene bg cor1
-                    show frontnomaskcum
-                    $ renpy.pause ()
-                    scene bg cor1
-                    show tali fin2 at left
-                    if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to find my helmet before it gets worse..."
-                        scene black
-                        play sound "audio/walk.mp3"
-                        "Tali continues her way..."
-                        $ suit = 10
-                        $ lovedart = False
-                        jump engine
-                    else :
-                        tali "I swallowed too much... I have to go to the medbay urgently."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump medbayafterdefeat
-            else:
-                $ suit -= 1
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-        elif suit == 7:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    scene bg cor1
-                    show frontnomask1
-                    $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    scene bg  cor1
-                    show frontnomask2
-                    $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ infection += 1
-                    $ fuckstage = 1
-                    scene bg cor1
-                    show frontnomaskcum
-                    $ renpy.pause ()
-                    scene bg cor1
-                    show tali fin2 at left
-                    if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to activate suit recover sequence before it gets worse..."
-                        scene black
-                        play sound "audio/walk.mp3"
-                        "Tali continues her way..."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump engine
-                    else :
-                        tali "I swallowed too much... I have to go to the medbay urgently."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump medbayafterdefeat
-            else:
-                $ suit -= 1
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-        elif suit < 7:
-            if fuckstage == 1:
-                $ fuckstage += 1
-                if fuckpose == 1:
-                    scene bg cor1
-                    show frontdamaged1
-                    $ renpy.pause ()
-                else:
-                    scene bg cor1
-                    show backdamaged1
-                    pause 2
-                    scene bg cor1
-                    show backdamaged2
-                    $ renpy.pause ()
-            elif fuckstage == 2:
-                $ fuckstage += 1
-                if fuckpose == 1:
-                    scene bg cor1
-                    show frontdamaged2
-                    $ renpy.pause ()
-                else:
-                    scene bg cor1
-                    show backdamaged2
-                    $ renpy.pause ()
-            elif fuckstage == 3:
-                $ lewd += 1
-                $ infection += 1
-                $ fuckstage = 1
-                if fuckpose == 1:
-                    scene bg cor1
-                    show frontdamaged2
-                    $ renpy.pause ()
-                    scene bg cor1
-                    show frontdamagedcum
-                    $ renpy.pause ()
-                else:
-                    scene bg cor1
-                    show backdamaged2
-                    $ renpy.pause ()
-                    scene bg cor1
-                    show backdamagedcum
-                    $ renpy.pause ()
-                scene bg cor1
-                show tali fin3 at left
-                tali "K-Keelah. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
-                scene black
-                play sound "audio/walk.mp3"
-                $ lovedart = False
-                $ suit = 10
-                jump medbayafterdefeat
-        play sound "audio/punch.mp3"
-        show creep stand at right
-        show creep stand at shake
-        jump sliderBattleFuck1
-
-    label suittier2:
-        hide varren stand
-        $ random = renpy.random.randint(1, 100)
-        play sound "audio/fall.ogg"
-        if suit > 8:
-            show tali a21 at left
-            show tali a21 at shake
-        if suit == 8:
-            show tali a22 at left
-            show tali a22 at shake
-        if suit == 7:
-            show tali a23 at left
-            show tali a23 at shake
-        if suit < 7:
-            show tali a24 at left
-            show tali a24 at shake
-        "Tali failed to dodge!"
-        if suit > 8:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    scene bg cor2
-                    show frontvarmask1
-                    $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    scene bg cor2
-                    show frontvarmask2
-                    $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ fuckstage = 1
-                    scene bg cor2
-                    show frontvarmask2
-                    $ renpy.pause ()
-                    scene bg cor2
-                    show frontvarmaskcum
-                    $ renpy.pause ()
-                    scene bg cor2
-                    show tali fin1 at left
-                    tali "Ugh... I feel so nasty. My suit is undamaged but... I can keep going after some cleanup."
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues on her way..."
-                    $ lovedart = False
-                    $ suit = 10
-                    jump warehouse
-            else:
-                $ suit -= 1
-                if suit == 8:
-                    play sound "audio/glass.mp3"
-                    "Helmet damaged!"
-        elif suit == 8:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    if lewd > 25:
-                        scene bg cor2
-                        show frontvarnomask2
-                        $ renpy.pause ()
-                    else:
-                        scene bg cor2
-                        show frontvarnomask1
-                        $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    if lewd > 25:
-                        scene bg cor2
-                        show frontvarnomask2
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show frontvarnomask3
-                        pause 2.5
-                        scene bg cor2
-                        show frontvarnomask4
-                        $ renpy.pause ()
-                    else:
-                        scene bg cor2
-                        show frontvarnomask2
-                        $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ infection += 1
-                    $ fuckstage = 1
-                    if lewd > 25:
-                        scene bg cor2
-                        show frontvarnomask4
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show frontvarnomask5
-                        pause 4
-                        scene bg cor2
-                        show frontvarnomask6
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show frontvarnomaskcum2
-                        $ renpy.pause ()
-                    else:
-                        scene bg cor2
-                        show frontvarnomask2
-                        $ renpy.pause ()
-                        scene bg cor2
-                        show frontvarnomaskcum1
-                        $ renpy.pause ()
-                    scene bg cor2
-                    show tali fin2 at left
-                    if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to find my helmet before it gets worse..."
-                        scene black
-                        play sound "audio/walk.mp3"
-                        "Tali continues her way..."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump warehouse
-                    else :
-                        tali "I swallowed too much... I have to go to the medbay urgently."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump medbayafterdefeat
-            else:
-                $ suit -= 1
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-        elif suit == 7:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    if fuckpose == 1:
-                        scene bg cor2
-                        show backvar1
-                        $ renpy.pause ()
-                    else:
-                        scene bg cor2
-                        show frontvardamaged1
-                        $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    if fuckpose == 1:
-                        scene bg cor2
-                        show backvar2
-                        $ renpy.pause ()
-                    else:
-                        scene bg cor2
-                        show frontvardamaged2
-                        $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ infection += 1
-                    $ fuckstage = 1
-                    scene bg cor2
-                    show frontvardamaged2
-                    $ renpy.pause ()
-                    scene bg cor2
-                    show frontvardamagedcum
-                    $ renpy.pause ()
-                    scene bg cor2
-                    show tali fin2 at left
-                    if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to activate suit recover sequence before it gets worse..."
-                        scene black
-                        play sound "audio/walk.mp3"
-                        "Tali continues her way..."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump warehouse
-                    else :
-                        tali "I swallowed too much... I have to go to the medbay urgently."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump medbayafterdefeat
-            else:
-                $ suit -= 1
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-        elif suit < 7:
-            if fuckstage == 1:
-                $ fuckstage += 1
-                scene bg cor2
-                show backvar3
-                $ renpy.pause ()
-            elif fuckstage == 2:
-                $ fuckstage += 1
-                scene bg cor2
-                show backvar4
-                $ renpy.pause ()
-            elif fuckstage == 3:
-                $ lewd += 1
-                $ infection += 1
-                $ fuckstage = 1
-                scene bg cor2
-                show backvar4
-                $ renpy.pause ()
-                scene bg cor2
-                show backvarcum1
-                $ renpy.pause ()
-                scene bg cor2
-                show tali fin3 at left
-                tali "Ahhh. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
-                scene black
-                play sound "audio/walk.mp3"
-                $ lovedart = False
-                $ suit = 10
-                jump medbayafterdefeat
-        play sound "audio/punch.mp3"
-        show varren stand at right
-        show varren stand at shake
-        jump sliderBattleFuck2
-
-    label suittier3:
-        hide lizard stand
-        $ random = renpy.random.randint(1, 100)
-        play sound "audio/fall.ogg"
-        if suit > 8:
-            show tali a31 at left
-            show tali a31 at shake
-        if suit == 8:
-            show tali a32 at left
-            show tali a32 at shake
-        if suit == 7:
-            show tali a33 at left
-            show tali a33 at shake
-        if suit < 7:
-            show tali a34 at left
-            show tali a34 at shake
-        "Tali failed to dodge!"
-        if suit > 8:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    scene bg poolcor
-                    show liz1f1
-                    $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    scene bg poolcor
-                    show liz1f2
-                    $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ fuckstage = 1
-                    scene bg poolcor
-                    show liz1f2
-                    $ renpy.pause ()
-                    scene bg poolcor
-                    show liz1fcum1
-                    $ renpy.pause ()
-                    scene bg poolcor
-                    show tali fin1 at left
-                    tali "Ugh... I feel so nasty. My suit is undamaged but... I can keep going after some cleanup."
-                    scene black
-                    play sound "audio/walk.mp3"
-                    "Tali continues on her way..."
-                    $ lovedart = False
-                    $ suit = 10
-                    jump pool
-            else:
-                $ suit -= 1
-                if suit == 8:
-                    play sound "audio/glass.mp3"
-                    "Helmet damaged!"
-        elif suit == 8:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    if lewd > 25:
-                        scene bg poolcor
-                        show liz1f4
-                        $ renpy.pause ()
-                    else:
-                        scene bg poolcor
-                        show liz1f3
-                        $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    if lewd > 25:
-                        scene bg poolcor
-                        show liz1f4
-                        $ renpy.pause ()
-                        scene bg poolcor
-                        show liz1f9
-                        pause 2
-                        scene bg poolcor
-                        show liz1f5
-                        $ renpy.pause ()
-                    else:
-                        scene bg poolcor
-                        show liz1f4
-                        $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ infection += 1
-                    $ fuckstage = 1
-                    if lewd > 25:
-                        scene bg poolcor
-                        show liz1f5
-                        $ renpy.pause ()
-                        scene bg poolcor
-                        show liz1f6
-                        pause 3.3
-                        scene bg poolcor
-                        show liz1f7
-                        $ renpy.pause ()
-                        scene bg poolcor
-                        show liz1fcum3
-                        $ renpy.pause ()
-                    else:
-                        scene bg poolcor
-                        show liz1f4
-                        $ renpy.pause ()
-                        scene bg poolcor
-                        show liz1fcum2
-                        $ renpy.pause ()
-                    scene bg poolcor
-                    show tali fin2 at left
-                    if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to find my helmet before it gets worse..."
-                        scene black
-                        play sound "audio/walk.mp3"
-                        "Tali continues her way..."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump pool
-                    else :
-                        tali "I swallowed too much... I have to go to the medbay urgently."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump medbayafterdefeat
-            else:
-                $ suit -= 1
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-        elif suit == 7:
-            if random > 50:
-                if fuckstage == 1:
-                    $ fuckstage += 1
-                    scene bg poolcor
-                    show liz1f8
-                    $ renpy.pause ()
-                elif fuckstage == 2:
-                    $ fuckstage += 1
-                    scene bg poolcor
-                    show liz1b1
-                    pause 4
-                    $ renpy.pause ()
-                    scene bg poolcor
-                    show liz1b2
-                    $ renpy.pause ()
-                elif fuckstage == 3:
-                    $ lewd += 1
-                    $ infection += 1
-                    $ fuckstage = 1
-                    scene bg poolcor
-                    show liz1b2
-                    $ renpy.pause ()
-                    scene bg poolcor
-                    show liz1bcum1
-                    $ renpy.pause ()
-                    scene bg poolcor
-                    show tali fin2 at left
-                    if infection < 3:
-                        tali "T-That was too much cum. My antibiotics should help, but... I need to activate suit recover sequence before it gets worse..."
-                        scene black
-                        play sound "audio/walk.mp3"
-                        "Tali continues her way..."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump pool
-                    else :
-                        tali "I swallowed too much... I have to go to the medbay urgently."
-                        $ lovedart = False
-                        $ suit = 10
-                        jump medbayafterdefeat
-            else:
-                $ suit -= 1
-                play sound "audio/tier.mp3"
-                "Suit damaged!"
-        elif suit < 7:
-            if fuckstage == 1:
-                $ fuckstage += 1
-                scene bg poolcor
-                show liz1b3
-                pause 2
-                scene bg poolcor
-                show liz1b4
-                $ renpy.pause ()
-            elif fuckstage == 2:
-                $ fuckstage += 1
-                scene bg poolcor
-                show liz1b5
-                $ renpy.pause ()
-            elif fuckstage == 3:
-                $ lewd += 1
-                $ infection += 1
-                $ fuckstage = 1
-                scene bg poolcor
-                show liz1b5
-                $ renpy.pause ()
-                scene bg poolcor
-                show liz1bcum2
-                $ renpy.pause ()
-                scene bg poolcor
-                show tali fin3 at left
-                tali "Ahhh. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
-                scene black
-                play sound "audio/walk.mp3"
-                $ lovedart = False
-                $ suit = 10
-                jump medbayafterdefeat
-        play sound "audio/punch.mp3"
-        show lizard stand at right
-        show lizard stand at shake
-        jump sliderBattleFuck3
-
-
-
-    label shoot_skill1:
-        $ alarm += 1
-        $ ammo -= 1
-        play sound "audio/gunshot.mp3"
-        "Tali shoots!"
-        $ random = renpy.random.randint(1, 100)
-        if random > 1 and random < 70:
-            play sound "audio/punch.mp3"
-            if enemyID == 0:
-                show creep stand at shake
-                "Hit!"
-            elif enemyID == 1:
-                show biggy stand at shake
-                "Hit!"
-            elif enemyID == 2:
-                show varren stand at shake
-                "Hit!"
-            elif enemyID == 3:
-                show lizard stand at shake
-                "Hit!"
-            $ enemyhp -= 1
-            if enemyhp == 0 :
-                if enemyID == 0:
-                    show creep stand at right
-                    hide creep stand
-                    with Dissolve(2)
-                elif enemyID == 1:
-                    show biggy stand at right
-                    hide biggy stand
-                    with Dissolve(2)
-                elif enemyID == 2:
-                    show varren stand at right
-                    hide varren stand
-                    with Dissolve(2)
-                elif enemyID == 3:
-                    show lizard stand at right
-                    hide lizard stand
-                    with Dissolve(2)
-                "Enemy defeated."
-                $ corridor_fight = False
-                if suitdur < 80:
-                    $ suitdur += 20
-            else:
-                $ random = renpy.random.randint(1, 100)
-                play sound "audio/creepone.mp3"
-                if enemyID == 0:
-                    show creep stand at shake
-                elif enemyID == 1:
-                    show biggy stand at shake
-                elif enemyID == 2:
-                    show varren stand at shake
-                elif enemyID == 3:
-                    show lizard stand at shake
-                "Enemy attacks!"
-                if random > 60:
-                    play sound "audio/miss.mp3"
-                    if suit > 8:
-                        show tali evade at left
-                    if suit == 8:
-                        show tali evade69 at left
-                    if suit == 7:
-                        show tali evade7 at left
-                    if suit < 7:
-                        show tali evade6 at left
-                    "Miss!"
-                    if enemyID == 0:
-                        jump sliderBattleFuck1
-                    elif enemyID == 2:
-                        jump sliderBattleFuck2
-                    elif enemyID == 3:
-                        jump sliderBattleFuck3
-
-                else:
-                    if enemyID == 0:
-                        jump suittier1
-                    elif enemyID == 2:
-                        jump suittier2
-                    elif enemyID == 3:
-                        jump suittier3
-            if suit > 8:
-                show tali gunstand at left
-                tali "Another dead beast."
-            if suit == 8:
-                show tali gunstand69 at left
-                tali "I need to find my helmet..."
-            if suit == 7:
-                show tali inj7 at left
-                tali "Damned creep damaged my suit... but the recovery system should be able to handle it."
-            if suit < 7:
-                show tali inj6 at left
-                tali "Ngh. Need to hurry to the medbay. That was a tough one."
-                $ suit = 10
-                $ lovedart = False
-                jump medbayafterdefeat
-            scene black
-            play sound "audio/walk.mp3"
-            "Tali continued on her way......"
-            $ suit = 10
-            if roomID == 4:
-                $ roomID = 3
-            elif roomID == 5:
-                $ roomID = 2
-            elif roomID == 1:
-                jump map
-            elif roomID == 11:
-                jump pool
-            jump rooms
-        else:
-            play sound "audio/miss.mp3"
-            "Miss!"
-            $ random = renpy.random.randint(1, 100)
-            play sound "audio/creepone.mp3"
-            if enemyID == 0:
-                show creep stand at shake
-            elif enemyID == 1:
-                show biggy stand at shake
-            elif enemyID == 2:
-                show varren stand at shake
-            elif enemyID == 3:
-                show lizard stand at shake
-            "Enemy attacks!"
-            if random > 60:
-                play sound "audio/miss.mp3"
-                if suit > 8:
-                    show tali evade at left
-                if suit == 8:
-                    show tali evade69 at left
-                if suit == 7:
-                    show tali evade7 at left
-                if suit < 7:
-                    show tali evade6 at left
-                "Miss!"
-                if enemyID == 0:
-                    jump sliderBattleFuck1
-                elif enemyID == 2:
-                    jump sliderBattleFuck2
-                elif enemyID == 3:
-                    jump sliderBattleFuck3
-            else:
-                if enemyID == 0:
-                    jump suittier1
-                elif enemyID == 2:
-                    jump suittier2
-                elif enemyID == 3:
-                    jump suittier3
-
-    label grenade_skill1:
-        $ alarm += 5
-        $ grenades -= 1
-        play sound "audio/gunready.wav"
-        if suit > 8:
-            show tali grenade at left
-        if suit == 8:
-            show tali grenade69 at left
-        if suit == 7:
-            show tali grenade7 at left
-        if suit < 7:
-            show tali grenade6 at left
-        "Fire in the hole!"
-        if enemyID == 0:
-            show creep stand at shake
-            play sound "audio/explosion.mp3"
-            "Devastating!"
-            show creep stand at right
-            hide creep stand
-            with Dissolve(2)
-        elif enemyID == 1:
-            show biggy stand at shake
-            play sound "audio/explosion.mp3"
-            "Devastating!"
-            show biggy stand at right
-            hide biggy stand
-            with Dissolve(2)
-        elif enemyID == 2:
-            show varren stand at shake
-            play sound "audio/explosion.mp3"
-            "Devastating!"
-            show varren stand at right
-            hide varren stand
-            with Dissolve(2)
-        elif enemyID == 3:
-            show lizard stand at shake
-            play sound "audio/explosion.mp3"
-            "Devastating!"
-            show lizard stand at right
-            hide lizard stand
-            with Dissolve(2)
-        "Enemy dead."
-        if suit > 8:
-            show tali gunstand at left
-            tali "Another dead beast."
-        if suit == 8:
-            show tali gunstand69 at left
-            tali "I need to find my helmet..."
-        if suit == 7:
-            show tali inj7 at left
-            tali "Damn creep damaged my suit... but recovery system can handle it."
-        if suit < 7:
-            show tali inj6 at left
-            tali "Ngh. Need to hurry to the medbay. That was a tough one."
-            $ lovedart = False
-            $ suit = 10
-            jump medbayafterdefeat
-        scene black
-        play sound "audio/walk.mp3"
-        "Tali continued on her way......"
-        $ suit = 10
-        if roomID == 4:
-            $ roomID = 3
-        elif roomID == 5:
-            $ roomID = 2
-        elif roomID == 1:
-            jump map
-        elif roomID == 11:
-            jump pool
-        jump rooms
-
-    label escape_skill1:
-        $ random = renpy.random.randint(1, 100)
-        "Tali tries to run away!"
-        if random > 0 and random < 51:
-            play sound "audio/run.ogg"
-            scene black
-            "Escape successful."
-            $ lovedart = False
-            $ fuckstage = 1
-            $ sexstage = 1
-            scene bg map
-            if suit > 8:
-                jump map
-            if suit == 8:
-                show tali guninjured69 at left
-                tali "That was close... I'd better go get my helmet."
-            if suit == 7:
-                show tali inj7 at left
-                tali "D-Damned beast. My suits repair system's can't repair this fast enough..."
-            if suit < 7:
-                show tali inj6 at left
-                tali "Ah keelah, my suit is destroyed! I need to hurry to the medbay."
-                $ suit = 10
-                jump medbayafterdefeat
-            $ suit = 10
-            jump map
-        elif random > 50 and random < 101:
-            play sound "audio/creepone.mp3"
-            "Escape failed..."
-            if enemyID == 0:
-                jump suittier1
-            elif enemyID == 2:
-                jump suittier2
-            elif enemyID == 3:
-                jump suittier3
-
     label sliderFight:
         $ enemyhp = renpy.random.randint(1, 5)
         show tali gunshoot at left
@@ -30418,7 +28765,7 @@ label start:
                     jump meddp1Bad
                 elif enemyID == 32:
                     if prison_phantom:
-                        jump prisonphscene1
+                        jump prisonphscene
                     else:
                         jump prisonteasescene
             else:
