@@ -15,12 +15,13 @@ define asari = Character("Asari", who_color="#baf8ff", what_font="arial.ttf", wh
 define krogan = Character("Krogan", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
 define vorcha = Character("Vorcha", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
 define zeltan = Character("Zeltan", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
+define nyun = Character("Nyun", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
 define phantom = Character("Phantom", who_color="#baf8ff", what_font="arial.ttf", what_size = 25)
 define dis = Dissolve(.5)
 define nest = Character("Nest", who_color="#FF0000", what_font="arial.ttf", what_bold=True, what_size = 25)
+
 image cell = "images/items/cell.png"
 image egg = "images/items/egg.png"
-
 image clips = "images/items/clips.png"
 image parts = "images/items/parts.png"
 image gren = "images/items/grenade.png"
@@ -65,7 +66,6 @@ define barrackskey = False
 define isLube = False
 define reddead = False
 define secureDoors = True
-
 
 define comroom = True
 define engine = False
@@ -26076,7 +26076,7 @@ label start:
             "Smelling prey, a varren attacks!"
             $ fuckpose = renpy.random.randint(1, 2)
             $ enemyhp = 5
-            jump sliderBattleFuck2
+            jump slider_battle_fuck
         else:
             "The way was clear."
             jump warehouse
@@ -26095,7 +26095,7 @@ label start:
             "Enemy attacks!"
             $ fuckpose = renpy.random.randint(1, 2)
             $ enemyhp = 5
-            jump sliderBattleFuck3
+            jump slider_battle_fuck
         else:
             "The way was clear."
             jump pool
@@ -26327,7 +26327,7 @@ label start:
             "Following her scent, a creature springs out!"
             $ fuckpose = renpy.random.randint(1, 2)
             $ enemyhp = 5
-            jump sliderBattleFuck1
+            jump slider_battle_fuck
         else:
             "The way was clear."
             jump engine
@@ -27959,234 +27959,6 @@ label start:
         $ hackNumber = 3
         $ hackID = 0
         jump medbayafterdefeat
-
-
-    screen sliderfuck1():
-        modal True
-        showif ammo > 0:
-            imagebutton:
-                idle "images/skills/shoot_idle.png"
-                hover "images/skills/shoot_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.2
-                action Jump("shoot_skill1")
-        showif grenades > 0:
-            imagebutton:
-                idle "images/skills/grenskill_idle.png"
-                hover "images/skills/grenskill_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.3
-                action Jump("grenade_skill1")
-        showif darts > 0 and lovedart == False and suit > 6:
-            imagebutton:
-                idle "images/skills/dart_idle.png"
-                hover "images/skills/dart_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.4
-                action Jump("dart_skill")
-        showif lewd > 20 and suit > 6 and lovedart:
-            imagebutton:
-                idle "images/skills/lips_idle.png"
-                hover "images/skills/lips_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.5
-                action Jump("sex_skill")
-        showif lewd > 10 and suit > 6:
-            imagebutton:
-                idle "images/skills/tease_idle.png"
-                hover "images/skills/tease_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.6
-                action Jump("tease_skill")
-        imagebutton:
-            idle "images/skills/escape_idle.png"
-            hover "images/skills/escape_hover.png"
-            focus_mask True
-            xpos 0.45
-            ypos 0.7
-            action Jump("escape_skill1")
-        bar:
-            left_bar "images/skills/sliderbar_idle.png"
-            right_bar "images/skills/sliderbar_empty.png"
-            thumb "images/skills/enemyicon.png"
-            value AnimatedValue(0, 1000, 5, slidervalue)
-            xalign 0.5
-            yalign 0.9
-            xysize(500,70)
-        timer 5.5 action Jump("suittier1")
-
-    screen sliderfuck2():
-        modal True
-        showif ammo > 0:
-            imagebutton:
-                idle "images/skills/shoot_idle.png"
-                hover "images/skills/shoot_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.2
-                action Jump("shoot_skill1")
-        showif grenades > 0:
-            imagebutton:
-                idle "images/skills/grenskill_idle.png"
-                hover "images/skills/grenskill_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.3
-                action Jump("grenade_skill1")
-        showif darts > 0 and lovedart == False and suit > 7:
-            imagebutton:
-                idle "images/skills/dart_idle.png"
-                hover "images/skills/dart_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.4
-                action Jump("dart_skill")
-        showif lewd > 20 and suit > 7 and lovedart:
-            imagebutton:
-                idle "images/skills/lips_idle.png"
-                hover "images/skills/lips_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.5
-                action Jump("sex_skill")
-        showif lewd > 10 and suit > 7:
-            imagebutton:
-                idle "images/skills/tease_idle.png"
-                hover "images/skills/tease_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.6
-                action Jump("tease_skill")
-        imagebutton:
-            idle "images/skills/escape_idle.png"
-            hover "images/skills/escape_hover.png"
-            focus_mask True
-            xpos 0.45
-            ypos 0.7
-            action Jump("escape_skill1")
-        bar:
-            left_bar "images/skills/sliderbar_idle.png"
-            right_bar "images/skills/sliderbar_empty.png"
-            thumb "images/skills/enemyicon.png"
-            value AnimatedValue(0, 1000, 5, slidervalue)
-            xalign 0.5
-            yalign 0.9
-            xysize(500,70)
-        timer 5.5 action Jump("suittier2")
-
-    screen sliderfuck3():
-        modal True
-        showif ammo > 0:
-            imagebutton:
-                idle "images/skills/shoot_idle.png"
-                hover "images/skills/shoot_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.2
-                action Jump("shoot_skill1")
-        showif grenades > 0:
-            imagebutton:
-                idle "images/skills/grenskill_idle.png"
-                hover "images/skills/grenskill_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.3
-                action Jump("grenade_skill1")
-        showif darts > 0 and lovedart == False and suit > 7:
-            imagebutton:
-                idle "images/skills/dart_idle.png"
-                hover "images/skills/dart_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.4
-                action Jump("dart_skill")
-        showif lewd > 20 and suit > 7 and lovedart:
-            imagebutton:
-                idle "images/skills/lips_idle.png"
-                hover "images/skills/lips_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.5
-                action Jump("sex_skill")
-        showif lewd > 10 and suit > 7:
-            imagebutton:
-                idle "images/skills/tease_idle.png"
-                hover "images/skills/tease_hover.png"
-                focus_mask True
-                xpos 0.45
-                ypos 0.6
-                action Jump("tease_skill")
-        imagebutton:
-            idle "images/skills/escape_idle.png"
-            hover "images/skills/escape_hover.png"
-            focus_mask True
-            xpos 0.45
-            ypos 0.7
-            action Jump("escape_skill1")
-        bar:
-            left_bar "images/skills/sliderbar_idle.png"
-            right_bar "images/skills/sliderbar_empty.png"
-            thumb "images/skills/enemyicon.png"
-            value AnimatedValue(0, 1000, 5, slidervalue)
-            xalign 0.5
-            yalign 0.9
-            xysize(500,70)
-        timer 5.5 action Jump("suittier3")
-
-    label tease_skill:
-        if suit > 8:
-            show tali tease at left
-            show tali tease at shake
-        if suit == 8:
-            show tali tease69 at left
-            show tali tease69 at shake
-        if suit == 7:
-            show tali tease7 at left
-            show tali tease7 at shake
-        if suit < 7:
-            show tali tease7 at left
-            show tali tease7 at shake
-        play sound "audio/slap.mp3"
-        "Want this fat quarian ass? Come and get it."
-        play sound "audio/creepone.mp3"
-        pause 1
-        if enemyID == 0:
-            jump suittier1
-        elif enemyID == 2:
-            jump suittier2
-        elif enemyID == 3:
-            jump suittier3
-
-
-
-    label dart_skill:
-        $ lovedart = True
-        $ darts -= 1
-        if suit > 8:
-            show tali dart at left
-        if suit == 8:
-            show tali dart69 at left
-        if suit == 7:
-            show tali dart7 at left
-        if suit < 7:
-            show tali dart6 at left
-        play sound "audio/equip.ogg"
-        "Firing tranquilizer!"
-        play sound "audio/dart.mp3"
-        pause 1
-        play sound "audio/roar.mp3"
-        "The beast looks more calm now. You can try to get closer."
-        if enemyID == 0:
-            jump sliderBattleFuck1
-        elif enemyID == 2:
-            jump sliderBattleFuck2
-        elif enemyID == 3:
-            jump sliderBattleFuck3
 
     label sliderFight:
         $ enemyhp = renpy.random.randint(1, 5)
