@@ -212,3 +212,14 @@ label display_battle_enemy_grabs:
         if suit < 7:
             show tali a34 at left,shake
     return
+
+label display_battle_tali_teases:
+    if suit > 8:
+        show tali tease at left,shake
+    if suit == 8:
+        show tali tease69 at left,shake
+    if suit == 7:
+        show tali tease7 at left,shake
+    if suit < 7:
+        show tali tease7 at left,shake
+    return
