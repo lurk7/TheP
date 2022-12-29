@@ -1,33 +1,3 @@
-# refactoring of combat
-#     - combined suittier1-3 functions into a single function (enemy_attack_hits)
-#     - combined sliderBattleFuck1-3 into a single function (slider_battle_fuck)
-#     - combied sex_skill1-3 into a single function(sex_skill)
-#     - combined screen sliderfuck1-3 into a single screen (sliderfuck)
-#     - moved lewd 'enemy_attack_hits' scenes from suittier to thier own labels
-#     - moved lewd sex skill scenes from the skill itself into thier own labels
-#     - reduced many repeated lines
-#     - combined all combat finishing logic into a single function (encounter_finished) from suittier, sex_skill, shoot, grenade, escape
-#     - combined all enemy attacking logic into a single function to use shared counter-attack logic(enemy_attacks)  from shoot_skill, sex_skill
-#     - combined all enemy attack hits logic (enemy_attack_hits) from enemy_attacks, escape_skill1
-#     - general cleanup of shoot and grenade skills
-
-# wip
-#     - dp encounter
-#       -
-
-# todo
-#     - work on "screen logic():"
-
-
-# old lines 616 41 505 176   total ~ 1338
-# new lines 422 539 -16 -28 total ~ 917
-
-# old  flow is
-# map -> encounter_chance -> rooms -> [comroom, warehouse, engine, corridor1 - 3 , barracks] -> [sliderBattleFuck1 - 3] -> screen[sliderfuck1 - 3]
-#     -> skills [shoot_skill1, grenade_skill1, dart_skill, sex_skill, tease_skill, escape_skill1] -> [suittier1 - 3, sex_skill1 - 3]
-# roomID = comroom:1 engine_corridor:4 , warehouse_corridor:5, pool_corridor:11
-# enemyID = creep:0 , biggy:1, varren:2, lizard:3
-
 define been_defeated = False
 define lewd_action = False
 define has_escaped = False
@@ -120,7 +90,6 @@ label combat_event_chance:
             jump slider_battle_fuck
     return
 
-
 label enemy_attacks:
     $ random = renpy.random.randint(1, 100)
     call combat_event_chance
@@ -184,7 +153,6 @@ label sex_skill:
         $ renpy.pause ()
         $ sexstage += 1
         jump slider_battle_fuck
-
 
 label enemy_attack_hits:
     $ random = renpy.random.randint(1, 100)
@@ -358,32 +326,29 @@ label slider_battle_fuck:
     call display_battle_enemy_stand
     call screen sliderfuck
 
-
-#########
-# overwrite logic
-#########
-
-label suittier1:
-    jump enemy_attack_hits
-label suittier2:
-    jump enemy_attack_hits
-label suittier3:
+label tease_skill:
+    call display_battle_tali_teases
+    play sound "audio/slap.mp3"
+    "Want this fat quarian ass? Come and get it."
+    play sound "audio/creepone.mp3"
+    pause 1
     jump enemy_attack_hits
 
-
-
-label sliderBattleFuck1:
-    $ enemyID = 0
+label dart_skill:
+    $ lovedart = True
+    $ darts -= 1
+    if suit > 8:
+        show tali dart at left
+    if suit == 8:
+        show tali dart69 at left
+    if suit == 7:
+        show tali dart7 at left
+    if suit < 7:
+        show tali dart6 at left
+    play sound "audio/equip.ogg"
+    "Firing tranquilizer!"
+    play sound "audio/dart.mp3"
+    pause 1
+    play sound "audio/roar.mp3"
+    "The beast looks more calm now. You can try to get closer."
     jump slider_battle_fuck
-
-label sliderBattleFuck2:
-    $ enemyID = 2
-    jump slider_battle_fuck
-
-label sliderBattleFuck3:
-    $ enemyID = 3
-    jump slider_battle_fuck
-
-#########
-# Images
-#########
