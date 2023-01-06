@@ -1,6 +1,6 @@
 define been_defeated = False
-define lewd_action = False
-define has_escaped = False
+define lewd_action = False  # was the last action lewd? if so increase Tali's lewd level
+define has_escaped = False 
 define enemy_dead = False
 define combat_second_enemy = False
 define combat_second_dead = False
@@ -34,7 +34,7 @@ label escape_skill1:
             play sound "audio/run.ogg"
             scene black
             "Escape successful."
-            $ has_escaped = 1
+            $ has_escaped = True
             jump encounter_finished
         else :
             play sound "audio/creepone.mp3"
@@ -57,7 +57,7 @@ label shoot_skill1:
             # enemy dead
             call display_battle_disolve_enemy
             "Enemy defeated."
-            $ enemy_dead = 1
+            $ enemy_dead = True
             jump encounter_finished
 
         else:
@@ -120,7 +120,7 @@ label sex_skill:
         $ random = renpy.random.randint(1, 100)
         if random > 30:
             call display_room
-            $ lewd_action = 1
+            $ lewd_action = True
             # skill success
             play sound "audio/fall.ogg"
             call display_battle_tali_grabs
@@ -167,13 +167,15 @@ label enemy_attack_hits:
             "Helmet damaged!"
         else:
             if suit in [7,8]:
+                "Suit has been torn!"
                 play sound "audio/tier.mp3"
-            "Suit damaged!"
+            else:
+                "Suit damaged!"
         $ suit -= 1
         jump slider_battle_fuck
     else:
         # enemy starts a lewd action
-        $ lewd_action = 1
+        $ lewd_action = True
         call display_room
         if enemyID == 0:
             if suit > 8:
@@ -227,14 +229,15 @@ label encounter_finished:
     $ combat_second_enemy = False
     $ combat_second_dead = False
     if suit < 7:
-        tali "Ah keelah, my suit is destroyed! I need to hurry to the medbay."
-        $ been_defeated = 1
+        if not been_defeated:
+            tali "Ah keelah, my suit is destroyed! I need to hurry to the medbay."
+        $ been_defeated = True
     if has_escaped and not been_defeated:
-        $ has_escaped = 0
+        $ has_escaped = False
         if suit == 8:
             tali "That was close... I'd better go get my helmet."
         elif suit == 7:
-            tali "D-Damned beast. My suits repair system's can't repair this fast enough..."
+            tali "D-Damned beast. My suits repair system's can barely cope with the damage..."
         $ suit = 10
         scene bg map
         jump map
@@ -243,11 +246,11 @@ label encounter_finished:
         call display_battle_tali_finished
     if lewd_action:  # was finishing action lewd?
         $ lewd += 1
-        $ lewd_action = 0
+        $ lewd_action = False
     if infection > 2:
         $ been_defeated = True
     if been_defeated:
-        $ been_defeated = 0
+        $ been_defeated = False
         jump medbayafterdefeat
     else:
         scene black with Dissolve(2)
@@ -320,7 +323,6 @@ screen sliderfuck():
         timer 5.5 action Jump("enemy_attack_hits")
 
 label slider_battle_fuck:
-    $ fuckpose = renpy.random.randint(1, 2)
     call display_room
     call battle_display_tali
     call display_battle_enemy_stand
