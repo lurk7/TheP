@@ -252,7 +252,7 @@ label lewd_varren_1:
         show tali fin1 at left
         tali "Ugh... I feel so nasty. My suit is undamaged but... I think I can keep going after cleaning up."
     return
-    
+
 label lewd_varren_2:
     if fuckstage == 1:
         if lewd > 25:
@@ -294,7 +294,7 @@ label lewd_varren_2:
             tali "T-That was way too much cum. My antibiotics should help, but... I really need to find my helmet before it gets any worse..."
         else :
             tali "I swallowed way too much... I have to get back to the medbay urgently."
-            $ been_defeated = 1  
+            $ been_defeated = 1
     return
 
 label lewd_varren_3:
@@ -308,7 +308,7 @@ label lewd_varren_3:
         if fuckpose == 1:
             show backvar2     # mount 1
         else:# blow 2
-            show frontvardamaged2     
+            show frontvardamaged2
     elif fuckstage == 3:     # blow 2 + cum
         $ infection += 1
         show frontvardamaged2
@@ -535,4 +535,486 @@ label lewd_lizzard_4:
         show tali fin3 at left
         tali "Ahhh. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
         $ been_defeated = 1
+    return
+
+
+    # DP SCENES ---------------------------------------------------------------
+
+label dp_creep_1: # creeps DP if suit > 8
+    if fuckstage == 1:
+        show dp1mask1
+    elif fuckstage == 2:
+        show dp1mask2
+    elif fuckstage == 3:
+        show dp1mask2
+        $ renpy.pause ()
+        call display_room
+        show dp1maskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin1 at left
+        tali "Ugh... I feel so nasty. My suit is undamaged but... I can keep going after some cleanup."
+    return
+
+label dp_creep_2: # creeps DP if suit = 8 (no mask)
+    if fuckstage == 1:
+        show dp1nomask1
+    elif fuckstage == 2:
+        show dp1nomask2
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp1nomask2
+        $ renpy.pause ()
+        call display_room
+        show dp1nomaskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        if infection < 3:
+            tali "T-That was too much cum. My antibiotics should help, but... I need to find my helmet before it gets worse..."
+            $ been_defeated = 1
+    return
+
+label dp_creep_3: # creeps DP if suit = 7
+    if fuckstage == 1:
+        show dp1nomask1
+    elif fuckstage == 2:
+        show dp1nomask2
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp1nomask2
+        $ renpy.pause ()
+        call display_room
+        show dp1nomaskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        if infection < 3:
+            tali "T-That was too much cum. My antibiotics should help, but... I need to activate suit recover sequence before it gets worse..."
+        else :
+            tali "I swallowed too much... I have to go to the medbay urgently."
+    return
+
+label dp_creep_4: # creeps DP if suit = 6
+    if fuckstage == 1:
+        show dp1damaged1
+    elif fuckstage == 2:
+        show dp1damaged1
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp1damaged1
+        $ renpy.pause ()
+        call display_room
+        show dp1damagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin3 at left
+        tali "K-Keelah. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
+        $ been_defeated = 1
+    return
+
+label dp_varren_1: # varrens DP if suit > 8
+    if fuckstage == 1:
+        show dp2mask1
+    elif fuckstage == 2:
+        show dp2mask2
+    elif fuckstage == 3:
+        show dp2mask1
+        $ renpy.pause ()
+        call display_room
+        show dp2maskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin1 at left
+        tali "Ugh... I feel so nasty. My suit is undamaged but... I think I can keep going after cleaning up."
+    return
+
+label dp_varren_2: # varrens DP if suit = 8
+    if fuckstage == 1:
+        show dp2nomask1
+    elif fuckstage == 2:
+        show dp2nomask2
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp2nomask2
+        $ renpy.pause ()
+        call display_room
+        show dp2nomaskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        if infection < 3:
+            tali "T-That was way too much cum. My antibiotics should help, but... I really need to find my helmet before it gets any worse..."
+        else :
+            tali "I swallowed way too much... I have to get back to the medbay urgently."
+            $ been_defeated = 1
+    return
+
+label dp_varren_3: # varrens DP if suit = 7
+    if fuckstage == 1:
+        show dp2damaged1
+    elif fuckstage == 2:
+        show dp2damaged2
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp2damaged2
+        $ renpy.pause ()
+        call display_room
+        show dp2damagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        if infection < 3:
+            tali "T-That was too much cum. My antibiotics should help, but... I need to activate my suit's recover sequence before it gets worse..."
+        else :
+            tali "I swallowed too much... I have to get to the medbay urgently."
+            $ been_defeated = 1
+    return
+
+label dp_varren_4: # varrens DP if suit = 6
+    if fuckstage == 1:
+        show dp2damaged3
+    elif fuckstage == 2:
+        show dp2damaged4
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp2damaged4
+        $ renpy.pause ()
+        call display_room
+        show dp2damagedcum2
+        $ renpy.pause ()
+        call display_room
+        show tali fin3 at left
+        tali "Ahhh. My suit's in tatters... and my body's on fire. I hope I can make it back to the medbay..."
+        $ been_defeated = 1
+    return
+
+label dp_lizzard_1: # lizards DP if suit > 8
+    if fuckstage == 1:
+        show dp3mask1
+    elif fuckstage == 2:
+        show dp3mask2
+    elif fuckstage == 3:
+        show dp3mask2
+        $ renpy.pause ()
+        call display_room
+        show dp3maskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin1 at left
+    return
+
+label dp_lizzard_2: # lizards DP if suit = 8
+    if fuckstage == 1:
+        show dp3nomask1
+    elif fuckstage == 2:
+        show dp3nomask2
+        $ renpy.pause ()
+        show dp3nomask3
+        pause 2
+        call display_room
+        show dp3nomask4
+        $ renpy.pause ()
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp3nomask5
+        pause 3
+        call display_room
+        show dp3nomask6
+        $ renpy.pause ()
+        call display_room
+        show dp3nomaskcum1
+        $ renpy.pause ()
+        call display_room
+        show dp3nomaskcum2
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        if infection > 3:
+            tali "I swallowed too much... I have to go to the medbay urgently."
+            $ been_defeated = 1
+    return
+
+label dp_lizzard_3:# lizards DP if suit = 7
+    if fuckstage == 1:
+        show dp3damaged1
+    elif fuckstage == 2:
+        show dp3damaged2
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp3damaged2
+        $ renpy.pause ()
+        call display_room
+        show dp3damagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        if infection > 3:
+            tali "I swallowed too much... I have to go to the medbay urgently."
+            $ been_defeated = 1
+    return
+label dp_lizzard_4:# lizards DP if suit = 6
+    if fuckstage == 1:
+        show dp3damaged3
+    elif fuckstage == 2:
+        show dp3damaged4_08
+    elif fuckstage == 3:
+        $ infection += 1
+        show dp3damaged4_08
+        $ renpy.pause ()
+        call display_room
+        show dp3damagedcum2
+        $ renpy.pause ()
+        call display_room
+        show tali fin3 at left
+        tali "Ahhh. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
+        $ been_defeated = 1
+    return
+
+# DP dart scenes
+
+label dp_creep_skill_1: # creeps dart DP if suit > 8
+    if sexstage == 1:
+        show dart1dp1mask1
+    elif sexstage == 2:
+        show dart1dp1mask2
+    elif sexstage == 3:
+        show dart1dp1mask2
+        $ renpy.pause ()
+        call display_room
+        show dart1dp1maskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin1 at left
+        tali "Ngh. So much cum... "
+    return
+
+label dp_creep_skill_2: # creeps dart DP if suit = 8
+    if sexstage == 1:
+        show dart1dp1nomask1
+    elif sexstage == 2:
+        show dart1dp1nomask2
+    elif sexstage == 3:
+        if lewd < 30:
+            show dart1dp1nomask2
+            $ renpy.pause ()
+            call display_room
+            show dart1dp1nomaskcum1
+            $ renpy.pause ()
+            call display_room
+            show tali doubt69 at left
+            tali "Well... one way or another."
+        else:
+            show dart1dp1nomask2
+            $ renpy.pause ()
+            call display_room
+            show dart1dp1nomask3
+            $ renpy.pause ()
+            call display_room
+            show dart1dp1nomaskcum2
+            $ renpy.pause ()
+            call display_room
+            show dart1dp1nomaskcum3
+            $ renpy.pause ()
+            call display_room
+            show tali fin2 at left
+            tali "Silly girl, you went a little too crazy..."
+    return
+
+label dp_creep_skill_3: # creeps dart DP if suit = 7
+    if sexstage == 1:
+        show dart1dp1damaged1
+    elif sexstage == 2:
+        show dart1dp1damaged2
+    elif sexstage == 3:
+        show dart1dp1damaged2
+        $ renpy.pause ()
+        call display_room
+        show dart1dp1damaged4
+        pause 1.7
+        call display_room
+        show dart1dp1damagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        tali "Silly girl, you went a little too crazy..."
+
+    return
+
+label dp_creep_skill_4: # creeps dart DP if suit = 6
+    if sexstage == 1:
+        show dart1dp1damaged3
+    elif sexstage == 2:
+        show dart1dp1damaged3
+        $ renpy.pause ()
+        call display_room
+        show dart1dp1damaged5
+        $ renpy.pause ()
+        call display_room
+        show dart1dp1damaged6
+        $ renpy.pause ()
+    elif sexstage == 3:
+        show dart1dp1damaged6
+        $ renpy.pause ()
+        call display_room
+        show dart1dp1damagedcum2
+        $ renpy.pause ()
+        call display_room
+        show tali fin3 at left
+        tali "Silly girl, you went a little too crazy..."
+
+    return
+
+label dp_varren_skill_1: # varrens dart DP if suit > 8
+    if sexstage == 1:
+        show dart2dp2mask1
+    elif sexstage == 2:
+        show dart2dp2mask2
+    elif sexstage == 3:
+        show dart2dp2mask1
+        $ renpy.pause ()
+        call display_room
+        show dart2dp2maskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin1 at left
+        tali "Ah, so much sperm... "
+    return
+
+label dp_varren_skill_2: # varrens dart DP if suit = 8
+    if sexstage == 1:
+        show dart2dp2nomask1
+    elif sexstage == 2:
+        show dart2dp2nomask2
+    elif sexstage == 3:
+        show dart2dp2nomask2
+        $ renpy.pause ()
+        call display_room
+        show dart2dp2nomaskcum
+        $ renpy.pause ()
+        call display_room
+        show tali doubt69 at left
+        tali "Now where did I put my helmet...?"
+    return
+
+    $ renpy.pause ()
+    call display_room
+    show tali fin2 at left
+    tali "Okay. Maybe I was a little too into it..."
+
+label dp_varren_skill_3: # varrens dart DP if suit = 7
+    if sexstage == 1:
+        show dart2dp2damaged1
+    elif sexstage == 2:
+        show dart2dp2damaged2
+        pause 1.4
+        call display_room
+        show dart2dp2damaged3
+        $ renpy.pause ()
+        call display_room
+        show dart2dp2damaged4
+        pause 2
+        call display_room
+        show dart2dp2damaged5
+        $ renpy.pause ()
+    elif sexstage == 3:
+        show dart2dp2damaged5
+        $ renpy.pause ()
+        call display_room
+        show dart2dp2damagedcum1
+        $ renpy.pause ()
+        call display_room
+        show dart2dp2damagedcum2
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        tali "Okay. Maybe I was a little too into it..."
+    return
+
+label dp_varren_skill_4: # varrens dart DP if suit = 6
+    if sexstage == 1:
+        show dart2dp2damaged6
+    elif sexstage == 2:
+        show dart2dp2damaged7
+        pause 2.5
+        call display_room
+        show dart2dp2damaged8
+        $ renpy.pause ()
+    elif sexstage == 3:
+        show dart2dp2damaged8
+        $ renpy.pause ()
+        call display_room
+        show dart2dp2damagedcum3
+        $ renpy.pause ()
+        call display_room
+        show tali fin3 at left
+        tali "Silly girl, you went a little too crazy..."
+    return
+
+label dp_lizard_skill_1: # lizards dart DP if suit > 8
+    if sexstage == 1:
+        show dart3dp3mask1
+    elif sexstage == 2:
+        show dart3dp3mask2
+    elif sexstage == 3:
+        show dart3dp3mask2
+        $ renpy.pause ()
+        call display_room
+        show dart3dp3maskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin1 at left
+        tali "Ah, so much sperm... "
+    return
+
+label dp_lizard_skill_2:# lizards dart DP if suit = 8
+    if sexstage == 1:
+        show dart3dp3nomask1
+    elif sexstage == 2:
+        show dart3dp3nomask2
+    elif sexstage == 3:
+        show dart3dp3nomask2
+        $ renpy.pause ()
+        call display_room
+        show dart3dp3nomaskcum
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        tali "Okay. Maybe I was a little too into it..."
+    return
+
+label dp_lizard_skill_3:# lizards dart DP if suit = 7
+    if sexstage == 1:
+        show dart3dp3damaged1
+    elif sexstage == 2:
+        show dart3dp3damaged2
+        pause 3.5
+        call display_room
+        show dart3dp3damaged3
+        $ renpy.pause ()
+    elif sexstage == 3:
+        show dart3dp3damaged4
+        $ renpy.pause ()
+        call display_room
+        show dart3dp3damagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        tali "Okay. Maybe I was a little too into it..."
+    return
+
+label dp_lizard_skill_4:# lizards dart DP if suit = 6
+    if sexstage == 1:
+        show dart3dp3damaged5
+    elif sexstage == 2:
+        show dart3dp3damaged6_09
+    elif sexstage == 3:
+        show dart3dp3damaged6_09
+        $ renpy.pause ()
+        call display_room
+        show dart3dp3damagedcum2
+        $ renpy.pause ()
+        call display_room
+        show tali fin3 at left
+        tali "Silly girl, you went a little too crazy..."
     return
