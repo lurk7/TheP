@@ -40,6 +40,7 @@ label lewd_creep_skill_2:
             call display_room
             show sex6
     elif sexstage == 3:
+        $ infection += 1
         if lewd < 30:
             show sex3alt
             $ renpy.pause ()
@@ -151,6 +152,7 @@ label lewd_varren_skill_2:
             show tali fin2 at left
             tali "Okay. Maybe I was a little too into it..."
     return
+
 label lewd_lizard_skill_1:
     if sexstage == 1:
         show lizsex1
@@ -235,7 +237,6 @@ label lewd_lizard_skill_2:
             show tali fin2 at left
             tali "Okay. Maybe I was a little too into it..."
     return
-
 
 label lewd_varren_1:
     if fuckstage == 1:
@@ -403,6 +404,7 @@ label lewd_creep_3:
             tali "T-That was too much cum. My antibiotics should help, but... I need to activate suit recover sequence before it gets worse..."
         else :
             tali "I swallowed too much... I have to go to the medbay urgently."
+            $ been_defeated = 1
     return
 
 label lewd_creep_4:
@@ -593,6 +595,7 @@ label dp_creep_3: # creeps DP if suit = 7
             tali "T-That was too much cum. My antibiotics should help, but... I need to activate suit recover sequence before it gets worse..."
         else :
             tali "I swallowed too much... I have to go to the medbay urgently."
+            $ been_defeated = 1
     return
 
 label dp_creep_4: # creeps DP if suit = 6
@@ -714,7 +717,6 @@ label dp_lizzard_2: # lizards DP if suit = 8
         pause 2
         call display_room
         show dp3nomask4
-        $ renpy.pause ()
     elif fuckstage == 3:
         $ infection += 1
         show dp3nomask5
@@ -916,7 +918,6 @@ label dp_varren_skill_3: # varrens dart DP if suit = 7
         pause 2
         call display_room
         show dart2dp2damaged5
-        $ renpy.pause ()
     elif sexstage == 3:
         show dart2dp2damaged5
         $ renpy.pause ()
@@ -939,7 +940,6 @@ label dp_varren_skill_4: # varrens dart DP if suit = 6
         pause 2.5
         call display_room
         show dart2dp2damaged8
-        $ renpy.pause ()
     elif sexstage == 3:
         show dart2dp2damaged8
         $ renpy.pause ()
@@ -991,7 +991,6 @@ label dp_lizard_skill_3:# lizards dart DP if suit = 7
         pause 3.5
         call display_room
         show dart3dp3damaged3
-        $ renpy.pause ()
     elif sexstage == 3:
         show dart3dp3damaged4
         $ renpy.pause ()
