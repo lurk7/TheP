@@ -80,7 +80,7 @@ label combat_event_chance:
     $ random = renpy.random.randint(1, 100)
     if not combat_second_enemy and not combat_second_dead:
         if random > 80 and alarm > 60:
-            "Alert!! Additional enemy approaching"
+            "Alert!! Additional enemy approaching!"
             call display_battle_hide_enemy
             call combat_second_enemy_joins
             call display_battle_enemy_stand
@@ -186,33 +186,62 @@ label enemy_attack_hits:
 
 
 label enemy_attack_lewd_selector:
-    if enemyID == 0:
-        if suit > 8:
-            call lewd_creep_1
-        elif suit == 8:
-            call lewd_creep_2
-        elif suit == 7:
-            call lewd_creep_3
-        elif suit < 7:
-            call lewd_creep_4
-    elif enemyID == 2:
-        if suit > 8:
-            call lewd_varren_1
-        elif suit == 8:
-            call lewd_varren_2
-        elif suit == 7:
-            call lewd_varren_3
-        elif suit < 7:
-            call lewd_varren_4
-    elif enemyID == 3:
-        if suit > 8:
-            call lewd_lizzard_1
-        elif suit == 8:
-            call lewd_lizzard_2
-        elif suit == 7:
-            call lewd_lizzard_3
-        elif suit < 7:
-            call lewd_lizzard_4
+    if not combat_second_enemy:
+        if enemyID == 0:
+            if suit > 8:
+                call lewd_creep_1
+            elif suit == 8:
+                call lewd_creep_2
+            elif suit == 7:
+                call lewd_creep_3
+            elif suit < 7:
+                call lewd_creep_4
+        elif enemyID == 2:
+            if suit > 8:
+                call lewd_varren_1
+            elif suit == 8:
+                call lewd_varren_2
+            elif suit == 7:
+                call lewd_varren_3
+            elif suit < 7:
+                call lewd_varren_4
+        elif enemyID == 3:
+            if suit > 8:
+                call lewd_lizzard_1
+            elif suit == 8:
+                call lewd_lizzard_2
+            elif suit == 7:
+                call lewd_lizzard_3
+            elif suit < 7:
+                call lewd_lizzard_4
+    elif combat_second_enemy:
+        if enemyID == 0:
+            if suit > 8:
+                call dp_creep_1
+            elif suit == 8:
+                call dp_creep_2
+            elif suit == 7:
+                call dp_creep_3
+            elif suit < 7:
+                call dp_creep_4
+        elif enemyID == 2:
+            if suit > 8:
+                call dp_varren_1
+            elif suit == 8:
+                call dp_varren_2
+            elif suit == 7:
+                call dp_varren_3
+            elif suit < 7:
+                call dp_varren_4
+        elif enemyID == 3:
+            if suit > 8:
+                call dp_lizzard_1
+            elif suit == 8:
+                call dp_lizzard_2
+            elif suit == 7:
+                call dp_lizzard_3
+            elif suit < 7:
+                call dp_lizzard_4
     return
 
 
