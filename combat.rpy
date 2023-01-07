@@ -75,6 +75,7 @@ label shoot_skill1:
 label combat_second_enemy_joins:
     $ combat_second_enemy = True
     $ fuckstage = 1
+    $ sexstage = 1
     return
 
 label combat_event_chance:
