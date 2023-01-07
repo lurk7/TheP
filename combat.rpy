@@ -124,21 +124,7 @@ label sex_skill:
             call display_battle_tali_grabs
             "Success!"
             call display_room
-            if enemyID == 0:
-                if suit > 8:
-                    call lewd_creep_skill_1
-                elif suit > 6:
-                    call lewd_creep_skill_2
-            elif enemyID == 2:
-                if suit > 8:
-                    call lewd_varren_skill_1
-                elif suit == 8:
-                    call lewd_varren_skill_2
-            elif enemyID == 3:
-                if suit > 8:
-                    call lewd_lizard_skill_1
-                elif suit == 8:
-                    call lewd_lizard_skill_2
+            call sex_skill_lewd_selector
         else:
             # skill failure
             call display_battle_tali_evade_shake
@@ -151,6 +137,54 @@ label sex_skill:
         $ renpy.pause ()
         $ sexstage += 1
         jump slider_battle_fuck
+
+label sex_skill_lewd_selector:
+    if not combat_second_enemy:
+        if enemyID == 0:
+            if suit > 8:
+                call lewd_creep_skill_1
+            elif suit > 6:
+                call lewd_creep_skill_2
+        elif enemyID == 2:
+            if suit > 8:
+                call lewd_varren_skill_1
+            elif suit == 8:
+                call lewd_varren_skill_2
+        elif enemyID == 3:
+            if suit > 8:
+                call lewd_lizard_skill_1
+            elif suit == 8:
+                call lewd_lizard_skill_2
+    elif combat_second_enemy:
+        if enemyID == 0:
+            if suit > 8:
+                call dp_creep_skill_1
+            elif suit == 8:
+                call dp_creep_skill_2
+            elif suit == 7:
+                call dp_creep_skill_3
+            elif suit < 7:
+                call dp_creep_skill_4
+        elif enemyID == 2:
+            if suit > 8:
+                call dp_varren_skill_1
+            elif suit == 8:
+                call dp_varren_skill_2
+            elif suit == 7:
+                call dp_varren_skill_3
+            elif suit < 7:
+                call dp_varren_skill_4
+        elif enemyID == 3:
+            if suit > 8:
+                call dp_lizard_skill_1
+            elif suit == 8:
+                call dp_lizard_skill_2
+            elif suit == 7:
+                call dp_lizard_skill_3
+            elif suit < 7:
+                call dp_lizard_skill_4
+
+    return
 
 label enemy_attack_hits:
     $ random = renpy.random.randint(1, 100)
@@ -244,13 +278,12 @@ label enemy_attack_lewd_selector:
                 call dp_lizzard_4
     return
 
-
 label encounter_finished:
     # event over, cleanup vars
     $ fuckstage = 1
     $ sexstage = 1
     $ lovedart = False
-    if combat_second_enemy:
+    if combat_second_enemy and enemy_dead:
         "One down, One to go"
         # reset state with new enemy
         $ enemyhp = 5
@@ -314,7 +347,7 @@ screen sliderfuck():
                 xpos 0.45
                 ypos 0.3
                 action Jump("grenade_skill1")
-        showif darts > 0 and lovedart == False and ((suit > 6 and enemyID == 0) or (suit > 7 and enemyID in [2,3])):
+        showif darts > 0 and lovedart == False and ((suit > 6 and enemyID == 0) or (suit > 7 and enemyID in [2,3]) or combat_second_enemy):
             imagebutton:
                 idle "images/skills/dart_idle.png"
                 hover "images/skills/dart_hover.png"
@@ -322,7 +355,7 @@ screen sliderfuck():
                 xpos 0.45
                 ypos 0.4
                 action Jump("dart_skill")
-        showif lewd > 20 and lovedart and ((suit > 6 and enemyID == 0) or (suit > 7 and enemyID in [2,3])):
+        showif lewd > 20 and lovedart and ((suit > 6 and enemyID == 0) or (suit > 7 and enemyID in [2,3]) or combat_second_enemy):
             imagebutton:
                 idle "images/skills/lips_idle.png"
                 hover "images/skills/lips_hover.png"
