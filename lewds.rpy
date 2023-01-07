@@ -224,7 +224,6 @@ label lewd_lizard_skill_2:
                 tali "Oh Keelah yes... Fuck my face with your fat cock... Stretch my tight throat and clog it with your cum!"
                 call display_room
                 show lizcum4
-                $ renpy.pause ()
             else:
                 call display_room
                 show lizsex5
@@ -232,7 +231,7 @@ label lewd_lizard_skill_2:
                 tali "MMm... his dick is throbbing in pleasure. Let me empty your balls in my mouth."
                 call display_room
                 show lizcum3
-                $ renpy.pause ()
+            $ renpy.pause ()
             call display_room
             show tali fin2 at left
             tali "Okay. Maybe I was a little too into it..."
@@ -289,6 +288,7 @@ label lewd_varren_2:
             $ renpy.pause ()
             call display_room
             show frontvarnomaskcum1
+        $ renpy.pause ()
         call display_room
         show tali fin2 at left
         if infection < 3:
@@ -366,6 +366,7 @@ label lewd_creep_1:
             $ renpy.pause ()
             call display_room
             show backmaskcum
+        $ renpy.pause ()
         call display_room
         show tali fin1 at left
         tali "Ugh... I feel so nasty. My suit is undamaged but... I can keep going after some cleanup."
@@ -433,6 +434,7 @@ label lewd_creep_4:
             $ renpy.pause ()
             scene bg cor1
             show backdamagedcum
+        $ renpy.pause ()
         call display_room
         show tali fin3 at left
         tali "K-Keelah. My suit's in tatters... and my body's on fire. I need to head back to the medbay..."
@@ -490,6 +492,7 @@ label lewd_lizzard_2:
             $ renpy.pause ()
             call display_room
             show liz1fcum2
+        $ renpy.pause ()
         call display_room
         show tali fin2 at left
         if infection > 3:
@@ -899,10 +902,10 @@ label dp_varren_skill_2: # varrens dart DP if suit = 8
         tali "Now where did I put my helmet...?"
     return
 
-    $ renpy.pause ()
-    call display_room
-    show tali fin2 at left
-    tali "Okay. Maybe I was a little too into it..."
+    # $ renpy.pause ()
+    # call display_room
+    # show tali fin2 at left
+    # tali "Okay. Maybe I was a little too into it..."
 
 label dp_varren_skill_3: # varrens dart DP if suit = 7
     if sexstage == 1:
