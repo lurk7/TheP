@@ -94,7 +94,7 @@ label enemy_attacks:
     play sound "audio/creepone.mp3"
     call display_battle_enemy_shake
     "Enemy attacks!"
-    if random > 30:
+    if random > 60:
         # miss
         play sound "audio/miss.mp3"
         call display_battle_tali_evade
