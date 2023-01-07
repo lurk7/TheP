@@ -291,10 +291,12 @@ label encounter_finished:
         call display_battle_hide_enemy
         $ combat_second_enemy = False
         $ combat_second_dead = True
+        $ enemy_dead = False
         jump enemy_attacks
     $ corridor_fight = False
     $ combat_second_enemy = False
     $ combat_second_dead = False
+    $ enemy_dead = False
     if suit < 7:
         if not been_defeated:
             tali "Ah keelah, my suit is destroyed! I need to hurry to the medbay."
