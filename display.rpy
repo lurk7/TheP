@@ -2,6 +2,17 @@ transform right_creep1:
     xalign 1.0 ypos 1.1 yanchor 1.0
 transform right_creep2:
     xalign 1.1 ypos 0.75 yanchor 1.0 
+
+transform right_varren1:
+    xalign 1.0 ypos 1.05 yanchor 1.0
+transform right_varren2:
+    xalign 1.4 ypos 0.85 yanchor 1.0 
+
+transform right_lizard1:
+    xalign 1.0 ypos 1.15 yanchor 1.0
+transform right_lizard2:
+    xalign 1.2 ypos 0.95 yanchor 1.0 
+
 transform shrink:
     zoom 0.9
 transform shake2:
@@ -42,6 +53,12 @@ label display_battle_enemy_stand:
         if enemyID == 0:
             show creep stand at right_creep1 as creep1
             show creep stand at right_creep2,shrink as creep2 behind creep1
+        elif enemyID == 2:
+            show varren stand at right_varren1 as varren1
+            show varren stand at right_varren2 as varren2 behind varren1
+        elif enemyID == 3:
+            show lizard stand at right_lizard1 as lizard1
+            show lizard stand at right_lizard2 as lizard2 behind lizard1
     return
 
 label display_battle_enemy_shake:
@@ -57,11 +74,22 @@ label display_battle_enemy_shake:
     elif combat_second_enemy:
         if enemyID == 0:
             show creep stand at right_creep1,shake as creep1
+        elif enemyID == 2:
+            show varren stand at right_varren1,shake as varren1
+        elif enemyID == 3:
+            show lizard stand at right_lizard1,shake as lizard1
     return
 
 label display_battle_enemy_shake_both:
-    show creep stand at right_creep1,shake as creep1
-    show creep stand at right_creep2,shake2 as creep2
+    if enemyID == 0:
+        show creep stand at right_creep1,shake as creep1
+        show creep stand at right_creep2,shake2 as creep2
+    if enemyID == 2:
+        show varren stand at right_varren1,shake as varren1
+        show varren stand at right_varren2,shake2 as varren2
+    if enemyID == 3:
+        show lizard stand at right_lizard1,shake as lizard1
+        show lizard stand at right_lizard2,shake2 as lizard2
     return 
 
 label display_battle_tali_evade:
@@ -117,8 +145,15 @@ label display_battle_hide_enemy:
         elif enemyID == 3:
             hide lizard stand
     elif combat_second_enemy:
-        hide creep1
-        hide creep2
+        if enemyID == 0:
+            hide creep1
+            hide creep2
+        elif enemyID == 2:
+            hide varren1
+            hide varren2
+        elif enemyID == 3:
+            hide lizard1
+            hide lizard2
     return
 
 label display_battle_disolve_enemy:
@@ -143,12 +178,26 @@ label display_battle_disolve_enemy:
         if enemyID == 0:
             hide creep1
             with Dissolve(2)
+        elif enemyID == 2:
+            hide varren1
+            with Dissolve(2)
+        elif enemyID == 3:
+            hide lizzard1
+            with Dissolve(2)
     return
 
 label display_battle_disolve_enemy_both:
     if enemyID == 0:
         hide creep1
         hide creep2
+        with Dissolve(2)
+    if enemyID == 2:
+        hide varren1
+        hide varren2
+        with Dissolve(2)
+    if enemyID == 3:
+        hide lizard1
+        hide lizard2
         with Dissolve(2)
     return
     

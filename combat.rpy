@@ -79,9 +79,7 @@ label combat_second_enemy_joins:
 label combat_event_chance:
     $ random = renpy.random.randint(1, 100)
     if not combat_second_enemy and not combat_second_dead:
-        if random > 80 :
-            if not enemyID == 0:
-                return
+        if random > 80 and alarm > 60:
             "Alert!! Additional enemy approaching"
             call display_battle_hide_enemy
             call combat_second_enemy_joins
@@ -177,33 +175,7 @@ label enemy_attack_hits:
         # enemy starts a lewd action
         $ lewd_action = True
         call display_room
-        if enemyID == 0:
-            if suit > 8:
-                call lewd_creep_1
-            elif suit == 8:
-                call lewd_creep_2
-            elif suit == 7:
-                call lewd_creep_3
-            elif suit < 7:
-                call lewd_creep_4
-        elif enemyID == 2:
-            if suit > 8:
-                call lewd_varren_1
-            elif suit == 8:
-                call lewd_varren_2
-            elif suit == 7:
-                call lewd_varren_3
-            elif suit < 7:
-                call lewd_varren_4
-        elif enemyID == 3:
-            if suit > 8:
-                call lewd_lizzard_1
-            elif suit == 8:
-                call lewd_lizzard_2
-            elif suit == 7:
-                call lewd_lizzard_3
-            elif suit < 7:
-                call lewd_lizzard_4
+        call enemy_attack_lewd_selector
     if fuckstage > 2:
         jump encounter_finished
     $ renpy.pause ()
@@ -211,6 +183,38 @@ label enemy_attack_hits:
     play sound "audio/punch.mp3"
     call display_battle_enemy_shake
     jump slider_battle_fuck
+
+
+label enemy_attack_lewd_selector:
+    if enemyID == 0:
+        if suit > 8:
+            call lewd_creep_1
+        elif suit == 8:
+            call lewd_creep_2
+        elif suit == 7:
+            call lewd_creep_3
+        elif suit < 7:
+            call lewd_creep_4
+    elif enemyID == 2:
+        if suit > 8:
+            call lewd_varren_1
+        elif suit == 8:
+            call lewd_varren_2
+        elif suit == 7:
+            call lewd_varren_3
+        elif suit < 7:
+            call lewd_varren_4
+    elif enemyID == 3:
+        if suit > 8:
+            call lewd_lizzard_1
+        elif suit == 8:
+            call lewd_lizzard_2
+        elif suit == 7:
+            call lewd_lizzard_3
+        elif suit < 7:
+            call lewd_lizzard_4
+    return
+
 
 label encounter_finished:
     # event over, cleanup vars
