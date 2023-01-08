@@ -3,6 +3,7 @@
 # add different fuck poses to a loop
 
 init python:
+    # uncomment  line below to force gallery open at gamestart
     # config.label_overrides = {'splashscreen' : 'splashscreen_new'}
     config.developer = True
 
