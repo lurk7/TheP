@@ -1027,16 +1027,20 @@ label dp_creep_skill_2: # creeps dart DP if suit = 8
         else:
             show dart1dp1nomask2
             $ renpy.pause ()
+            call display_room
             show tali lewd7
             tali "Come here, boy... I'll take care of you too..."
             call display_room
             show dart1dp1nomask3
+            $ renpy.pause ()
+            call display_room
             show tali lewd8
             play sound "audio/cumshot1.ogg"
             tali "Mmmm... yes. Take my head and push your dick into my mouth. Shoot your cum deep down my throat."
             call display_room
             show dart1dp1nomaskcum2
             $ renpy.pause ()
+            call display_room
             show tali lewd9
             tali "Aaaaaaaaa... Come on... Make my mouth overflow with all your hot jizz, I want it all!"
             call display_room
@@ -1051,6 +1055,7 @@ label dp_creep_skill_3: # creeps dart DP if suit = 7
     if sexstage == 1:
         show tali lewd10
         tali "Caught you! Come closer now, don't be shy..."
+        call display_room
         show dart1dp1damaged1
     elif sexstage == 2:
         show dart1dp1damaged2
@@ -1239,7 +1244,8 @@ label dp_lizard_skill_4:# lizards dart DP if suit = 6
         show dart3dp3damaged6_09
     elif sexstage == 3:
         show dart3dp3damaged6_09
-        tali "Ah Keelah! Your slimy cock feels so good up my asshole... Don't pull out, please... Stretch it harder... I want my butt filled with all your hot lizard cum!"
+        $ renpy.pause ()
+        tali "Ah Keelah! c... Don't pull out, please... Stretch it harder... I want my butt filled with all your hot lizard cum!"
         call display_room
         show dart3dp3damagedcum2
         $ renpy.pause ()
