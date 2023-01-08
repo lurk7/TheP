@@ -3,7 +3,7 @@
 # add different fuck poses to a loop
 
 init python:
-    config.label_overrides = {'splashscreen' : 'splashscreen_new'}
+    # config.label_overrides = {'splashscreen' : 'splashscreen_new'}
     config.developer = True
 
 
