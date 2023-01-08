@@ -20217,7 +20217,6 @@ label start:
     $ sidequest = "..."
     play music "audio/bg/common_bg.mp3" volume 0.3 loop
     "With her commander grounded and her friends too busy, the young quarian Tali'Zorah ventures out into the unknown fringes of Terminus Space, busying herself with chores to find valuable tech and exciting discoveries she can report back to the Migrant Fleet."
-    jump test111
     scene bg start1
     with dis
     show tali tool at left
