@@ -123,6 +123,7 @@ label lewd_creep_skill_3:
         show dart1backdamaged2
         $ renpy.pause ()
     elif sexstage == 3:
+        $ infection += 1
         show dart1backdamaged2
         $ renpy.pause ()
         call display_room
@@ -139,6 +140,7 @@ label lewd_creep_skill_4:
     elif sexstage == 2:
         show dart1backdamaged4
     elif sexstage == 3:
+        $ infection += 1
         show dart1backdamaged4
         $ renpy.pause ()
         tali "Ah Keelah, yes! Don't stop, you bostet! Fill my quarian pussy with your hot monster jizz!"
@@ -208,6 +210,7 @@ label lewd_varren_skill_2:
         else:
             show dart2backnomask2
     elif sexstage == 3:
+        $ infection += 1
         if dart_pose == 1:
             if lewd < 30:
                 show sex10
@@ -271,6 +274,7 @@ label lewd_varren_skill_3:
         show dart2backdamaged3
         $ renpy.pause ()
     elif sexstage == 3:
+        $ infection += 1
         show dart2backdamaged3
         $ renpy.pause ()
         call display_room
@@ -291,6 +295,7 @@ label lewd_varren_skill_4:
     elif sexstage == 2:
         show dart2backdamaged6
     elif sexstage == 3:
+        $ infection += 1
         show dart2backdamaged6
         $ renpy.pause ()
         tali "Oh Keelah, oh Keelah... I'm cuming! Fuck me harder!"
@@ -335,6 +340,7 @@ label lewd_lizard_skill_2:
             call display_room
             show lizsex5
     elif sexstage == 3:
+        $ infection += 1
         if lewd < 30:
             show lizsex4
             tali "Ah, you're ready to cum..."
@@ -406,6 +412,7 @@ label lewd_lizard_skill_3:
         show dart3backdamaged3
         $ renpy.pause ()
     elif sexstage == 3:
+        $ infection += 1
         show dart3backdamaged3
         $ renpy.pause ()
         call display_room
@@ -426,6 +433,7 @@ label lewd_lizard_skill_4:
         show dart3backdamaged5_12
         $ renpy.pause ()
     elif sexstage == 3:
+        $ infection += 1
         show dart3backdamaged5_12
         $ renpy.pause ()
         tali "Let's cum together... Empty your sticky balls inside my tight ass!"
