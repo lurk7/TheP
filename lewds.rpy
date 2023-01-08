@@ -143,7 +143,7 @@ label lewd_creep_skill_4:
         $ renpy.pause ()
         tali "Ah Keelah, yes! Don't stop, you bostet! Fill my quarian pussy with your hot monster jizz!"
         call display_room
-        show dart1backdamagedcum1
+        show dart1backdamagedcum2
         $ renpy.pause ()
         call display_room
         show tali fin3 at left
