@@ -271,7 +271,7 @@ label display_battle_tali_grabs:
                 show tali grab28 at shake
             elif suit == 6:
                 show tali grab29 at shake
-        return
+    return
 
 
 
