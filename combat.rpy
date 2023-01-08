@@ -83,7 +83,15 @@ label combat_second_enemy_joins:
 label combat_event_chance:
     $ random = renpy.random.randint(1, 100)
     if not combat_second_enemy and not combat_second_dead:
-        if random < combat_second_enemy_chance and alarm > 99:
+        if enemyID ==  0 and alarm > 40 : 
+            pass
+        elif enemyID ==  2 and alarm > 60 : 
+            pass
+        elif enemyID ==  3 and alarm > 99 : 
+            pass
+        else:
+            return
+        if random < combat_second_enemy_chance:
             "Alert!! Additional enemy approaching!"
             call display_battle_hide_enemy
             call combat_second_enemy_joins
