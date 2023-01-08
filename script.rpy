@@ -195,6 +195,7 @@ define hackstep = 3
 define hackstage = 0
 define fuckstage = 1
 define fuckpose = 0
+define dart_pose = 0
 define sexpose = 0
 define sexstage = 1
 # CHANGE TO FALSE
@@ -20216,7 +20217,7 @@ label start:
     $ sidequest = "..."
     play music "audio/bg/common_bg.mp3" volume 0.3 loop
     "With her commander grounded and her friends too busy, the young quarian Tali'Zorah ventures out into the unknown fringes of Terminus Space, busying herself with chores to find valuable tech and exciting discoveries she can report back to the Migrant Fleet."
-    #jump crokdart
+    jump test111
     scene bg start1
     with dis
     show tali tool at left
@@ -26075,6 +26076,7 @@ label start:
             with dis
             "Smelling prey, a varren attacks!"
             $ fuckpose = renpy.random.randint(1, 2)
+            $ dart_pose = renpy.random.randint(1, 2)
             $ enemyhp = 5
             jump slider_battle_fuck
         else:
@@ -26094,6 +26096,7 @@ label start:
             with dis
             "Enemy attacks!"
             $ fuckpose = renpy.random.randint(1, 2)
+            $ dart_pose = renpy.random.randint(1, 2)
             $ enemyhp = 5
             jump slider_battle_fuck
         else:
@@ -26326,6 +26329,7 @@ label start:
             with dis
             "Following her scent, a creature springs out!"
             $ fuckpose = renpy.random.randint(1, 2)
+            $ dart_pose = renpy.random.randint(1, 2)
             $ enemyhp = 5
             jump slider_battle_fuck
         else:
@@ -28177,14 +28181,14 @@ label start:
     label escape_skill:
         $ random = renpy.random.randint(1, 100)
         "Tali tries to run away!"
-        if random > 1 and random < 50:
+        if random > 0 and random < 51:
             play sound "audio/run.ogg"
             scene black
             "Escape successful."
             if comEncounter == True:
                 jump afterComEvent
             jump map
-        elif random > 50 and random < 100:
+        elif random > 50 and random < 101:
             play sound "audio/creepone.mp3"
             scene black
             "Escape failed..."

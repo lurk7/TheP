@@ -1,14 +1,27 @@
 label lewd_creep_skill_1:
     if sexstage == 1:
-        show sex1
+        if dart_pose == 1:
+            show sex1
+        else:
+            show dart1backmask1
     elif sexstage == 2:
-        show sex2
+        if dart_pose == 1:
+            show sex2
+        else:
+            show dart1backmask2
     elif sexstage == 3:
-        show sex2
-        $ renpy.pause ()
-        call display_room
-        show cum1
-        $ renpy.pause ()
+        if dart_pose == 1:
+            show sex2
+            $ renpy.pause ()
+            call display_room
+            show cum1
+            $ renpy.pause ()
+        else:
+            show dart1backmask2
+            $ renpy.pause ()
+            call display_room
+            show dart1backmaskcum
+            $ renpy.pause ()
         call display_room
         show tali fin1 at left
         tali "Ngh. So much cum... "
@@ -16,77 +29,151 @@ label lewd_creep_skill_1:
 
 label lewd_creep_skill_2:
     if sexstage == 1:
-        show sex3
+        if dart_pose == 1:
+            show sex3
+        else:
+            show dart1backnomask1
     elif sexstage == 2:
-        if lewd < 30:
-            show sex3alt
-        elif lewd < 40:
-            show tali grab3
-            tali "So hard. I think I can do much better..."
+        if dart_pose == 1:
+            if lewd < 30:
+                show sex3alt
+            elif lewd < 40:
+                show tali grab3
+                tali "So hard. I think I can do much better..."
+                call display_room
+                show sex4
+            elif lewd > 40:
+                show tali grab3
+                tali "You like staring at my lips? Let me give you something to really look at..."
+                call display_room
+                show sex4
+                $ renpy.pause ()
+                call display_room
+                show tali grab4
+                tali "Keelah... I want him deep in my throat..."
+                call display_room
+                show sex5
+                pause 3
+                call display_room
+                show sex6
+        else:
+            show tali lewd1
+            tali "Ah, I feel his hard cock rubs my pussy..."
+            play sound "audio/creepone.mp3"
+            pause 1
+            tali "You like my tight butt? Want to grab my body, aren't you?"
             call display_room
-            show sex4
-        elif lewd > 40:
-            show tali grab3
-            tali "You like staring at my lips? Let me give you something to really look at..."
-            call display_room
-            show sex4
+            show dart1backnomask2
             $ renpy.pause ()
-            call display_room
-            show tali grab4
-            tali "Keelah... I want him deep in my throat..."
-            call display_room
-            show sex5
-            pause 3
-            call display_room
-            show sex6
     elif sexstage == 3:
         $ infection += 1
-        if lewd < 30:
-            show sex3alt
+        if dart_pose == 1:
+            if lewd < 30:
+                show sex3alt
+                $ renpy.pause ()
+                call display_room
+                show cum2
+                $ renpy.pause ()
+                call display_room
+                show tali doubt69 at left
+                tali "Well... one way or another."
+            elif lewd < 41:
+                show sex4alt
+                $ renpy.pause ()
+                call display_room
+                show cum2
+                $ renpy.pause ()
+                call display_room
+                show tali doubt69 at left
+                tali "Done. Now where's me helmet...?"
+            elif lewd > 40:
+                show sex5
+                pause 3
+                call display_room
+                show sex6alt
+                $ renpy.pause ()
+                call display_room
+                show tali grab5
+                tali "Mmm. My lips are wrapped so tight around your fat cock. Go on then... give me your cum. I don't want to spill a single drop."
+                call display_room
+                show cum3
+                $ renpy.pause ()
+                call display_room
+                show tali fin2 at left
+                tali "Silly girl, you went a little too crazy..."
+        else:
+            show dart1backnomask2
             $ renpy.pause ()
+            tali "Mmmm... yes. Let me milk your dick with my hips..."
             call display_room
-            show cum2
+            show dart1backnomaskcum
             $ renpy.pause ()
             call display_room
             show tali doubt69 at left
             tali "Well... one way or another."
-        elif lewd < 41:
-            show sex4alt
-            $ renpy.pause ()
-            call display_room
-            show cum2
-            $ renpy.pause ()
-            call display_room
-            show tali doubt69 at left
-            tali "Done. Now where's me helmet...?"
-        elif lewd > 40:
-            show sex5
-            pause 3
-            call display_room
-            show sex6alt
-            $ renpy.pause ()
-            call display_room
-            show tali grab5
-            tali "Mmm. My lips are wrapped so tight around your fat cock. Go on then... give me your cum. I don't want to spill a single drop."
-            call display_room
-            show cum3
-            $ renpy.pause ()
-            call display_room
-            show tali fin2 at left
-            tali "Silly girl, you went a little too crazy..."
+    return
+
+label lewd_creep_skill_3:
+    if sexstage == 1:
+        show dart1backdamaged1
+    elif sexstage == 2:
+        show tali lewd2
+        tali "Let's... I know a good use for such a hard fat cock... Let me show you..."
+        call display_room
+        show dart1backdamaged2
+        $ renpy.pause ()
+    elif sexstage == 3:
+        show dart1backdamaged2
+        $ renpy.pause ()
+        call display_room
+        show dart1backdamagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        tali "Ngh. So much cum... "
+    return
+
+label lewd_creep_skill_4:
+    if sexstage == 1:
+        show dart1backdamaged3
+    elif sexstage == 2:
+        show dart1backdamaged4
+    elif sexstage == 3:
+        show dart1backdamaged4
+        $ renpy.pause ()
+        tali "Ah Keelah, yes! Don't stop, you bostet! Fill my quarian pussy with your hot monster jizz!"
+        call display_room
+        show dart1backdamagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin3 at left
+        tali "Silly girl, you went a little too crazy..."
     return
 
 label lewd_varren_skill_1:
     if sexstage == 1:
-        show sex7
+        if dart_pose == 1:
+            show sex7
+        else:
+            show dart2backmask1
     elif sexstage == 2:
-        show sex8
+        if dart_pose == 1:
+            show sex8
+        else:
+            show dart2backmask2
     elif sexstage == 3:
-        show sex8
-        $ renpy.pause ()
-        call display_room
-        show cum4
-        $ renpy.pause ()
+        if dart_pose == 1:
+            show sex8
+            $ renpy.pause ()
+            call display_room
+            show cum4
+            $ renpy.pause ()
+        else:
+            show dart2backmask2
+            $ renpy.pause ()
+            call display_room
+            show dart2backmaskcum
+            $ renpy.pause ()
         call display_room
         show tali fin1 at left
         tali "Ah, so much sperm... "
@@ -94,63 +181,125 @@ label lewd_varren_skill_1:
 
 label lewd_varren_skill_2:
     if sexstage == 1:
-        show sex9
+        if dart_pose == 1:
+            show sex9
+        else:
+            show dart2backnomask1
     elif sexstage == 2:
-        if lewd < 30:
-            show sex10
-        elif lewd < 41:
-            show sex10
-            $ renpy.pause ()
-            call display_room
-            show tali grab7
-            tali "Such a nice red lollipop you have... Let me take some measurements..."
-            call display_room
-            show sex11
-        elif lewd > 40:
-            show sex10
-            $ renpy.pause ()
-            call display_room
-            show tali grab7
-            tali "Such a thick, bad doggy. Tali will have to punish you..."
-            call display_room
-            show sex11
+        if dart_pose == 1:
+            if lewd < 30:
+                show sex10
+            elif lewd < 41:
+                show sex10
+                $ renpy.pause ()
+                call display_room
+                show tali grab7
+                tali "Such a nice red lollipop you have... Let me take some measurements..."
+                call display_room
+                show sex11
+            elif lewd > 40:
+                show sex10
+                $ renpy.pause ()
+                call display_room
+                show tali grab7
+                tali "Such a thick, bad doggy. Tali will have to punish you..."
+                call display_room
+                show sex11
+        else:
+            show dart2backnomask2
     elif sexstage == 3:
-        if lewd < 30:
-            show sex10
+        if dart_pose == 1:
+            if lewd < 30:
+                show sex10
+                $ renpy.pause ()
+                call display_room
+                show cum5
+                $ renpy.pause ()
+                call display_room
+                show tali doubt69 at left
+                tali "Well... one way or another."
+            elif lewd < 41:
+                show sex11
+                $ renpy.pause ()
+                call display_room
+                show cum6
+                $ renpy.pause ()
+                call display_room
+                show tali doubt69 at left
+                tali "Now where did I put my helmet...?"
+            elif lewd > 40:
+                show sex11
+                $ renpy.pause ()
+                call display_room
+                show cum7
+                $ renpy.pause ()
+                call display_room
+                show tali grab8
+                tali "Mmmm, you filthy stray. You're not going anywhere until your cock is clean and polished..."
+                call display_room
+                show cum8
+                $ renpy.pause ()
+                call display_room
+                show cum9
+                $ renpy.pause ()
+                call display_room
+                show tali fin2 at left
+                tali "Okay. Maybe I was a little too into it..."
+        else:
+            show dart2backnomask2
             $ renpy.pause ()
             call display_room
-            show cum5
+            show dart2backnomaskcum
             $ renpy.pause ()
             call display_room
             show tali doubt69 at left
             tali "Well... one way or another."
-        elif lewd < 41:
-            show sex11
-            $ renpy.pause ()
-            call display_room
-            show cum6
-            $ renpy.pause ()
-            call display_room
-            show tali doubt69 at left
-            tali "Now where did I put my helmet...?"
-        elif lewd > 40:
-            show sex11
-            $ renpy.pause ()
-            call display_room
-            show cum7
-            $ renpy.pause ()
-            call display_room
-            show tali grab8
-            tali "Mmmm, you filthy stray. You're not going anywhere until your cock is clean and polished..."
-            call display_room
-            show cum8
-            $ renpy.pause ()
-            call display_room
-            show cum9
-            $ renpy.pause ()
-            call display_room
-            show tali fin2 at left
-            tali "Okay. Maybe I was a little too into it..."
+    return
+
+label lewd_varren_skill_3:
+    if sexstage == 1:
+        show dart2backdamaged1
+    elif sexstage == 2:
+        show tali lewd3
+        tali "Ahhh... I feel hot between my hips. Will you help me to handle it?"
+        $ renpy.pause ()
+        call display_room
+        show dart2backdamaged2
+        $ renpy.pause ()
+        tali "Oh yes! Good boy! Keep it hard until I'm done..."
+        call display_room
+        show dart2backdamaged3
+        $ renpy.pause ()
+    elif sexstage == 3:
+        show dart2backdamaged3
+        $ renpy.pause ()
+        call display_room
+        show dart2backdamagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        tali "Ah, so much sperm... "
+    return
+
+label lewd_varren_skill_4:
+    if sexstage == 1:
+        show dart2backdamaged4
+        $ renpy.pause ()
+        call display_room
+        show dart2backdamaged5
+        $ renpy.pause ()
+    elif sexstage == 2:
+        show dart2backdamaged6
+    elif sexstage == 3:
+        show dart2backdamaged6
+        $ renpy.pause ()
+        tali "Oh Keelah, oh Keelah... I'm cuming! Fuck me harder!"
+        call display_room
+        show dart2backdamagedcum2
+        $ renpy.pause ()
+        call display_room
+        show tali fin3 at left
+        tali "Okay. Maybe I was a little too into it..."
     return
 
 label lewd_lizard_skill_1:
@@ -235,6 +384,57 @@ label lewd_lizard_skill_2:
             call display_room
             show tali fin2 at left
             tali "Okay. Maybe I was a little too into it..."
+    return
+
+label lewd_lizard_skill_3:
+    if sexstage == 1:
+        show dart3backdamaged0
+        $ renpy.pause ()
+        call display_room
+        show tali lewd4
+        tali "Time to use your long lizard tongue... Try hard and maybe I reward you with quarian cooky."
+        call display_room
+        show dart3backdamaged1
+        $ renpy.pause ()
+    elif sexstage == 2:
+        show tali lewd5
+        tali "Here it come your prize. I hope you lubed me well to push this cock in my tight booty..."
+        call display_room
+        show dart3backdamaged2
+        $ renpy.pause ()
+        call display_room
+        show dart3backdamaged3
+        $ renpy.pause ()
+    elif sexstage == 3:
+        show dart3backdamaged3
+        $ renpy.pause ()
+        call display_room
+        show dart3backdamagedcum1
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        tali "Ah, so much sperm... "
+    return
+
+label lewd_lizard_skill_4:
+    if sexstage == 1:
+        show dart3backdamaged4
+    elif sexstage == 2:
+        show tali lewd6
+        tali "Yes! Your slimy cock going so deep and soft... Let me play with my wet pussy..."
+        call display_room
+        show dart3backdamaged5_12
+        $ renpy.pause ()
+    elif sexstage == 3:
+        show dart3backdamaged5_12
+        $ renpy.pause ()
+        tali "Let's cum together... Empty your sticky balls inside my tight ass!"
+        call display_room
+        show dart3backdamagedcum2
+        $ renpy.pause ()
+        call display_room
+        show tali fin2 at left
+        tali "Okay. Maybe I was a little too into it..."
     return
 
 label lewd_varren_1:
@@ -716,6 +916,7 @@ label dp_lizzard_2: # lizards DP if suit = 8
     elif fuckstage == 2:
         show dp3nomask2
         $ renpy.pause ()
+        call display_room
         show dp3nomask3
         pause 2
         call display_room
@@ -798,11 +999,17 @@ label dp_creep_skill_2: # creeps dart DP if suit = 8
     if sexstage == 1:
         show dart1dp1nomask1
     elif sexstage == 2:
+        show tali grab13
+        tali "Oh Keelah... two such fat cocks for little quarian girl... let me handle it with my mouth..."
+        call display_room
         show dart1dp1nomask2
+        $ renpy.pause ()
     elif sexstage == 3:
         if lewd < 30:
             show dart1dp1nomask2
             $ renpy.pause ()
+            show tali grab13
+            tali "Yes, you boshtets! Cover my face with your hot cum!"
             call display_room
             show dart1dp1nomaskcum1
             $ renpy.pause ()
@@ -812,12 +1019,18 @@ label dp_creep_skill_2: # creeps dart DP if suit = 8
         else:
             show dart1dp1nomask2
             $ renpy.pause ()
+            show tali lewd7
+            tali "Come here, boy... I will take care of you too..."
             call display_room
             show dart1dp1nomask3
-            $ renpy.pause ()
+            show tali lewd8
+            play sound "audio/cumshot1.ogg"
+            tali "Mmmm... yes. Take my head and push your dick in my mouth. Shoot your cum deep in my throat."
             call display_room
             show dart1dp1nomaskcum2
             $ renpy.pause ()
+            show tali lewd9
+            tali "Aaaaaaaaa... Come on... Make my mouth to overflow with hot jizz, I want to swallow it all!"
             call display_room
             show dart1dp1nomaskcum3
             $ renpy.pause ()
@@ -828,12 +1041,15 @@ label dp_creep_skill_2: # creeps dart DP if suit = 8
 
 label dp_creep_skill_3: # creeps dart DP if suit = 7
     if sexstage == 1:
+        show tali lewd10
+        tali "Caught you! Come closer, don't be shy..."
         show dart1dp1damaged1
     elif sexstage == 2:
         show dart1dp1damaged2
     elif sexstage == 3:
         show dart1dp1damaged2
         $ renpy.pause ()
+        tali "Yes, yes... fuck me harder, you bastards! I was a bad quarian bitch!"
         call display_room
         show dart1dp1damaged4
         pause 1.7
@@ -913,17 +1129,20 @@ label dp_varren_skill_3: # varrens dart DP if suit = 7
     elif sexstage == 2:
         show dart2dp2damaged2
         pause 1.4
+        tali "You like it, dirty doggy? Let me spread it for you..."
         call display_room
         show dart2dp2damaged3
         $ renpy.pause ()
         call display_room
         show dart2dp2damaged4
         pause 2
+        tali "Oh yes... like this. Take care of my wet pussy, good boy..."
         call display_room
         show dart2dp2damaged5
     elif sexstage == 3:
         show dart2dp2damaged5
         $ renpy.pause ()
+        tali "Give me your doggy jizz. Fill my holes with your hot cum..."
         call display_room
         show dart2dp2damagedcum1
         $ renpy.pause ()
@@ -941,6 +1160,7 @@ label dp_varren_skill_4: # varrens dart DP if suit = 6
     elif sexstage == 2:
         show dart2dp2damaged7
         pause 2.5
+        tali "Hmmmpff... you... bad, bad doggy! How dare you to treat quarian admiral like this... Only if you want to punish her harder..."
         call display_room
         show dart2dp2damaged8
     elif sexstage == 3:
@@ -990,8 +1210,12 @@ label dp_lizard_skill_3:# lizards dart DP if suit = 7
     if sexstage == 1:
         show dart3dp3damaged1
     elif sexstage == 2:
+        show tali lewd11
+        tali "What are you looking at, boshtet? You like my ass? Think you can try?"
+        call display_room
         show dart3dp3damaged2
         pause 3.5
+        tali "Mmmm... let me prepare my tight hole for your cock..."
         call display_room
         show dart3dp3damaged3
     elif sexstage == 3:
@@ -1012,7 +1236,7 @@ label dp_lizard_skill_4:# lizards dart DP if suit = 6
         show dart3dp3damaged6_09
     elif sexstage == 3:
         show dart3dp3damaged6_09
-        $ renpy.pause ()
+        tali "Ah Keelah! Your slimy cock treats my booty hole so well... Don't pull out, please... Stretch it harder... I want my butt full with your lizard cum!"
         call display_room
         show dart3dp3damagedcum2
         $ renpy.pause ()

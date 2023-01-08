@@ -841,7 +841,7 @@ image dart1dp1damaged5:
     pause 0.1
     "images/events/w2/dp1/damaged5/0048.png"
     pause 0.1
-    repeat
+
 image dart1dp1damaged6:
     "images/events/w2/dp1/damaged6/0056.png"
     pause 0.1
@@ -3311,6 +3311,51 @@ image dp3nomaskcum2:
     pause 0.12
     "images/events/l3/nomaskcum2/0070.png"
     pause 0.12
+
+
+image dart3backdamaged0:
+    "images/events/l2/front/damaged1/0001.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0002.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0003.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0004.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0005.png"
+    function slurp
+    pause 0.1
+    "images/events/l2/front/damaged1/0006.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0007.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0008.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0009.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0010.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0011.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0012.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0013.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0014.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0015.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0016.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0017.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0018.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0019.png"
+    pause 0.1
+    "images/events/l2/front/damaged1/0020.png"
+    pause 0.1
+    repeat
 
 image dart3backdamaged1:
     "images/events/l2/back/damaged1/0021.png"

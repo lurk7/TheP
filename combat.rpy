@@ -1,6 +1,6 @@
 define been_defeated = False
 define lewd_action = False  # was the last action lewd? if so increase Tali's lewd level
-define has_escaped = False 
+define has_escaped = False
 define enemy_dead = False
 define combat_second_enemy = False
 define combat_second_dead = False
@@ -34,6 +34,7 @@ label escape_skill1:
             play sound "audio/run.ogg"
             scene black
             "Escape successful."
+            $ combat_second_enemy = False
             $ has_escaped = True
             jump encounter_finished
         else :
@@ -145,18 +146,30 @@ label sex_skill_lewd_selector:
         if enemyID == 0:
             if suit > 8:
                 call lewd_creep_skill_1
-            elif suit > 6:
+            elif suit == 8:
                 call lewd_creep_skill_2
+            elif suit == 7:
+                call lewd_creep_skill_3
+            elif suit == 6:
+                call lewd_creep_skill_4
         elif enemyID == 2:
             if suit > 8:
                 call lewd_varren_skill_1
             elif suit == 8:
                 call lewd_varren_skill_2
+            elif suit == 7:
+                call lewd_varren_skill_3
+            elif suit == 6:
+                call lewd_varren_skill_4
         elif enemyID == 3:
             if suit > 8:
                 call lewd_lizard_skill_1
             elif suit == 8:
                 call lewd_lizard_skill_2
+            elif suit == 7:
+                call lewd_lizard_skill_3
+            elif suit == 6:
+                call lewd_lizard_skill_4
     elif combat_second_enemy:
         if enemyID == 0:
             if suit > 8:
@@ -351,7 +364,7 @@ screen sliderfuck():
                 xpos 0.45
                 ypos 0.3
                 action Jump("grenade_skill1")
-        showif darts > 0 and lovedart == False and ((suit > 6 and enemyID == 0) or (suit > 7 and enemyID in [2,3]) or combat_second_enemy):
+        showif darts > 0 and lovedart == False and ((suit > 5 and enemyID == 0) or (suit > 5 and enemyID in [2,3]) or combat_second_enemy):
             imagebutton:
                 idle "images/skills/dart_idle.png"
                 hover "images/skills/dart_hover.png"
@@ -359,7 +372,7 @@ screen sliderfuck():
                 xpos 0.45
                 ypos 0.4
                 action Jump("dart_skill")
-        showif lewd > 20 and lovedart and ((suit > 6 and enemyID == 0) or (suit > 7 and enemyID in [2,3]) or combat_second_enemy):
+        showif lewd > 20 and lovedart and ((suit > 7 and enemyID in [1,2,3]) or (suit < 8 and lewd > 40) or combat_second_enemy):
             imagebutton:
                 idle "images/skills/lips_idle.png"
                 hover "images/skills/lips_hover.png"
