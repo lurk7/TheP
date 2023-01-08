@@ -4,6 +4,7 @@ define has_escaped = False
 define enemy_dead = False
 define combat_second_enemy = False
 define combat_second_dead = False
+define combat_second_enemy_chance = 30
 
 label grenade_skill1:
     $ alarm += 5
@@ -82,7 +83,7 @@ label combat_second_enemy_joins:
 label combat_event_chance:
     $ random = renpy.random.randint(1, 100)
     if not combat_second_enemy and not combat_second_dead:
-        if random > 80 and alarm > 60:
+        if random < combat_second_enemy_chance and alarm > 99:
             "Alert!! Additional enemy approaching!"
             call display_battle_hide_enemy
             call combat_second_enemy_joins
@@ -297,6 +298,7 @@ label encounter_finished:
     # event over, cleanup vars
     $ fuckstage = 1
     $ sexstage = 1
+    $ combat_second_enemy_chance = 30
     $ lovedart = False
     if combat_second_enemy and enemy_dead:
         "One down, One to go"
@@ -417,6 +419,7 @@ label tease_skill:
     "Want this fat quarian ass? Come and get it."
     play sound "audio/creepone.mp3"
     pause 1
+    $ combat_second_enemy_chance += 10
     jump enemy_attack_hits
 
 label dart_skill:
