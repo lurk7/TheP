@@ -83,11 +83,11 @@ label combat_second_enemy_joins:
 label combat_event_chance:
     $ random = renpy.random.randint(1, 100)
     if not combat_second_enemy and not combat_second_dead:
-        if enemyID ==  0 and alarm > 40 : 
+        if enemyID ==  0 and alarm > 99 :
             pass
-        elif enemyID ==  2 and alarm > 60 : 
+        elif enemyID ==  2 and alarm > 149 :
             pass
-        elif enemyID ==  3 and alarm > 99 : 
+        elif enemyID ==  3 and alarm > 199 :
             pass
         else:
             return
@@ -428,6 +428,7 @@ label tease_skill:
     play sound "audio/creepone.mp3"
     pause 1
     $ combat_second_enemy_chance += 10
+    call combat_event_chance
     jump enemy_attack_hits
 
 label dart_skill:
