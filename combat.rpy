@@ -4,7 +4,7 @@ define has_escaped = False
 define enemy_dead = False
 define combat_second_enemy = False
 define combat_second_dead = False
-define combat_second_enemy_chance = 30
+define combat_second_enemy_chance = 20
 
 label grenade_skill1:
     $ alarm += 5
@@ -298,7 +298,7 @@ label encounter_finished:
     # event over, cleanup vars
     $ fuckstage = 1
     $ sexstage = 1
-    $ combat_second_enemy_chance = 30
+    $ combat_second_enemy_chance = 20
     $ lovedart = False
     if combat_second_enemy and enemy_dead:
         "One down, One to go"
