@@ -372,7 +372,7 @@ screen sliderfuck():
                 xpos 0.45
                 ypos 0.4
                 action Jump("dart_skill")
-        showif lewd > 20 and lovedart and ((suit > 7 and enemyID in [1,2,3]) or (suit < 8 and lewd > 40) or combat_second_enemy):
+        showif lewd > 20 and lovedart and ((suit > 7 and enemyID in [0,2,3]) or (suit < 8 and lewd > 40) or combat_second_enemy):
             imagebutton:
                 idle "images/skills/lips_idle.png"
                 hover "images/skills/lips_hover.png"
